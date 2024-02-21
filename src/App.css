@@ -57,8 +57,11 @@
 
 
 .imgg {
-  width: 98%;
-  height: 80%;
+  width: 45%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
 }
 
@@ -72,6 +75,10 @@
 .image-container {
   flex: 1;
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 /* Style for the info container on the right */
