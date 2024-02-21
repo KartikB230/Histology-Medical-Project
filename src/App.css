@@ -170,7 +170,7 @@
 
 .navbar{
   background-color: rgb(205, 117, 117);
-  padding:10px 0px;
+  
 }
 
 .navbar-brand{
@@ -178,8 +178,8 @@
 }
 
 .nav-item{
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 35px;
+  padding-right: 35px;
 }
 
 .nav-link{
