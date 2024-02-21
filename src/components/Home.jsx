@@ -15,14 +15,14 @@ const Home = () => {
   style={{
     position: 'absolute',
     color: 'white',
-    textAlign: 'center',
-    top: '50%',
-    left: '50%',
+    textAlign: 'left',
+    top: '42%',
+    left: '40%',
     transform: 'translate(-50%, -50%)',
     fontSize: '50px',
   }}
 >
-  Discover the Microscopic Wonders<br></br>
+  <strong>Discover the Microscopic Wonders ,</strong><br></br>
   <span style={{ color: 'red' }}>
     <b>
       <Typewriter
@@ -33,7 +33,7 @@ const Home = () => {
           ' "Exploring the intricate patterns of life through histology."',
           ' "Believe in the magic of stained slides and hidden details."',
         ]}
-        loop={5}
+        loop={50}
         cursor
         cursorStyle='_'
         typeSpeed={70}
