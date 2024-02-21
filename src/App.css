@@ -173,8 +173,10 @@
   
 }
 
-.navbar-brand{
-  padding:10px 170px 10px 170px;
+@media (min-width: 992px) {
+  .navbar-brand {
+    padding: 10px 170px;
+  }
 }
 
 .nav-item{
