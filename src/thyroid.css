@@ -1,90 +1,227 @@
-/* Default styles for all devices */
-.img {
-    height: 700px;
-    width: 1200px;
-    margin: 25px;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.divv {
-    display: flex;
-    justify-content: center;
+.heading
+{
     text-align: center;
 }
 
-#imageContainer {
+/* Default styles for all devices */
+/* Default styles for all devices */
+.img {
     position: relative;
-    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* display: inline-block; */
 }
 
-.labels {
+.toggle-button {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 100; /* Position at the top */
+    right: 0; /* Position at the end */
+    left : 0%;
+    border: none;
+    background: none;
+    padding: 0;
+  }
+  
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    /* Styles for small devices (sm) */
+    .img {
+        width: 90%; /* Adjust the percentage as needed */
+    }
+
+    #labels button:nth-child(1) { /* Button 1 */
+        top: 37%; /* Adjust the percentage as needed */
+        left: 35%; /* Adjust the percentage as needed */
+    }
+    
+    #labels button:nth-child(2) { /* Button 2 */
+        top: 40%; /* Adjust the percentage as needed */
+        left: 40%; /* Adjust the percentage as needed */
+    }
+    
+    #labels button:nth-child(3) { /* Button 3 */
+        top: 61%; /* Adjust the percentage as needed */
+        left: 35%; /* Adjust the percentage as needed */
+    }
+    
+    #labels button:nth-child(4) { /* Button 4 */
+        top: 80%; /* Adjust the percentage as needed */
+        left: 80%; /* Adjust the percentage as needed */
+    }
+    
+    #labels button:nth-child(5) { /* Button 5 */
+        top: 50%; /* Adjust the percentage as needed */
+        left: 80%; /* Adjust the percentage as needed */
+    }
+    
+    #labels button:nth-child(6) { /* Button 6 */
+        top: 45%; /* Adjust the percentage as needed */
+        left: 38%; /* Adjust the percentage as needed */
+    }
+
+    
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    /* Styles for medium devices (md) */
+    .img {
+        width: 90%;
+         /* Adjust the percentage as needed */
+    }
+
+    #labels button:nth-child(1) { /* Button 1 */
+        top: 20%; /* Adjust the percentage as needed */
+        left: 20%; /* Adjust the percentage as needed */
+    }
+    
+    #labels button:nth-child(2) { /* Button 2 */
+        top: 40%; /* Adjust the percentage as needed */
+        left: 40%; /* Adjust the percentage as needed */
+    }
+    
+    #labels button:nth-child(3) { /* Button 3 */
+        top: 60%; /* Adjust the percentage as needed */
+        left: 60%; /* Adjust the percentage as needed */
+    }
+    
+    #labels button:nth-child(4) { /* Button 4 */
+        top: 80%; /* Adjust the percentage as needed */
+        left: 80%; /* Adjust the percentage as needed */
+    }
+    
+    #labels button:nth-child(5) { /* Button 5 */
+        top: 50%; /* Adjust the percentage as needed */
+        left: 80%; /* Adjust the percentage as needed */
+    }
+    
+    #labels button:nth-child(6) { /* Button 6 */
+        top: 40%; /* Adjust the percentage as needed */
+        left: 60%; /* Adjust the percentage as needed */
+    }
+    .toggle-button {
+        position: absolute;
+        top: 5%; /* Position at the top */
+        right: 5%; /* Position at the end */
+        left : 10;
+        border: none;
+        background: none;
+        padding: 0;
+    }
+
+    
+}
+
+@media only screen and (min-width: 993px) {
+    /* Styles for large devices (lg) */
+    .img {
+        width: 80%;
+        height: 750px; /* Adjust the percentage as needed */
+    }
+
+    #labels button:nth-child(1) { /* Button 1 */
+        top: 30%; /* Adjust the percentage as needed */
+        left: 39%; /* Adjust the percentage as needed */
+    }
+    
+    #labels button:nth-child(2) { /* Button 2 */
+        top: 53%; /* Adjust the percentage as needed */
+        left: 67%; /* Adjust the percentage as needed */
+    }
+    
+    #labels button:nth-child(3) { /* Button 3 */
+        top: 75%; /* Adjust the percentage as needed */
+        left: 40%; /* Adjust the percentage as needed */
+    }
+    
+    #labels button:nth-child(4) { /* Button 4 */
+        top: 39%; /* Adjust the percentage as needed */
+        left: 64%; /* Adjust the percentage as needed */
+    }
+    
+    #labels button:nth-child(5) { /* Button 5 */
+        top: 67%; /* Adjust the percentage as needed */
+        left: 41%; /* Adjust the percentage as needed */
+    }
+    
+    #labels button:nth-child(6) { /* Button 6 */
+        top: 45%; /* Adjust the percentage as needed */
+        left: 42%; /* Adjust the percentage as needed */
+    }
+    .toggle-button {
+        position: absolute;
+        top: 0; /* Position at the top */
+        right: 0; /* Position at the end */
+        border: none;
+        background: none;
+        padding: 0;
+      }
+
+    
+}
+
+/* Add additional styles as needed */
+
+
+#imageContainer {
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    
+}
+
+/* .labels {
+    position: absolute;
+
+} */
+
+@media only screen and (max-width: 768px) {
+    /* Styles for small devices (sm) */
+    #labels button {
+        font-size: 10px;
+    } 
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    /* Styles for medium devices (md) */
+    #labels button {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    /* Styles for large devices (lg) */
+    #labels button {
+        font-size: 20px;
+
+    }
 }
 
 .labels button {
-    position: relative;
+    /* position: absolute; */
+    position:absolute;
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 1);
     cursor: pointer;
     font-size: medium;
+    font-weight: bolder;
+    z-index: 10;
 }
 
 /* Example button positions */
-#labels button:nth-child(1) { /* Button 1 */
-    top: 156px;
-    left: 250px;
-}
 
-#labels button:nth-child(2) { /* Button 2 */
-    top: 270px;
-    left: 620px;
-}
-
-#labels button:nth-child(3) { /* Button 3 */
-    top: 419px;
-    left: 290px;
-}
-
-#labels button:nth-child(4) { /* Button 4 */
-    top: 160px;
-    left: 550px;
-}
-
-#labels button:nth-child(5) { /* Button 5 */
-    top: 330px;
-    left: 230px;
-}
-
-#labels button:nth-child(6) { /* Button 6 */
-    top: 230px;
-    left: 290px;
-}
-
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    z-index: 1000; /* Ensure the overlay is behind the popup */
-    display: none; /* Initially hidden */
-}
-
-.overlay.active {
-    display: block; /* Show the overlay when active */
-}
 
 .popup {
     display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: absolute;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -94,10 +231,6 @@
     width: 100%;
     text-align: center;
     font-size: medium;
-}
-
-.popup.active {
-    display: block; /* Show the popup when active */
 }
 
 .popup img {
@@ -127,48 +260,3 @@
     color: #aaaaaa;
     cursor: pointer;
 }
-
-/* Media queries for responsiveness */
-@media only screen and (max-width: 768px) {
-    .img {
-        height: auto;
-        width: 90%;
-    }
-        /* Example button positions */
-    #labels button:nth-child(1) { 
-        /* Button 1 */
-        top: 156px;
-        left: 250px;
-    }
-
-    #labels button:nth-child(2) { /* Button 2 */
-        top: 270px;
-        left: 620px;
-    }
-
-    #labels button:nth-child(3) { /* Button 3 */
-        top: 60%; /* Adjust as needed */
-        left: 65%; /* Adjust as needed */
-    }
-
-    #labels button:nth-child(4) { /* Button 4 */
-        top: 35%; /* Adjust as needed */
-        left: 25%; /* Adjust as needed */
-    }
-
-    #labels button:nth-child(5) { /* Button 5 */
-        top: 55%; /* Adjust as needed */
-        left: 50%; /* Adjust as needed */
-    }
-
-    #labels button:nth-child(6) { /* Button 6 */
-        top: 75%; /* Adjust as needed */
-        left: 75%; /* Adjust as needed */
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .popup {
-        width: 90%;
-    }
-} 

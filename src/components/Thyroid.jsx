@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../thyroid.css'; // Import your CSS file
+import Navbar from './Navbar';
 
 function Thyroid() {
   // State variables for modal
@@ -7,6 +8,7 @@ function Thyroid() {
   const [modalImage, setModalImage] = useState('');
   const [modalDescription, setModalDescription] = useState('');
   const [audioSrc, setAudioSrc] = useState('');
+  const [buttonClicked, setButtonClicked] = useState(false);
 
   // Function to open modal
   function openModal(imagePath, desc, audioPath) {
@@ -35,23 +37,31 @@ function Thyroid() {
   function toggleButtons() {
     const buttonSet = document.getElementById('labels');
     buttonSet.style.display = buttonSet.style.display === 'none' ? 'block' : 'none';
+    setButtonClicked(!buttonClicked); // Toggle the state of buttonClicked
   }
 
+  function handleImageClick(event) {
+    // Prevent default behavior (e.g., navigation) and event propagation
+    // event.preventDefault();
+    event.stopPropagation();
+  }
   return (
     <>
-
-    <div class="divv">
-      <h1>Thyroid</h1>
+    <Navbar/>
+    <div class="heading">
+      <h1>Thyroid</h1><hr/>
     </div>
     
+    
     <div >
-      <div class="divv">
-      <img class="img" src="/assets/Thyroid Low magnification.tif"  alt="Thyroid" />
+      <div class="img">
+        <img class="img" src="/assets/Updated_thyroid.png"  alt="Thyroid" />
       </div>
+      {/* <button id="toggleButton" className="toggle-button" onClick={toggleButtons}>
+          {buttonClicked ? <img src="/assets/on.png" alt="afterClick" /> : <img src="/assets/off.png" alt="beforeClick" />}
+      </button>
+       */}
       
-      <div class="divv">
-      <button id="toggleButton" onClick={toggleButtons}>Toggle Buttons</button>
-      </div>
       
       <div id="labels" className="labels">
 
@@ -125,13 +135,13 @@ function Thyroid() {
       
       
       {/* Modal */}
-      {modalOpen && (
+      {/* {modalOpen && (
         <div className="modal">
           <span className="close" onClick={closeModal}>&times;</span>
-          <img className="modal-content" src={modalImage} alt="Modal" />
+          <img className="modal-content" src={modalImage} alt="Modal" onClick={(e) => e.stopPropagation()}/>
           <div className="modal-description">{modalDescription}</div>
-        </div>
-      )}
+        </div> */}
+      {/* )} */}
     </div>
     </>
   );
