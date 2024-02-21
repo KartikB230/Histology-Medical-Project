@@ -54,17 +54,12 @@ function Thyroid() {
     
     
     <div >
-      <div class="img">
-        <img class="img" src="/assets/Updated_thyroid.png"  alt="Thyroid" />
-      </div>
-      {/* <button id="toggleButton" className="toggle-button" onClick={toggleButtons}>
-          {buttonClicked ? <img src="/assets/on.png" alt="afterClick" /> : <img src="/assets/off.png" alt="beforeClick" />}
-      </button>
-       */}
-      
       
       <div id="labels" className="labels">
 
+      <div className="img">
+        <img className="img" src="/assets/Updated_thyroid.png" alt="Thyroid" />
+      </div>
         <button className="button" data-tooltip="Follicles" data-popup="popup1" onClick={() => openPopup('popup1')}>1</button>
         <button className="button" data-tooltip="Connective Tissue septa" data-popup = "popup2" onClick={() => openPopup('popup2')}>2</button>
         <button className="button" data-tooltip="Blood Vessels" data-popup = "popup3" onClick={() => openPopup('popup3')}>3</button>
@@ -148,3 +143,10 @@ function Thyroid() {
 }
 
 export default Thyroid;
+
+
+
+/*{ <button id="toggleButton" className="toggle-button" onClick={toggleButtons}>
+          {buttonClicked ? <img src="/assets/on.png" alt="afterClick" /> : <img src="/assets/off.png" alt="beforeClick" />}
+      </button>
+      }*/

@@ -170,7 +170,8 @@
 
 .navbar{
   background-color: rgb(205, 117, 117);
-  position: absolute;
+  position: fixed;
+  z-index: 1000;
   
 }
 
