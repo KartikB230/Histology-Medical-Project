@@ -2,6 +2,16 @@
   text-align: center;
 }
 
+
+.fredoka-navbar {
+  font-family: "Fredoka", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -158,4 +168,20 @@
   overflow: auto; /* Enable scrolling if content overflows */
 }
 
+.navbar{
+  background-color: rgb(205, 117, 117);
+  padding:10px 0px;
+}
 
+.navbar-brand{
+  padding:10px 170px 10px 170px;
+}
+
+.nav-item{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.nav-link{
+  color: white;
+}

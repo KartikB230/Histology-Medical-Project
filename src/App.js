@@ -4,6 +4,7 @@ import './App.css';
 import HomePage from "./components/HomePage";
 import Thyroid from "./components/Thyroid";
 import SquamousEpithelium from "./components/SquamousEpithelium";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
