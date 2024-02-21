@@ -169,7 +169,7 @@
 }
 
 .navbar{
-  background-color: rgb(205, 117, 117);
+  background-color: rgb(195, 66, 66);
   position: absolute;
   
 }
@@ -187,4 +187,26 @@
 
 .nav-link{
   color: white;
+}
+
+
+.homediv {
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0.6; /* This will hide any content that overflows the container */
+}
+
+.homeimg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center; ;/* Optional: Centers the image */
+}
+
+
+.homediv{
+  background-color: rgb(211, 101, 101);
+  
+
+  
 }
