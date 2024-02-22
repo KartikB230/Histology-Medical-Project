@@ -107,7 +107,7 @@ body {
     }
 
     .button1 { /* Button 1 */
-        top: 28%; /* Adjust the percentage as needed */
+        top: 27%; /* Adjust the percentage as needed */
         left: 33.5%; /* Adjust the percentage as needed */
     }
     
@@ -199,33 +199,33 @@ body {
     }
 
     .button1 { /* Button 1 */
-        top: 25.8%; /* Adjust the percentage as needed */
-        left: 36.5%; /* Adjust the percentage as needed */
+        top: 27%; /* Adjust the percentage as needed */
+        left: 37%; /* Adjust the percentage as needed */
     }
 
     .button2 { /* Button 2 */
         top: 53%; /* Adjust the percentage as needed */
-        left: 72%; /* Adjust the percentage as needed */
+        left: 70%; /* Adjust the percentage as needed */
     }
     
     .button3 { /* Button 3 */
-        top: 81%; /* Adjust the percentage as needed */
-        left: 36.5%; /* Adjust the percentage as needed */
+        top: 82%; /* Adjust the percentage as needed */
+        left: 37.5%; /* Adjust the percentage as needed */
     }
     
     .button4 { /* Button 4 */
-        top: 32%; /* Adjust the percentage as needed */
-        left: 67%; /* Adjust the percentage as needed */
+        top: 32.5%; /* Adjust the percentage as needed */
+        left: 65.5%; /* Adjust the percentage as needed */
     }
     
     .button5 { /* Button 5 */
         top: 71%; /* Adjust the percentage as needed */
-        left: 39%; /* Adjust the percentage as needed */
+        left: 40%; /* Adjust the percentage as needed */
     }
     
     .button6 { /* Button 6 */
         top: 45%; /* Adjust the percentage as needed */
-        left: 39%; /* Adjust the percentage as needed */
+        left: 40%; /* Adjust the percentage as needed */
     }
     .toggle-button {
         position: absolute;
@@ -256,9 +256,10 @@ body {
 @media only screen and (max-width: 768px) {
     /* Styles for small devices (sm) */
     .button1, .button2, .button3, .button4, .button5, .button6 {
-        width:15px;
+        width:12px;
         padding: 0px;
         font-size: 10px;
+        height: 15px;
     } 
 }
 
