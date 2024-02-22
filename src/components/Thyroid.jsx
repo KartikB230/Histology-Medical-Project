@@ -54,23 +54,18 @@ function Thyroid() {
     
     
     <div >
-      <div class="img">
-        <img class="img" src="/assets/Updated_thyroid.png"  alt="Thyroid" />
-      </div>
-      {/* <button id="toggleButton" className="toggle-button" onClick={toggleButtons}>
-          {buttonClicked ? <img src="/assets/on.png" alt="afterClick" /> : <img src="/assets/off.png" alt="beforeClick" />}
-      </button>
-       */}
-      
       
       <div id="labels" className="labels">
 
-        <button className="button" data-tooltip="Follicles" data-popup="popup1" onClick={() => openPopup('popup1')}>1</button>
-        <button className="button" data-tooltip="Connective Tissue septa" data-popup = "popup2" onClick={() => openPopup('popup2')}>2</button>
-        <button className="button" data-tooltip="Blood Vessels" data-popup = "popup3" onClick={() => openPopup('popup3')}>3</button>
-        <button className="button" data-tooltip="Follicular cells (Simple cuboidal epithelium)" data-popup = "popup4" onClick={() => openPopup('popup4')}>4</button>
-        <button className="button" data-tooltip="Parafollicular or C cells " data-popup = "popup5" onClick={() => openPopup('popup5')}>5</button>
-        <button className="button" data-tooltip="Colloid" data-popup = "popup6" onClick={() => openPopup('popup6')}>6</button>
+      <div className="img">
+        <img className="img" src="/assets/Updated_thyroid.png" alt="Thyroid" />
+      </div>
+        <button className="button1" data-tooltip="Follicles" data-popup="popup1" onClick={() => openPopup('popup1')}>1</button>
+        <button className="button2" data-tooltip="Connective Tissue septa" data-popup = "popup2" onClick={() => openPopup('popup2')}>2</button>
+        <button className="button3" data-tooltip="Blood Vessels" data-popup = "popup3" onClick={() => openPopup('popup3')}>3</button>
+        <button className="button4" data-tooltip="Follicular cells (Simple cuboidal epithelium)" data-popup = "popup4" onClick={() => openPopup('popup4')}>4</button>
+        <button className="button5" data-tooltip="Parafollicular or C cells " data-popup = "popup5" onClick={() => openPopup('popup5')}>5</button>
+        <button className="button6" data-tooltip="Colloid" data-popup = "popup6" onClick={() => openPopup('popup6')}>6</button>
         
       </div>
 
@@ -148,3 +143,10 @@ function Thyroid() {
 }
 
 export default Thyroid;
+
+
+
+/*{ <button id="toggleButton" className="toggle-button" onClick={toggleButtons}>
+          {buttonClicked ? <img src="/assets/on.png" alt="afterClick" /> : <img src="/assets/off.png" alt="beforeClick" />}
+      </button>
+      }*/
