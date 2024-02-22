@@ -176,8 +176,9 @@
 }
 
 .navbar{
-  background-color: rgb(195, 66, 66);
-  position: absolute;
+  background-color: rgb(205, 117, 117);
+  position: fixed;
+  z-index:1000;
   
 }
 
@@ -213,7 +214,156 @@
 
 .homediv{
   background-color: rgb(211, 101, 101);
-  
+}
 
+.caimag{
+  text-align: center;
+}
+
+
+
+.thecard{
+  position: absolute;
+  height: 100%;
+  width:100%;
+  transform-style:preserve-3d;
+  transition: all 1s ease;
+ 
+}
+
+.thefront{
+  position: absolute;
+  height: 100%;
+  width:100%;
+  backface-visibility: hidden;
+  background:#baeebc ;
+  color: #333;
+}
+
+.theback{
+  position: absolute;
+  height: 100%;
+  width:100%;
+  backface-visibility: hidden;
+  background:rgb(232, 252, 229) ;
+  color: #333;
+  transform: rotateY(180deg);
+}
+.thefrontt{
+  position: absolute;
+  height: 100%;
+  width:100%;
+  backface-visibility: hidden;
+  background:#e8eef1 ;
+  color: #333;
+}
+
+.thebackk{
+  position: absolute;
+  height: 100%;
+  width:100%;
+  backface-visibility: hidden;
+  background:rgb(190, 190, 190) ;
+  color: #616161;
+  transform: rotateY(180deg);
+}
+.thefronttt{
+  position: absolute;
+  height: 100%;
+  width:100%;
+  backface-visibility: hidden;
+  background:#baeebc ;
+  color: #333;
+}
+
+.thebackkk{
+  position: absolute;
+  height: 100%;
+  width:100%;
+  backface-visibility: hidden;
+  background:rgb(232, 252, 229) ;
+  color: #333;
+  transform: rotateY(180deg);
+}
+.thecard:hover{
+  transform: rotateY(180deg);
+}
+
+.container {
+  width:600px;
+  height:450px;
+  background-color:rgb(254, 254, 253);
+  padding-top:20px;
+  padding-left:15px;
+  padding-right:15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.wsppimg{
   
+  height: 100px;
+  width: 100px;
+
+}
+
+.reacttoexcelbtn{
+  margin: 30px;
+  margin-top: 35px;
+  margin-right: 80px;
+  height:50px;
+  width: 200px;
+  float: right;
+  background-color: #fff;
+  color: red;
+  font-size: 22px;
+  border-radius: 15px;
+}
+
+.reacttoexcelbtnn{
+
+  margin-top: 10px;
+  margin-right: 80px;
+  height:50px;
+  width: 200px;
+  float: right;
+  background-color: #fff;
+  color: red;
+  font-size: 22px;
+  border-radius: 15px;
+}
+
+.container {
+  position: relative;
+}
+
+.content-container {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transition: left 0.5s ease-in-out;
+}
+
+.content-container.slide-in {
+  left: 0;
+}
+
+.maincontainer,
+.maincontainerr,
+.maincontainerrr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 310px;
+  height: 350px;
+  background-color: white;
+  border: solid black;
+  position: relative;
+  margin: 30px;
 }

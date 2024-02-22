@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Home from './Home';
+import ContactUs from './ContactUs';
 
 function HomePage() {
     
@@ -10,6 +11,7 @@ function HomePage() {
 
             <Navbar />
             <Home />
+            <ContactUs />
             
         </div>
     );
