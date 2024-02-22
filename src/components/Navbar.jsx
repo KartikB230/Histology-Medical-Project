@@ -1,5 +1,5 @@
 import React from 'react'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -18,7 +18,7 @@ const Navbar = () => {
       <ul class="navbar-nav">
 
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="" style={{'color':'white','fontSize':'20px'}}>Home</a>
+          <Link class="nav-link active" aria-current="page" to="/" style={{'color':'white','fontSize':'20px'}}>Home</Link>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" style={{'color':'white','fontSize':'20px'}}>Features</a>
@@ -26,13 +26,15 @@ const Navbar = () => {
         <li class="nav-item">
           <a class="nav-link" href="#" style={{'color':'white','fontSize':'20px'}}>Contact</a>
         </li>
+
+        
         <li class="nav-item dropdown">
           <a style={{'color':'white','fontSize':'20px'}} class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Learning
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" onClick={() => navigate('SquamousEpithelium')} style={{'color':'rgb(205, 117, 117)', "cursor":"pointer",'fontSize':'20px'}}>Squamous Epithelium</a></li>
-            <li><a class="dropdown-item" onClick={() => navigate('Thyroid')} style={{'color':'rgb(205, 117, 117)', "cursor":"pointer",'fontSize':'20px'}}>Thyroid</a></li>
+            <li><Link class="dropdown-item" to='/SquamousEpithelium'  style={{'color':'rgb(205, 117, 117)', "cursor":"pointer",'fontSize':'20px'}}>Squamous Epithelium</Link></li>
+            <li><Link class="dropdown-item" to='/Thyroid'  style={{'color':'rgb(205, 117, 117)', "cursor":"pointer",'fontSize':'20px'}}>Thyroid</Link></li>
             {/* <li><a class="dropdown-item" href="#" style={{'color':'white'}}>Something else here</a></li> */}
           </ul>
         </li>
