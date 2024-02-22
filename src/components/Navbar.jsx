@@ -18,7 +18,7 @@ const Navbar = () => {
       <ul class="navbar-nav">
 
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" style={{'color':'white','fontSize':'20px'}}>Home</a>
+          <a class="nav-link active" aria-current="page" href="" style={{'color':'white','fontSize':'20px'}}>Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" style={{'color':'white','fontSize':'20px'}}>Features</a>
