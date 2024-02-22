@@ -99,6 +99,10 @@ body {
 /* Media queries for responsiveness */
 @media only screen and (max-width: 768px) {
 
+    body {
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+}
     
 
     /* Styles for small devices (sm) */
@@ -140,6 +144,11 @@ body {
 }
 
 @media only screen and (min-width: 769px) and (max-width: 992px) {
+
+    body {
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+}
     /* Styles for medium devices (md) */
     .labels img {
         width: 90%;
