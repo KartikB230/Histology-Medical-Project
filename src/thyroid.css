@@ -107,31 +107,31 @@ body {
     }
 
     .button1 { /* Button 1 */
-        top: 25%; /* Adjust the percentage as needed */
-        left: 35%; /* Adjust the percentage as needed */
+        top: 28%; /* Adjust the percentage as needed */
+        left: 33.5%; /* Adjust the percentage as needed */
     }
     
     .button2 { /* Button 2 */
-        top: 80%; /* Adjust the percentage as needed */
-        left: 70%; /* Adjust the percentage as needed */
+        top: 52%; /* Adjust the percentage as needed */
+        left: 73%; /* Adjust the percentage as needed */
     }
     
-    #labels button:nth-child(3) { /* Button 3 */
-        top: 61%; /* Adjust the percentage as needed */
+    .button3 { /* Button 3 */
+        top: 82%; /* Adjust the percentage as needed */
         left: 35%; /* Adjust the percentage as needed */
     }
     
-    #labels button:nth-child(4) { /* Button 4 */
-        top: 80%; /* Adjust the percentage as needed */
-        left: 80%; /* Adjust the percentage as needed */
+    .button4 { /* Button 4 */
+        top: 33%; /* Adjust the percentage as needed */
+        left: 69%; /* Adjust the percentage as needed */
     }
     
-    #labels button:nth-child(5) { /* Button 5 */
-        top: 50%; /* Adjust the percentage as needed */
-        left: 80%; /* Adjust the percentage as needed */
+    .button5{ /* Button 5 */
+        top: 73%; /* Adjust the percentage as needed */
+        left: 37%; /* Adjust the percentage as needed */
     }
     
-    #labels button:nth-child(6) { /* Button 6 */
+    .button6 { /* Button 6 */
         top: 45%; /* Adjust the percentage as needed */
         left: 38%; /* Adjust the percentage as needed */
     }
@@ -143,37 +143,38 @@ body {
     /* Styles for medium devices (md) */
     .labels img {
         width: 90%;
+       
          /* Adjust the percentage as needed */
     }
 
     .button1 { /* Button 1 */
-        top: 10%; /* Adjust the percentage as needed */
-        left: 20%; /* Adjust the percentage as needed */
+        top: 26%; /* Adjust the percentage as needed */
+        left: 34%; /* Adjust the percentage as needed */
     }
     
     .button2 { /* Button 2 */
-        top: 68%; /* Adjust the percentage as needed */
-        left: 40%; /* Adjust the percentage as needed */
+        top: 52%; /* Adjust the percentage as needed */
+        left: 74%; /* Adjust the percentage as needed */
     }
     
     .button3 { /* Button 3 */
-        top: 60%; /* Adjust the percentage as needed */
-        left: 60%; /* Adjust the percentage as needed */
+        top: 81%; /* Adjust the percentage as needed */
+        left: 35%; /* Adjust the percentage as needed */
     }
     
     .button4 { /* Button 4 */
-        top: 80%; /* Adjust the percentage as needed */
-        left: 80%; /* Adjust the percentage as needed */
+        top: 32%; /* Adjust the percentage as needed */
+        left: 69%; /* Adjust the percentage as needed */
     }
     
     .button5 { /* Button 5 */
-        top: 50%; /* Adjust the percentage as needed */
-        left: 80%; /* Adjust the percentage as needed */
+        top: 72%; /* Adjust the percentage as needed */
+        left: 37%; /* Adjust the percentage as needed */
     }
     
     .button6 { /* Button 6 */
-        top: 40%; /* Adjust the percentage as needed */
-        left: 60%; /* Adjust the percentage as needed */
+        top: 43%; /* Adjust the percentage as needed */
+        left: 38%; /* Adjust the percentage as needed */
     }
     .toggle-button {
         position: absolute;
@@ -193,37 +194,38 @@ body {
     
     .labels img {
         width: 80%;
-        height: 750px; /* Adjust the percentage as needed */
+        height: 40%;
+         /* Adjust the percentage as needed */
     }
 
     .button1 { /* Button 1 */
-        top: 8%; /* Adjust the percentage as needed */
-        left: 80%; /* Adjust the percentage as needed */
+        top: 25.8%; /* Adjust the percentage as needed */
+        left: 36.5%; /* Adjust the percentage as needed */
     }
 
     .button2 { /* Button 2 */
-        top: 3%; /* Adjust the percentage as needed */
-        left: 61%; /* Adjust the percentage as needed */
+        top: 53%; /* Adjust the percentage as needed */
+        left: 72%; /* Adjust the percentage as needed */
     }
     
-    #labels button:nth-child(3) { /* Button 3 */
-        top: 15%; /* Adjust the percentage as needed */
-        left: 40%; /* Adjust the percentage as needed */
+    .button3 { /* Button 3 */
+        top: 81%; /* Adjust the percentage as needed */
+        left: 36.5%; /* Adjust the percentage as needed */
     }
     
-    #labels button:nth-child(4) { /* Button 4 */
-        top: 39%; /* Adjust the percentage as needed */
-        left: 64%; /* Adjust the percentage as needed */
+    .button4 { /* Button 4 */
+        top: 32%; /* Adjust the percentage as needed */
+        left: 67%; /* Adjust the percentage as needed */
     }
     
-    #labels button:nth-child(5) { /* Button 5 */
-        top: 17%; /* Adjust the percentage as needed */
-        left: 41%; /* Adjust the percentage as needed */
+    .button5 { /* Button 5 */
+        top: 71%; /* Adjust the percentage as needed */
+        left: 39%; /* Adjust the percentage as needed */
     }
     
-    #labels button:nth-child(6) { /* Button 6 */
-        top: 25%; /* Adjust the percentage as needed */
-        left: 42%; /* Adjust the percentage as needed */
+    .button6 { /* Button 6 */
+        top: 45%; /* Adjust the percentage as needed */
+        left: 39%; /* Adjust the percentage as needed */
     }
     .toggle-button {
         position: absolute;
@@ -240,6 +242,8 @@ body {
 
 
 
+
+
 #imageContainer {
     position: relative;
     display: flex;
@@ -252,6 +256,8 @@ body {
 @media only screen and (max-width: 768px) {
     /* Styles for small devices (sm) */
     .button1, .button2, .button3, .button4, .button5, .button6 {
+        width:15px;
+        padding: 0px;
         font-size: 10px;
     } 
 }
@@ -266,7 +272,8 @@ body {
 @media only screen and (min-width: 993px) {
     /* Styles for large devices (lg) */
     .button1, .button2, .button3, .button4, .button5, .button6 {
-        font-size: 20px;
+        font-size: 18px;
+        height: 28px;
 
     }
 }

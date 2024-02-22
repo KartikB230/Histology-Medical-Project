@@ -58,7 +58,7 @@ function Thyroid() {
       <div id="labels" className="labels">
 
       <div className="img">
-        <img className="img" src="/assets/Updated_thyroid.png" alt="Thyroid" />
+        <img className="imgg" src="/assets/Updated_thyroid.png" alt="Thyroid" />
       </div>
         <button className="button1" data-tooltip="Follicles" data-popup="popup1" onClick={() => openPopup('popup1')}>1</button>
         <button className="button2" data-tooltip="Connective Tissue septa" data-popup = "popup2" onClick={() => openPopup('popup2')}>2</button>
