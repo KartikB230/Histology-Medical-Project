@@ -8,6 +8,7 @@ body {
 .heading
 {
     text-align: center;
+    margin-top: 10px;
 }
 
 .toggle-button {
@@ -159,15 +160,67 @@ body {
     z-index: 1005;
 }
 
+/* Close button styles */
 .close-button {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 20px;
-    color: #aaaaaa;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid #aaa; /* Border for the box structure */
+    border-radius: 5px; /* Square shape */
     cursor: pointer;
-    z-index:1005;
-}
+    z-index: 1006;
+    transition: background-color 0.3s, border-color 0.3s; /* Transition for color change */
+  }
+  
+  /* Close button styles */
+.close-button {
+    position: absolute;
+    
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid #aaa; /* Border for the box structure */
+    border-radius: 5px; /* Square shape */
+    cursor: pointer;
+    z-index: 1006;
+    transition: background-color 0.3s, border-color 0.3s; /* Transition for color change */
+  }
+  
+  /* Close button icon */
+.close-button::after {
+    content: '×'; /* Unicode character for "x" */
+    font-family: Arial, sans-serif; /* Use a common font */
+    font-size: 24px; /* Increase font size */
+    font-weight: bold; /* Make the font bold */
+    color: #aaa; /* Default color */
+    display: block;
+    text-align: center;
+    line-height: 30px; /* Center vertically */
+  }
+  
+  
+  /* Hover effect */
+  .close-button:hover {
+    background-color: #f00; /* Red background on hover */
+    border-color: #f00; /* Red border on hover */
+  }
+  
+  /* Hover effect for icon */
+  .close-button:hover::after {
+    color: #fff; /* White color on hover */
+  }
+  
+  /* Prevent ::after pseudo-element from being applied to any other element */
+  .close-button:not(:last-child)::after {
+    content: none; /* Remove content from ::after pseudo-element for all but the last .close-button */
+  }
+  
+  
 .img{
     position: relative;
     display: flex;
