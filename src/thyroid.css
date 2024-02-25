@@ -10,15 +10,22 @@ body {
 }
 
 .toggle-button {
-    position: absolute;
-    top: 100; /* Position at the top */
-    right: 0; /* Position at the end */
-    left : 0%;
+    position:absolute;
+    top: 100%;
+    /* right:4.5%; */
+    left:83%;
     border: none;
     background: none;
     padding: 0;
   }
-
+.description
+{
+    position: absolute;
+    top:115%;
+    left:0%;
+    text-align: left;
+    font-size: 20px;
+}
 .labels {
   position: relative;
   display: flex;
@@ -90,6 +97,7 @@ body {
     cursor: pointer;
 }
 .img{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -180,15 +188,7 @@ body {
         top: 43%; /* Adjust the percentage as needed */
         left: 38%; /* Adjust the percentage as needed */
     }
-    .toggle-button {
-        position: absolute;
-        top: 5%; /* Position at the top */
-        right: 5%; /* Position at the end */
-        left : 10;
-        border: none;
-        background: none;
-        padding: 0;
-    }
+    
 
     
 }
@@ -231,14 +231,7 @@ body {
         top: 45%; /* Adjust the percentage as needed */
         left: 40%; /* Adjust the percentage as needed */
     }
-    .toggle-button {
-        position: absolute;
-        top: 0; /* Position at the top */
-        right: 0; /* Position at the end */
-        border: none;
-        background: none;
-        padding: 0;
-      }
+    
 
     
 }

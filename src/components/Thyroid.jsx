@@ -59,7 +59,14 @@ function Thyroid() {
 
       <div className="img">
         <img className="imgg" src="/assets/Updated_thyroid.png" alt="Thyroid" />
-        
+        <button id="toggleButton" className="toggle-button" onClick={toggleButtons}>
+          {buttonClicked ? <img src="/assets/on.png" alt="afterClick" /> : <img src="/assets/off.png" alt="beforeClick" />}
+      </button>
+      <div className='description'>
+          <p>
+            The thyroid, or thyroid gland, is an endocrine gland in vertebrates. In humans, it is in the neck and consists of two connected lobes. The lower two thirds of the lobes are connected by a thin band of tissue called the isthmus. The thyroid gland is a butterfly-shaped gland located in the neck below the Adam's apple. Microscopically, the functional unit of the thyroid gland is the spherical thyroid follicle, lined with follicular cells (thyrocytes), and occasional parafollicular cells that surround a lumen containing colloid.
+            </p>
+      </div>
       </div>
         <button className="button1" data-tooltip="Follicles" data-popup="popup1" onClick={() => openPopup('popup1')}>1</button>
         <button className="button2" data-tooltip="Connective Tissue septa" data-popup = "popup2" onClick={() => openPopup('popup2')}>2</button>
@@ -69,11 +76,9 @@ function Thyroid() {
         <button className="button6" data-tooltip="Colloid" data-popup = "popup6" onClick={() => openPopup('popup6')}>6</button>
         
       </div>
-      <div className='description'>
-          <p>
-            The thyroid, or thyroid gland, is an endocrine gland in vertebrates. In humans, it is in the neck and consists of two connected lobes. The lower two thirds of the lobes are connected by a thin band of tissue called the isthmus. The thyroid gland is a butterfly-shaped gland located in the neck below the Adam's apple. Microscopically, the functional unit of the thyroid gland is the spherical thyroid follicle, lined with follicular cells (thyrocytes), and occasional parafollicular cells that surround a lumen containing colloid.
-            </p>
-      </div>
+      
+      
+      
       
       <div id="popup1" className="popup">
         <button className="close-button" onClick={() => closePopup('popup1')}>&times;</button>
@@ -151,7 +156,3 @@ export default Thyroid;
 
 
 
-/*{ <button id="toggleButton" className="toggle-button" onClick={toggleButtons}>
-          {buttonClicked ? <img src="/assets/on.png" alt="afterClick" /> : <img src="/assets/off.png" alt="beforeClick" />}
-      </button>
-      }*/
