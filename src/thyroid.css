@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    
 }
 
 .heading
@@ -17,11 +18,14 @@ body {
     border: none;
     background: none;
     padding: 0;
+    
+    
   }
 .description
 {
     position: absolute;
     top:115%;
+    margin-top: 10px;
     left:0%;
     text-align: left;
     font-size: 20px;
@@ -43,6 +47,47 @@ body {
     font-size: medium;
     font-weight: bolder;
     z-index: 0;
+    transition: background-color 0.3s ease;
+    
+}
+
+/* Hover effect */
+.button1:hover,.button2:hover,.button3:hover,.button4:hover,.button5:hover,.button6:hover {
+  background-color: #0056b3; /* Change the background color on hover */
+}
+
+.button1:hover::after,
+.button2:hover::after,
+.button3:hover::after,
+.button4:hover::after,
+.button5:hover::after,
+.button6:hover::after,
+.toggleButton:hover::after{
+  content: attr(data-tooltip); /* Display the value of data-tooltip as tooltip content */
+  position: absolute;
+  top: 100%; /* Position the tooltip below the button */
+  left: 50%; /* Center the tooltip horizontally */
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0; /* Initially hide the tooltip */
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Tooltip display on hover */
+.button1:hover::after,
+.button2:hover::after,
+.button3:hover::after,
+.button4:hover::after,
+.button5:hover::after,
+.button6:hover::after,
+.toggleButton:hover::after{
+  opacity: 1; /* Show the tooltip on hover */
 }
 
 
@@ -53,39 +98,65 @@ body {
     
     /* display: inline-block; */
 }
-
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
 
 .popup {
     display: none;
-    position: absolute;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 20px;
-    z-index: 1001;
-    max-width: 400px;
+    position: fixed;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    top: 7.7%;
+    left: 0;
+    right:0;
+    bottom:0;
     width: 100%;
-    text-align: center;
-    font-size: medium;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1005;
 }
+
 
 .popup img {
     display: block;
-    margin: 0 auto;
+    margin: auto; /* Center horizontally and vertically */
+    
     border-radius: 8px;
     max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+    max-height: 100%;
+    z-index: 1005;
 }
 
-.popup .description {
+/* .popup .description {
     font-size: 16px;
     color: #333333;
     margin-bottom: 15px;
+} */
+#popupInfo{
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center; 
+    z-index: 1005;
 }
+
+
 
 .popup audio {
     margin-top: 15px;
+    z-index: 1005;
 }
 
 .close-button {
@@ -95,6 +166,7 @@ body {
     font-size: 20px;
     color: #aaaaaa;
     cursor: pointer;
+    z-index:1005;
 }
 .img{
     position: relative;

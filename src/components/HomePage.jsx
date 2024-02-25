@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Home from './Home';
-import ContactUs from './ContactUs';
+
+import Footer from './Footer';
 
 function HomePage() {
     
@@ -11,7 +12,7 @@ function HomePage() {
 
             <Navbar />
             <Home />
-            <ContactUs />
+            <Footer />
             
         </div>
     );

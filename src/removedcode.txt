@@ -1,0 +1,66 @@
+ <div id="popup1" className="popup">
+          <button className="close-button" onClick={() => closePopup('popup1')}>&times;</button>
+          <img src="/assets/Follicles_high_magnification.tif" onClick={() => openModal('/assets/Follicles_high_magnification.tif', 'Follicles', '/assets/Audios/Thyroid_Follicles.wav')} height="500px" width="500px" alt="Follicles" />
+          <div className="description">Follicles are the basic structural units of the thyroid gland...</div>
+          <audio controls>
+            <source src={audioSrc} type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div id="popup2" className="popup">
+              <button className="close-button" onClick={() => closePopup('popup2')}>&times;</button>
+              <img src="/assets/Connective_Tissue_Septa_Colloid.tif" onClick={() => openModal('popup2', '/assets/Connective_Tissue_Septa_Colloid.tif', 'Connective Tissue septa')} height="500px" width="500px" alt = "Connective Tissue septa"/>
+              <div className="description">The gland shows a thin capsule. Thin septae extend from the capsule into the substance of the gland and divide it into lobules.</div>
+              <audio controls>
+                  <source src="/assets/Audios/Connective_tissue _septa.wav" type="audio/mpeg"/>
+                  Your browser does not support the audio element.
+              </audio>
+          </div>
+          <div id="popup3" className="popup">
+              <button className="close-button" onClick={() => closePopup('popup3')}>&times;</button>
+              {/* <img src="/assets/Follicles_high_magnification.tif" onClick="openModal('popup3', '/assets/Follicles_high_magnification.tif', 'Connective Tissue septa')" height="500px" width="500px"> */}
+              <div className="description">There is very little intralobular connective tissue (follicles are packed). The interlobular and intralobular connective tissue is thin and contains many capillaries.</div>
+              <audio controls>
+                  <source src="/assets/Audios/Connective_tissue _septa.wav" type="audio/mpeg"/>
+                  Your browser does not support the audio element.
+              </audio>
+          </div>
+          <div id="popup4" className="popup">
+              <button className="close-button" onClick={() => closePopup('popup4')}>&times;</button>
+              <img src="/assets/Follicular_cells_parafollicular_cells.tif" onClick={() => openModal('popup4', '/assets/Follicular_cells_parafollicular_cells.tif', 'Follicular cells')} height="500px" width="500px" alt = "Follicular cells"/>
+              <div className="description">The lining epithelium of the follicles shows cuboidal cells which stain eosinophilic. These cells have a vesicular round nucleus. They constitute the principal secretory cells of thyroid which synthesize thyroglobulin. </div>
+              <audio controls>
+                  <source src="/assets/Audios/Follicular_cells.wav" type="audio/mpeg"/>
+                  Your browser does not support the audio element.
+              </audio>
+          </div>
+          <div id="popup5" className="popup">
+              <button className="close-button" onClick={() => closePopup('popup5')}>&times;</button>
+              <img src="/assets/Follicular_cells_parafollicular_cells.tif" onClick={() => openModal('popup5', '/assets/Follicular_cells_parafollicular_cells.tif', 'Parafollicular Cells')} height="500px" width="500px" alt = "Parafollicular Cells"/>
+              <div className="description">These cells constitute about 2% of the thyroid gland. The cells are called as clear cells because the cytoplasm is not stained. The cells are large and occur either singly or in groups of 2 or 3. They are usually situated between the basement membrane and the cubical epithelium. They secrete calcitonin.</div>
+              <audio controls>
+                  <source src="/assets/Audios/Parafollicular_cells.wav" type="audio/mpeg"/>
+                  Your browser does not support the audio element.
+              </audio>
+          </div>
+          <div id="popup6" className="popup">
+              <button className="close-button" onClick={() => closePopup('popup6')}>&times;</button>
+              <img src="/assets/Connective_Tissue_Septa_Colloid.tif" onClick={() => openModal('popup6', '/assets/Connective_Tissue_Septa_Colloid.tif', 'Colloid')} height="500px" width="500px" alt = "Colloid"/>
+              <div className="description">The lumen of the thyroid follicle is large and contains colloid which is stained eosinophilic It is made of a glycoprotein complex, also known as thyroglobulin. The colloid stains with both acidic and basic dyes. It is strongly PAS positive. </div>
+              <audio controls>
+                  <source src="/assets/Audios/Colloid.wav" type="audio/mpeg"/>
+                  Your browser does not support the audio element.
+              </audio>
+          </div>
+
+
+    .box {
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto; /* Center the box horizontally */
+    background-color: #e0e0e0; /* Background color */
+    padding: 20px; /* Padding around the content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    margin-top: 10px;
+    padding-bottom: 80px;
+  }

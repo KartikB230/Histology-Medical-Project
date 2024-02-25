@@ -162,17 +162,17 @@
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
   justify-content: center; /* Center items horizontally */
   align-items: center; /* Center items vertically */
+  z-index: 1005;
 }
 
 /* Popup content styling */
 .popup-content {
-  background-color: white; /* White background for the popup */
+  text-align: center;
+  color: aliceblue;
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
-  max-width: 80%; /* Limit maximum width of the popup */
-  max-height: 80%; /* Limit maximum height of the popup */
-  overflow: auto; /* Enable scrolling if content overflows */
+  border-radius: 10px;
+  z-index: 1005;
+
 }
 
 .navbar{
