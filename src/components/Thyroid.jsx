@@ -3,33 +3,13 @@ import '../thyroid.css'; // Import your CSS file
 import Navbar from './Navbar';
 
 function Thyroid() {
-  // State variables for modal
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalImage, setModalImage] = useState('');
-  const [modalDescription, setModalDescription] = useState('');
-  const [audioSrc, setAudioSrc] = useState('');
+ 
   const [buttonClicked, setButtonClicked] = useState(false);
 
-  // Function to open modal
-  function openModal(imagePath, desc, audioPath) {
-    setModalOpen(true);
-    setModalImage(imagePath);
-    setModalDescription(desc);
-    setAudioSrc(audioPath);
-  }
-
-  // Function to close modal
-  function closeModal() {
-    setModalOpen(false);
-  }
-
-  // Function to open popup
-  function openPopup(popupId) {
-    document.getElementById(popupId).style.display = 'block';
-  }
 
   
-  function openPopup1(imagePath, descriptionText, audioPath) {
+  function openPopup1(imagePath, descriptionText, audioPath) 
+  {
     // Set the source of the pop-up image
     document.getElementById('popupImage').src = imagePath;
 
@@ -42,22 +22,24 @@ function Thyroid() {
 
     // Display the overlay
     document.getElementById('overlay').style.display = 'flex';
-}
+ }
 
 
  
   // Function to close popup
-  function closePopup() {
+  function closePopup() 
+  {
     // Hide the overlay
     document.getElementById('overlay').style.display = 'none';
 
     // Pause the audio when closing the pop-up
     document.getElementById('popupAudio').pause();
-}
+ }
 
 
   // Toggle button visibility
-  function toggleButtons() {
+  function toggleButtons() 
+  {
     const buttonSet = document.getElementById('buttons');
     buttonSet.style.display = buttonSet.style.display === 'none' ? 'block' : 'none';
     setButtonClicked(!buttonClicked); // Toggle the state of buttonClicked
@@ -66,7 +48,6 @@ function Thyroid() {
   return (
     <>
       <Navbar/>
-      
       <div className='box'>
       <div class="heading">
         <h1>Thyroid</h1><hr/>
@@ -99,28 +80,27 @@ function Thyroid() {
         </div>
         
         
-    {/* < Pop-up overlay */}
-    <div id="overlay" class="overlay" >
-    <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
-    <div className="popup-content">
-        <img id="popupImage" className="popup-image" src="" alt="Pop-up Image"/>
-        <div>
-        <p id="popupInfo"></p>
-        </div>
-        <div className="audio-container">
-         
-            <audio controls id="popupAudio">
-                <source src="" type="audio/wav"/>
-                Your browser does not support the audio element.
-            </audio>
+        {/* < Pop-up overlay */}
+        <div id="overlay" class="overlay" >
+        <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
+        <div className="popup-content">
+            <img id="popupImage" className="popup-image" src="" alt="Pop-up Image"/>
+            <div>
+            <p id="popupInfo"></p>
+            </div>
+            <div className="audio-container">
+            
+                <audio controls id="popupAudio">
+                    <source src="" type="audio/wav"/>
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
         </div>
     </div>
 </div>
-</div>
-    </>
-  );
+</>
+);
 }
-
 export default Thyroid;
 
 
