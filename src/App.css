@@ -57,8 +57,8 @@
 
 
 .imgg {
-  width: 45%;
-  height: 100%;
+  width: 80%;
+  height: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,12 +84,11 @@
 /* Style for the info container on the right */
 .info-container {
   flex: 1;
- 
 }
 
 /* Style for the info content */
 .info-content {
-  text-align: left;
+  text-align: center;
 }
 
 

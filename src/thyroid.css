@@ -361,6 +361,11 @@ body {
     
 }
 
+.image-cell{
+    color: blue;
+    cursor: pointer;
+  }
+
 #imageContainer {
     position: relative;
     display: flex;
