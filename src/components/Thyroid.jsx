@@ -59,7 +59,7 @@ function Thyroid() {
             </button>
             <div className='description'>
             <a className="image-cell" onClick={() => openPopup1("/assets/Thyroid Pencil diagram without labels.jpg")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}>
-              <strong><u>Click Here to view Pencil Diagram of Simple Squamous Epithelium</u></strong>
+              <strong><u>Click Here to view Pencil Diagram of Thyroid</u></strong>
             </a>
               <p>
                 The thyroid, or thyroid gland, is an endocrine gland in vertebrates. In humans, it is in the neck and consists of two connected lobes. The lower two thirds of
