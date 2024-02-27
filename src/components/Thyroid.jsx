@@ -47,7 +47,7 @@ function Thyroid() {
       <Navbar />
       <div className='box'>
         <div class="heading">
-          <h1>Thyroid</h1><hr />
+          <h1 style={{"margin":"10px"}}>Thyroid</h1><hr style={{"height":"10px"}}/>
         </div>
 
         <div id="labels" className="labels">

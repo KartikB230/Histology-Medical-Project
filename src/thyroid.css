@@ -160,25 +160,11 @@ body {
     z-index: 1005;
 }
 
-/* Close button styles */
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    border: 2px solid #aaa; /* Border for the box structure */
-    border-radius: 5px; /* Square shape */
-    cursor: pointer;
-    z-index: 1006;
-    transition: background-color 0.3s, border-color 0.3s; /* Transition for color change */
-  }
+
   
   /* Close button styles */
 .close-button {
     position: absolute;
-    
     top: 10px;
     right: 10px;
     width: 30px;
@@ -188,6 +174,7 @@ body {
     border-radius: 5px; /* Square shape */
     cursor: pointer;
     z-index: 1006;
+    color: #aaa;
     transition: background-color 0.3s, border-color 0.3s; /* Transition for color change */
   }
   
@@ -197,7 +184,7 @@ body {
     font-family: Arial, sans-serif; /* Use a common font */
     font-size: 24px; /* Increase font size */
     font-weight: bold; /* Make the font bold */
-    color: #aaa; /* Default color */
+    color: black; /* Default color */
     display: block;
     text-align: center;
     line-height: 30px; /* Center vertically */

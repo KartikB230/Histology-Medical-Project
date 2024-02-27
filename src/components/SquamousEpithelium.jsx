@@ -45,9 +45,9 @@ function SquamousEpithelium() {
       <div>
         <Navbar/>
         <div className="cd">
-          <h1 className="main-title">Squamous Epithelium</h1>
+          <h1 style={{"margin":"10px"}}>Squamous Epithelium</h1>
         </div>
-        <hr />
+        <hr style={{"height":"10px"}}/>
 
         {/* Image on the left */}
         <div className="image-container">
