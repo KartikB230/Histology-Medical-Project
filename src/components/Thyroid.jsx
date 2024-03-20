@@ -7,22 +7,45 @@ function Thyroid() {
   const [buttonClicked, setButtonClicked] = useState(false);
 
 
+function openPopup1(imagePath, descriptionText, audioPath) {
+    // Reset the popup content
+    resetPopup();
 
-  function openPopup1(imagePath, descriptionText, audioPath) {
-    // Set the source of the pop-up image
-    document.getElementById('popupImage').src = imagePath;
+    // Set the source of the pop-up image if a valid imagePath is provided
+    if (imagePath && imagePath !== '#') {
+        document.getElementById('popupImage').src = imagePath;
+        document.getElementById('popupImage').style.display = 'block'; // Show the image container
+    }
 
-    // Set the source of the pop-up audio
-    document.getElementById('popupAudio').src = audioPath;
+    // Set the description text if provided and not equal to '#'
+    if (descriptionText && descriptionText !== '#') {
+        document.getElementById('popupInfo').innerHTML = descriptionText;
+        document.getElementById('popupInfo').style.display = 'block'; // Show the description container
+    }
 
-    console.log(descriptionText)
-    // Set the description text
-    document.getElementById('popupInfo').innerHTML = descriptionText;
+    // Set the source of the pop-up audio if a valid audioPath is provided
+    if (audioPath && audioPath !== '#') {
+        document.getElementById('popupAudio').src = audioPath;
+        document.getElementById('popupAudio').style.display = 'block'; // Show the audio container
+    }
 
     // Display the overlay
     document.getElementById('overlay').style.display = 'flex';
-  }
+}
 
+function resetPopup() {
+    // Reset the image source
+    document.getElementById('popupImage').src = '';
+    // Reset the description text
+    document.getElementById('popupInfo').innerHTML = '';
+    // Reset the audio source
+    document.getElementById('popupAudio').src = '';
+
+    // Hide all components initially
+    document.getElementById('popupImage').style.display = 'none';
+    document.getElementById('popupInfo').style.display = 'none';
+    document.getElementById('popupAudio').style.display = 'none';
+}
 
 
   // Function to close popup
@@ -53,12 +76,12 @@ function Thyroid() {
         <div id="labels" className="labels">
 
           <div className="img">
-            <img src="/assets/Updated_thyroid.png" alt="Thyroid" />
+            <img src="/assets/Images/Thyroid/Updated_thyroid.png" alt="Thyroid" />
             <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={toggleButtons}>
               {buttonClicked ? <img src="/assets/on.png" alt="afterClick" /> : <img src="/assets/off.png" alt="beforeClick" />}
             </button>
             <div className='description'>
-            <a className="image-cell" onClick={() => openPopup1("/assets/Thyroid Pencil diagram without labels.jpg")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}>
+            <a href = '#' className="image-cell" onClick={() => openPopup1("/assets/Images/Thyroid/Thyroid Pencil diagram without labels.jpg")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}>
               <strong><u>Click Here to view Pencil Diagram of Thyroid</u></strong>
             </a>
               <p>
@@ -70,12 +93,12 @@ function Thyroid() {
             </div>
           </div>
           <div id="buttons">
-            <button className="button1" data-tooltip="Follicles" data-popup="popup1" onClick={() => openPopup1('/assets/Connective_Tissue_Septa.png', 'Follicles are the basic structural units of the thyroid gland. Each lobule contains many closely packed follicles of different size and shapes. The size of the follicle is approximately 150-200 microns. Follicles are round to oval in shape and are lined by simple squamous or cuboidal epithelium. The follicles are filled with colloid. ', '/assets/Audios/Thyroid_Follicles.wav')}>1</button>
-            <button className="button2" data-tooltip="Connective Tissue septa" data-popup="popup2" onClick={() => openPopup1('/assets/Connective_Tissue_Septa.png', 'The gland shows a thin capsule. Thin septae extend from the capsule into the substance of the gland and divide it into lobules. ', '/assets/Audios/Connective_tissue_septa.wav')}>2</button>
+            <button className="button1" data-tooltip="Follicles" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Thyroid/Connective_Tissue_Septa.png', 'Follicles are the basic structural units of the thyroid gland. Each lobule contains many closely packed follicles of different size and shapes. The size of the follicle is approximately 150-200 microns. Follicles are round to oval in shape and are lined by simple squamous or cuboidal epithelium. The follicles are filled with colloid. ', '/assets/Audios/Thyroid/Thyroid_Follicles.wav')}>1</button>
+            <button className="button2" data-tooltip="Connective Tissue septa" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Thyroid/Connective_Tissue_Septa.png', 'The gland shows a thin capsule. Thin septae extend from the capsule into the substance of the gland and divide it into lobules. ', '/assets/Audios/Thyroid/Connective_tissue_septa.wav')}>2</button>
             <button className="button3" data-tooltip="Blood Vessels" data-popup="popup3" onClick={() => openPopup1('#', 'There is very little intralobular connective tissue (follicles are packed). The interlobular and intralobular connective tissue is thin and contains many capillaries.', '#')}>3</button>
-            <button className="button4" data-tooltip="Follicular cells (Simple cuboidal epithelium)" data-popup="popup4" onClick={() => openPopup1('/assets/Follicular_cells.png', 'The lining epithelium of the follicles shows cuboidal cells which stain eosinophilic. These cells have a vesicular round nucleus. They constitute the principal secretory cells of thyroid which synthesize thyroglobulin.', '/assets/Audios/Follicular_cells.wav')}>4</button>
-            <button className="button5" data-tooltip="Parafollicular or C cells " data-popup="popup5" onClick={() => openPopup1('/assets/Parafollicular_Cells.png', 'These cells constitute about 2% of the thyroid gland. The cells are called as clear cells because the cytoplasm is not stained. The cells are large and occur either singly or in groups of 2 or 3. They are usually situated between the basement membrane and the cubical epithelium. They secrete calcitonin.', '/assets/Audios/Parafollicular_cells.wav')}>5</button>
-            <button className="button6" data-tooltip="Colloid" data-popup="popup6" onClick={() => openPopup1('/assets/Follicular_cells.png', 'The lumen of the thyroid follicle is large and contains colloid which is stained eosinophilic It is made of a glycoprotein complex, also known as thyroglobulin. The colloid stains with both acidic and basic dyes. It is strongly PAS positive. ', '/assets/Audios/Colloid.wav')}>6</button>
+            <button className="button4" data-tooltip="Follicular cells (Simple cuboidal epithelium)" data-popup="popup4" onClick={() => openPopup1('/assets/Images/Thyroid/Follicular_cells.png', 'The lining epithelium of the follicles shows cuboidal cells which stain eosinophilic. These cells have a vesicular round nucleus. They constitute the principal secretory cells of thyroid which synthesize thyroglobulin.', '/assets/Audios/Thyroid/Follicular_cells.wav')}>4</button>
+            <button className="button5" data-tooltip="Parafollicular or C cells " data-popup="popup5" onClick={() => openPopup1('/assets/Images/Thyroid/Parafollicular_Cells.png', 'These cells constitute about 2% of the thyroid gland. The cells are called as clear cells because the cytoplasm is not stained. The cells are large and occur either singly or in groups of 2 or 3. They are usually situated between the basement membrane and the cubical epithelium. They secrete calcitonin.', '/assets/Audios/Thyroid/Parafollicular_cells.wav')}>5</button>
+            <button className="button6" data-tooltip="Colloid" data-popup="popup6" onClick={() => openPopup1('/assets/Images/Thyroid/Follicular_cells.png', 'The lumen of the thyroid follicle is large and contains colloid which is stained eosinophilic It is made of a glycoprotein complex, also known as thyroglobulin. The colloid stains with both acidic and basic dyes. It is strongly PAS positive. ', '/assets/Audios/Thyroid/Colloid.wav')}>6</button>
           </div>
         </div>
 

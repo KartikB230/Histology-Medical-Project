@@ -129,10 +129,11 @@ body {
 }
 
 
-.popup img {
-    display: block;
+.popup-img {
+    display: none;
     margin: auto; /* Center horizontally and vertically */
-    
+    justify-content: center;
+    align-items: center;
     border-radius: 8px;
     max-width: 100%;
     max-height: 100%;
