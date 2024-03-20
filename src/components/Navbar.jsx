@@ -35,10 +35,17 @@ const Navbar = () => {
           <ul class="dropdown-menu">
             <li><Link class="dropdown-item" to='/SquamousEpithelium'  style={{'color':'rgb(205, 117, 117)', "cursor":"pointer",'fontSize':'20px'}}>Squamous Epithelium</Link></li>
             <li><Link class="dropdown-item" to='/Thyroid'  style={{'color':'rgb(205, 117, 117)', "cursor":"pointer",'fontSize':'20px'}}>Thyroid</Link></li>
-            {/* <li><a class="dropdown-item" href="#" style={{'color':'white'}}>Something else here</a></li> */}
+            <li className="dropdown-submenu">
+                  <a class="dropdown-item"  style={{'color':'rgb(205, 117, 117)', "cursor":"pointer",'fontSize':'20px'}}>Kidney</a>
+                  <ul className="dropdown-menu" >
+                    <li ><a class="dropdown-item" href="/Medulla" style={{'color':'rgb(205, 117, 117)', "cursor":"pointer",'fontSize':'20px'}}>Medulla</a></li>
+                    <li><a class="dropdown-item" href="/Cortex" style={{'color':'rgb(205, 117, 117)', "cursor":"pointer",'fontSize':'20px'}}>Cortex</a></li>
+                  </ul>
+          </li>
           </ul>
+          
         </li>
-
+        
       </ul>
     </div>
 

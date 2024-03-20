@@ -5,6 +5,8 @@ import HomePage from "./components/HomePage";
 import Thyroid from "./components/Thyroid";
 import SquamousEpithelium from "./components/SquamousEpithelium";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Medulla from "./components/Medulla";
+import Cortex from "./components/Cortex";
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
             <Route path='/' element={<HomePage/>} />
             <Route path='/SquamousEpithelium' element={<SquamousEpithelium/>} />
             <Route path='/Thyroid' element={<Thyroid/>} />
+            <Route path='/Medulla' element={<Medulla/>} />
+            <Route path='/Cortex' element={<Cortex/>} />
             
           </Routes>
          </div>
