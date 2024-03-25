@@ -91,23 +91,6 @@
   text-align: center;
 }
 
-.popup-image {
-  max-width: 100%; /* Adjust the max-width as needed */
-  max-height: 75vh; /* Adjust the max-height as needed */
-  object-fit: contain;
-}
-
-/* Add this style to ensure the content inside the overlay is stacked vertically */
-.popup-content {
-  text-align: center;
-  color: white;
-  padding: 20px;
-  border-radius: 10px; /* Add rounded corners to the pop-up content */
-}
-/* .popup-content > * {
-  margin-bottom: 10px;
-} */
-
 .image-description {
   text-align: center;
   display: flex;
@@ -128,15 +111,7 @@
   cursor: pointer;
 }
 
-.popup-image1 {
-  max-width: 100%; /* Adjust the max-width as needed */
-  max-height: 75vh; /* Adjust the max-height as needed */
-  object-fit: contain;
-}
 
-/* App.css */
-
-/* Overlay styling */
 .overlay {
   display: none;
   position: fixed;
@@ -150,15 +125,50 @@
   z-index: 1005;
 }
 
-/* Popup content styling */
 .popup-content {
   text-align: center;
   color: aliceblue;
   padding: 20px;
   border-radius: 10px;
   z-index: 1005;
-
+  background-color: rgb(0,0,0,0.5); /* Semi-transparent background color */
 }
+
+.popup-content > * {
+  margin-bottom: 10px;
+}
+
+.image-description,
+.info-container {
+  text-align: center;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-image {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+.audio-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Style the audio player */
+#audioPlayer {
+  width: 100%; /* Adjust the width as needed */
+  max-width: 400px; /* Set a maximum width for the player */
+}
+
+
+
 
 .navbar{
   background-color: rgb(205, 117, 117);

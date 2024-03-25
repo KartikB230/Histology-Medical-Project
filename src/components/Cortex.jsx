@@ -7,7 +7,7 @@ function Cortex() {
   const [buttonClicked, setButtonClicked] = useState(false);
 
 
-function openPopup1(imagePath, descriptionText, audioPath) {
+  function openPopup1(imagePath, descriptionText, audioPath) {
     // Reset the popup content
     resetPopup();
 
@@ -28,10 +28,25 @@ function openPopup1(imagePath, descriptionText, audioPath) {
         document.getElementById('popupAudio').src = audioPath;
         document.getElementById('popupAudio').style.display = 'block'; // Show the audio container
     }
+    
 
     // Display the overlay
     document.getElementById('overlay').style.display = 'flex';
+
+    
 }
+
+// Function to handle button clicks
+function buttonClickHandler() {
+    // Get the data attributes from the button
+    var imagePath = this.getAttribute('data-image');
+    var descriptionText = this.getAttribute('data-description');
+    var audioPath = this.getAttribute('data-audio');
+    // Call openPopup1 with extracted data attributes
+    openPopup1(imagePath, descriptionText, audioPath);
+}
+
+
 
 function resetPopup() {
     // Reset the image source
@@ -81,8 +96,8 @@ function resetPopup() {
               {buttonClicked ? <img src="/assets/on.png" alt="afterClick" /> : <img src="/assets/off.png" alt="beforeClick" />}
             </button>
             <div className='description'>
-            <a href = '#' className="image-cell" onClick={() => openPopup1("/assets/Images/Thyroid/Thyroid Pencil diagram without labels.jpg")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}>
-              <strong><u>Click Here to view Pencil Diagram of Thyroid</u></strong>
+            <a href = '#' className="image-cell" onClick={() => openPopup1("/assets/Images/Kidney/Kidney_Panaromic.png")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}>
+              <strong><u>Click Here to view Panaromic view of Kidney </u></strong>
             </a>
               <p>
               Cortex is the dark coloured outer portion of the kidney. The cortex or the Cortical labrynth consists of Glomerulus, Bowman’s Capsule, PCT and DCT. 
@@ -93,11 +108,11 @@ function resetPopup() {
             </div>
           </div>
           <div id="buttons">
-            <button className="button1" data-tooltip="Follicles" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Thyroid/Connective_Tissue_Septa.png', 'Follicles are the basic structural units of the thyroid gland. Each lobule contains many closely packed follicles of different size and shapes. The size of the follicle is approximately 150-200 microns. Follicles are round to oval in shape and are lined by simple squamous or cuboidal epithelium. The follicles are filled with colloid. ', '/assets/Audios/Thyroid/Thyroid_Follicles.wav')}>1</button>
-            <button className="button2" data-tooltip="Connective Tissue septa" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Thyroid/Connective_Tissue_Septa.png', 'The gland shows a thin capsule. Thin septae extend from the capsule into the substance of the gland and divide it into lobules. ', '/assets/Audios/Thyroid/Connective_tissue_septa.wav')}>2</button>
-            <button className="button3" data-tooltip="Blood Vessels" data-popup="popup3" onClick={() => openPopup1('#', 'There is very little intralobular connective tissue (follicles are packed). The interlobular and intralobular connective tissue is thin and contains many capillaries.', '#')}>3</button>
-            <button className="button4" data-tooltip="Follicular cells (Simple cuboidal epithelium)" data-popup="popup4" onClick={() => openPopup1('/assets/Images/Thyroid/Follicular_cells.png', 'The lining epithelium of the follicles shows cuboidal cells which stain eosinophilic. These cells have a vesicular round nucleus. They constitute the principal secretory cells of thyroid which synthesize thyroglobulin.', '/assets/Audios/Thyroid/Follicular_cells.wav')}>4</button>
-            <button className="button5" data-tooltip="Parafollicular or C cells " data-popup="popup5" onClick={() => openPopup1('/assets/Images/Thyroid/Parafollicular_Cells.png', 'These cells constitute about 2% of the thyroid gland. The cells are called as clear cells because the cytoplasm is not stained. The cells are large and occur either singly or in groups of 2 or 3. They are usually situated between the basement membrane and the cubical epithelium. They secrete calcitonin.', '/assets/Audios/Thyroid/Parafollicular_cells.wav')}>5</button>
+            <button className="Cortex button1" data-tooltip="Capsule" data-popup="popup1" onClick={() => openPopup1('#', 'Bowmans capsule has two layers, an outer parietal layer and an inner visceral layer. The visceral layer is in contact with the glomerular capillaries. The visceral layer of Bowman’s capsule is lined by special cells called Podocytes because they have feet like processes or pedicels extending to the wall of capillaries. The parietal layer of Bowman’s capsule is lined by simple squamous flattened epithelium. The glomerulus receives blood through the afferent arteriole and the filtered blood leaves via efferent arteriole located at the vascular pole. The efferent arteriole has a narrower lumen and thicker wall than the afferent arteriole', '/assets/Audios/Kidney/Bowman_capsule .m4a')}>1</button>
+            <button className="Cortex button2" data-tooltip="Glomerulus" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Kidney/Glomerulus.png', 'The Glomerulus consists of anastomosing tuft of capillaries which appears as a round cellular mass. The endothelial lining of the capillaries is fenestrated. Supporting cells called Mesangial cells lie amongst the capillaries along with their secreted matrix, Mesangium. In addition to support, mesangial cells phagocytose trapped residues and clear the glomerular basement membrane. Mesangial cells respond to both vasoconstrictors like Angiotensin II and vasodilators like Atriopeptides and thus regulate blood flow through the glomerulus. The glomerulus is surrounded by Bowman’s capsule.', '/assets/Audios/Kidney/Glomerulus.m4a')}>2</button>
+            <button className="Cortex button3" data-tooltip="PCT" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Kidney/PCT_DCT.png', 'Proximal convoluted tubule (PCT): In sections, they appear transversely cut with large and irregularly oval outline. The lining epithelium is simple cuboidal with microvilli. They are darkly stained. As microvilli are present,  the lumen is small and not very clearly seen ', '/assets/Audios/Kidney/Pct.m4a')}>3</button>
+            <button className="Cortex button4" data-tooltip="DCT" data-popup="popup4" onClick={() => openPopup1('/assets/Images/Kidney/PCT_DCT.png', 'Distal convoluted tubule (DCT): As compared to the PCT section, they are smaller in size, the lining epithelium is simple cuboidal, and appear lightly stained with a vesicular nucleus. The tubules have a clear cut lumen.', '/assets/Audios/Kidney/Dct.m4a')}>4</button>
+            <button className="Cortex button5" data-tooltip="Capillaries" data-popup="popup5">5</button>
             
           </div>
         </div>

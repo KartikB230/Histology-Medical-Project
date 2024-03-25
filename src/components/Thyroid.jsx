@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../thyroid.css'; // Import your CSS file
+import '../App.css'; // Import your CSS file
 import Navbar from './Navbar';
 
 function Thyroid() {
