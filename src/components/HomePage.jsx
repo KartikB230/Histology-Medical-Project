@@ -15,6 +15,7 @@ function HomePage() {
             <Navbar />
             <Home />
             <Carousel/>
+            <Footer/>
         </div>
     );
 }
