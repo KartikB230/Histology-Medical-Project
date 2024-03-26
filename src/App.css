@@ -12,6 +12,27 @@
     "wdth" 100;
 }
 
+.font{
+  font-family: 'Gloock', serif;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.d-block{
+  background-color: rgb(205, 117, 117);
+  height: 450px;
+  width: 880px;
+  margin-bottom: 100px;
+  margin-top: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -315,13 +336,12 @@
 }
 
 .container {
-  width:600px;
-  height:450px;
+  height: 700px;
   background-color:rgb(254, 254, 253);
   padding-top:20px;
   padding-left:15px;
   padding-right:15px;
-  display: block;
+  display: flex;
   align-items: center;
   justify-content: center;
 }

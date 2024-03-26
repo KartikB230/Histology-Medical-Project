@@ -1,40 +1,82 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Carousel from 'react-bootstrap/Carousel';
 
-const Carousel = () => {
-  return (
-    
-    <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <img src="/assets/Carouse/Img1.jpg" class="d-block w-100" alt="..."/>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/assets/Carouse/Img2.jpg" class="d-block w-100" alt="..."/>
-          </div>
-          <div class="carousel-item">
-            <img src="/assets/Carouse/Img3.png" class="d-block w-100" alt="..."/>
-          </div>
-          {/* <!-- Add more carousel items as needed --/> */}
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+function BCarousel() {
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
+
+  
+
+  return (    
+    <div>
+    <Carousel  activeIndex={index} onSelect={handleSelect} variant="dark">
+      <Carousel.Item>
+      <div className='caimag'>
+        <img
+          className="d-block"
+          src="/assets/Carouse/Img1.jpg"
+          alt="First slide"
+        />
+        
       </div>
-    </div>
-  </div>
-</div>
+        <Carousel.Caption>
+          <h3>Squamous Epithelium</h3>
+        </Carousel.Caption>
+      </Carousel.Item>
 
-  )
+
+      <Carousel.Item>
+      <div className='caimag'>
+        <img
+          className="d-block"
+          src="/assets/Carouse/Img2.tif"
+          alt="Second slide"
+          
+        />
+      </div>
+
+        <Carousel.Caption>
+          <h3>Thyroid</h3>
+          
+        </Carousel.Caption>
+      </Carousel.Item>
+
+
+      <Carousel.Item>
+      <div className='caimag'>
+        <img
+          className="d-block"
+          src="/assets/Carouse/Img3.png"
+          alt="Third slide"
+        />
+      </div>
+        <Carousel.Caption>
+          <h3>Medulla</h3>
+          
+        </Carousel.Caption>
+      </Carousel.Item>
+
+
+      <Carousel.Item>
+      <div className='caimag'>
+        <img
+          className="d-block"
+          src="/assets/Carouse/Img4.jpeg"
+          alt="Third slide"
+        />
+      </div>
+        <Carousel.Caption>
+          <h3>Cortex</h3>
+          
+        </Carousel.Caption>
+      </Carousel.Item>      
+      
+    </Carousel>
+    </div>
+  );
 }
 
-export default Carousel
+export default BCarousel
