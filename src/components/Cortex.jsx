@@ -7,7 +7,7 @@ function Cortex() {
   const [buttonClicked, setButtonClicked] = useState(false);
 
 
-  function openPopup1(imagePath, descriptionText, audioPath) {
+  function openPopup1(imagePath, descriptionText, audioPath, audioPath2 = '#') {
     // Reset the popup content
     resetPopup();
 
@@ -27,6 +27,14 @@ function Cortex() {
     if (audioPath && audioPath !== '#') {
         document.getElementById('popupAudio').src = audioPath;
         document.getElementById('popupAudio').style.display = 'block'; // Show the audio container
+    }
+    if (audioPath2 && audioPath2 !== '#') {
+      document.getElementById('popupAudio2').src = audioPath2;
+      document.getElementById('popupAudio2').style.display = 'block'; // Show the audio container
+    }
+    else
+    {
+      document.getElementById('popupAudio2').style.display = 'none'; 
     }
     
 
@@ -60,6 +68,7 @@ function resetPopup() {
     document.getElementById('popupImage').style.display = 'none';
     document.getElementById('popupInfo').style.display = 'none';
     document.getElementById('popupAudio').style.display = 'none';
+    document.getElementById('popupAudio2').style.display = 'none';
 }
 
 
@@ -70,6 +79,7 @@ function resetPopup() {
 
     // Pause the audio when closing the pop-up
     document.getElementById('popupAudio').pause();
+    document.getElementById('popupAudio2').pause();
   }
 
 
@@ -108,10 +118,10 @@ function resetPopup() {
             </div>
           </div>
           <div id="buttons">
-            <button className="Cortex button1" data-tooltip="Capsule" data-popup="popup1" onClick={() => openPopup1('#', 'Bowmans capsule has two layers, an outer parietal layer and an inner visceral layer. The visceral layer is in contact with the glomerular capillaries. The visceral layer of Bowman’s capsule is lined by special cells called Podocytes because they have feet like processes or pedicels extending to the wall of capillaries. The parietal layer of Bowman’s capsule is lined by simple squamous flattened epithelium. The glomerulus receives blood through the afferent arteriole and the filtered blood leaves via efferent arteriole located at the vascular pole. The efferent arteriole has a narrower lumen and thicker wall than the afferent arteriole', '/assets/Audios/Kidney/Bowman_capsule .m4a')}>1</button>
-            <button className="Cortex button2" data-tooltip="Glomerulus" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Kidney/Glomerulus.png', 'The Glomerulus consists of anastomosing tuft of capillaries which appears as a round cellular mass. The endothelial lining of the capillaries is fenestrated. Supporting cells called Mesangial cells lie amongst the capillaries along with their secreted matrix, Mesangium. In addition to support, mesangial cells phagocytose trapped residues and clear the glomerular basement membrane. Mesangial cells respond to both vasoconstrictors like Angiotensin II and vasodilators like Atriopeptides and thus regulate blood flow through the glomerulus. The glomerulus is surrounded by Bowman’s capsule.', '/assets/Audios/Kidney/Glomerulus.m4a')}>2</button>
-            <button className="Cortex button3" data-tooltip="PCT" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Kidney/PCT_DCT.png', 'Proximal convoluted tubule (PCT): In sections, they appear transversely cut with large and irregularly oval outline. The lining epithelium is simple cuboidal with microvilli. They are darkly stained. As microvilli are present,  the lumen is small and not very clearly seen ', '/assets/Audios/Kidney/Pct.m4a')}>3</button>
-            <button className="Cortex button4" data-tooltip="DCT" data-popup="popup4" onClick={() => openPopup1('/assets/Images/Kidney/PCT_DCT.png', 'Distal convoluted tubule (DCT): As compared to the PCT section, they are smaller in size, the lining epithelium is simple cuboidal, and appear lightly stained with a vesicular nucleus. The tubules have a clear cut lumen.', '/assets/Audios/Kidney/Dct.m4a')}>4</button>
+            <button className="Cortex button1" data-tooltip="Capsule" data-popup="popup1" >1</button>
+            <button className="Cortex button2" data-tooltip="Glomerulus" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Kidney/Glomerulus.png', '<strong><u>Glomerulus: </u></strong>The Glomerulus consists of anastomosing tuft of capillaries which appears as a round cellular mass. The endothelial lining of the capillaries is fenestrated. Supporting cells called Mesangial cells lie amongst the capillaries along with their secreted matrix, Mesangium. In addition to support, mesangial cells phagocytose trapped residues and clear the glomerular basement membrane. Mesangial cells respond to both vasoconstrictors like Angiotensin II and vasodilators like Atriopeptides and thus regulate blood flow through the glomerulus. The glomerulus is surrounded by Bowman’s capsule.<br/> <strong><u>Bowmans Capsule: </strong></u>Bowmans capsule has two layers, an outer parietal layer and an inner visceral layer. The visceral layer is in contact with the glomerular capillaries. The visceral layer of Bowman’s capsule is lined by special cells called Podocytes because they have feet like processes or pedicels extending to the wall of capillaries. The parietal layer of Bowman’s capsule is lined by simple squamous flattened epithelium. The glomerulus receives blood through the afferent arteriole and the filtered blood leaves via efferent arteriole located at the vascular pole. The efferent arteriole has a narrower lumen and thicker wall than the afferent arteriole', '/assets/Audios/Kidney/Glomerulus.m4a', '/assets/Audios/Kidney/Bowman_capsule .m4a')}>2</button>
+            <button className="Cortex button3" data-tooltip="PCT" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Kidney/PCT_DCT.png', '<strong><u>Proximal convoluted tubule (PCT):</u></strong> In sections, they appear transversely cut with large and irregularly oval outline. The lining epithelium is simple cuboidal with microvilli. They are darkly stained. As microvilli are present,  the lumen is small and not very clearly seen', '/assets/Audios/Kidney/Pct.m4a')}>3</button>
+            <button className="Cortex button4" data-tooltip="DCT" data-popup="popup4" onClick={() => openPopup1('/assets/Images/Kidney/PCT_DCT.png', '<strong><u>Distal convoluted tubule (DCT):</u></strong> As compared to the PCT section, they are smaller in size, the lining epithelium is simple cuboidal, and appear lightly stained with a vesicular nucleus. The tubules have a clear cut lumen.', '/assets/Audios/Kidney/Dct.m4a')}>4</button>
             <button className="Cortex button5" data-tooltip="Capillaries" data-popup="popup5">5</button>
             
           </div>
@@ -129,6 +139,10 @@ function resetPopup() {
             <div className="audio-container">
 
               <audio controls id="popupAudio">
+                <source src="" type="audio/wav" />
+                Your browser does not support the audio element.
+              </audio>
+              <audio controls id="popupAudio2" style ={{marginLeft : '50px'}}>
                 <source src="" type="audio/wav" />
                 Your browser does not support the audio element.
               </audio>
