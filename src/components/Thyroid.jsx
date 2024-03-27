@@ -81,7 +81,7 @@ function resetPopup() {
               {buttonClicked ? <img src="/assets/on.png" alt="afterClick" /> : <img src="/assets/off.png" alt="beforeClick" />}
             </button>
             <div className='description'>
-            <a href = '#' className="image-cell" onClick={() => openPopup1("/assets/Images/Thyroid/Thyroid Pencil diagram without labels.jpg")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}>
+            <a href = '#' className="image-cell" onClick={() => openPopup1("/assets/Images/Thyroid/Thyroid_Pencil_Diagram.jpg")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}>
               <strong><u>Click Here to view Pencil Diagram of Thyroid</u></strong>
             </a>
               <p>
