@@ -23,7 +23,7 @@ function HomePage() {
             <div ref={carouselRef}>
                 <Carousel />
             </div>
-            <Footer />
+            
         </div>
     );
 }
