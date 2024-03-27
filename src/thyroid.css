@@ -302,6 +302,31 @@ body {
         top: 77.55%; /* Adjust the percentage as needed */
         left: 47.7%; /* Adjust the percentage as needed */
     }
+
+    /*Adrenal*/
+    .Adrenal.button1 { /* Button 1 */
+        top: 86.4%; /* Adjust the percentage as needed */
+        left: 7.2%; /* Adjust the percentage as needed */
+    }
+
+    .Adrenal.button2 { /* Button 2 */
+        top: 53.5%; /* Adjust the percentage as needed */
+        left: 5.5%; /* Adjust the percentage as needed */
+    }
+
+    .Adrenal.button3 { /* Button 3 */
+        top: 34.5%; /* Adjust the percentage as needed */
+        left: 51.3%; /* Adjust the percentage as needed */
+    }
+
+    .Adrenal.button4 { /* Button 4 */
+        top: 16.5%; /* Adjust the percentage as needed */
+        left: 88.5%; /* Adjust the percentage as needed */
+    }
+    .Adrenal.button5 { /* Button 4 */
+        top: 71.55%; /* Adjust the percentage as needed */
+        left: 89.7%; /* Adjust the percentage as needed */
+    }
     
     
 }
@@ -391,6 +416,30 @@ body {
         left: 47.1%; /* Adjust the percentage as needed */
     }
 
+    /*Adrenal*/
+    .Adrenal.button1 { /* Button 1 */
+        top: 86.4%; /* Adjust the percentage as needed */
+        left: 8%; /* Adjust the percentage as needed */
+    }
+
+    .Adrenal.button2 { /* Button 2 */
+        top: 53.5%; /* Adjust the percentage as needed */
+        left: 5.5%; /* Adjust the percentage as needed */
+    }
+
+    .Adrenal.button3 { /* Button 3 */
+        top: 33%; /* Adjust the percentage as needed */
+        left: 51%; /* Adjust the percentage as needed */
+    }
+
+    .Adrenal.button4 { /* Button 4 */
+        top: 14%; /* Adjust the percentage as needed */
+        left: 90.5%; /* Adjust the percentage as needed */
+    }
+    .Adrenal.button5 { /* Button 4 */
+        top: 71.55%; /* Adjust the percentage as needed */
+        left: 89.7%; /* Adjust the percentage as needed */
+    }
     
 }
 
@@ -479,6 +528,30 @@ body {
         left: 48%; /* Adjust the percentage as needed */
     }
 
+    /*Adrenal*/
+    .Adrenal.button1 { /* Button 1 */
+        top: 84.4%; /* Adjust the percentage as needed */
+        left: 19.2%; /* Adjust the percentage as needed */
+    }
+
+    .Adrenal.button2 { /* Button 2 */
+        top: 52.5%; /* Adjust the percentage as needed */
+        left: 18.5%; /* Adjust the percentage as needed */
+    }
+
+    .Adrenal.button3 { /* Button 3 */
+        top: 34.5%; /* Adjust the percentage as needed */
+        left: 51.3%; /* Adjust the percentage as needed */
+    }
+
+    .Adrenal.button4 { /* Button 4 */
+        top: 13.5%; /* Adjust the percentage as needed */
+        left: 79.5%; /* Adjust the percentage as needed */
+    }
+    .Adrenal.button5 { /* Button 4 */
+        top: 71.55%; /* Adjust the percentage as needed */
+        left: 79.7%; /* Adjust the percentage as needed */
+    }
     
 }
 

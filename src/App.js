@@ -7,9 +7,12 @@ import SquamousEpithelium from "./components/SquamousEpithelium";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Medulla from "./components/Medulla";
 import Cortex from "./components/Cortex";
+import Adrenal from "./components/Adrenal";
 
 
 function App() {
+
+  
   return (
    
     <BrowserRouter>
@@ -20,6 +23,7 @@ function App() {
             <Route path='/SquamousEpithelium' element={<SquamousEpithelium/>} />
             <Route path='/Thyroid' element={<Thyroid/>} />
             <Route path='/Medulla' element={<Medulla/>} />
+            <Route path='/Adrenal' element={<Adrenal/>} />
             <Route path='/Cortex' element={<Cortex/>} />
             
           </Routes>
