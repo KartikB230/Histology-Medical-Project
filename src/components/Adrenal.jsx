@@ -82,7 +82,7 @@ function Adrenal() {
             </button>
             <div className='description'>
               <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Adrenal/Adrenal_Pencil.png")} style={{ "display": "flex", "justifyContent": "center", "marginBottom": "10px" }}>
-                <strong><u>Click Here to view Panaromic view of Adrenal Gland</u></strong>
+                <strong><u>Click Here to view Pencil Diagram of Adrenal Gland</u></strong>
               </a>
               <p>
                 The adrenal gland is a small, triangular-shaped organ located on top of each kidney, responsible for producing hormones such as cortisol, adrenaline, and aldosterone, crucial for regulating metabolism, immune response, and stress response.
