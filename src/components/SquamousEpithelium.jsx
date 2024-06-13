@@ -54,7 +54,7 @@ function SquamousEpithelium() {
             src="/assets/Images/Squamous/simple_squamous_epithelium.jpg"
             className="imgg"
             alt="Simple Squamous Epithelium"
-            onClick={() => openPopup1("/assets/Images/Squamous/simple_squamous_epithelium_High_power.jpg", 'Simple squamous epithelium consists of a single layer of flattened cells with a slight bulge in the center because of the presence of the nucleus. Endothelium of blood vessels and alveoli of lungs are lined by simple squamous epithelium', '/assets/Audios/h1_76 squamous epithelium (1).wav')}
+            onClick={() => openPopup1("/assets/Images/Squamous/simple_squamous_epithelium_High_power.jpg", 'Simple squamous epithelium consists of a single layer of flattened cells with a slight bulge in the center because of the presence of the nucleus. Endothelium of blood vessels and alveoli of lungs are lined by simple squamous epithelium', '/assets/Audios/Squamous/h1_76 squamous epithelium (1).wav')}
             data-popup="popup1"
           />
 
