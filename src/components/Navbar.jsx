@@ -29,9 +29,12 @@ const Navbar = ({ scrollToCarousel }) => {
             <li className="nav-item">
               <Link onClick={scrollToCarousel} className="nav-link" to="/" style={{ color: 'white', fontSize: '20px' }}>Features</Link>
             </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" style={{ 'color': 'white', 'fontSize': '20px' }}>Contact</a>
-              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" style={{ 'color': 'white', 'fontSize': '20px' }}>Contact</a>
+            </li>
+            <li class="nav-item">
+            <Link onClick={scrollToCarousel} className="nav-link" to="/Trial" style={{ color: 'white', fontSize: '20px' }}>Trial</Link>
+            </li>
 
 
               <li class="nav-item dropdown">
@@ -49,6 +52,8 @@ const Navbar = ({ scrollToCarousel }) => {
                     </ul>
                   </li>
                   <li><Link class="dropdown-item" to='/Adrenal' style={{ 'color': 'rgb(205, 117, 117)', "cursor": "pointer", 'fontSize': '20px' }}>Adrenal Gland</Link></li>
+                  <li><Link class="dropdown-item" to='/Pituitary' style={{ 'color': 'rgb(205, 117, 117)', "cursor": "pointer", 'fontSize': '20px' }}>Pitiutary Gland</Link></li>
+                  <li><Link class="dropdown-item" to='/Cartilage' style={{ 'color': 'rgb(205, 117, 117)', "cursor": "pointer", 'fontSize': '20px' }}>Cartilage</Link></li>
 
                 </ul>
 

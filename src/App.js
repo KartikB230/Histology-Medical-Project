@@ -8,6 +8,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Medulla from "./components/Medulla";
 import Cortex from "./components/Cortex";
 import Adrenal from "./components/Adrenal";
+import Trial from './components/Trial';
+import Pituitary from './components/Pituitary';
+import Cartilage from './components/Cartilage';
 
 
 function App() {
@@ -25,6 +28,9 @@ function App() {
             <Route path='/Medulla' element={<Medulla/>} />
             <Route path='/Adrenal' element={<Adrenal/>} />
             <Route path='/Cortex' element={<Cortex/>} />
+            <Route path="/Trial" element={<Trial/>} />
+            <Route path="/Pituitary" component={Pituitary} />
+            <Route path="/Cartilage" component={Cartilage} />
             
           </Routes>
          </div>

@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
-import '../thyroid.css'; // Import your CSS file
+import React, { useState } from 'react'; 
 import Navbar from './Navbar';
 
 function Adrenal() {
-
   const [buttonClicked, setButtonClicked] = useState(false);
-
 
   function openPopup1(imagePath, descriptionText, audioPath) {
     // Reset the popup content
@@ -13,20 +10,20 @@ function Adrenal() {
 
     // Set the source of the pop-up image if a valid imagePath is provided
     if (imagePath && imagePath !== '#') {
-      document.getElementById('popupImage').src = imagePath;
-      document.getElementById('popupImage').style.display = 'block'; // Show the image container
+        document.getElementById('popupImage').src = imagePath;
+        document.getElementById('popupImage').style.display = 'block'; // Show the image container
     }
 
     // Set the description text if provided and not equal to '#'
     if (descriptionText && descriptionText !== '#') {
-      document.getElementById('popupInfo').innerHTML = descriptionText;
-      document.getElementById('popupInfo').style.display = 'block'; // Show the description container
+        document.getElementById('popupInfo').innerHTML = descriptionText;
+        document.getElementById('popupInfo').style.display = 'block'; // Show the description container
     }
 
     // Set the source of the pop-up audio if a valid audioPath is provided
     if (audioPath && audioPath !== '#') {
-      document.getElementById('popupAudio').src = audioPath;
-      document.getElementById('popupAudio').style.display = 'block'; // Show the audio container
+        document.getElementById('popupAudio').src = audioPath;
+        document.getElementById('popupAudio').style.display = 'block'; // Show the audio container
     }
 
     // Display the overlay
@@ -58,50 +55,54 @@ function Adrenal() {
   }
 
 
-  // Toggle button visibility
+  // Toggle Button
+
   function toggleButtons() {
-    const buttonSet = document.getElementById('buttons');
-    buttonSet.style.display = buttonSet.style.display === 'none' ? 'block' : 'none';
+    document.querySelectorAll('.AllButtons').forEach(button => {    
+        button.style.display = button.style.display === 'none' ? 'block' : 'none';
+    });
     setButtonClicked(!buttonClicked); // Toggle the state of buttonClicked
-  }
+}
+
 
   return (
     <>
       <Navbar />
       <div className='box'>
-        <div class="heading">
-          <h1 style={{ "margin": "10px" }}>Adrenal Gland</h1><hr style={{ "height": "10px" }} />
+        <div className="heading">
+          <h1>Adrenal Gland</h1>
         </div>
+        <hr style={{"height":"10px"}}/>
 
-        <div id="labels" className="labels">
-
-          <div className="img">
-            <img src="/assets/Images/Adrenal/Adrenal_Gland.png" alt="adrenal" style={{ height: '617.6px', width: '1098.4px' }} />
-            <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={toggleButtons}>
-              {buttonClicked ? <img src="/assets/on.png" alt="afterClick" /> : <img src="/assets/off.png" alt="beforeClick" />}
-            </button>
-            <div className='description'>
-              <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Adrenal/Adrenal_Pencil.png")} style={{ "display": "flex", "justifyContent": "center", "marginBottom": "10px" }}>
-                <strong><u>Click Here to view Panaromic view of Adrenal Gland</u></strong>
-              </a>
-              <p>
-                The adrenal gland is a small, triangular-shaped organ located on top of each kidney, responsible for producing hormones such as cortisol, adrenaline, and aldosterone, crucial for regulating metabolism, immune response, and stress response.
-              </p>
-            </div>
-          </div>
-          <div id="buttons">
-            <button className="Adrenal button1" data-tooltip="Adrenal Medulla " data-popup="popup1" onClick={() => openPopup1('/assets/Images/Adrenal/Adrenal_Medulla.png', 'The medulla has an abundant number of large capillaries and sinusoids. The cells are large, pale staining, columnar with elongated nucleus. The base of the cell is aligned towards the capillary wall and the apex is aligned towards the sinusoids.  The cells contain secretory granules which secrete adrenaline and noradrenaline. ', '#')}>1</button>
-            <button className="Adrenal button2" data-tooltip="Zona Reticularis" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Adrenal/Zona_Reticularis.png', 'The cells are arranged in anastamosing cords. These cords branch and anastamose. In between the cords, there are plenty of sinusoidal capillaries. The cells of zona reticularis are small, polygonal and dark eosinophilic. The nuclei are very much condensed and dark - described as shrunken - pyknotic-nuclei. The zona reticularis was earlier referred to as the ‘graveyard of the cortex’ due to the presence of these pyknotic nuclei.Zona reticularis secretes sex corticoids - mainly androgens.', '#')}>2</button>
-            <button className="Adrenal button3" data-tooltip="Zona Fasciculata" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Adrenal/Zona_Fasciculata.png', 'The capillaries in this layer are longitudinally placed. The cells are arranged in longitudinal columns - usually two cell thick. The cells are large, pale, polygonal cells. The nucleus is in the central part of the cell and is vesicular. The cells contain an abundant amount of lipid droplets which disappear during processing and hence the cells give a vacuolated appearance. The cells in zona fasciculata are also called as spongioblasts. Zona fasciculata secretes glucocorticoids concerned with carbohydrate metabolism. ', '#')}>3</button>
-            <button className="Adrenal button4" data-tooltip="Zona Glomerulosa" data-popup="popup4" onClick={() => openPopup1('/assets/Images/Adrenal/Zona_Glomerulose.png', ' The cells are arranged in cords in the form of arcades. These arcades are inverted U shaped. The cells are low columnar, light eosinophilic or basophilic. Nucleus is round and dark. In between these arcades, there are capillaries. These cells  secrete mineralocorticoids, the main potent component being Aldosterone. It influences the Na+, K+ and water balance, therefore it is important for maintenance of blood pressure', '#')}>4</button>
-            <button className="Adrenal button5" data-tooltip="Capsule" data-popup="popup5">5</button>
-
+        <div className="Container1" id="container1"> {/* Add id to the parent container */}
+          <div style={{ position: 'relative' }}> {/* Ensure relative positioning for parent container */}
+            
+            <img src="/assets/Images/Adrenal/Adrenal_Gland.png" alt="Thyroid" />
+            <button className="AllButtons" data-tooltip="Zona Glomerulosa" id="Adrenalbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Adrenal/Zona_Glomerulose.png', 'Follicles are the basic structural units of the thyroid gland. Each lobule contains many closely packed follicles of different size and shapes. The size of the follicle is approximately 150-200 microns. Follicles are round to oval in shape and are lined by simple squamous or cuboidal epithelium. The follicles are filled with colloid. ', '#')}>1</button>
+            <button className="AllButtons" data-tooltip="Zona Fasciculata" id="Adrenalbtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Adrenal/Zona_Fasciculata.png', 'The gland shows a thin capsule. Thin septae extend from the capsule into the substance of the gland and divide it into lobules. ', '#')}>2</button>
+            <button className="AllButtons" data-tooltip="Zona Reticularis" id="Adrenalbtn3" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Adrenal/Zona_Reticularis.png', 'There is very little interlobular connective tissue (follicles are packed). The interlobular and intralobular connective tissue is thin and contains many capillaries. ', '#')}>3</button>
+            <button className="AllButtons" data-tooltip="Capsule" id="Adrenalbtn4" data-popup="popup4" onClick={() => openPopup1('#', 'The lining epithelium of the follicles shows cuboidal cells which stain eosinophilic. These cells have a vesicular round nucleus. They constitute the principal secretory cells of thyroid which synthesize thyroglobulin. ', '#')}>4</button>
+            <button className="AllButtons" data-tooltip="Medulla" id="Adrenalbtn5" data-popup="popup5" onClick={() => openPopup1('/assets/Images/Adrenal/Adrenal_Medulla.png', 'These cells constitute about 2% of the thyroid gland. The cells are called as clear cells because the cytoplasm is not stained. The cells are large and occur either singly or in groups of 2 or 3. They are usually situated between the basement membrane and the cubical epithelium. They secrete calcitonin.', '/assets/Audios/Thyroid/Parafollicular_cells.wav')}>5</button>
+            
+          
           </div>
         </div>
 
+        <div className="Container2">
+          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Adrenal/Adrenal_Pencil.png")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}><strong><u>Click Here to view Pencil Diagram of Adrenal Gland</u></strong></a>
+          <p>
+            The thyroid, or thyroid gland, is an endocrine gland in vertebrates. In humans, it is in the neck and consists of two connected lobes. The lower two thirds of
+            the lobes are connected by a thin band of tissue called the isthmus. The thyroid gland is a butterfly-shaped gland located in the neck below the Adam's apple.
+            Microscopically, the functional unit of the thyroid gland is the spherical thyroid follicle, lined with follicular cells (thyrocytes), and occasional
+            parafollicular cells that surround a lumen containing colloid.
+          </p>
+        </div>
+        <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={toggleButtons}>
+              {buttonClicked ? <img src="/assets/on-1.png" alt="afterClick" /> : <img src="/assets/off-1.png" alt="beforeClick" />}
+            </button> 
 
         {/* < Pop-up overlay */}
-        <div id="overlay" class="overlay" >
+        <div id="overlay" className="overlay" >
           <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
           <div className="popup-content">
             <img id="popupImage" className="popup-image" src="" alt="Pop-up Image" />
@@ -109,7 +110,6 @@ function Adrenal() {
               <p id="popupInfo"></p>
             </div>
             <div className="audio-container">
-
               <audio controls id="popupAudio">
                 <source src="" type="audio/wav" />
                 Your browser does not support the audio element.
@@ -117,11 +117,9 @@ function Adrenal() {
             </div>
           </div>
         </div>
+
       </div>
     </>
   );
 }
 export default Adrenal;
-
-
-

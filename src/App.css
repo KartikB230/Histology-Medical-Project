@@ -2,17 +2,15 @@
   text-align: center;
 }
 
-
 .fredoka-navbar {
   font-family: "Fredoka", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings: "wdth" 100;
 }
 
-.font{
+.font {
   font-family: 'Gloock', serif;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -20,7 +18,7 @@
   justify-content: center;
 }
 
-.d-block{
+.d-block {
   background-color: rgb(205, 117, 117);
   height: 500px;
   width: 880px;
@@ -29,9 +27,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  
 }
-
 
 .App-logo {
   height: 40vmin;
@@ -68,22 +64,19 @@
   }
 }
 
-/* styles.css */
+/* styles.css styles */
 .cd {
   display: flex;
   justify-content: center;
-
 }
 
-
-
 .imgg {
-  width: 80%;
-  height: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
+  display: block;
+  margin: auto;
+  max-width: 100%; /* Adjust the maximum width as needed */
+  max-height: 100vh; /* Adjust the maximum height as needed */
+  width: auto;
+  height: auto; /* Allow the image to maintain its aspect ratio */
 }
 
 .content-container {
@@ -92,22 +85,18 @@
   font-size: large;
 }
 
-/* Style for the image container on the left */
 .image-container {
   flex: 1;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
-/* Style for the info container on the right */
 .info-container {
   flex: 1;
 }
 
-/* Style for the info content */
 .info-content {
   text-align: center;
 }
@@ -126,10 +115,19 @@
   justify-content: center;
   align-items: center;
 }
+.Container2 {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center; 
+}
 
-.image-cell{
+.image-cell {
+  
+  margin-left : auto;
+  margin-right: auto;
   color: blue;
-  cursor: pointer;
+  cursor: pointer; 
 }
 
 
@@ -161,6 +159,52 @@
   margin-bottom: 10px;
 }
 
+ /* Close button styles */
+ .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 2px solid #aaa; /* Border for the box structure */
+  border-radius: 5px; /* Square shape */
+  cursor: pointer;
+  z-index: 1006;
+  color: #aaa;
+  transition: background-color 0.3s, border-color 0.3s; /* Transition for color change */
+}
+
+/* Close button icon */
+.close-button::after {
+  content: '×'; /* Unicode character for "x" */
+  font-family: Arial, sans-serif; /* Use a common font */
+  font-size: 24px; /* Increase font size */
+  font-weight: bold; /* Make the font bold */
+  color: black; /* Default color */
+  display: block;
+  text-align: center;
+  line-height: 30px; /* Center vertically */
+}
+
+
+/* Hover effect */
+.close-button:hover {
+  background-color: #f00; /* Red background on hover */
+  border-color: #f00; /* Red border on hover */
+}
+
+/* Hover effect for icon */
+.close-button:hover::after {
+  color: #fff; /* White color on hover */
+}
+
+/* Prevent ::after pseudo-element from being applied to any other element */
+.close-button:not(:last-child)::after {
+  content: none; /* Remove content from ::after pseudo-element for all but the last .close-button */
+}
+
+
 .image-description,
 .info-container {
   text-align: center;
@@ -190,14 +234,10 @@
   max-width: 400px; /* Set a maximum width for the player */
 }
 
-
-
-
-.navbar{
+.navbar {
   background-color: rgb(205, 117, 117);
   position: fixed;
-  z-index:1000;
-  
+  z-index: 1000;
 }
 
 .dropdown-submenu {
@@ -226,23 +266,20 @@
   border-left: 5px solid rgb(205, 117, 117); /* Arrow for submenu */
 }
 
-
-
 @media (min-width: 992px) {
   .navbar-brand {
     padding: 10px 170px;
   }
 }
 
-.nav-item{
+.nav-item {
   padding-left: 35px;
   padding-right: 35px;
 }
 
-.nav-link{
+.nav-link {
   color: white;
 }
-
 
 .homediv {
   height: 100vh;
@@ -254,112 +291,104 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  object-position: center center; ;/* Optional: Centers the image */
+  object-position: center center;
+  /* Optional: Centers the image */
 }
 
-
-.homediv{
-  background-color: rgb(211, 101, 101);
-}
-
-.caimag{
+.caimag {
   text-align: center;
 }
 
-
-
-.thecard{
+.thecard {
   position: absolute;
   height: 100%;
-  width:100%;
-  transform-style:preserve-3d;
+  width: 100%;
+  transform-style: preserve-3d;
   transition: all 1s ease;
- 
 }
 
-.thefront{
+.thefront {
   position: absolute;
   height: 100%;
-  width:100%;
+  width: 100%;
   backface-visibility: hidden;
-  background:#baeebc ;
+  background: #baeebc;
   color: #333;
 }
 
-.theback{
+.theback {
   position: absolute;
   height: 100%;
-  width:100%;
+  width: 100%;
   backface-visibility: hidden;
-  background:rgb(232, 252, 229) ;
+  background: rgb(232, 252, 229);
   color: #333;
   transform: rotateY(180deg);
 }
-.thefrontt{
+
+.thefrontt {
   position: absolute;
   height: 100%;
-  width:100%;
+  width: 100%;
   backface-visibility: hidden;
-  background:#e8eef1 ;
+  background: #e8eef1;
   color: #333;
 }
 
-.thebackk{
+.thebackk {
   position: absolute;
   height: 100%;
-  width:100%;
+  width: 100%;
   backface-visibility: hidden;
-  background:rgb(190, 190, 190) ;
+  background: rgb(190, 190, 190);
   color: #616161;
   transform: rotateY(180deg);
 }
-.thefronttt{
+
+.thefronttt {
   position: absolute;
   height: 100%;
-  width:100%;
+  width: 100%;
   backface-visibility: hidden;
-  background:#baeebc ;
+  background: #baeebc;
   color: #333;
 }
 
-.thebackkk{
+.thebackkk {
   position: absolute;
   height: 100%;
-  width:100%;
+  width: 100%;
   backface-visibility: hidden;
-  background:rgb(232, 252, 229) ;
+  background: rgb(232, 252, 229);
   color: #333;
   transform: rotateY(180deg);
 }
-.thecard:hover{
+
+.thecard:hover {
   transform: rotateY(180deg);
 }
 
 .container {
   height: 700px;
-  background-color:rgb(254, 254, 253);
-  padding-top:20px;
-  padding-left:15px;
-  padding-right:15px;
+  background-color: rgb(254, 254, 253);
+  padding-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-
-
-.wsppimg{
-  
+.wsppimg {
   height: 100px;
   width: 100px;
-
 }
 
-.reacttoexcelbtn{
+.reacttoexcelbtn {
   margin: 30px;
   margin-top: 35px;
   margin-right: 80px;
-  height:50px;
+  height: 50px;
   width: 200px;
   float: right;
   background-color: #fff;
@@ -368,11 +397,10 @@
   border-radius: 15px;
 }
 
-.reacttoexcelbtnn{
-
+.reacttoexcelbtnn {
   margin-top: 10px;
   margin-right: 80px;
-  height:50px;
+  height: 50px;
   width: 200px;
   float: right;
   background-color: #fff;
@@ -411,4 +439,335 @@
   border: solid black;
   position: relative;
   margin: 30px;
+}
+
+/* thyroid.css styles */
+.Container1 {
+  position: relative;
+  width: 100%;
+  max-width: 600px; 
+  margin: 0 auto; 
+}
+
+.Container1 img {
+  display: block;
+  margin: auto;
+  max-width: 100%; /* Adjust the maximum width as needed */
+  max-height: 100vh; /* Adjust the maximum height as needed */
+  width: auto;
+  height: auto; /* Allow the image to maintain its aspect ratio */
+}
+
+
+.Container1 .AllButtons {
+    position: absolute;
+    color: white;
+    background-color: rgba(0,0,0,1);
+    border: 1px solid rgba(255, 255, 255, 1);
+    cursor: pointer;
+    font-weight: bolder;
+    z-index: 1; 
+    transition: background-color 0.3s ease;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: 1%;
+  margin-bottom: -1%;
+}
+
+
+
+.toggle-button {
+  position: absolute;
+  bottom: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  z-index: 1; /* Ensure it's above other elements */
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+
+.Container1 button:hover::after{
+    content: attr(data-tooltip); 
+    position: absolute;
+    top: 100%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 1; 
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+
+/* Styles for small devices (sm) */
+@media only screen and (max-width: 768px) {
+  /* Styles for small devices (sm) */
+  .AllButtons{
+      width:12px;
+      padding: 0px;
+      font-size: 10px;
+      height: 15px;
+  } 
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  /* Styles for medium devices (md) */
+  .AllButtons{
+      font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  /* Styles for large devices (lg) */
+  .AllButtons{
+      font-size: 18px;
+      height: 28px;
+
+  }
+}
+
+.trial-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.6);
+}
+
+.tiles-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.tile {
+  width: calc(25% - 30px); /* Ensures 4 tiles in a row with spacing */
+  min-width: 200px; /* Ensures a minimum width */
+  max-width: 300px; /* Ensures a maximum width */
+  height: 250px;
+  margin: 15px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tile:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.tile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.tile-image {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.tile-name {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+  .tile {
+    width: calc(33.33% - 30px); /* Adjusts for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .tile {
+    width: calc(50% - 30px); /* Adjusts for mobile screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .tile {
+    width: calc(100% - 30px); /* Adjusts for very small screens */
+  }
+}
+
+/* Coordinates */
+
+
+/* Thyroid */
+
+#Thyroidbtn1 {
+  top: 26%;
+  left: 32%; 
+  transform: translate(-50%, -50%);
+}
+
+#Thyroidbtn2 {
+  top: 55%;
+  left: 80%; 
+  transform: translate(-50%, -50%);
+}
+
+#Thyroidbtn3 {
+  top: 84%;
+  left: 35%; 
+  transform: translate(-50%, -50%);
+}
+
+#Thyroidbtn4 {
+  top: 35%;
+  left: 72.5%; 
+  transform: translate(-50%, -50%);
+}
+
+#Thyroidbtn5 {
+  top: 73%;
+  left: 37%; 
+  transform: translate(-50%, -50%);
+}
+
+#Thyroidbtn6 {
+  top: 48%;
+  left: 37%; 
+  transform: translate(-50%, -50%);
+}
+
+/* Adrenal Gland */
+
+#Adrenalbtn1 {
+  top: 15.8%;
+  right: 6.5%; 
+  transform: translate(-50%, -50%);
+}
+
+#Adrenalbtn2 {
+  top: 36%;
+  left: 51.2%; 
+  transform: translate(-50%, -50%);
+}
+
+#Adrenalbtn3 {
+  top: 55.9%;
+  left: 6.2%; 
+  transform: translate(-50%, -50%);
+}
+
+#Adrenalbtn4 {
+  top: 74%;
+  left: 92%; 
+  transform: translate(-50%, -50%);
+}
+
+#Adrenalbtn5 {
+  top: 86%;
+  left: 8%; 
+  transform: translate(-50%, -50%);
+}
+
+/* Kidney */
+
+#Medullabtn1 {
+  top: 12.5%;
+  left: 20%; 
+  transform: translate(-50%, -50%);
+}
+
+#Medullabtn2 {
+  top: 21%;
+  left: 51%; 
+  transform: translate(-50%, -50%);
+}
+
+#Medullabtn3 {
+  top: 46.33%;
+  left: 32%; 
+  transform: translate(-50%, -50%);
+}
+
+#Medullabtn4 {
+  top: 76%;
+  left: 74%; 
+  transform: translate(-50%, -50%);
+}
+
+
+#Cortexbtn1 {
+  top: 10%;
+  left: 41%; 
+  transform: translate(-50%, -50%);
+}
+
+#Cortexbtn2 {
+  top: 40%;
+  left: 22.7%; 
+  transform: translate(-50%, -50%);
+}
+
+#Cortexbtn3 {
+  top: 57%;
+  left: 63.6%; 
+  transform: translate(-50%, -50%);
+}
+
+#Cortexbtn4 {
+  top: 47.5%;
+  left: 11.6%; 
+  transform: translate(-50%, -50%);
+}
+
+#Cortexbtn5 {
+  top: 79.5%;
+  left: 48.5%; 
+  transform: translate(-50%, -50%);
+}
+
+#Cortexbtn6 {
+  top: 48%;
+  left: 37%; 
+  transform: translate(-50%, -50%);
 }

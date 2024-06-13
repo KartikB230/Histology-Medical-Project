@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import '../App.css'; // Import your CSS file
 import Navbar from './Navbar';
 
 function Thyroid() {
 
   const [buttonClicked, setButtonClicked] = useState(false);
 
-
-function openPopup1(imagePath, descriptionText, audioPath) {
+  function openPopup1(imagePath, descriptionText, audioPath) {
     // Reset the popup content
     resetPopup();
 
@@ -31,9 +29,9 @@ function openPopup1(imagePath, descriptionText, audioPath) {
 
     // Display the overlay
     document.getElementById('overlay').style.display = 'flex';
-}
+  }
 
-function resetPopup() {
+  function resetPopup() {
     // Reset the image source
     document.getElementById('popupImage').src = '';
     // Reset the description text
@@ -45,7 +43,7 @@ function resetPopup() {
     document.getElementById('popupImage').style.display = 'none';
     document.getElementById('popupInfo').style.display = 'none';
     document.getElementById('popupAudio').style.display = 'none';
-}
+  }
 
 
   // Function to close popup
@@ -58,53 +56,54 @@ function resetPopup() {
   }
 
 
-  // Toggle button visibility
+  // Toggle Button
+
   function toggleButtons() {
-    const buttonSet = document.getElementById('buttons');
-    buttonSet.style.display = buttonSet.style.display === 'none' ? 'block' : 'none';
+    document.querySelectorAll('.AllButtons').forEach(button => {    
+        button.style.display = button.style.display === 'none' ? 'block' : 'none';
+    });
     setButtonClicked(!buttonClicked); // Toggle the state of buttonClicked
-  }
+}
+
 
   return (
     <>
       <Navbar />
       <div className='box'>
-        <div class="heading">
-          <h1 style={{"margin":"10px"}}>Thyroid</h1><hr style={{"height":"10px"}}/>
+        <div className="heading">
+          <h1>Thyroid</h1>
         </div>
+        <hr style={{"height":"10px"}}/>
 
-        <div id="labels" className="labels">
-
-          <div className="img">
-            <img src="/assets/Images/Thyroid/Updated_thyroid.png" alt="Thyroid" />
-            <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={toggleButtons}>
-              {buttonClicked ? <img src="/assets/on.png" alt="afterClick" /> : <img src="/assets/off.png" alt="beforeClick" />}
-            </button>
-            <div className='description'>
-            <a href = '#' className="image-cell" onClick={() => openPopup1("/assets/Images/Thyroid/Thyroid Pencil diagram without labels.jpg")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}>
-              <strong><u>Click Here to view Pencil Diagram of Thyroid</u></strong>
-            </a>
-              <p>
-                The thyroid, or thyroid gland, is an endocrine gland in vertebrates. In humans, it is in the neck and consists of two connected lobes. The lower two thirds of
-                the lobes are connected by a thin band of tissue called the isthmus. The thyroid gland is a butterfly-shaped gland located in the neck below the Adam's apple.
-                Microscopically, the functional unit of the thyroid gland is the spherical thyroid follicle, lined with follicular cells (thyrocytes), and occasional
-                parafollicular cells that surround a lumen containing colloid.
-              </p>
-            </div>
-          </div>
-          <div id="buttons">
-            <button className="button1" data-tooltip="Follicles" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Thyroid/Connective_Tissue_Septa.png', 'Follicles are the basic structural units of the thyroid gland. Each lobule contains many closely packed follicles of different size and shapes. The size of the follicle is approximately 150-200 microns. Follicles are round to oval in shape and are lined by simple squamous or cuboidal epithelium. The follicles are filled with colloid. ', '/assets/Audios/Thyroid/Thyroid_Follicles.wav')}>1</button>
-            <button className="button2" data-tooltip="Connective Tissue septa" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Thyroid/Connective_Tissue_Septa.png', 'The gland shows a thin capsule. Thin septae extend from the capsule into the substance of the gland and divide it into lobules. ', '/assets/Audios/Thyroid/Connective_tissue_septa.wav')}>2</button>
-            <button className="button3" data-tooltip="Blood Vessels" data-popup="popup3" onClick={() => openPopup1('#', 'There is very little intralobular connective tissue (follicles are packed). The interlobular and intralobular connective tissue is thin and contains many capillaries.', '#')}>3</button>
-            <button className="button4" data-tooltip="Follicular cells (Simple cuboidal epithelium)" data-popup="popup4" onClick={() => openPopup1('/assets/Images/Thyroid/Follicular_cells.png', 'The lining epithelium of the follicles shows cuboidal cells which stain eosinophilic. These cells have a vesicular round nucleus. They constitute the principal secretory cells of thyroid which synthesize thyroglobulin.', '/assets/Audios/Thyroid/Follicular_cells.wav')}>4</button>
-            <button className="button5" data-tooltip="Parafollicular or C cells " data-popup="popup5" onClick={() => openPopup1('/assets/Images/Thyroid/Parafollicular_Cells.png', 'These cells constitute about 2% of the thyroid gland. The cells are called as clear cells because the cytoplasm is not stained. The cells are large and occur either singly or in groups of 2 or 3. They are usually situated between the basement membrane and the cubical epithelium. They secrete calcitonin.', '/assets/Audios/Thyroid/Parafollicular_cells.wav')}>5</button>
-            <button className="button6" data-tooltip="Colloid" data-popup="popup6" onClick={() => openPopup1('/assets/Images/Thyroid/Follicular_cells.png', 'The lumen of the thyroid follicle is large and contains colloid which is stained eosinophilic It is made of a glycoprotein complex, also known as thyroglobulin. The colloid stains with both acidic and basic dyes. It is strongly PAS positive. ', '/assets/Audios/Thyroid/Colloid.wav')}>6</button>
+        <div className="Container1" id="container1"> {/* Add id to the parent container */}
+          <div style={{ position: 'relative' }}> {/* Ensure relative positioning for parent container */}
+            
+            <img src="/assets/Images/Thyroid/Updated_thyroid.png" alt="Thyroid"/>
+            <button className="AllButtons" data-tooltip="Follicles" id="Thyroidbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Thyroid/Connective_Tissue_Septa.png', 'Follicles are the basic structural units of the thyroid gland. Each lobule contains many closely packed follicles of different size and shapes. The size of the follicle is approximately 150-200 microns. Follicles are round to oval in shape and are lined by simple squamous or cuboidal epithelium. The follicles are filled with colloid. ', '/assets/Audios/Thyroid/Thyroid_Follicles.wav')}>1</button>
+            <button className="AllButtons" data-tooltip="Connective Tissue septa" id="Thyroidbtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Thyroid/Connective_Tissue_Septa.png', 'The gland shows a thin capsule. Thin septae extend from the capsule into the substance of the gland and divide it into lobules. ', '/assets/Audios/Thyroid/Connective_tissue_septa.wav')}>2</button>
+            <button className="AllButtons" data-tooltip="Blood Vessels" id="Thyroidbtn3" data-popup="popup3" onClick={() => openPopup1('#', 'There is very little interlobular connective tissue (follicles are packed). The interlobular and intralobular connective tissue is thin and contains many capillaries. ', '#')}>3</button>
+            <button className="AllButtons" data-tooltip="Follicular cells (Simple cuboidal epithelium)" id="Thyroidbtn4" data-popup="popup4" onClick={() => openPopup1('/assets/Images/Thyroid/Follicular_cells.png', 'The lining epithelium of the follicles shows cuboidal cells which stain eosinophilic. These cells have a vesicular round nucleus. They constitute the principal secretory cells of thyroid which synthesize thyroglobulin. ', '/assets/Audios/Thyroid/Follicular_cells.wav')}>4</button>
+            <button className="AllButtons" data-tooltip="Parafollicular or C cells " id="Thyroidbtn5" data-popup="popup5" onClick={() => openPopup1('/assets/Images/Thyroid/Parafollicular_Cells.png', 'These cells constitute about 2% of the thyroid gland. The cells are called as clear cells because the cytoplasm is not stained. The cells are large and occur either singly or in groups of 2 or 3. They are usually situated between the basement membrane and the cubical epithelium. They secrete calcitonin.', '/assets/Audios/Thyroid/Parafollicular_cells.wav')}>5</button>
+            <button className="AllButtons" data-tooltip="Colloid" id="Thyroidbtn6" data-popup="popup6" onClick={() => openPopup1('/assets/Images/Thyroid/Follicular_cells.png', 'The lumen of the thyroid follicle is large and contains colloid which is stained eosinophilic It is made of a glycoprotein complex, also known as thyroglobulin. The colloid stains with both acidic and basic dyes. It is strongly PAS positive. ', '/assets/Audios/Thyroid/Colloid.wav')}>6</button> 
+          
           </div>
         </div>
 
+        <div className="Container2">
+          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Thyroid/Thyroid Pencil diagram without labels.jpg")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}><strong><u>Click Here to view Pencil Diagram of Thyroid</u></strong></a>
+          <p>
+            The thyroid, or thyroid gland, is an endocrine gland in vertebrates. In humans, it is in the neck and consists of two connected lobes. The lower two thirds of
+            the lobes are connected by a thin band of tissue called the isthmus. The thyroid gland is a butterfly-shaped gland located in the neck below the Adam's apple.
+            Microscopically, the functional unit of the thyroid gland is the spherical thyroid follicle, lined with follicular cells (thyrocytes), and occasional
+            parafollicular cells that surround a lumen containing colloid.
+          </p>
+        </div>
+        <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={toggleButtons}>
+              {buttonClicked ? <img src="/assets/on-1.png" alt="afterClick" /> : <img src="/assets/off-1.png" alt="beforeClick" />}
+            </button> 
 
         {/* < Pop-up overlay */}
-        <div id="overlay" class="overlay" >
+        <div id="overlay" className="overlay" >
           <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
           <div className="popup-content">
             <img id="popupImage" className="popup-image" src="" alt="Pop-up Image" />
@@ -112,7 +111,6 @@ function resetPopup() {
               <p id="popupInfo"></p>
             </div>
             <div className="audio-container">
-
               <audio controls id="popupAudio">
                 <source src="" type="audio/wav" />
                 Your browser does not support the audio element.
@@ -120,11 +118,9 @@ function resetPopup() {
             </div>
           </div>
         </div>
+
       </div>
     </>
   );
 }
 export default Thyroid;
-
-
-
