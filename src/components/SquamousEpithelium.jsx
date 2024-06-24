@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import Navbar from './Navbar.jsx' ;
+import { Cursor } from 'react-simple-typewriter';
 
 
 
