@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../App.css'; 
 import Navbar from './Navbar';
 
-const Trial = () => {
+const Epithelium = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const searchInputRef = useRef(null);
 
@@ -12,14 +12,13 @@ const Trial = () => {
   }, []);
 
   const tiles = [
-    { name: 'Squamous Epithelium', img: '/assets/Images/Squamous/Simple squamous pencil diagram button.png', link: '/SquamousEpithelium', keywords: [] },
-    { name: 'Thyroid', img: '/assets/Images/Thyroid/Updated_thyroid.png', link: '/Thyroid', keywords: [] },
-    { name: 'Medulla', img: '/assets/Images/Kidney/Medulla.jpg', link: '/Medulla', keywords: ['kidney'] },
-    { name: 'Cortex', img: '/assets/Images/Kidney/Cortex.png', link: '/Cortex', keywords: ['kidney'] },
-    { name: 'Adrenal Gland', img: '/assets/Images/Adrenal/Adrenal_Pencil.png', link: '/Adrenal', keywords: [] },
-    { name: 'Pituitary Gland', img: '/path/to/image6.jpg', link: '/Pituitary', keywords: [] },
-    { name: 'Cartilage', img: '/path/to/image7.jpg', link: '/Cartilage', keywords: []}, 
-    { name: 'Epithelium', img: '/assets/Images/Epithelium/Epithelium.jpg', link: '/Epithelium', keywords: []}
+    { name: 'Simple Cuboidal Epithelium', img: '/assets/Images/Epithelium/Simple Cuboidal Epithelium Pencil.png', link: '/SimpleCuboidalEpithelium', keywords: [] },
+    { name: 'Simple Columnar Epithelium', img: '/assets/Images/Epithelium/Simple Columnar Pencil.png', link: '/SimpleColumnarEpithelium', keywords: [] },
+    { name: 'Ciliated Columnar Epithelium', img: '/assets/Images/Epithelium/Ciliated Columnar Epithelium Pencil.jpg', link: '/CiliatedColumnarEpithelium', keywords: [] },
+    { name: 'Pseudostratified Epithelium', img: '/assets/Images/Epithelium/Pseudostratified Epithelium Pencil.jpg', link: '/PseudostratifiedEpithelium', keywords: [] },
+    { name: 'Transitional Epithelium', img: '/assets/Images/Epithelium/Transitional Epithelium Streched Pencil.jpg', link: '/TransitionalEpithelium', keywords: [] },
+    { name: 'Stratified Squamous Non-Keratinised Epithelium', img: '/assets/Images/Epithelium/Stratified Squamous Non-Keratinised Pencil.jpg', link: '/StratifiedSquamousNonKeratinisedEpithelium', keywords: [] },
+    { name: 'Stratified Squamous Keratinised Epithelium', img: '/assets/Images/Epithelium/Stratified Squamous Keratinised Epithelium Pencil.jpg', link: '/StratifiedSquamousKeratinisedEpithelium', keywords: [] }
   ];
 
   const filteredTiles = tiles.filter(tile =>
@@ -56,4 +55,4 @@ const Trial = () => {
   );
 }
 
-export default Trial;
+export default Epithelium;

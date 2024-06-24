@@ -11,6 +11,7 @@ import Adrenal from "./components/Adrenal";
 import Trial from './components/Trial';
 import Pituitary from './components/Pituitary';
 import Cartilage from './components/Cartilage';
+import Epithelium from "./components/Epithelium";
 
 
 function App() {
@@ -29,8 +30,9 @@ function App() {
             <Route path='/Adrenal' element={<Adrenal/>} />
             <Route path='/Cortex' element={<Cortex/>} />
             <Route path="/Trial" element={<Trial/>} />
-            <Route path="/Pituitary" component={Pituitary} />
-            <Route path="/Cartilage" component={Cartilage} />
+            <Route path="/Pituitary" element={<Pituitary/>} />
+            <Route path="/Cartilage" element={<Cartilage/>} />
+            <Route path="/Epithelium" element={<Epithelium/>} />
             
           </Routes>
          </div>

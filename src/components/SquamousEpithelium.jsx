@@ -74,7 +74,7 @@ function SquamousEpithelium() {
         {/* Information and audio on the right */}
         <div className="info-container">
           <div className="info-content">
-          <a className="image-cell" onClick={() => openPopup1("/assets/Images/Squamous/Simple squamous pencil diagram.jpg", 'Simple squamous epithelium consists of a single layer of flattened cells with a slight bulge in the center because of the presence of the nucleus. Endothelium of blood vessels and alveoli of lungs are lined by simple squamous epithelium', '/assets/Audios/Squamous/h1_76 squamous epithelium (1).wav')}>
+          <a className="image-cell" onClick={() => openPopup1("/assets/Images/Squamous/Simple squamous pencil diagram.png", 'Simple squamous epithelium consists of a single layer of flattened cells with a slight bulge in the center because of the presence of the nucleus. Endothelium of blood vessels and alveoli of lungs are lined by simple squamous epithelium', '/assets/Audios/Squamous/h1_76 squamous epithelium (1).wav')}>
               <strong><u>Click Here to view Pencil Diagram of Simple Squamous Epithelium</u></strong>
             </a>
             <p style={{"margin":"10px"}}>
