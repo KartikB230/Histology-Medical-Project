@@ -151,6 +151,12 @@
   z-index: 1005;
 }
 
+<<<<<<< Updated upstream
+=======
+
+
+/* Popup content styling */
+>>>>>>> Stashed changes
 .popup-content {
   text-align: center;
   color: aliceblue;
@@ -448,6 +454,7 @@
   margin: 30px;
 }
 
+<<<<<<< Updated upstream
 /* thyroid.css styles */
 .Container1 {
   position: relative;
@@ -778,3 +785,28 @@
   left: 37%; 
   transform: translate(-50%, -50%);
 }
+=======
+
+
+@media only screen and (max-width: 768px) {
+    .span{
+      position: absolute;
+      color: white;
+      te: left;
+      top: 42%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+      font-size: 50px;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+
+
+}
+
+@media only screen and (min-width: 993px) {
+  
+ 
+}
+>>>>>>> Stashed changes
