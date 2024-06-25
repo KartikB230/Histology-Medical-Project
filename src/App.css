@@ -151,12 +151,6 @@
   z-index: 1005;
 }
 
-<<<<<<< Updated upstream
-=======
-
-
-/* Popup content styling */
->>>>>>> Stashed changes
 .popup-content {
   text-align: center;
   color: aliceblue;
@@ -297,6 +291,7 @@
 .homediv {
   height: 100vh;
   overflow: hidden;
+  background-color: rgb(255, 192, 192);
   opacity: 0.6; /* This will hide any content that overflows the container */
 }
 
@@ -454,8 +449,6 @@
   margin: 30px;
 }
 
-<<<<<<< Updated upstream
-/* thyroid.css styles */
 .Container1 {
   position: relative;
   width: 100%;
@@ -785,7 +778,7 @@
   left: 37%; 
   transform: translate(-50%, -50%);
 }
-=======
+
 
 
 @media only screen and (max-width: 768px) {
@@ -809,4 +802,4 @@
   
  
 }
->>>>>>> Stashed changes
+

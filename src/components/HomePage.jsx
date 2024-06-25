@@ -1,11 +1,6 @@
 import React, { useRef } from 'react';
 import Navbar from './Navbar';
 import Home from './Home';
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
 import Footer from './Footer';
 import Carousel from './Carousel';
 
