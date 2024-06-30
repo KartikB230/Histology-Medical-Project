@@ -18,7 +18,7 @@ function SquamousEpithelium() {
         <div className= "Container1"  id="container1">
           <div style={{ position: 'relative' }}>
             <img src="/assets/Images/Squamous/simple_squamous_epithelium1.png" alt="SquamousEpithelium" />
-            <button className="AllButtons" data-tooltip="Squamous Cells" id="Squamousbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Squamous/Simple squamous pencil diagram.png', 'Simple squamous epithelium consists of a single layer of flattened cells with a slight bulge in the center because of the presence of the nucleus. Endothelium of blood vessels and alveoli of lungs are lined by simple squamous epithelium', '/assets/Audios/Squamous/h1_76 squamous epithelium (1).wav')}>1</button>
+            <button className="AllButtons" data-tooltip="Squamous Cells" id="Squamousbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Squamous/simple_squamous_epithelium_High_power1.png', 'Simple squamous epithelium consists of a single layer of flattened cells with a slight bulge in the center because of the presence of the nucleus. Endothelium of blood vessels and alveoli of lungs are lined by simple squamous epithelium', '/assets/Audios/Squamous/h1_76 squamous epithelium (1).wav')}>1</button>
           </div>
         </div>
 
@@ -36,7 +36,7 @@ function SquamousEpithelium() {
               />
         </div>
 
-        <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={toggleButtons}>
+        <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
           {buttonClicked ? <img src="/assets/on-1.png" alt="afterClick" /> : <img src="/assets/off-1.png" alt="beforeClick" />}
         </button>
 
