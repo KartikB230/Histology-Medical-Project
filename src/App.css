@@ -73,10 +73,10 @@
 .imgg {
   display: block;
   margin: auto;
-  max-width: 100%; /* Adjust the maximum width as needed */
-  max-height: 100vh; /* Adjust the maximum height as needed */
+  max-width: 100%; 
+  max-height: 100vh; 
   width: auto;
-  height: auto; /* Allow the image to maintain its aspect ratio */
+  height: auto; 
 }
 
 .content-container {
@@ -483,7 +483,206 @@
   height: 100%;
   margin-top: 1%;
   margin-bottom: -1%;
+  position: relative; /* Add this to allow absolute positioning */
 }
+
+.heading img {
+  height: 40px;
+  width: 40px;
+  position: absolute; /* Position the image absolutely */
+  left: 00; /* Align the image to the left */
+  top: 50%; /* Center the image vertically */
+  transform: translateY(-60%); /* Adjust for proper centering */
+  margin-left: 2%;
+}
+
+
+/* Simple Cuboidal Epithelium*/
+
+.tab-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 50px; 
+}
+
+.tab-button {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #ddd;
+  width: 40%;
+  height: 90px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.tab-button:hover {
+  background-color: rgb(205, 117, 117);
+  border-color: #aaa;
+}
+
+.tab-button:focus {
+  outline: none;
+  border-color: #555;
+}
+
+.tab-button:active {
+  background-color: #ddd;
+  border-color: #888;
+}
+
+.tab-button.active {
+  background-color: #3498db; /* Active tab background */
+  color: #fff; /* Active tab text color */
+  border-color: #3498db; /* Active tab border color */
+}
+
+/* Styles for the content inside each tab */
+.content {
+  padding: 20px;
+}
+
+.epithelium-container {
+  padding: 30px;
+  font-family: 'Roboto', sans-serif;
+  background: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+  max-width: 100%;
+  margin: 20px auto;
+}
+
+.epithelium-title {
+  font-size: 40px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
+.epithelium-list {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  color: #34495e;
+}
+
+.epithelium-list li {
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.epithelium-text {
+  font-size: 18px;
+  color: #34495e;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+
+.epithelium-image-box {
+  background: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  /* padding: 0px; */
+  flex: 1;
+  margin: 0 0 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* .epithelium-image-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+} */
+
+.epithelium-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Quiz Styling */
+
+.quiz-content {
+  padding: 20px;
+}
+
+.quiz-question {
+  margin-bottom: 20px;
+}
+
+.quiz-question p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.quiz-question label {
+  display: block;
+  margin: 5px 0;
+}
+
+.quiz-button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .epithelium-container {
+      padding: 20px;
+  }
+
+  .epithelium-title {
+      font-size: 24px;
+  }
+
+  .epithelium-list li,
+  .epithelium-text {
+      font-size: 16px;
+  }
+
+  .epithelium-image-box{
+      padding: 10px;
+  }
+
+  .epithelium-image-box {
+      margin: 10px 0;
+  }
+}
+.image-1
+{
+  /* max-height: 500px;
+  max-width: 500px;
+  margin-top: 70px; */
+  height: auto;
+  width: auto;
+}
+.image-2
+{
+  /* max-height: 200px;
+  max-width: 750px;
+  margin-top: 70px; */
+  height: auto;
+  width: auto;
+}
+.image-3
+{
+  height: auto;
+  width: auto;
+}
+
 
 
 
@@ -645,6 +844,14 @@
 
 /* Coordinates */
 
+/* Squamous */
+
+#Squamousbtn1
+{
+  top: 31%;
+  left: 38.5%; 
+  transform: translate(-50%, -50%);
+}
 
 /* Thyroid */
 
@@ -779,13 +986,59 @@
   transform: translate(-50%, -50%);
 }
 
+/* Simple Cuboidal Epithelium */
 
+#Cuboidalbtn1
+{
+  top: 29%;
+  left: 75%;
+}
+
+/* Simple Columnar Epithelium */
+
+#Columnarbtn1
+{
+  top: 9%;
+  left: 53%;
+}
+
+/* Pseudostratified Epithelium */
+
+#Pseudobtn1
+{
+  top: 45%;
+  left: 68.5%;
+}
+
+/* Transitional Epithelium */
+
+#Transitionalbtn1
+{
+  top: 35%;
+  left: 65.5%;
+}
+
+/* Stratified Squamous Keratinised Epithelium */
+
+#Keratinisedbtn1
+{
+  top: 48%;
+  left: 56%;
+}
+
+/* Stratified Squamous Non-Keratinised Epithelium */
+
+#NonKeratinisedbtn1
+{
+  top: 22%;
+  left: 72%;
+}
 
 @media only screen and (max-width: 768px) {
     .span{
       position: absolute;
       color: white;
-      te: left;
+      /* te: left; */
       top: 42%;
       left: 40%;
       transform: translate(-50%, -50%);

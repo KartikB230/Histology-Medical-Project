@@ -12,6 +12,12 @@ import Trial from './components/Trial';
 import Pituitary from './components/Pituitary';
 import Cartilage from './components/Cartilage';
 import Epithelium from "./components/Epithelium";
+import SimpleCuboidalEpithelium from "./components/SimpleCuboidalEpithelium";
+import SimpleColumnarEpithelium from "./components/SimpleColumnarEpithelium";
+import PseudostratifiedEpithelium from "./components/PseudostratifiedEpithelium";
+import TransitionalEpithelium from "./components/TransitionalEpithelium";
+import StratifiedSquamousKeratinisedEpithelium from "./components/StratifiedSquamousKeratinisedEpithelium"
+import StratifiedSquamousNonKeratinisedEpithelium from "./components/StratifiedSquamousNonKeratinisedEpithelium";
 
 
 function App() {
@@ -33,7 +39,12 @@ function App() {
             <Route path="/Pituitary" element={<Pituitary/>} />
             <Route path="/Cartilage" element={<Cartilage/>} />
             <Route path="/Epithelium" element={<Epithelium/>} />
-            
+            <Route path="/SimpleCuboidalEpithelium" element={<SimpleCuboidalEpithelium/>}/>
+            <Route path="/SimpleColumnarEpithelium" element = {<SimpleColumnarEpithelium/>}/>
+            <Route path="/PseudostratifiedEpithelium" element = {<PseudostratifiedEpithelium/>}/>
+            <Route path="/TransitionalEpithelium" element = {<TransitionalEpithelium/>}/>
+            <Route path="/StratifiedSquamousKeratinisedEpithelium" element = {<StratifiedSquamousKeratinisedEpithelium/>}/>
+            <Route path="/StratifiedSquamousNonKeratinisedEpithelium" element = {<StratifiedSquamousNonKeratinisedEpithelium/>}/>
           </Routes>
          </div>
          
