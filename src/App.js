@@ -53,6 +53,7 @@ function App() {
           <div>
             <Routes>
               <Route path='/' element={<LoginPage/>} />
+              <Route path='/home' element={<HomePage/>} />
               <Route path='/SquamousEpithelium' element={<SquamousEpithelium/>} />
               <Route path='/Thyroid' element={<Thyroid/>} />
               <Route path='/Medulla' element={<Medulla/>} />
