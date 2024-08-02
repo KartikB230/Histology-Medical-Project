@@ -60,9 +60,7 @@ function LoginPage() {
         </form>
       </div>
       <div className="welcome-section">
-        <h1>Hey!</h1>
-        <h1>Welcome Back</h1>
-       
+        <h1 style={{ color: 'white', fontSize: '60px', marginBottom:"10px" }}>SymbiAnatomy.</h1>
       </div>
     </div>
   );

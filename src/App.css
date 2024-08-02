@@ -1144,9 +1144,9 @@
 
 .toggle-password {
   position: absolute;
-  margin-left: 5%;
   right: 0px;
-  bottom: 15.5px;
+  top: 37%;
+  transform: translateY(-50%);
   background: none;
   border: none;
   cursor: pointer;
@@ -1209,4 +1209,57 @@
 .welcome-section h1 {
   margin: 0;
   font-size: 48px;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .welcome-section {
+    display: none;
+  }
+
+  .login-form {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .login-form form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-form {
+    width: 90%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+  }
+
+  .login-form h2 {
+    font-size: 20px;
+  }
+
+  .login-form button {
+    font-size: 14px;
+  }
+
+  .login-form p {
+    font-size: 14px;
+  }
+
+  .login-form a {
+    font-size: 14px;
+  }
 }
