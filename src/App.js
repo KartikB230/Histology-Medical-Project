@@ -23,30 +23,46 @@ import LoginPage from "./components/LoginPage";
 
 function App() {
   const [loading, setLoading] = useState(false);
-    
+  const [loaderSize, setLoaderSize] = useState(30);
+
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 3000);
   }, []);
-  
+
+  useEffect(() => {
+    const updateLoaderSize = () => {
+      const width = window.innerWidth;
+      if (width < 600) {
+        setLoaderSize(15);
+      } else if (width < 900) {
+        setLoaderSize(20);
+      } else {
+        setLoaderSize(30);
+      }
+    };
+
+    updateLoaderSize();
+    window.addEventListener("resize", updateLoaderSize);
+    return () => window.removeEventListener("resize", updateLoaderSize);
+  }, []);
+
   return (
     <div>
       {loading ? (
         <div className="Loader">
-
-          <div style={{ color: 'white', fontSize: '60px',marginLeft: "0px", marginBottom:"40px" }}>
+          <div className="title">
             <strong>SymbiAnatomy</strong>
           </div>
-          <div stye>
+          <div className="spinner">
             <PropagateLoader
               color={'rgb(255, 210, 210)'}
               loading={loading}
-              size={30}
+              size={loaderSize}
             />
           </div>
-
         </div>
       ) : (
         <BrowserRouter>

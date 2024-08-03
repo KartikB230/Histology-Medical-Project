@@ -14,8 +14,25 @@
   position: fixed; /* Fix loader in viewport */
   top: 0;
   left: 0;
-  
 }
+
+.Loader .title {
+  color: white;
+  
+  font-size: 7vw; /* Responsive font size based on viewport width */
+ 
+  margin-bottom: 5vh; /* Responsive bottom margin based on viewport height */
+  text-align: center;
+}
+
+.Loader .spinner {
+  display: flex;
+  margin-right: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 
 
