@@ -24,10 +24,10 @@ const Navbar = ({ scrollToCarousel }) => {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/" style={{ color: 'white', fontSize: '20px' }}>Home</Link>
+              <Link className="nav-link active" aria-current="page" to="/home" style={{ color: 'white', fontSize: '20px' }}>Home</Link>
             </li>
             <li className="nav-item">
-              <Link onClick={scrollToCarousel} className="nav-link" to="/" style={{ color: 'white', fontSize: '20px' }}>Features</Link>
+              <Link onClick={scrollToCarousel} className="nav-link" to="/home" style={{ color: 'white', fontSize: '20px' }}>Features</Link>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" style={{ 'color': 'white', 'fontSize': '20px' }}>Contact</a>
