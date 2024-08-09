@@ -18,6 +18,8 @@ import PseudostratifiedEpithelium from "./components/PseudostratifiedEpithelium"
 import TransitionalEpithelium from "./components/TransitionalEpithelium";
 import StratifiedSquamousKeratinisedEpithelium from "./components/StratifiedSquamousKeratinisedEpithelium"
 import StratifiedSquamousNonKeratinisedEpithelium from "./components/StratifiedSquamousNonKeratinisedEpithelium";
+import LoginPage from "./components/LoginPage";
+
 
 
 function App() {
@@ -45,6 +47,7 @@ function App() {
             <Route path="/TransitionalEpithelium" element = {<TransitionalEpithelium/>}/>
             <Route path="/StratifiedSquamousKeratinisedEpithelium" element = {<StratifiedSquamousKeratinisedEpithelium/>}/>
             <Route path="/StratifiedSquamousNonKeratinisedEpithelium" element = {<StratifiedSquamousNonKeratinisedEpithelium/>}/>
+            <Route path="/LoginPage" element = {<LoginPage/>}/>
           </Routes>
          </div>
          

@@ -152,7 +152,7 @@
 }
 
 .popup-content {
-  text-align: center;
+  text-align: left;
   color: aliceblue;
   padding: 20px;
   overflow-y: auto;
@@ -212,6 +212,9 @@
 }
 
 
+
+
+
 .image-description,
 .info-container {
   text-align: center;
@@ -225,6 +228,7 @@
 
 .popup-image {
   max-width: 100%;
+  position: relative;
   max-height: 75vh;
   object-fit: contain;
   margin: 0 auto; /* Center the image horizontally */
@@ -466,7 +470,8 @@
 }
 
 
-.Container1 .AllButtons {
+.Container1 .AllButtons,
+.overlay .AllButtons {
     position: absolute;
     color: white;
     background-color: rgba(0,0,0,1);
@@ -476,6 +481,9 @@
     z-index: 1; 
     transition: background-color 0.3s ease;
 }
+
+
+
 .heading {
   display: flex;
   align-items: center;
@@ -569,19 +577,19 @@
 }
 
 .epithelium-list {
-  margin-left: 20px;
+  margin-left: 0px;
   margin-bottom: 20px;
   color: #34495e;
 }
 
 .epithelium-list li {
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.5;
 }
 
 .epithelium-text {
-  font-size: 18px;
+  font-size: 25px;
   color: #34495e;
   line-height: 1.8;
   margin-bottom: 15px;
@@ -589,27 +597,80 @@
 }
 
 
+
 .epithelium-image-box {
   background: #f5f5f5;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-  /* padding: 0px; */
   flex: 1;
   margin: 0 0 20px;
-  text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 1.5;
 }
-
-/* .epithelium-image-box:hover {
-  transform: scale(1.05);
+/* 
+.epithelium-image-box:hover {
+  transform: scale(1.02);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-} */
+}  */
 
 .epithelium-image {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
 }
+
+.epithelium-image.image-2 {
+  max-height: 200px;
+  max-width: 700px;
+  height: auto;
+  width: auto;
+}
+
+.epithelium-image.image-1,
+.epithelium-image.image-2 {
+  margin-right: 150px;
+  margin-bottom: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .epithelium-image-box {
+    margin-right: 0;
+  }
+
+  .epithelium-image.image-2 {
+    max-width: 100%;
+    max-height: 150px;
+  }
+
+  .epithelium-image.image-1,
+  .epithelium-image.image-2 {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .epithelium-image-box {
+    margin-right: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  .epithelium-image.image-2 {
+    max-width: 100%;
+    max-height: 100px;
+  }
+
+  .epithelium-image.image-1,
+  .epithelium-image.image-2 {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
 
 /* Quiz Styling */
 
@@ -718,7 +779,7 @@
 /* Styles for small devices (sm) */
 @media only screen and (max-width: 768px) {
   /* Styles for small devices (sm) */
-  .AllButtons{
+  .Container1 .AllButtons{
       width:12px;
       padding: 0px;
       font-size: 10px;
@@ -728,14 +789,14 @@
 
 @media only screen and (min-width: 769px) and (max-width: 992px) {
   /* Styles for medium devices (md) */
-  .AllButtons{
+.Container1 .AllButtons{
       font-size: 15px;
   }
 }
 
 @media only screen and (min-width: 993px) {
   /* Styles for large devices (lg) */
-  .AllButtons{
+.Container1 .AllButtons{
       font-size: 18px;
       height: 28px;
 
@@ -1034,6 +1095,72 @@
   left: 72%;
 }
 
+
+/* Pituitary Gland */
+
+#Pituitarybtn1 {
+  top: 25%;
+  left: 19%; 
+  transform: translate(-50%, -50%);
+}
+
+#Pituitarybtn2 {
+  top: 53%;
+  left: 60%; 
+  transform: translate(-50%, -50%);
+}
+
+#Pituitarybtn3 {
+  top: 25%;
+  left: 83%; 
+
+  transform: translate(-50%, -50%);
+}
+
+#Pituitarybtn4 {
+  top: 39%;
+  left: 95%; 
+  transform: translate(-50%, -50%);
+}
+
+#Pituitarybtn5 {
+  top: 52%;
+  left: 87%; 
+  transform: translate(-50%, -50%);
+}
+
+#Pituitarybtn6 {
+  top: 64%;
+  left: 87%; 
+  transform: translate(-50%, -50%);
+}
+
+
+{
+  border: 2px solid red;
+}
+
+#Pituitarybtn7 {
+  top: 24%;
+  left: 67%;
+}
+
+#Pituitarybtn8 {
+  top: 52%;
+  left: 37%;
+}
+
+#Pituitarybtn9 {
+  top: 40%;
+  left: 55%;
+}
+#Pituitarybtn7, #Pituitarybtn8, #Pituitarybtn9 {
+  position: absolute; 
+  transform: translate(-50%, -50%);
+}
+
+
+
 @media only screen and (max-width: 768px) {
     .span{
       position: absolute;
@@ -1044,6 +1171,7 @@
       transform: translate(-50%, -50%);
       font-size: 50px;
     }
+    
 }
 
 @media only screen and (min-width: 769px) and (max-width: 992px) {

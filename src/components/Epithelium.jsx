@@ -17,12 +17,13 @@ const Epithelium = () => {
   }, [activeTab]);
 
   const tiles = [
-    { name: 'Simple Cuboidal Epithelium', img: '/assets/Images/Epithelium/Simple Cuboidal Epithelium Pencil.png', link: '/SimpleCuboidalEpithelium', keywords: ['cuboidal', 'simple', 'epithelium'] },
-    { name: 'Simple Columnar Epithelium', img: '/assets/Images/Epithelium/Simple Columnar Pencil.png', link: '/SimpleColumnarEpithelium', keywords: ['columnar', 'simple', 'epithelium'] },
-    { name: 'Pseudostratified Epithelium', img: '/assets/Images/Epithelium/Pseudostratified Epithelium Pencil.jpg', link: '/PseudostratifiedEpithelium', keywords: ['pseudostratified', 'epithelium'] },
-    { name: 'Transitional Epithelium', img: '/assets/Images/Epithelium/Transitional Epithelium Streched Pencil.jpg', link: '/TransitionalEpithelium', keywords: ['transitional', 'epithelium'] },
-    { name: 'Stratified Squamous Keratinised Epithelium', img: '/assets/Images/Epithelium/Stratified Squamous Keratinised Epithelium Pencil.jpg', link: '/StratifiedSquamousKeratinisedEpithelium', keywords: ['stratified', 'squamous', 'keratinised', 'epithelium'] },
-    { name: 'Stratified Squamous Non-Keratinised Epithelium', img: '/assets/Images/Epithelium/Stratified Squamous Non-Keratinised Pencil.jpg', link: '/StratifiedSquamousNonKeratinisedEpithelium', keywords: ['stratified', 'squamous', 'non-keratinised', 'epithelium'] }
+    { name: 'Simple Squamous Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Squamous _low.jpeg', link: '/SquamousEpithelium', keywords: [] },
+    { name: 'Simple Cuboidal Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Cuboidal_low.jpeg', link: '/SimpleCuboidalEpithelium', keywords: ['cuboidal', 'simple', 'epithelium'] },
+    { name: 'Simple Columnar Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Columnar_low.jpeg', link: '/SimpleColumnarEpithelium', keywords: ['columnar', 'simple', 'epithelium'] },
+    { name: 'Pseudostratified Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Pseudo _low.jpg', link: '/PseudostratifiedEpithelium', keywords: ['pseudostratified', 'epithelium'] },
+    { name: 'Transitional Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Trans_low.jpeg', link: '/TransitionalEpithelium', keywords: ['transitional', 'epithelium'] },
+    { name: 'Stratified Squamous Keratinised Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Strat_ker_low.jpeg', link: '/StratifiedSquamousKeratinisedEpithelium', keywords: ['stratified', 'squamous', 'keratinised', 'epithelium'] },
+    { name: 'Stratified Squamous Non-Keratinised Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Strat_non_ker_low.jpg', link: '/StratifiedSquamousNonKeratinisedEpithelium', keywords: ['stratified', 'squamous', 'non-keratinised', 'epithelium'] }
   ];
 
   const filteredTiles = tiles.filter(tile =>
@@ -69,8 +70,9 @@ const Epithelium = () => {
       case 'Theory':
         return (
           <div className="epithelium-container">
+            <div className='epithelium-image-box'>
             <h2 className="epithelium-title">Specific Learning Objectives</h2>
-            <ul className="epithelium-list">
+            <ol className="epithelium-list">
               <li>Define epithelial tissue.</li>
               <li>Enumerate the common features of epithelial tissue.</li>
               <li>Enlist the functions of epithelial tissue.</li>
@@ -78,34 +80,42 @@ const Epithelium = () => {
               <li>Differentiate between Cilia, Stereocilia, and Microvilli.</li>
               <li>Differentiate between Basal membrane and Basal Lamina.</li>
               <li>Identify various types of epithelia under a light microscope.</li>
-            </ul>
+            </ol>
+            </div>
+            
+            <div className='epithelium-image-box'>
             <h2 className="epithelium-title">Introduction</h2>
-            <ol className="epithelium-list">
+            <ul className="epithelium-list">
               <li>Epithelial tissue forms the lining of general body surfaces, passages and cavities within the body.</li>
               <li>The tissue is composed of closely packed cells which are adherent to each other through junctional complexes of various kinds.</li>
               <li>Basement membrane connects the epithelium to the underlying subepithelial tissues.</li>
               <li>The important functions of the tissue include protection, absorption, secretion, excretion, sensory perception, chemoreception, prevention of wear and tear and conservation of moisture.</li>
               <li>Classification of epithelial tissue is based on the shape of cells, number of cell layers and special modifications seen on cells.</li>
               <li>Individual epithelial cells or groups of such cells which are specialised to secrete specific products are called Glands</li>
-            </ol>
-            <div className="epithelium-image-box">
-              <img src="/assets/Images/Epithelium/Diagram1.png" alt="Image 1" className="epithelium-image image-1" />
-              <p className="epithelium-text">
-                <strong>Various cells attached to each other with various types of cell junctions - Zona Occludens, Zona Adherens, Macula Adherens and Gap Junctions.</strong>
-              </p>
+            </ul>
             </div>
-            <div className="epithelium-image-box">
+            
+
+          
+            <div className="epithelium-image-box" >
+              <img src="/assets/Images/Epithelium/Diagram1.png" alt="Image 1" className="epithelium-image image-1" />
               <img src="/assets/Images/Epithelium/Diagram2.png" alt="Image 2" className="epithelium-image image-2" />
-              <p className="epithelium-text">
-                <strong>The cells of epithelium rest on the basement membrane.</strong>
-              </p>
+              <ul className="epithelium-list">
+                <strong>
+                <li>Various cells attached to each other with various types of cell junctions - Zona Occludens, Zona Adherens, Macula Adherens and Gap Junctions.</li>
+                <li>The basic function of every epithelium is protection.</li>
+                <li>The cells of epithelium rest on basement membrane.</li>
+                </strong>
+              </ul>
+            </div>
+            
+            
+            <div className="epithelium-image-box">
+            <h2 className="epithelium-title">Modifications of Epithelial Cells</h2>
+              <img src="/assets/Images/Epithelium/Diagram4.jpg" alt="Image 4" className="epithelium-image image-4" />
             </div>
             <div className="epithelium-image-box">
               <img src="/assets/Images/Epithelium/Diagram3.jpg" alt="Image 3" className="epithelium-image image-3" />
-            </div>
-            <h2 className="epithelium-title">Modifications of Epithelial Cells</h2>
-            <div className="epithelium-image-box">
-              <img src="/assets/Images/Epithelium/Diagram4.jpg" alt="Image 4" className="epithelium-image image-4" />
             </div>
           </div>
         );

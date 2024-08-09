@@ -1,6 +1,4 @@
-
-
-export function openPopup1(imagePath, descriptionText, audioPath) {
+export function openPopup1(imagePath, descriptionText, audioPath, showButtons=false) {
   resetPopup();
 
   if (imagePath && imagePath !== '#') {
@@ -18,6 +16,12 @@ export function openPopup1(imagePath, descriptionText, audioPath) {
     document.getElementById('popupAudio').style.display = 'block';
   }
 
+  if (showButtons) {
+    document.getElementById('additionalButtons').style.display = 'block';
+  } else {
+    document.getElementById('additionalButtons').style.display = 'none';
+  }
+
   document.getElementById('overlay').style.display = 'flex';
 }
 
@@ -29,11 +33,24 @@ export function resetPopup() {
   document.getElementById('popupImage').style.display = 'none';
   document.getElementById('popupInfo').style.display = 'none';
   document.getElementById('popupAudio').style.display = 'none';
+  document.getElementById('additionalButtons').style.display = 'none';
 }
 
 export function closePopup() {
-  document.getElementById('overlay').style.display = 'none';
-  document.getElementById('popupAudio').pause();
+  const overlay = document.getElementById('overlay');
+  const popupAudio = document.getElementById('popupAudio');
+
+  if (overlay) {
+    overlay.style.display = 'none';
+  } else {
+    console.warn("Overlay element not found.");
+  }
+
+  if (popupAudio) {
+    popupAudio.pause();
+  } else {
+    console.warn("Popup audio element not found.");
+  }
 }
 
 export function toggleButtons(buttonClicked, setButtonClicked) {

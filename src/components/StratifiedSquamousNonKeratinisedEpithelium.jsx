@@ -25,9 +25,9 @@ function StratifiedSquamousNonKeratinisedEpithelium() {
           <ul className='epithelium-list' style={{ marginTop: '40px' }}>
           <li>It is made up of many cell layers.</li>
           <li>There is a basal columnar cell layer, above which,  are cuboidal or polyhedral cells. As we proceed towards the surface, the cells get more and more flat. The superficial layer is made up of flat squamous cells.</li>
-          <li><strong>Stratified Squamous Keratinised Epithelium – </strong>It has a layer of keratin(dead cells) above the cell   layers. The superficial cells die, loose their nuclei and form keratin.</li>
+          <li><strong>Stratified Squamous Keratinised Epithelium - </strong>It has a layer of keratin(dead cells) above the cell   layers. The superficial cells die, loose their nuclei and form keratin.</li>
           <li>Present at places where there is friction, constant wear and tear going on.</li>
-          <li>Example – Skin</li>
+          <li>Example - Skin</li>
 
           </ul>
         </p>
@@ -48,6 +48,7 @@ function StratifiedSquamousNonKeratinisedEpithelium() {
                 Your browser does not support the audio element.
               </audio>
             </div>
+            <div id="additionalButtons" className="additional-buttons"></div>
           </div>
         </div>
       </div>

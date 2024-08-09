@@ -52,6 +52,7 @@ function PseudostratifiedEpithelium() {
                 Your browser does not support the audio element.
               </audio>
             </div>
+            <div id="additionalButtons" className="additional-buttons"></div>
           </div>
         </div>
       </div>
