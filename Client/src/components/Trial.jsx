@@ -26,7 +26,7 @@ const Trial = () => {
       onClick: toggleKidneyDetails
     },
     { name: 'Adrenal Gland', img: '/assets/Images/Adrenal/Adrenal_Gland.png', link: '/Adrenal', keywords: [] },
-    { name: 'Pituitary Gland', img: '/assets/Images/Pitutary/Pituitary Low Magnification.png', link: '/Pituitary', keywords: [] },
+    { name: 'Pituitary Gland', img: '/assets/Images/Pituitary/Pituitary Low Magnification.png', link: '/Pituitary', keywords: [] },
     // { name: 'Cartilage', img: '/path/to/image7.jpg', link: '/Cartilage', keywords: [] },
     { name: 'Epithelium', img: '/assets/Images/Epithelium/Epithelium.jpg', link: '/Epithelium', keywords: ['Simple Squamous Epithelium','Simple Cuboidal Epithelium','Simple Columnar Epithelium','Pseudostratified Epithelium', 'Transitional Epithelium', 'Stratified Squamous Keratinised Epithelium', 'Stratified Squamous Non-Keratinised Epithelium']}
   ];
