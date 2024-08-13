@@ -33,31 +33,8 @@ const Navbar = ({ scrollToCarousel }) => {
               <a class="nav-link" href="#" style={{ 'color': 'white', 'fontSize': '20px' }}>Contact</a>
             </li>
             <li class="nav-item">
-            <Link onClick={scrollToCarousel} className="nav-link" to="/Trial" style={{ color: 'white', fontSize: '20px' }}>Trial</Link>
+            <Link onClick={scrollToCarousel} className="nav-link" to="/Trial" style={{ color: 'white', fontSize: '20px' }}>Learning</Link>
             </li>
-
-
-              <li class="nav-item dropdown">
-                <a style={{ 'color': 'white', 'fontSize': '20px' }} class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Learning
-                </a>
-                <ul class="dropdown-menu">
-                  <li><Link class="dropdown-item" to='/SquamousEpithelium' style={{ 'color': 'rgb(205, 117, 117)', "cursor": "pointer", 'fontSize': '20px' }}>Squamous Epithelium</Link></li>
-                  <li><Link class="dropdown-item" to='/Thyroid' style={{ 'color': 'rgb(205, 117, 117)', "cursor": "pointer", 'fontSize': '20px' }}>Thyroid</Link></li>
-                  <li className="dropdown-submenu">
-                    <a class="dropdown-item" style={{ 'color': 'rgb(205, 117, 117)', "cursor": "pointer", 'fontSize': '20px' }}>Kidney</a>
-                    <ul className="dropdown-menu" >
-                      <li ><Link class="dropdown-item" to="/Medulla" style={{ 'color': 'rgb(205, 117, 117)', "cursor": "pointer", 'fontSize': '20px' }}>Medulla</Link></li>
-                      <li><Link class="dropdown-item" to="/Cortex" style={{ 'color': 'rgb(205, 117, 117)', "cursor": "pointer", 'fontSize': '20px' }}>Cortex</Link></li>
-                    </ul>
-                  </li>
-                  <li><Link class="dropdown-item" to='/Adrenal' style={{ 'color': 'rgb(205, 117, 117)', "cursor": "pointer", 'fontSize': '20px' }}>Adrenal Gland</Link></li>
-                  <li><Link class="dropdown-item" to='/Pituitary' style={{ 'color': 'rgb(205, 117, 117)', "cursor": "pointer", 'fontSize': '20px' }}>Pitiutary Gland</Link></li>
-                  <li><Link class="dropdown-item" to='/Cartilage' style={{ 'color': 'rgb(205, 117, 117)', "cursor": "pointer", 'fontSize': '20px' }}>Cartilage</Link></li>
-
-                </ul>
-
-              </li>
 
             </ul>
           </div>

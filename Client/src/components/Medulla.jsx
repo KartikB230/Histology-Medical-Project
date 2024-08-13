@@ -26,6 +26,7 @@ function Medulla() {
         </div>
 
         <div className="Container2">
+        <a href='#' className="image-cell"  style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}><strong><u>Click Here to view Pencil Diagram of Kidney</u></strong></a>
           <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Kidney/Kidney_Panaromic.png")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}><strong><u>Click Here to view Panaromic view of Kidney</u></strong></a>
           <p>
             <strong>Medulla -</strong> It is the lighter coloured, inner part of the kidney. The medulla has a striated appearance due to the presence of straight portions of the descending limb and ascending limb, loops of Henle, and lower parts of collecting tubules. The areas between adjacent pyramids are called the Renal Columns of Bertini. Renal columns are continuation of the cortex into the medulla.

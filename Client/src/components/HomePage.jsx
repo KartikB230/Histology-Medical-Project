@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import Navbar from './Navbar';
 import Home from './Home';
 import Footer from './Footer';
-import Carousel from './Carousel';
+// import Carousel from './Carousel';
 
 function HomePage() {
     const carouselRef = useRef(null);
@@ -21,7 +21,7 @@ function HomePage() {
             <Navbar scrollToCarousel={scrollToCarousel} />
             <Home />
             <div ref={carouselRef}>
-                <Carousel />
+                {/* <Carousel /> */}
             </div>
             
         </div>

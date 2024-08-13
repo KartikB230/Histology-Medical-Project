@@ -114,6 +114,7 @@ const Epithelium = () => {
             <h2 className="epithelium-title">Modifications of Epithelial Cells</h2>
               <img src="/assets/Images/Epithelium/Diagram4.jpg" alt="Image 4" className="epithelium-image image-4" />
             </div>
+           <br/>
             <div className="epithelium-image-box">
               <img src="/assets/Images/Epithelium/Diagram3.jpg" alt="Image 3" className="epithelium-image image-3" />
             </div>

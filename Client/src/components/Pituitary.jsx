@@ -63,24 +63,25 @@ function Pituitary() {
             <button className="AllButtons" data-tooltip="Pars Nervosa" id="Pituitarybtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Pituitary/Pars Nervosa.png', 'The Hypothalamo-hypophyseal tract comprises of non-myelinated nerve fibres which extend from their cell bodies located in the supraoptic and paraventricular nuclei of hypothalamus to the hypophysis cerebri (pituitary gland). <br/>The supraoptic nucleus of hypothalamus produces Anti-diuretic Hormone while the paraventricular nucleus produces Oxytonin hormone. <br/>These hormones are termed neurosecretions.The secretions get accumulated at the terminal, bulb like enlargements called as Herring bodies, which cannot be identified in a Haematoxylin-Eosin stained slide.', '#')}>1</button>
             <button className="AllButtons" data-tooltip="Pars Intermedia" id="Pituitarybtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Pituitary/Pars Intermedia.png', 'The Pars Intermedia is rudimentary in human beings. <br/>It consists of colloid filled vesicles which are remnants of Rathke’s pouch. <br/>The vesicles are lined by low columnar basophilic epithelium. <br/>The vesicles contain an eosinophilic colloid of unknown function. <br/>In animals, Pars Intermedia is well developed and contains special type of Basophils called Melanotropes which secrete Melanotropic stimulating Hormone.', '#')}>2</button>
             <button className="AllButtons" data-tooltip="Pars Distalis" id="Pituitarybtn3" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Pituitary/Pars Distalis.png', 'The pars anterior is covered by a capsule which is derived from the inner layer of dura mater. <br/>It contains cords of cells which branch and anastomose. The cells are supported by a thin basement membrane which is made of reticular tissue. <br/>2 types of cells are found in pars anterior -<br/>a. Chromophobes make up 50% of the cell population of pars anterior.<br/>b. Chromophils - consists of two further subtypes of cells, acidophils (35%) and basophils (15%).', '#', true)}>3</button>
-            <button className="AllButtons" data-tooltip="Acidophil" id="Pituitarybtn4" data-popup="popup4">4</button>
-            <button className="AllButtons" data-tooltip="Basophil" id="Pituitarybtn5" data-popup="popup5">5</button>
-            <button className="AllButtons" data-tooltip="Chromophobe" id="Pituitarybtn6" data-popup="popup6">6</button>
+            <button className="AllButtons" data-tooltip="Acidophil" id="Pituitarybtn4" data-popup="popup4" onClick={() => openPopup1('/assets/Images/Pituitary/Acidophils.png', '<strong>Acidophils</strong> as the name suggests take up a dark, eosinophilic stain. These are round cells occurring either singly or in groups. The cells show a dark, round and vesicular nucleus. They show coarse granules within the cytoplasm. Acidophils are of two further types – Somatotropes and Mammotropes. Somatotropes secrete growth hormone which is required for the growth of the body, especially the growth of bones. Mammotropes secrete Prolactin which is required for growth of mammary gland and secretion of milk.', '#')}>4</button>
+            <button className="AllButtons" data-tooltip="Basophil" id="Pituitarybtn5" data-popup="popup5" onClick={() => openPopup1('/assets/Images/Pituitary/Basophils.png', '<strong>Basophils</strong> are larger than acidophils. The cells are oval to round in shape and contain a central, vesicular nucleus. They take up basic stains. Their cytoplasm shows fine granules. Basophils are of three subtypes – Corticotropes, Thyrotropes and Gonadotropes. Corticotropes secrete Adrenocorticotrophic hormone, Thyrotropes secrete Thyroid stimulating hormone. Gonadotropes secrete Follicle stimulating hormone and Luteinising hormone.', '#')}>5</button>
+            <button className="AllButtons" data-tooltip="Chromophobe" id="Pituitarybtn6" data-popup="popup6" onClick={() => openPopup1('/assets/Images/Pituitary/Chromophobe.png', '<strong>Chromophobes</strong> are so called as their cytoplasm do not stain with any classic dyes. The cells are very small in size and occur in groups.  The cells have distinct nuclei and scanty cytoplasm giving the appearance of “naked nuclei”. Chromophobes are considered to be precursors of chromophils. They are also considered as degranulated chromophil cells.', '#')}>6</button>
           </div>
         </div>
 
         <div className="Container2">
-          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Pituitary/")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Pituitary Gland</u></strong></a>
-          
+          <a href='#' className="image-cell"  style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Pituitary Gland</u></strong></a>
+          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Pituitary/Pituitary Panaromic.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Panaromic View of Pituitary Gland</u></strong></a>
           <ol style = {{textAlign : 'left'}}>
             <strong><u>Identifying features:</u></strong>
             <li>Connective Tissue Capsule</li>
-            <li>3 parts visualized -</li>
-            Pars anterior - cords/ clumps of cells present (chromophils- acidophils, basophils and chromophobes)
-            Pars Intermedia- colloid filled follicles lined by basophils.
-            Pars Posterior - nerve fibers with pituicytes present
-            Large number of capillaries and sinusoids present
+            <li>3 parts visualized are :-</li>
+            <strong>Pars anterior</strong> - cords/ clumps of cells present (chromophils- acidophils, basophils and chromophobes)<br/>
+            <strong>Pars Intermedia</strong>- colloid filled follicles lined by basophils.<br/>
+            <strong>Pars Posterior</strong> - nerve fibers with pituicytes present large number of capillaries and sinusoids present
+            <li>Large number of capillaries and sinusoids are present</li>
             </ol>
+            
         </div>
         <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
           {buttonClicked ? <img src="/assets/on-1.png" alt="afterClick" /> : <img src="/assets/off-1.png" alt="beforeClick" />}

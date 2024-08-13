@@ -153,8 +153,8 @@
 .Container2 {
   display: flex;
   flex-direction: column; 
-  align-items: center; 
-  text-align: center; 
+  align-items: left; 
+  text-align: left; 
 }
 
 .image-cell {
@@ -638,11 +638,14 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
   flex: 1;
-  margin: 0 0 20px;
+  margin: 0 auto 20px;
   transition: transform 0.3s, box-shadow 0.3s;
   margin-bottom: 10px;
+  
+
   font-size: 18px;
   line-height: 1.5;
+  
 }
 /* 
 .epithelium-image-box:hover {
@@ -650,7 +653,9 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }  */
 
+
 .epithelium-image {
+  display: inline-block;
   max-width: 100%;
   height: auto;
   border-radius: 10px;
@@ -665,7 +670,9 @@
 
 .epithelium-image.image-1,
 .epithelium-image.image-2 {
-  margin-right: 150px;
+  margin-right: 50px;
+  margin-left: auto;
+  margin-top: 10px;
   margin-bottom: 40px;
 }
 

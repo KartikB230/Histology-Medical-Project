@@ -28,7 +28,7 @@ const Trial = () => {
     { name: 'Adrenal Gland', img: '/assets/Images/Adrenal/Adrenal_Gland.png', link: '/Adrenal', keywords: [] },
     { name: 'Pituitary Gland', img: '/assets/Images/Pituitary/Pituitary Low Magnification.png', link: '/Pituitary', keywords: [] },
     // { name: 'Cartilage', img: '/path/to/image7.jpg', link: '/Cartilage', keywords: [] },
-    { name: 'Epithelium', img: '/assets/Images/Epithelium/Epithelium.jpg', link: '/Epithelium', keywords: ['Simple Squamous Epithelium','Simple Cuboidal Epithelium','Simple Columnar Epithelium','Pseudostratified Epithelium', 'Transitional Epithelium', 'Stratified Squamous Keratinised Epithelium', 'Stratified Squamous Non-Keratinised Epithelium']}
+    { name: 'Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Squamous _low.jpeg', link: '/Epithelium', keywords: ['Simple Squamous Epithelium','Simple Cuboidal Epithelium','Simple Columnar Epithelium','Pseudostratified Epithelium', 'Transitional Epithelium', 'Stratified Squamous Keratinised Epithelium', 'Stratified Squamous Non-Keratinised Epithelium']}
   ];
 
   const kidneyDetails = [
@@ -89,11 +89,11 @@ const Trial = () => {
                   </div>
                 </Link>
               ))}
-              <div className="tile" onClick={toggleKidneyDetails}>
+              {/* <div className="tile" onClick={toggleKidneyDetails}>
                 <div className="tile-content">
                   <div className="tile-name">Back</div>
                 </div>
-              </div>
+              </div> */}
             </>
           )}
         </div>
