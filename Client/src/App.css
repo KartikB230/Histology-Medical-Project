@@ -328,15 +328,31 @@
 }
 
 .homediv {
-  height: 100vh;
+  position: relative;
+  height: 100vh; /* Full viewport height */
   overflow: hidden;
-  background-color: rgb(255, 192, 192);
-  opacity: 0.6; /* This will hide any content that overflows the container */
+  background: url('../public/assets/Images/img.jpg') no-repeat center center;
+  background-size: cover; /* Default for large screens */
+ 
+  opacity: 0.5;
 }
 
+/* Media Query for Small Devices (e.g., Mobile Phones) */
+
+
+/* Media Query for Medium Devices (e.g., Tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .homediv {
+    background-size: contain; /* Ensure the entire image is visible */
+    background-position: center center;
+  }
+}
+
+
 .homeimg {
+  
   height: 100%;
-  width: 100%;
+  width: 70%;
   object-fit: cover;
   object-position: center center;
   /* Optional: Centers the image */
@@ -854,6 +870,8 @@
 
 .search-bar {
   margin-bottom: 20px;
+  align-items: center;
+  text-align: center;
 }
 
 .search-input {
@@ -1178,9 +1196,7 @@
 }
 
 
-{
-  border: 2px solid red;
-}
+
 
 #Pituitarybtn7 {
   top: 24%;
