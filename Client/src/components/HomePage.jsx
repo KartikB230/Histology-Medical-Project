@@ -4,6 +4,7 @@ import Home from './Home';
 import Footer from './Footer';
 // import Carousel from './Carousel';
 
+
 function HomePage() {
     const carouselRef = useRef(null);
 
