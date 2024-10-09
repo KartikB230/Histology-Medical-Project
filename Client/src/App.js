@@ -19,6 +19,9 @@ import PseudostratifiedEpithelium from "./components/PseudostratifiedEpithelium"
 import TransitionalEpithelium from "./components/TransitionalEpithelium";
 import StratifiedSquamousKeratinisedEpithelium from "./components/StratifiedSquamousKeratinisedEpithelium";
 import StratifiedSquamousNonKeratinisedEpithelium from "./components/StratifiedSquamousNonKeratinisedEpithelium";
+import HyalineCartilage from "./components/HyalineCartilage";
+import ElasticCartilage from "./components/ElasticCartilage";
+import WhiteFibrousCartilage from "./components/WhiteFibrousCartilage";
 import LoginPage from "./components/LoginPage";
 
 function App() {
@@ -85,6 +88,9 @@ function App() {
               <Route path="/TransitionalEpithelium" element={<TransitionalEpithelium/>}/>
               <Route path="/StratifiedSquamousKeratinisedEpithelium" element={<StratifiedSquamousKeratinisedEpithelium/>}/>
               <Route path="/StratifiedSquamousNonKeratinisedEpithelium" element={<StratifiedSquamousNonKeratinisedEpithelium/>}/>
+              <Route path = "/HyalineCartilage" element={<HyalineCartilage/>}/>
+              <Route path = "/ElasticCartilage" element={<ElasticCartilage/>}/>
+              <Route path = "/WhiteFibrousCartilage" element ={<WhiteFibrousCartilage/>}/>
             </Routes>
           </div>
         </BrowserRouter>

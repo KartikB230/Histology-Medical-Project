@@ -28,12 +28,20 @@ function Adrenal() {
 
         <div className="Container2">
           <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Adrenal/Adrenal_Pencil.png")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}><strong><u>Click Here to view Pencil Diagram of Adrenal Gland</u></strong></a>
-          <p>
-            The thyroid, or thyroid gland, is an endocrine gland in vertebrates. In humans, it is in the neck and consists of two connected lobes. The lower two thirds of
-            the lobes are connected by a thin band of tissue called the isthmus. The thyroid gland is a butterfly-shaped gland located in the neck below the Adam's apple.
-            Microscopically, the functional unit of the thyroid gland is the spherical thyroid follicle, lined with follicular cells (thyrocytes), and occasional
-            parafollicular cells that surround a lumen containing colloid.
-          </p>
+            <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
+            <ol className="feature-list">
+              <li>Connective Tissue Capsule</li>
+              <li>Outer Cortex Shows 3 Zones:
+              <ol className="nested-list">
+                <li><strong>Zona Glomerulosa</strong> - inverted U-shaped cell arcades</li>
+                <li><strong>Zona Fasciculata</strong> - vertical rows of cells, usually 2 rows thick</li>
+                <li><strong>Zona Reticularis</strong> - anastomosing cords of cells</li>
+              </ol>
+              </li>
+              <li>Inner Medulla – basophilic cells, pheochromocytes</li>
+              <li>Large number of capillaries and sinusoids present</li>
+            </ol>
+
         </div>
         <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
           {buttonClicked ? <img src="/assets/on-1.png" alt="afterClick" /> : <img src="/assets/off-1.png" alt="beforeClick" />}

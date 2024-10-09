@@ -9,7 +9,10 @@ const Trial = () => {
   const searchInputRef = useRef(null);
 
   useEffect(() => {
-    searchInputRef.current.focus();
+    
+    if (window.innerWidth > 1000) {
+      searchInputRef.current.focus();
+    }
   }, []);
 
   const toggleKidneyDetails = () => {
@@ -27,7 +30,7 @@ const Trial = () => {
     },
     { name: 'Adrenal Gland', img: '/assets/Images/Adrenal/Adrenal_Gland.png', link: '/Adrenal', keywords: [] },
     { name: 'Pituitary Gland', img: '/assets/Images/Pituitary/Pituitary Low Magnification.png', link: '/Pituitary', keywords: [] },
-    // { name: 'Cartilage', img: '/path/to/image7.jpg', link: '/Cartilage', keywords: [] },
+    { name: 'Cartilage', img: '/assets/Images/Cartilage/Elastic Cartilage Low Magnification.jpg', link:  '/Cartilage', keywords: ['Hyaline Cartilage','Elastic Cartilage','White Fibrous Cartilage'] },
     { name: 'Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Squamous _low.jpeg', link: '/Epithelium', keywords: ['Simple Squamous Epithelium','Simple Cuboidal Epithelium','Simple Columnar Epithelium','Pseudostratified Epithelium', 'Transitional Epithelium', 'Stratified Squamous Keratinised Epithelium', 'Stratified Squamous Non-Keratinised Epithelium']}
   ];
 

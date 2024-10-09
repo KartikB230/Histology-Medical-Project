@@ -11,10 +11,12 @@ const Epithelium = () => {
   const [score, setScore] = useState(null);
 
   useEffect(() => {
-    if (activeTab === 'Types of Epithelium' && searchInputRef.current) {
+    
+    if (activeTab === 'Types of Epithelium' && searchInputRef.current && window.innerWidth > 1000) {
       searchInputRef.current.focus();
     }
   }, [activeTab]);
+  
 
   const tiles = [
     { name: 'Simple Squamous Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Squamous _low.jpeg', link: '/SquamousEpithelium', keywords: [] },
@@ -68,58 +70,66 @@ const Epithelium = () => {
   const renderContent = () => {
     switch (activeTab) {
       case 'Theory':
-        return (
-          <div className="epithelium-container">
-            <div className='epithelium-image-box'>
-            <h2 className="epithelium-title">Specific Learning Objectives</h2>
-            <ol className="epithelium-list">
-              <li>Define epithelial tissue.</li>
-              <li>Enumerate the common features of epithelial tissue.</li>
-              <li>Enlist the functions of epithelial tissue.</li>
-              <li>Classify epithelial tissues and give examples of each variety.</li>
-              <li>Differentiate between Cilia, Stereocilia, and Microvilli.</li>
-              <li>Differentiate between Basal membrane and Basal Lamina.</li>
-              <li>Identify various types of epithelia under a light microscope.</li>
-            </ol>
-            </div>
-            
-            <div className='epithelium-image-box'>
-            <h2 className="epithelium-title">Introduction</h2>
-            <ul className="epithelium-list">
-              <li>Epithelial tissue forms the lining of general body surfaces, passages and cavities within the body.</li>
-              <li>The tissue is composed of closely packed cells which are adherent to each other through junctional complexes of various kinds.</li>
-              <li>Basement membrane connects the epithelium to the underlying subepithelial tissues.</li>
-              <li>The important functions of the tissue include protection, absorption, secretion, excretion, sensory perception, chemoreception, prevention of wear and tear and conservation of moisture.</li>
-              <li>Classification of epithelial tissue is based on the shape of cells, number of cell layers and special modifications seen on cells.</li>
-              <li>Individual epithelial cells or groups of such cells which are specialised to secrete specific products are called Glands</li>
-            </ul>
-            </div>
-            
+  return (
+    <div className="epithelium-container">
+      {/* Section 1: Specific Learning Objectives (Numerical List) */}
+      <div className="epithelium-section">
+        <h2 className="epithelium-title">Specific Learning Objectives</h2>
+        <ol className="epithelium-objectives-list">
+          <li>Define epithelial tissue.</li>
+          <li>Enumerate the common features of epithelial tissue.</li>
+          <li>Enlist the functions of epithelial tissue.</li>
+          <li>Classify epithelial tissues and give examples of each variety.</li>
+          <li>Differentiate between Cilia, Stereocilia, and Microvilli.</li>
+          <li>Differentiate between Basal membrane and Basal Lamina.</li>
+          <li>Identify various types of epithelia under a light microscope.</li>
+        </ol>
+      </div>
 
-          
-            <div className="epithelium-image-box" >
-              <img src="/assets/Images/Epithelium/Diagram1.png" alt="Image 1" className="epithelium-image image-1" />
-              <img src="/assets/Images/Epithelium/Diagram2.png" alt="Image 2" className="epithelium-image image-2" />
-              <ul className="epithelium-list">
-                <strong>
-                <li>Various cells attached to each other with various types of cell junctions - Zona Occludens, Zona Adherens, Macula Adherens and Gap Junctions.</li>
-                <li>The basic function of every epithelium is protection.</li>
-                <li>The cells of epithelium rest on basement membrane.</li>
-                </strong>
-              </ul>
-            </div>
-            
-            
-            <div className="epithelium-image-box">
-            <h2 className="epithelium-title">Modifications of Epithelial Cells</h2>
-              <img src="/assets/Images/Epithelium/Diagram4.jpg" alt="Image 4" className="epithelium-image image-4" />
-            </div>
-           <br/>
-            <div className="epithelium-image-box">
-              <img src="/assets/Images/Epithelium/Diagram3.jpg" alt="Image 3" className="epithelium-image image-3" />
-            </div>
-          </div>
-        );
+      {/* Section 2: Introduction (Filled Circle Pointers) */}
+      <div className="epithelium-section">
+        <h2 className="epithelium-title">Introduction</h2>
+        <ul className="epithelium-introduction-list">
+          <li>Epithelial tissue forms the lining of general body surfaces, passages, and cavities within the body.</li>
+          <li>The tissue is composed of closely packed cells that adhere to each other through various junctional complexes.</li>
+          <li>Basement membrane connects the epithelium to the underlying subepithelial tissues.</li>
+          <li>Functions include protection, absorption, secretion, excretion, sensory perception, prevention of wear and tear, and conservation of moisture.</li>
+          <li>Classification is based on the shape of cells, number of cell layers, and special modifications seen on cells.</li>
+          <li>Specialized epithelial cells that secrete specific products are called glands.</li>
+        </ul>
+      </div>
+      
+
+
+
+      {/* Section 3: Image and Text Block */}
+      <div className="epithelium-section">
+        <div className="epithelium-image-box">
+          <img src="/assets/Images/Epithelium/Diagram1.png" alt="Image 1" className="epithelium-image image-1" />
+          <img src="/assets/Images/Epithelium/Diagram2.png" alt="Image 2" className="epithelium-image image-2" />
+          <ul className="epithelium-list">
+            <strong>
+              <li>Various cells attached with types of junctions - Zona Occludens, Zona Adherens, Macula Adherens, and Gap Junctions.</li>
+              <li>The basic function of epithelium is protection.</li>
+              <li>The cells of the epithelium rest on the basement membrane.</li>
+            </strong>
+          </ul>
+        </div>
+      </div>
+
+      {/* Section 4: Modifications of Epithelial Cells */}
+      <div className="epithelium-section">
+        <h2 className="epithelium-title">Modifications of Epithelial Cells</h2>
+        <img src="/assets/Images/Epithelium/Diagram4.jpg" alt="Image 4" className="epithelium-image image-4" />
+      </div>
+
+      {/* Section 5: Final Image */}
+      <div className="epithelium-section">
+        <img src="/assets/Images/Epithelium/Diagram3.jpg" alt="Image 3" className="epithelium-image image-3" />
+      </div>
+    </div>
+  );
+
       case 'Types of Epithelium':
         return (
           <div className="types-content">

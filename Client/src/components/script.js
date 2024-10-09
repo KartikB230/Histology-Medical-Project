@@ -24,6 +24,32 @@ export function openPopup1(imagePath, descriptionText, audioPath, showButtons=fa
 
   document.getElementById('overlay').style.display = 'flex';
 }
+export function openPopup(imagePath, descriptionText, audioPath, showButtons=false) {
+  resetPopup();
+
+  if (imagePath && imagePath !== '#') {
+    document.getElementById('popupImage').src = imagePath;
+    document.getElementById('popupImage').style.display = 'block';
+  }
+
+  if (descriptionText && descriptionText !== '#') {
+    document.getElementById('popupInfo').innerHTML = descriptionText;
+    document.getElementById('popupInfo').style.display = 'block';
+  }
+
+  if (audioPath && audioPath !== '#') {
+    document.getElementById('popupAudio').src = audioPath;
+    document.getElementById('popupAudio').style.display = 'block';
+  }
+
+  if (showButtons) {
+    document.getElementById('additionalButtons').style.display = 'block';
+  } else {
+    document.getElementById('additionalButtons').style.display = 'none';
+  }
+
+  document.getElementById('overlay').style.display = 'flex';
+}
 
 export function resetPopup() {
   document.getElementById('popupImage').src = '';
