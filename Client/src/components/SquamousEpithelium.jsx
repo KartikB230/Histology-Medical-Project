@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import { openPopup1, closePopup, toggleButtons } from './script';
 
 function SquamousEpithelium() {
@@ -21,7 +22,20 @@ function SquamousEpithelium() {
             <button className="AllButtons" data-tooltip="Squamous Cells" id="Squamousbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Squamous/simple_squamous_epithelium_High_power1.png', 'Simple squamous epithelium consists of a single layer of flattened cells with a slight bulge in the center because of the presence of the nucleus. Endothelium of blood vessels and alveoli of lungs are lined by simple squamous epithelium', '/assets/Audios/Squamous/h1_76 squamous epithelium (1).wav')}>1</button>
           </div>
         </div>
-
+        <div className="toggle-button-container">
+          <button
+            id="toggleButton"
+            data-tooltip="Show/Hide labels"
+            className="toggle-button"
+            onClick={() => toggleButtons(buttonClicked, setButtonClicked)}
+          >
+            {buttonClicked ? (
+              <img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />
+            ) : (
+              <img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />
+            )}
+          </button>
+        </div>
         <div className= 'Container2'>
           <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Squamous/Simple squamous pencil diagram.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Squamous Epithelium</u></strong></a>
           <p>Simple squamous epithelium consists of a single layer of flattened cells with a slight bulge in the center because of the presence of the nucleus. Endothelium of blood vessels and alveoli of lungs are lined by simple squamous epithelium
@@ -35,10 +49,6 @@ function SquamousEpithelium() {
                 loop={false}
               />
         </div>
-
-        <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-          {buttonClicked ? <img src="/assets/on-1.png" alt="afterClick" /> : <img src="/assets/off-1.png" alt="beforeClick" />}
-        </button>
 
         <div id="overlay" className="overlay">
           <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
@@ -56,9 +66,8 @@ function SquamousEpithelium() {
             <div id="additionalButtons" className="additional-buttons"></div>
           </div>
         </div>
-
-        
       </div>
+      <Footer/>
     </>
   );
 }

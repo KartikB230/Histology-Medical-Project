@@ -1,9 +1,21 @@
-import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Navbar = ({ scrollToCarousel }) => {
+const Navbar = ({ scrollToFooter }) => {
+  const navigate = useNavigate();
+
+  const handleFeaturesClick = () => {
+    navigate('/home'); // Navigate to Home page
+    setTimeout(() => {
+      // Scroll to the carousel after a slight delay to allow the page to render
+      const carouselElement = document.getElementById('carousel'); // Assuming your carousel has this ID
+      if (carouselElement) {
+        carouselElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100); // Delay to ensure the page has loaded
+  };
+
   return (
-    <>
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/" style={{ color: 'white', fontSize: '28px' }}>
@@ -24,26 +36,30 @@ const Navbar = ({ scrollToCarousel }) => {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/home" style={{ color: 'white', fontSize: '20px' }}>Home</Link>
+              <Link className="nav-link active" aria-current="page" to="/home" style={{ color: 'white', fontSize: '20px' }}>
+                Home
+              </Link>
             </li>
             <li className="nav-item">
-              <Link onClick={scrollToCarousel} className="nav-link" to="/home" style={{ color: 'white', fontSize: '20px' }}>Features</Link>
+              <Link onClick={scrollToFooter} className="nav-link" to="/home" style={{ color: 'white', fontSize: '20px' }}>
+                Contact
+              </Link>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" style={{ 'color': 'white', 'fontSize': '20px' }}>Contact</a>
+            <li className="nav-item">
+              <a onClick={handleFeaturesClick} className="nav-link" style={{ color: 'white', fontSize: '20px' }}>
+                Features
+              </a>
             </li>
-            <li class="nav-item">
-            <Link onClick={scrollToCarousel} className="nav-link" to="/Trial" style={{ color: 'white', fontSize: '20px' }}>Learning</Link>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Trial" style={{ color: 'white', fontSize: '20px' }}>
+                Learning
+              </Link>
             </li>
-
-            </ul>
-          </div>
-
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
+  );
+};
 
-    </>
-  )
-}
-
-export default Navbar
+export default Navbar;

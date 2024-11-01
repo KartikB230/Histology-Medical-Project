@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { FaSearch } from 'react-icons/fa';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import '../App.css';
 
 const Cartilage = () => {
@@ -178,8 +180,11 @@ const Cartilage = () => {
 
       case 'Types of Cartilage':
         return (
-          <div className="types-content">
+          <div className="trial-container">
             <div className="search-bar">
+            <div className="search-icon">
+              <FaSearch />
+          </div>
               <input
                 type="text"
                 placeholder="Start Typing to Search...."
@@ -235,12 +240,13 @@ const Cartilage = () => {
       <Navbar />
       <div className="tab-container">
         <button className="tab-button" onClick={() => setActiveTab('Theory')}>Theory</button>
-        <button className="tab-button" onClick={() => setActiveTab('Types of Cartilage')}>Types of Cartilage</button>
+        <button className="tab-button" onClick={() => setActiveTab('Types of Cartilage')}>Slides of Cartilage</button>
         <button className="tab-button" onClick={() => setActiveTab('Quiz')}>Quiz</button>
       </div>
       <div className="content">
         {renderContent()}
       </div>
+      <Footer/>
     </div>
   );
 }

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { FaSearch } from 'react-icons/fa';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import '../App.css';
 
 const Epithelium = () => {
@@ -132,8 +134,11 @@ const Epithelium = () => {
 
       case 'Types of Epithelium':
         return (
-          <div className="types-content">
+          <div className="trial-container">
             <div className="search-bar">
+            <div className="search-icon">
+              <FaSearch />
+            </div>
               <input
                 type="text"
                 placeholder="Start Typing to Search...."
@@ -195,6 +200,7 @@ const Epithelium = () => {
       <div className="content">
         {renderContent()}
       </div>
+      <Footer/>
     </div>
   );
 }

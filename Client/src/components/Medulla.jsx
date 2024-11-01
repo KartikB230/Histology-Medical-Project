@@ -1,5 +1,6 @@
 import React, { useState } from 'react'; 
 import Navbar from './Navbar';
+import Footer from './Footer';
 import { openPopup1, closePopup, toggleButtons } from './script';
 
 function Medulla() {
@@ -24,7 +25,20 @@ function Medulla() {
             <button className="AllButtons" id = "Medullabtn4" data-tooltip="Collecting Tubule" data-popup="popup4" onClick={() => openPopup1('/assets/Images/Kidney/Collecting_Tubule.png', 'Distal convoluted tubules drain into short connecting tubules located in the cortical substance (labyrinth). Connecting tubules, in tung, drain into cortical collecting tubules located in the medullary ray. They are lined by simple cuboidal epithelium.', '/assets/Audios/Kidney/Collecting Tubules.m4a')}>4</button>
           </div>
         </div>
-
+        <div className="toggle-button-container">
+          <button
+            id="toggleButton"
+            data-tooltip="Show/Hide labels"
+            className="toggle-button"
+            onClick={() => toggleButtons(buttonClicked, setButtonClicked)}
+          >
+            {buttonClicked ? (
+              <img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />
+            ) : (
+              <img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />
+            )}
+          </button>
+        </div>
         <div className="Container2">
         <a href='#' className="image-cell"  style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}><strong><u>Click Here to view Pencil Diagram of Kidney</u></strong></a>
           <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Kidney/Kidney_Panaromic.png")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}><strong><u>Click Here to view Panaromic view of Kidney</u></strong></a>
@@ -32,10 +46,7 @@ function Medulla() {
             <strong>Medulla -</strong> It is the lighter coloured, inner part of the kidney. The medulla has a striated appearance due to the presence of straight portions of the descending limb and ascending limb, loops of Henle, and lower parts of collecting tubules. The areas between adjacent pyramids are called the Renal Columns of Bertini. Renal columns are continuation of the cortex into the medulla.
           </p>
         </div>
-        <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-          {buttonClicked ? <img src="/assets/on-1.png" alt="afterClick" /> : <img src="/assets/off-1.png" alt="beforeClick" />}
-        </button> 
-
+        
         {/* < Pop-up overlay */}
         <div id="overlay" className="overlay" >
           <button className="close-button" onClick={closePopup}>&times;</button>
@@ -54,6 +65,7 @@ function Medulla() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

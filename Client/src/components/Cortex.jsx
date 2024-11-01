@@ -1,5 +1,6 @@
 import React, { useState } from 'react'; 
 import Navbar from './Navbar';
+import Footer from './Footer';
 import { openPopup1, closePopup, toggleButtons } from './script';
 
 function Cortex() {
@@ -25,6 +26,20 @@ function Cortex() {
             <button className="AllButtons" data-tooltip="Capillaries" id="Cortexbtn5" data-popup="popup5">5</button>
           </div>
         </div>
+        <div className="toggle-button-container">
+          <button
+            id="toggleButton"
+            data-tooltip="Show/Hide labels"
+            className="toggle-button"
+            onClick={() => toggleButtons(buttonClicked, setButtonClicked)}
+          >
+            {buttonClicked ? (
+              <img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />
+            ) : (
+              <img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />
+            )}
+          </button>
+        </div>
 
         <div className="Container2">
         <a href='#' className="image-cell"  style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}><strong><u>Click Here to view Pencil Diagram of Kidney</u></strong></a>
@@ -35,9 +50,7 @@ function Cortex() {
             Medullary rays are extensions (or projections) of inner medulla into the outer cortex. Medullary rays contain collecting tubules and therefore have striated appearance.
           </p>
         </div>
-        <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-          {buttonClicked ? <img src="/assets/on-1.png" alt="afterClick" /> : <img src="/assets/off-1.png" alt="beforeClick" />}
-        </button> 
+        
 
         {/* < Pop-up overlay */}
         <div id="overlay" className="overlay" >
@@ -56,6 +69,7 @@ function Cortex() {
             <div id="additionalButtons" className="additional-buttons"></div>
           </div>
         </div>
+        <Footer/>
       </div>
     </>
   );

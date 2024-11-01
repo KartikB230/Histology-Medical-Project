@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import { openPopup1, closePopup, toggleButtons } from './script';
 
 function WhiteFibrousCartilage() {
@@ -25,11 +26,24 @@ function WhiteFibrousCartilage() {
             
           </div>
         </div>
-
+        <div className="toggle-button-container">
+          <button
+            id="toggleButton"
+            data-tooltip="Show/Hide labels"
+            className="toggle-button"
+            onClick={() => toggleButtons(buttonClicked, setButtonClicked)}
+          >
+            {buttonClicked ? (
+              <img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />
+            ) : (
+              <img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />
+            )}
+          </button>
+        </div>
         <div className= 'Container2'>
           <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/White Fibrous Pencil.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of White Fibrous Cartilage</u></strong></a>
           <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/White Fibrous Cartilage High Magnification.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view High Magnification of White Fibrous Cartilage</u></strong></a>
-          <ul>
+          <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', margin: '0' }}>
           <li>The matrix is basophilic and filled with numerous Type-I collagen bundles.</li>
           <li>The collagen fibre bundles vary in thickness, the bundles branch and branches reunite with each other. This branching pattern gives a feathery appearance to the cartilage.</li>
           <li>Some fibroblasts are present in between bundles.</li>
@@ -41,10 +55,6 @@ function WhiteFibrousCartilage() {
 
         </ul>
         </div>
-       
-        <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-          {buttonClicked ? <img src="/assets/on-1.png" alt="afterClick" /> : <img src="/assets/off-1.png" alt="beforeClick" />}
-        </button>
 
         <div id="overlay" className="overlay">
           <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
@@ -62,9 +72,8 @@ function WhiteFibrousCartilage() {
             <div id="additionalButtons" className="additional-buttons"></div>
           </div>
         </div>
-
-        
       </div>
+      <Footer/>
     </>
   );
 }

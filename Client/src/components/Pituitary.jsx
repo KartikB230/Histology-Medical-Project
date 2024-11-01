@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import { openPopup1, closePopup, toggleButtons, openPopup } from './script';
 
 function Pituitary() {
@@ -68,7 +69,20 @@ function Pituitary() {
             <button className="AllButtons" data-tooltip="Chromophobe" id="Pituitarybtn6" data-popup="popup6" onClick={() => openPopup1('/assets/Images/Pituitary/Chromophobe.png', '<strong>Chromophobes</strong> are so called as their cytoplasm do not stain with any classic dyes. The cells are very small in size and occur in groups.  The cells have distinct nuclei and scanty cytoplasm giving the appearance of “naked nuclei”. Chromophobes are considered to be precursors of chromophils. They are also considered as degranulated chromophil cells.', '#')}>6</button>
           </div>
         </div>
-
+        <div className="toggle-button-container">
+          <button
+            id="toggleButton"
+            data-tooltip="Show/Hide labels"
+            className="toggle-button"
+            onClick={() => toggleButtons(buttonClicked, setButtonClicked)}
+          >
+            {buttonClicked ? (
+              <img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />
+            ) : (
+              <img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />
+            )}
+          </button>
+        </div>
         <div className="Container2">
           <a href='#' className="image-cell"  style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Pituitary Gland</u></strong></a>
           <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Pituitary/Pituitary Panaromic.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Panaromic View of Pituitary Gland</u></strong></a>
@@ -83,9 +97,6 @@ function Pituitary() {
             </ol>
             
         </div>
-        <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-          {buttonClicked ? <img src="/assets/on-1.png" alt="afterClick" /> : <img src="/assets/off-1.png" alt="beforeClick" />}
-        </button>
 
         <div id="overlay" className="overlay">
           <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
@@ -108,6 +119,7 @@ function Pituitary() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

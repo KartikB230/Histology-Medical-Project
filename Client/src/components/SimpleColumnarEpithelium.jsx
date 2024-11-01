@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import { openPopup1, closePopup, toggleButtons } from './script';
 
 function SimpleColumnarEpithelium() {
@@ -20,25 +21,37 @@ function SimpleColumnarEpithelium() {
             <button className="AllButtons" data-tooltip="Simple Columnar - High Magnification" id="Columnarbtn1" data-popup="popup1" onClick={() => openPopup1('assets/Images/Epithelium/Simple Columnar High Magnification.PNG', '#', '#')}>1</button>
           </div>
         </div>
-        <a href='#' className="image-cell" onClick={() => openPopup1("assets/Images/Epithelium/Simple Columnar Pencil.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Simple Columnar Epithelium</u></strong></a>
-        <p>
-          <ul className='epithelium-list' style={{ marginTop: '40px' }}>
-            <li>It consists of a single layer of tall and elongated cells. The nucleus is located at the base of the cell. The nucleus is elongated vertically.</li>
-            <li>It consists of a single layer of tall and elongated cells. The nucleus is located at the base of the cell. The nucleus is elongated vertically.</li>
-            <li>The cells show the presence of microvilli at some locations. Microvilli might be regular giving it a striated border or might be irregular described as the brush border.</li>
-            <li>Examples: </li>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;<strong>Simple columnar – </strong>Stomach fundus, Pylorus, large intestine<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;<strong>Simple columnar with regular microvilli (striated border) – </strong>Small intestine<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;<strong>Simple columnar with irregular microvilli (brush border) – </strong>Gall bladder.<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;<strong>Simple columnar ciliated – </strong>Fallopian tube
-            </p>
-          </ul>
-        </p>
-        <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-          {buttonClicked ? <img src="/assets/on-1.png" alt="afterClick" /> : <img src="/assets/off-1.png" alt="beforeClick" />}
-        </button>
-
+        <div className="toggle-button-container">
+          <button
+            id="toggleButton"
+            data-tooltip="Show/Hide labels"
+            className="toggle-button"
+            onClick={() => toggleButtons(buttonClicked, setButtonClicked)}
+          >
+            {buttonClicked ? (
+              <img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />
+            ) : (
+              <img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />
+            )}
+          </button>
+        </div>
+        <div className='Container2'>
+          <a href='#' className="image-cell" onClick={() => openPopup1("assets/Images/Epithelium/Simple Columnar Pencil.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Simple Columnar Epithelium</u></strong></a>
+          <p>
+            <ul className='epithelium-list' style={{ listStyleType: 'disc', paddingInlineStart: '20px', margin: '0' }}>
+              <li>It consists of a single layer of tall and elongated cells. The nucleus is located at the base of the cell. The nucleus is elongated vertically.</li>
+              <li>It consists of a single layer of tall and elongated cells. The nucleus is located at the base of the cell. The nucleus is elongated vertically.</li>
+              <li>The cells show the presence of microvilli at some locations. Microvilli might be regular giving it a striated border or might be irregular described as the brush border.</li>
+              <li>Examples: </li>
+              <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>Simple columnar – </strong>Stomach fundus, Pylorus, large intestine<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>Simple columnar with regular microvilli (striated border) – </strong>Small intestine<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>Simple columnar with irregular microvilli (brush border) – </strong>Gall bladder.<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>Simple columnar ciliated – </strong>Fallopian tube
+              </p>
+            </ul>
+          </p>  
+        </div>
         <div id="overlay" className="overlay">
           <button className="close-button" onClick={closePopup}>&times;</button>
           <div className="popup-content">
@@ -56,6 +69,7 @@ function SimpleColumnarEpithelium() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

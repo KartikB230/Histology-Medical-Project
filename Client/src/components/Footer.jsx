@@ -1,120 +1,74 @@
-import React from 'react';
-import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 
-export default function App() {
+
+const Footer = () => {
   return (
-    <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
-      <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
-        <div className='me-5 d-none d-lg-block'>
-          <span>Get connected with us on social networks:</span>
-        </div>
+    <footer className="footer" style={{ backgroundImage: `url(/assets/Images/SIT.jpg)` }}>
 
-        <div>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="facebook-f" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="twitter" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="google" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="instagram" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="linkedin" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="github" />
-          </a>
-        </div>
-      </section>
+      <Container fluid>
+        <Row className="py-4">
+          {/* About Section */}
+          <Col xs={12} sm={6} md={4} className="mb-3">
+            <h5 className="footer-title">SymbiAnatomy</h5>
+            <p>
+              An educational platform developed collaboratively by Symbiosis Medical College for Women and Symbiosis Institute of Technology, Pune. Designed to simplify the study of cells and histology for medical students.
+            </p>
+          </Col>
+          
+          {/* Quick Links Section */}
+          <Col xs={12} sm={6} md={2} className="mb-3">
+            <h5 className="footer-title">Quick Links</h5>
+            <ul className="list-unstyled">
+              <li><Link to="/home" className="footer-link">Home</Link></li>
+              <li><Link to="/Epithelium" className="footer-link">Epithelium</Link></li>
+              <li><Link to="/Thyroid" className="footer-link">Thyroid</Link></li>
+              <li><Link to="/Cartilage" className="footer-link">Cartilage</Link></li>
+              <li><Link to="/ConnectiveTissue" className="footer-link">Connective Tissue</Link></li>
+              <li><Link to="/Cartilage" className="footer-link">Cartilage</Link></li>
+              <li><Link to="/Bone" className="footer-link">Bone</Link></li>
+            </ul>
+          </Col>
 
-      <section className=''>
-        <MDBContainer className='text-center text-md-start mt-5'>
-          <MDBRow className='mt-3'>
-            <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>
-                <MDBIcon icon="gem" className="me-3" />
-                Company name
-              </h6>
-              <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit.
-              </p>
-            </MDBCol>
+          {/* Contact Section */}
+          <Col xs={12} sm={6} md={3} className="mb-3">
+            <h5 className="footer-title">Contact Us</h5>
+            <p>
+              Symbiosis Institute of Technology, Pune <br />
+              Email: <a href="mailto:adminofficer@sitpune.edu.in" className="footer-link">adminofficer@sitpune.edu.in</a>
+            </p>
+            <p>
+              Symbiosis Medical College for Women, Pune <br />
+              Email: <a href="mailto:contact@smcw.edu.in" className="footer-link">contact@smcw.edu.in</a>
+            </p>
+          </Col>
 
-            <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Angular
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  React
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Vue
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Laravel
-                </a>
-              </p>
-            </MDBCol>
+          {/* Social Media Section */}
+          <Col xs={12} sm={6} md={3} className="mb-3">
+            <h5 className="footer-title">Follow Us</h5>
+            <div className="d-flex justify-content-start">
+              <a href="https://facebook.com" className="social-icon" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
+              <a href="https://instagram.com" className="social-icon" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+              <a href="https://twitter.com" className="social-icon" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+              <a href="https://linkedin.com" className="social-icon" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+            </div>
+          </Col>
+        </Row>
 
-            <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Useful links</h6>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Pricing
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Settings
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Orders
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Help
-                </a>
-              </p>
-            </MDBCol>
+        <hr className="footer-divider" />
 
-            <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
-              <p>
-                <MDBIcon icon="home" className="me-2" />
-                New York, NY 10012, US
-              </p>
-              <p>
-                <MDBIcon icon="envelope" className="me-3" />
-                info@example.com
-              </p>
-              <p>
-                <MDBIcon icon="phone" className="me-3" /> + 01 234 567 88
-              </p>
-              <p>
-                <MDBIcon icon="print" className="me-3" /> + 01 234 567 89
-              </p>
-            </MDBCol>
-          </MDBRow>
-        </MDBContainer>
-      </section>
-
-      
-    </MDBFooter>
+        <Row className="text-center">
+          <Col>
+            <p className="mb-0">
+              &copy; {new Date().getFullYear()} Symbiosis Institute of Technology & Symbiosis Medical College for Women, Pune. All rights reserved.
+            </p>
+          </Col>
+        </Row>
+      </Container>
+    </footer>
   );
-}
+};
+
+export default Footer;

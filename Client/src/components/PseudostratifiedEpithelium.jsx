@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import { openPopup1, closePopup, toggleButtons } from './script';
 
 function PseudostratifiedEpithelium() {
@@ -20,24 +21,37 @@ function PseudostratifiedEpithelium() {
             <button className="AllButtons" data-tooltip="Pseudostratified Epithelium - High Magnification" id="Pseudobtn1" data-popup="popup1" onClick={() => openPopup1('assets/Images/Epithelium/Pseudostratified Epithelium High Magnification.PNG', '#', '#')}>1</button>
           </div>
         </div>
-        <a href='#' className="image-cell" onClick={() => openPopup1("assets/Images/Epithelium/Pseudostratified Epithelium Pencil.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Pseudostratified Epithelium</u></strong></a>
-        <p>
-          <ul className='epithelium-list' style={{ marginTop: '40px' }}>
-          <li>The epithelium consists of a single layer of cells. </li>
-          <li>The cells are of varying heights and their nuclei are placed at different levels. This epithelium therefore appears stratified which it actually is not.</li>
-          <li>It consists of two cell types a) Tall columnar cells b) Short basal cells. </li>
-          <li>Basal cells are overlaid by tall superficial cells which maintain their connection with the basement membrane through thin processes. </li>
-          <li>Basal cells are stem cells which give rise to other cells.</li>
-          <li>It has secretory role. </li>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;<strong>With cilia- </strong>Trachea, Bronchus (Respiratory system) <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;<strong>With stereocilia – </strong>Epididymis, Vas Deferens (Male reproductive system)
-            </p>
-          </ul>
-        </p>
-        <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-          {buttonClicked ? <img src="/assets/on-1.png" alt="afterClick" /> : <img src="/assets/off-1.png" alt="beforeClick" />}
-        </button>
+        <div className="toggle-button-container">
+          <button
+            id="toggleButton"
+            data-tooltip="Show/Hide labels"
+            className="toggle-button"
+            onClick={() => toggleButtons(buttonClicked, setButtonClicked)}
+          >
+            {buttonClicked ? (
+              <img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />
+            ) : (
+              <img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />
+            )}
+          </button>
+        </div>
+        <div className='Container2'>
+          <a href='#' className="image-cell" onClick={() => openPopup1("assets/Images/Epithelium/Pseudostratified Epithelium Pencil.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Pseudostratified Epithelium</u></strong></a>
+          <p>
+            <ul className='epithelium-list' style={{ listStyleType: 'disc', paddingInlineStart: '20px', margin: '0' }}>
+            <li>The epithelium consists of a single layer of cells. </li>
+            <li>The cells are of varying heights and their nuclei are placed at different levels. This epithelium therefore appears stratified which it actually is not.</li>
+            <li>It consists of two cell types a) Tall columnar cells b) Short basal cells. </li>
+            <li>Basal cells are overlaid by tall superficial cells which maintain their connection with the basement membrane through thin processes. </li>
+            <li>Basal cells are stem cells which give rise to other cells.</li>
+            <li>It has secretory role. </li>
+              <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>With cilia- </strong>Trachea, Bronchus (Respiratory system) <br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<strong>With stereocilia – </strong>Epididymis, Vas Deferens (Male reproductive system)
+              </p>
+            </ul>
+          </p>
+        </div>
 
         <div id="overlay" className="overlay">
           <button className="close-button" onClick={closePopup}>&times;</button>
@@ -56,6 +70,7 @@ function PseudostratifiedEpithelium() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
