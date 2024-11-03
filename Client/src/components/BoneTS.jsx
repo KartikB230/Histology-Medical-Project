@@ -5,30 +5,6 @@ import { openPopup1, closePopup, toggleButtons, openPopup } from './script';
 
 function BoneTS() {
   const [buttonClicked, setButtonClicked] = useState(false);
-  const [buttonBottomOffset, setButtonBottomOffset] = useState('20px');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const footer = document.querySelector('.footer');
-      const toggleButton = document.getElementById('toggleButton');
-
-      if (footer && toggleButton) {
-        const footerRect = footer.getBoundingClientRect();
-        const buttonHeight = toggleButton.offsetHeight;
-
-        if (footerRect.top < window.innerHeight) {
-          const offsetAboveFooter = footerRect.height + buttonHeight + 20;
-          setButtonBottomOffset(`${offsetAboveFooter}px`);
-        } else {
-          setButtonBottomOffset('20px');
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <>
       <div>
@@ -45,7 +21,7 @@ function BoneTS() {
             <button className="AllButtons" data-tooltip="Circumferential lamellae" id="TSbtn3" data-popup="popup3">3</button>
             <button className="AllButtons" data-tooltip="Interstitial lamellae" id="TSbtn4" data-popup="popup4">4</button>
             <button className="AllButtons" data-tooltip="Haversian Canal" id="TSbtn5" data-popup="popup5">5</button>
-            <button className="AllButtons" data-tooltip="Osteon (Haversian System)" id="TSbtn6" data-popup="popup6" onClick={() => openPopup1('/assets/Images/Bone/Osteon TS.jpg', '<p><strong><span style="text-decoration: underline;">Haversian System:</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>Central – Haversian canal through which nerves and vessels traverse.</li><li>Concentric lamellae surround the Haversian canal.</li><li>In between the lamellae, the osteocytes get trapped within lacunae.</li><li>Osteocytes have canaliculi which are processes to connect with the neighbouring osteocytes. They connect the Haversian canals to the dependent osteocytes, endosteal lamella and interstitial lamellae.</li><li>Long axis of osteon is parallel to the long axis of the bone.</li><li>Canals connecting two Haversian canals are called as Volkmann’s canals.</li></ul>',true)}>6</button>
+            <button className="AllButtons" data-tooltip="Osteon (Haversian System)" id="TSbtn6" data-popup="popup6">6</button>
         </div>
 
         {/* Toggle Button positioned below the image and centered */}
@@ -90,9 +66,7 @@ function BoneTS() {
           <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
           <div className="popup-content">
             <img id="popupImage" className="popup-image" src="" alt="Pop-up Image" />
-            <div id="additionalButtons" className="additional-buttons">
-              <a href="#" className="image-cell" onClick={() => openPopup('/assets/Images/Connective/Osteocytes Diagram.jpg')} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Osteocytes Diagram</u></strong></a>
-            </div>
+            <div id="additionalButtons" className="additional-buttons"></div>
             <div>
               <p id="popupInfo"></p>
             </div>

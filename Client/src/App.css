@@ -218,36 +218,32 @@
   transition: background-color 0.3s, border-color 0.3s; /* Transition for color change */
 }
 
-/* Close button icon */
-.close-button::after {
-  content: '×'; /* Unicode character for "x" */
-  font-family: Arial, sans-serif; /* Use a common font */
-  font-size: 24px; /* Increase font size */
-  font-weight: bold; /* Make the font bold */
-  color: black; /* Default color */
-  display: block;
-  text-align: center;
-  line-height: 30px; /* Center vertically */
+/* Close button styles */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.2); /* Light semi-transparent background */
+  border:#282c34; /* Remove border */
+  border-radius: 20%; /* Rounded shape */
+  display: flex; /* Flex display for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  cursor: pointer;
+  z-index: 1005;
+  color: #fff;
+  font-size: 28px; /* Adjust size for centering */
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
 }
-
 
 /* Hover effect */
 .close-button:hover {
-  background-color: #f00; /* Red background on hover */
-  border-color: #f00; /* Red border on hover */
+  background-color: rgba(255, 0, 0, 0.8); /* Bright red background on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
 }
-
-/* Hover effect for icon */
-.close-button:hover::after {
-  color: #fff; /* White color on hover */
-}
-
-/* Prevent ::after pseudo-element from being applied to any other element */
-.close-button:not(:last-child)::after {
-  content: none; /* Remove content from ::after pseudo-element for all but the last .close-button */
-}
-
-
 
 
 
@@ -825,21 +821,24 @@
 .toggle-button-container {
   display: flex;
   justify-content: center;
-  margin-top: 1px; /* Adjusted margin to add space above the toggle button */
-  margin-bottom: 10px; /* Optional margin for spacing */
-  position: relative; /* Make the container relative for absolute positioning of the tooltip */
+
+  margin-bottom: 10px;
+  position: relative;
 }
 
 .toggle-button {
   padding: 0;
   border: none;
-   /* Set border-radius to 0 to remove the circular shape */
+  outline: none; 
+  background: transparent; 
+  box-shadow: none; 
+  border-radius: 0; 
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: auto; /* Use auto width based on content */
-  height: auto; /* Use auto height based on content */
-  position: relative; /* Position relative to show the tooltip */
+  width: auto;
+  height: auto;
+  position: relative;
 }
 
 .toggle-image {
@@ -868,7 +867,7 @@
     white-space: nowrap;
     opacity: 1; 
     pointer-events: none;
-    z-index: 1006;
+    z-index: 1004;
     transition: opacity 0.3s ease;
 }
 
@@ -1395,7 +1394,7 @@ font-size: 48px;
   max-width: 85%; /* Increase the width for better visibility */
   margin: 20px auto;
   padding: 20px 0;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Add shadow */
   border-radius: 15px; /* Rounded corners */
   background-color: #f0f0f0; /* Light background */
 }
@@ -1405,7 +1404,7 @@ font-size: 48px;
   width: 100%;
   max-height: 500px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 20px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -1985,4 +1984,20 @@ ul {
 {
   top:83%;
   left:32.5%;
+}
+
+#Osteonbtn1
+{
+  top:48%;
+  left:60%;
+}
+#Osteonbtn2
+{
+  top:54%;
+  left:66%;
+}
+#Osteonbtn3
+{
+  top:76%;
+  left:62.5%;
 }

@@ -31,6 +31,7 @@ import LooseConnectiveTissue from "./components/LooseConnectiveTissue"
 import Bone from "./components/Bone"
 import BoneTS from "./components/BoneTS"
 import BoneLS from "./components/BoneLS"
+import Osteon from "./components/Osteon";
 import LoginPage from "./components/LoginPage";
 import Footer from "./components/Footer";
 import { Carousel } from "react-bootstrap";
@@ -113,8 +114,8 @@ function App() {
               <Route path = "/Bone" element ={<Bone/>}/>
               <Route path = "/BoneTS" element ={<BoneTS/>}/>
               <Route path = "/BoneLS" element ={<BoneLS/>}/>
+              <Route path = "/Osteon" element ={<Osteon/>}/>
               <Route path = "/Carousel" element ={<Carousel/>}/>
-              
               <Route path = "/Footer" element ={<Footer/>}/>
             </Routes>
           </div>

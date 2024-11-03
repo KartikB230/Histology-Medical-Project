@@ -23,6 +23,7 @@ const Bone = () => {
   const tiles = [
     { name: 'Ground Bone TS', img: '/assets/Images/Bone/Ground Bone TS Low Magnification.jpg', link: '/BoneTS', keywords: [] },
     { name: 'Ground Bone LS', img: '/assets/Images/Bone/Ground Bone LS Low Magnification.jpg', link: '/BoneLS', keywords: [] },
+    { name: 'Osteon', img: '/assets/Images/Bone/Osteon Low Magnification.jpg', link: '/Osteon', keywords: [] },
     
     
   ];
