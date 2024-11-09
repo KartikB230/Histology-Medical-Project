@@ -54,7 +54,7 @@ function BoneLS() {
           </ul>
         </div>
 
-        {/* Pop-up overlay */}
+        
         <div id="overlay" className="overlay">
           <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
           <div className="popup-content">

@@ -203,20 +203,7 @@
 }
 
  /* Close button styles */
- .close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
-  background-color: transparent;
-  border: 2px solid #aaa; /* Border for the box structure */
-  border-radius: 5px; /* Square shape */
-  cursor: pointer;
-  z-index: 1006;
-  color: #aaa;
-  transition: background-color 0.3s, border-color 0.3s; /* Transition for color change */
-}
+
 
 /* Close button styles */
 .close-button {
@@ -232,7 +219,7 @@
   align-items: center; /* Center vertically */
   justify-content: center; /* Center horizontally */
   cursor: pointer;
-  z-index: 1005;
+  z-index: 1006;
   color: #fff;
   font-size: 28px; /* Adjust size for centering */
   font-weight: bold;
