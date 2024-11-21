@@ -6,6 +6,27 @@ import { openPopup1, closePopup, toggleButtons, openPopup } from './script';
 function Osteon() {
   const [buttonClicked, setButtonClicked] = useState(false);
 
+  useEffect(() => {
+    const disableRightClick = (e) => {
+      e.preventDefault(); 
+    };
+
+    const disableImageDownload = (e) => {
+
+      if (e.target && e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', disableRightClick);
+    document.addEventListener('mousedown', disableImageDownload); 
+
+    return () => {
+      document.removeEventListener('contextmenu', disableRightClick);
+      document.removeEventListener('mousedown', disableImageDownload);
+    };
+  }, []);
+
   return (
     <>
       <div>
@@ -41,7 +62,7 @@ function Osteon() {
         <div className="Container2">
         <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Bone/Osteon Pencil Diagram.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Osteon</u></strong></a>
         <h2 style={{ textDecoration: 'underline' }}>Haversian System -</h2>
-          <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', margin: '0' }}>
+          <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft: '20px' }}>
             <li>Central – Haversian canal through which nerves and vessels traverse.</li>
             <li>Concentric lamellae surround the Haversian canal.</li>
             <li>In between the lamellae, the osteocytes get trapped within lacunae.</li>

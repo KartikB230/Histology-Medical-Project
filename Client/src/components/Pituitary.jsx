@@ -9,6 +9,27 @@ function Pituitary() {
   const parsDistalisImageRef = useRef(null);
 
   useEffect(() => {
+    const disableRightClick = (e) => {
+      e.preventDefault(); 
+    };
+
+    const disableImageDownload = (e) => {
+
+      if (e.target && e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', disableRightClick);
+    document.addEventListener('mousedown', disableImageDownload); 
+
+    return () => {
+      document.removeEventListener('contextmenu', disableRightClick);
+      document.removeEventListener('mousedown', disableImageDownload);
+    };
+  }, []);
+
+  useEffect(() => {
     const adjustButtonPositions = () => {
       const pituitaryImage = pituitaryImageRef.current;
       const parsDistalisImage = parsDistalisImageRef.current;
@@ -86,7 +107,7 @@ function Pituitary() {
         <div className="Container2">
           <a href='#' className="image-cell"  style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Pituitary Gland</u></strong></a>
           <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Pituitary/Pituitary Panaromic.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Panaromic View of Pituitary Gland</u></strong></a>
-          <ol style = {{textAlign : 'left'}}>
+          <ol style = {{textAlign : 'left', marginLeft : '20px'}}>
             <strong><u>Identifying features:</u></strong>
             <li>Connective Tissue Capsule</li>
             <li>Three parts visualized are :-</li>

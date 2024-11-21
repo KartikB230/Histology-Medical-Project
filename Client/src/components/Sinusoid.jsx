@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { openPopup1, closePopup, toggleButtons } from './script';
 
-function SimpleCuboidalEpithelium() {
+function Sinusoid() {
   const [buttonClicked, setButtonClicked] = useState(false);
 
   useEffect(() => {
@@ -26,30 +26,26 @@ function SimpleCuboidalEpithelium() {
       document.removeEventListener('mousedown', disableImageDownload);
     };
   }, []);
-
+  
   return (
     <>
     <div>
       <Navbar />
         <div className="heading">
           
-          <h1>Simple Cuboidal Epithelium</h1>
+          <h1>Sinusoid</h1>
         </div>
         <hr style={{ height: "10px" }} />
 
         <div className= "Container1"  id="container1">
           <div style={{ position: 'relative' }}>
-            <img src="assets/Images/Epithelium/Simple Cuboidal Epithelium.jpg" alt="Simple Cuboidal Epithelium" />
-            <button className="AllButtons" data-tooltip="Simple Cuboidal - High Magnification" id="Cuboidalbtn1" data-popup="popup1" onClick={() => openPopup1('assets/Images/Epithelium/Simple Cuboidal Epithelium High Magnification.PNG', '#', '#')}>1</button>
+            <img src="/assets/Images/Blood Vessel/Sinusoid Low Magnification.jpg" alt="Sinusoid" />
+            <button className="AllButtons" data-tooltip="Sinusoids" id="Sinusoidbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Blood Vessel/Sinusoid High Magnification.jpg', '#', '#')}>1</button>
+            <button className="AllButtons" data-tooltip="Sinusoids" id="Sinusoidbtn2" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Blood Vessel/Sinusoid High Magnification.jpg', '#', '#')}>1</button>
           </div>
         </div>
         <div className="toggle-button-container">
-          <button
-            id="toggleButton"
-            data-tooltip="Show/Hide labels"
-            className="toggle-button"
-            onClick={() => toggleButtons(buttonClicked, setButtonClicked)}
-          >
+          <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
             {buttonClicked ? (
               <img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />
             ) : (
@@ -57,15 +53,11 @@ function SimpleCuboidalEpithelium() {
             )}
           </button>
         </div>
-        <div className='Container2'>
-            <a href='#' className="image-cell" onClick={() => openPopup1("assets/Images/Epithelium/Simple Cuboidal Epithelium Pencil.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Simple Cuboidal Epithelium</u></strong></a>
-            <p>
-            <ul className='epithelium-list' style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft : '20px' }}>
-              <li>It is made of single layer of cells whose height and width are equal. A round nucleus is located in the center of each cell. </li>
-              <li>It has secretory role. </li>
-              <li>Example: PCT and DCT of Kidney, Thyroid Follicles, Ducts of many glands, Germinal epithelium of ovary</li>
+        <div className= 'Container2'>
+            <ul style = {{textAlign : 'left', listStyle : 'disc', marginLeft : '20px'}}>
+              <li>Sinusoids are large irregular blood vessels lined by gaps in the endothelium.</li>
+              <li><strong>Site:</strong> liver, adrenal cortex, pituitary, parathyroid, spleen.</li>
             </ul>
-            </p>
         </div>
 
         <div id="overlay" className="overlay">
@@ -81,13 +73,14 @@ function SimpleCuboidalEpithelium() {
                 Your browser does not support the audio element.
               </audio>
             </div>
-            <div id="additionalButtons" className="additional-buttons"></div>
+            <div id="additionalButtons" className="additional-buttons">
+            </div>
           </div>
         </div>
+        <Footer/>
       </div>
-      <Footer/>
     </>
   );
 }
 
-export default SimpleCuboidalEpithelium;
+export default Sinusoid;

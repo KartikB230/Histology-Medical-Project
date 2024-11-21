@@ -8,6 +8,27 @@ function DenseIrregularTissue() {
   const [buttonBottomOffset, setButtonBottomOffset] = useState('20px');
 
   useEffect(() => {
+    const disableRightClick = (e) => {
+      e.preventDefault(); 
+    };
+
+    const disableImageDownload = (e) => {
+
+      if (e.target && e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', disableRightClick);
+    document.addEventListener('mousedown', disableImageDownload); 
+
+    return () => {
+      document.removeEventListener('contextmenu', disableRightClick);
+      document.removeEventListener('mousedown', disableImageDownload);
+    };
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       const footer = document.querySelector('.footer');
       const toggleButton = document.getElementById('toggleButton');
@@ -67,11 +88,11 @@ function DenseIrregularTissue() {
         <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/Dense Irregular High Magnification.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view High Magnification of Dense Irregular Tissue</u></strong></a>
           <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/Dense Irregular Pencil Diagram.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Dense Irregular Tissue</u></strong></a>
           <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
-          <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', margin: '0' }}>
+          <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft: '20px' }}>
             <li>Collagen and elastic fibres with connective tissue cells dispersed randomly.</li>
           </ul>
           <h2 style={{ textDecoration: 'underline' }}>Examples:</h2>
-          <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', margin: '0' }}>
+          <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft: '20px' }}>
             <li>Dermis of Skin.</li>
           </ul>
 

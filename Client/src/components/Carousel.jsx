@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { Link } from 'react-router-dom';
 
@@ -8,6 +8,29 @@ const CarouselComponent = () => {
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
+
+
+  // Disable right-click and direct image download
+  useEffect(() => {
+    const disableRightClick = (e) => {
+      e.preventDefault(); 
+    };
+
+    const disableImageDownload = (e) => {
+
+      if (e.target && e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', disableRightClick);
+    document.addEventListener('mousedown', disableImageDownload); 
+
+    return () => {
+      document.removeEventListener('contextmenu', disableRightClick);
+      document.removeEventListener('mousedown', disableImageDownload);
+    };
+  }, []);
 
   return (
     <div className="carousel-container d-flex justify-content-center">
@@ -129,6 +152,21 @@ const CarouselComponent = () => {
             </div>
             <Carousel.Caption>
               <h3>Kidney</h3>
+            </Carousel.Caption>
+          </Link>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <Link to="/BloodVessel">
+            <div className='carousel-image'>
+              <img
+                className="d-block w-100"
+                src="/assets/Images/Carouse/Blood Vessel.jpg"
+                alt="Eighth slide"
+              />
+            </div>
+            <Carousel.Caption>
+              <h3>Blood Vessels</h3>
             </Carousel.Caption>
           </Link>
         </Carousel.Item>

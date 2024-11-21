@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -11,13 +11,48 @@ const Bone = () => {
   const [activeTab, setActiveTab] = useState('Theory');
   const [answers, setAnswers] = useState(Array(10).fill(null));
   const [score, setScore] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [buttonClicked, setButtonClicked] = useState(false);
+
+  // Disable right-click and direct image download
+  useEffect(() => {
+    const disableRightClick = (e) => {
+      e.preventDefault(); // Prevent right-click context menu
+    };
+
+    const disableImageDownload = (e) => {
+      // Prevent image download by blocking the right-click on images
+      if (e.target && e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    };
+
+    // Add event listeners for right-click and image downloads
+    document.addEventListener('contextmenu', disableRightClick);
+    document.addEventListener('mousedown', disableImageDownload); // Disable right-click on images
+
+    // Cleanup event listeners on component unmount
+    return () => {
+      document.removeEventListener('contextmenu', disableRightClick);
+      document.removeEventListener('mousedown', disableImageDownload);
+    };
+  }, []);
 
   useEffect(() => {
-    
-    if (activeTab === 'Slides of Bone' && searchInputRef.current && window.innerWidth > 1000) {
-      searchInputRef.current.focus();
+   
+    const state = location.state;
+    if (state && state.activeTab) {
+      setActiveTab(state.activeTab);
     }
-  }, [activeTab]);
+  }, [location]);
+
+  
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    
+    navigate(location.pathname, { state: { activeTab: tab } });
+  };
   
 
   const tiles = [
@@ -182,9 +217,9 @@ const Bone = () => {
     <div>
       <Navbar />
       <div className="tab-container">
-        <button className="tab-button" onClick={() => setActiveTab('Theory')}>Theory</button>
-        <button className="tab-button" onClick={() => setActiveTab('Slides of Bone')}>Slides of Bone</button>
-        <button className="tab-button" onClick={() => setActiveTab('Quiz')}>Quiz</button>
+        <button className="tab-button" onClick={() => handleTabChange('Theory')}>Theory</button>
+        <button className="tab-button" onClick={() => handleTabChange('Slides of Bone')}>Slides of Bone</button>
+        <button className="tab-button" onClick={() => handleTabChange('Quiz')}>Quiz</button>
       </div>
       <div className="content">
         {renderContent()}

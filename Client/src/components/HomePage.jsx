@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Navbar from './Navbar';
 import Home from './Home';
 import CarouselComponent from './Carousel';
@@ -6,7 +6,28 @@ import Footer from './Footer';
 
 function HomePage() {
     const carouselRef = useRef(null);
-    const footerRef = useRef(null); // Create a reference for the Footer
+    const footerRef = useRef(null);
+
+  useEffect(() => {
+    const disableRightClick = (e) => {
+      e.preventDefault(); 
+    };
+
+    const disableImageDownload = (e) => {
+
+      if (e.target && e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', disableRightClick);
+    document.addEventListener('mousedown', disableImageDownload); 
+
+    return () => {
+      document.removeEventListener('contextmenu', disableRightClick);
+      document.removeEventListener('mousedown', disableImageDownload);
+    };
+  }, []);
 
     // Function to scroll to the carousel
     const scrollToCarousel = () => {

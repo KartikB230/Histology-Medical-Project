@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { openPopup1, closePopup, toggleButtons } from './script';
 
-function WhiteFibrousCartilage() {
+function MuscularArtery() {
   const [buttonClicked, setButtonClicked] = useState(false);
 
   useEffect(() => {
@@ -26,25 +26,23 @@ function WhiteFibrousCartilage() {
       document.removeEventListener('mousedown', disableImageDownload);
     };
   }, []);
-
+  
   return (
     <>
     <div>
       <Navbar />
         <div className="heading">
           
-          <h1>White Fibrous Cartilage</h1>
+          <h1>Medium Muscular Artery</h1>
         </div>
         <hr style={{ height: "10px" }} />
 
         <div className= "Container1"  id="container1">
           <div style={{ position: 'relative' }}>
-            <img src="/assets/Images/Cartilage/White Fibrous Cartilage Low Magnification.jpg" alt="White Fibrous Cartilage" />
-            <button className="AllButtons" data-tooltip="Chondrocyte" id="Fibrousbtn1" data-popup="popup1" >1</button>
-            <button className="AllButtons" data-tooltip="Matrix with Collagen Fibres" id="Fibrousbtn2" data-popup="popup2" >2</button>
-            <button className="AllButtons" data-tooltip="Lacuna" id="Fibrousbtn3" data-popup="popup3" >3</button>
-            
-            
+            <img src="/assets/Images/Blood Vessel/Muscular Artery Low Magnification.jpg" alt="Medium Muscular Artery" />
+            <button className="AllButtons" data-tooltip="Tunica Intima" id="MAbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Blood Vessel/Muscular Artery Tunica Intima.jpg', '<p><strong><span style="text-decoration: underline;">Tunica Intima</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>Includes endothelium and internal elastic lamina</li><li>The internal elastic lamina is prominent and is wavy (Wavy due to contraction of smooth muscle cells in the Tunica media).</li></ul>','#')}>1</button>
+            <button className="AllButtons" data-tooltip="Tunica Media" id="MAbtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Blood Vessel/Muscular Artery Tunica Media.jpg', '<p><strong><span style="text-decoration: underline;">Tunica Media</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>Thickness of Tunica media in comparison to Tunica adventitia is 1 : 1</li><li>Concentrically arranged layers of smooth muscle fibres (almost 40 layers thick)</li><li>Scattered among them are some elastic and reticular fibres.</li></ul>','#')}>2</button>
+            <button className="AllButtons" data-tooltip="Tunica Adventitia" id="MAbtn3" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Blood Vessel/Muscular Artery Tunica Adventitia.jpg', '<p><strong><span style="text-decoration: underline;">Tunica Adventitia</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>External elastic lamina is prominent.</li><li>Made of longitudinally arranged collagenous tissue and a few elastic fibres.</li><li>These components gradually merge into the loose connective tissue surrounding the vessels.</li><li>It contains vasa vasorum and nervi vascularis</li><li><strong>Examples:</strong> brachial, radial, ulnar, popliteal, dorsalis pedis artery (All arteries except elastic arteries)</li></ul>', '#')}>3</button>
           </div>
         </div>
         <div className="toggle-button-container">
@@ -62,19 +60,7 @@ function WhiteFibrousCartilage() {
           </button>
         </div>
         <div className= 'Container2'>
-          <a href = "" className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/White Fibrous Pencil.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of White Fibrous Cartilage</u></strong></a>
-          <a className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/White Fibrous Cartilage High Magnification.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view High Magnification of White Fibrous Cartilage</u></strong></a>
-          <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft: '20px'}}>
-          <li>The matrix is basophilic and filled with numerous Type-I collagen bundles.</li>
-          <li>The collagen fibre bundles vary in thickness, the bundles branch and branches reunite with each other. This branching pattern gives a feathery appearance to the cartilage.</li>
-          <li>Some fibroblasts are present in between bundles.</li>
-          <li>Relatively fewer numbers of small lacunae with chondrocytes present between collagen fibre bundles.</li>
-          <li>No cell nests are seen.</li>
-          <li>The structural composition of this cartilage gives high tensile strength and elasticity to tissue.</li>
-          <li>Sites where White Fibro cartilage is present -</li>
-          Secondary Cartilaginous Joints, The Articular Discs of Joints, Glenoidal Labrum of shoulder joint, Acetabular labrum of Hip Joint, Intervertebral Discs.
-
-        </ul>
+          
         </div>
 
         <div id="overlay" className="overlay">
@@ -90,13 +76,14 @@ function WhiteFibrousCartilage() {
                 Your browser does not support the audio element.
               </audio>
             </div>
-            <div id="additionalButtons" className="additional-buttons"></div>
+            <div id="additionalButtons" className="additional-buttons">
+            </div>
           </div>
         </div>
+        <Footer/>
       </div>
-      <Footer/>
     </>
   );
 }
 
-export default WhiteFibrousCartilage;
+export default MuscularArtery;

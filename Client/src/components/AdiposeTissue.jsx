@@ -1,10 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { openPopup1, closePopup, toggleButtons } from './script';
 
 function AdiposeTissue() {
   const [buttonClicked, setButtonClicked] = useState(false);
+
+  // Disable right-click and direct image download
+  useEffect(() => {
+    const disableRightClick = (e) => {
+      e.preventDefault(); // Prevent right-click context menu
+    };
+
+    const disableImageDownload = (e) => {
+      // Prevent image download by blocking the right-click on images
+      if (e.target && e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    };
+
+    // Add event listeners for right-click and image downloads
+    document.addEventListener('contextmenu', disableRightClick);
+    document.addEventListener('mousedown', disableImageDownload); // Disable right-click on images
+
+    // Cleanup event listeners on component unmount
+    return () => {
+      document.removeEventListener('contextmenu', disableRightClick);
+      document.removeEventListener('mousedown', disableImageDownload);
+    };
+  }, []);
 
   return (
     <>

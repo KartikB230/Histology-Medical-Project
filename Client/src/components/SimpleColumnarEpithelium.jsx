@@ -1,10 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { openPopup1, closePopup, toggleButtons } from './script';
 
 function SimpleColumnarEpithelium() {
   const [buttonClicked, setButtonClicked] = useState(false);
+
+  useEffect(() => {
+    const disableRightClick = (e) => {
+      e.preventDefault(); 
+    };
+
+    const disableImageDownload = (e) => {
+
+      if (e.target && e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', disableRightClick);
+    document.addEventListener('mousedown', disableImageDownload); 
+
+    return () => {
+      document.removeEventListener('contextmenu', disableRightClick);
+      document.removeEventListener('mousedown', disableImageDownload);
+    };
+  }, []);
 
   return (
     <>
@@ -38,7 +59,7 @@ function SimpleColumnarEpithelium() {
         <div className='Container2'>
           <a href='#' className="image-cell" onClick={() => openPopup1("assets/Images/Epithelium/Simple Columnar Pencil.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Simple Columnar Epithelium</u></strong></a>
           <p>
-            <ul className='epithelium-list' style={{ listStyleType: 'disc', paddingInlineStart: '20px', margin: '0' }}>
+            <ul className='epithelium-list' style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft : '20px' }}>
               <li>It consists of a single layer of tall and elongated cells. The nucleus is located at the base of the cell. The nucleus is elongated vertically.</li>
               <li>It consists of a single layer of tall and elongated cells. The nucleus is located at the base of the cell. The nucleus is elongated vertically.</li>
               <li>The cells show the presence of microvilli at some locations. Microvilli might be regular giving it a striated border or might be irregular described as the brush border.</li>

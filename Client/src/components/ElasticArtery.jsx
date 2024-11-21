@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { openPopup1, closePopup, toggleButtons } from './script';
 
-function Thyroid() {
+function ElasticArtery() {
   const [buttonClicked, setButtonClicked] = useState(false);
 
   useEffect(() => {
@@ -33,19 +33,17 @@ function Thyroid() {
       <Navbar />
         <div className="heading">
           
-          <h1>Thyroid</h1>
+          <h1>Large Elastic Artery</h1>
         </div>
         <hr style={{ height: "10px" }} />
 
         <div className= "Container1"  id="container1">
           <div style={{ position: 'relative' }}>
-            <img src="/assets/Images/Thyroid/Updated_thyroid.png" alt="Thyroid" />
-            <button className="AllButtons" data-tooltip="Follicles" id="Thyroidbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Thyroid/Connective_Tissue_Septa.png', 'Follicles are the basic structural units of the thyroid gland. Each lobule contains many closely packed follicles of different size and shapes. The size of the follicle is approximately 150-200 microns. Follicles are round to oval in shape and are lined by simple squamous or cuboidal epithelium. The follicles are filled with colloid. ', '/assets/Audios/Thyroid/Thyroid_Follicles.wav')}>1</button>
-            <button className="AllButtons" data-tooltip="Connective Tissue septa" id="Thyroidbtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Thyroid/Connective_Tissue_Septa.png', 'The gland shows a thin capsule. Thin septae extend from the capsule into the substance of the gland and divide it into lobules. ', '/assets/Audios/Thyroid/Connective_tissue_septa.wav')}>2</button>
-            <button className="AllButtons" data-tooltip="Blood Vessels" id="Thyroidbtn3" data-popup="popup3" onClick={() => openPopup1('#', 'There is very little interlobular connective tissue (follicles are packed). The interlobular and intralobular connective tissue is thin and contains many capillaries. ', '#')}>3</button>
-            <button className="AllButtons" data-tooltip="Follicular cells (Simple cuboidal epithelium)" id="Thyroidbtn4" data-popup="popup4" onClick={() => openPopup1('/assets/Images/Thyroid/Follicular_cells.png', 'The lining epithelium of the follicles shows cuboidal cells which stain eosinophilic. These cells have a vesicular round nucleus. They constitute the principal secretory cells of thyroid which synthesize thyroglobulin. ', '/assets/Audios/Thyroid/Follicular_cells.wav')}>4</button>
-            <button className="AllButtons" data-tooltip="Parafollicular or C cells " id="Thyroidbtn5" data-popup="popup5" onClick={() => openPopup1('/assets/Images/Thyroid/Parafollicular_Cells.png', 'These cells constitute about 2% of the thyroid gland. The cells are called as clear cells because the cytoplasm is not stained. The cells are large and occur either singly or in groups of 2 or 3. They are usually situated between the basement membrane and the cubical epithelium. They secrete calcitonin.', '/assets/Audios/Thyroid/Parafollicular_cells.wav')}>5</button>
-            <button className="AllButtons" data-tooltip="Colloid" id="Thyroidbtn6" data-popup="popup6" onClick={() => openPopup1('/assets/Images/Thyroid/Follicular_cells.png', 'The lumen of the thyroid follicle is large and contains colloid which is stained eosinophilic It is made of a glycoprotein complex, also known as thyroglobulin. The colloid stains with both acidic and basic dyes. It is strongly PAS positive. ', '/assets/Audios/Thyroid/Colloid.wav')}>6</button>
+            <img src="/assets/Images/Blood Vessel/Elastic Artery Low Magnification.jpg" alt="Thyroid" />
+            <button className="AllButtons" data-tooltip="Tunica Intima" id="EAbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Blood Vessel/Elastic Artery Tunica Intima.jpg', '<p><strong><span style="text-decoration: underline;">Tunica Intima</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>Includes endothelium and subendothelial connective tissue. </li><li>The internal elastic lamina is present but not prominent (Tunica media contains elastic fibres, hence internal elastic lamina and external elastic lamina which also contain elastic fibres become indistinguishable).</li></ul>', '#')}>1</button>
+            <button className="AllButtons" data-tooltip="Tunica Media" id="EAbtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Blood Vessel/Elastic Artery Tunica Media.jpg', '<p><strong><span style="text-decoration: underline;">Tunica Media</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>Thickest layer.</li><li>Thickness of Tunica media in comparison to Tunica adventitia is 3 : 1</li><li>Concentrically arranged layers of elastic fibres (almost 40-60 layers thick)</li><li>Scattered among them are some smooth muscle cells and reticular fibres.</li></ul>', '#')}>2</button>
+            <button className="AllButtons" data-tooltip="Tunica Adventitia" id="EAbtn3" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Blood Vessel/Elastic Artery Tunica Adventitia.jpg', '<p><strong><span style="text-decoration: underline;">Tunica Adventitia</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>External elastic lamina is present but not prominent. </li><li>Made of longitudinally arranged collagenous tissue and a few elastic fibres. </li><li>These components gradually merge into the loose connective tissue surrounding the vessels.</li><li>It contains vasa vasorum and nerve vascularis</li><li><strong>Examples:</strong> aorta, pulmonary trunk, their main branches – brachiocephalic trunk, common carotid, subclavian, common iliac arteries</li></ul>', '#')}>3</button>
+            
           </div>
         </div>
         <div className="toggle-button-container">
@@ -95,4 +93,4 @@ function Thyroid() {
   );
 }
 
-export default Thyroid;
+export default ElasticArtery;

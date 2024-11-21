@@ -1,10 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { openPopup1, closePopup, toggleButtons } from './script';
 
 function StratifiedSquamousKeratinisedEpithelium() {
   const [buttonClicked, setButtonClicked] = useState(false);
+
+  useEffect(() => {
+    const disableRightClick = (e) => {
+      e.preventDefault(); 
+    };
+
+    const disableImageDownload = (e) => {
+
+      if (e.target && e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', disableRightClick);
+    document.addEventListener('mousedown', disableImageDownload); 
+
+    return () => {
+      document.removeEventListener('contextmenu', disableRightClick);
+      document.removeEventListener('mousedown', disableImageDownload);
+    };
+  }, []);
 
   return (
     <>
@@ -38,7 +59,7 @@ function StratifiedSquamousKeratinisedEpithelium() {
         <div className='Container2'>
           <a href='#' className="image-cell" onClick={() => openPopup1("assets/Images/Epithelium/Stratified Squamous Keratinised Epithelium Pencil.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Stratified Squamous Keratinised Epithelium</u></strong></a>
           <p>
-            <ul className='epithelium-list' style={{ listStyleType: 'disc', paddingInlineStart: '20px', margin: '0' }}>
+            <ul className='epithelium-list' style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft : '20px' }}>
             <li>It is made up of many cell layers.</li>
             <li>There is a basal columnar cell layer, above which,  are cuboidal or polyhedral cells. As we proceed towards the surface, the cells get more and more flat. The superficial layer is made up of flat squamous cells. </li>
             <li>Stratified Squamous Non-Keratinised Epithelium - where only above mentioned cell layers are present. Keratin layer is absent. It is also known as moist epithelium.</li>

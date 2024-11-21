@@ -46,12 +46,12 @@ const Navbar = ({ scrollToFooter }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <a onClick={handleFeaturesClick} className="nav-link" style={{ color: 'white', fontSize: '20px' }}>
+              <a onClick={handleFeaturesClick} className="nav-link" style={{ color: 'white', fontSize: '20px', cursor : 'pointer'  }}>
                 Features
               </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Trial" style={{ color: 'white', fontSize: '20px' }}>
+              <Link className="nav-link" to="/Trial" style={{ color: 'white', fontSize: '20px'}}>
                 Learning
               </Link>
             </li>

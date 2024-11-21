@@ -1,34 +1,38 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Axios from 'axios';
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import icons
 
-
-function LoginPage() {
+function LoginPage({ onLogin }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const[errors,setErrors]=useState("false");
-  const[passerrors ,setPassError]=useState("false");
-  const[loginStatus, setLoginStatus]=useState("");
+  const [loginStatus, setLoginStatus] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // Authentication logic
     if (username === '123' && password === '123') {
-      navigate('/home');
+      onLogin(); // Set authentication state to true
+      navigate('/home'); // Navigate to the home page
     } else {
-      Axios.post("http://localhost:3001/login", {
-      username: username,
-      password: password,
-      }).then((response) => {
-      if(response.data.message){
-          setLoginStatus(response.data.message);
-      }else{
-         navigate('/home', {state: {username: username}})
-          //navigate(`/sPanel/${prn}`,{state:{prn:props.prn}});
-      }
+      Axios.post('http://localhost:3001/login', {
+        username: username,
+        password: password,
       })
+        .then((response) => {
+          if (response.data.message) {
+            setLoginStatus(response.data.message); // Display login error
+          } else {
+            onLogin(); // Set authentication state to true
+            navigate('/home', { state: { username: username } }); // Navigate with user state
+          }
+        })
+        .catch((error) => {
+          setLoginStatus('An error occurred during login. Please try again.');
+          console.error(error);
+        });
     }
   };
 
@@ -49,7 +53,7 @@ function LoginPage() {
           <label htmlFor="password">Password:</label>
           <div className="password-container">
             <input
-              type={showPassword ? "text" : "password"}
+              type={showPassword ? 'text' : 'password'}
               id="password"
               name="password"
               value={password}
@@ -60,7 +64,7 @@ function LoginPage() {
               className="toggle-password"
               onClick={() => setShowPassword(!showPassword)}
             >
-              {showPassword ? '🙈' : '👁️'}
+              {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
             </button>
           </div>
 
@@ -70,12 +74,38 @@ function LoginPage() {
           </div>
 
           <button type="submit">Sign In</button>
-          <h1 style={{color: 'red', fontSize: '15px', textAlign: 'center', marginTop: '20px'}}>{loginStatus}</h1>
-          <p>Don't Have Any Account? <a href="#">Sign Up</a></p>
+          <h1
+            style={{
+              color: 'red',
+              fontSize: '15px',
+              textAlign: 'center',
+              marginTop: '20px',
+            }}
+          >
+            {loginStatus}
+          </h1>
+          {/* Login Status Message */}
+          {loginStatus && (
+            <div
+              style={{
+                color: 'red',
+                textAlign: 'center',
+                marginTop: '10px',
+              }}
+            >
+              {loginStatus}
+            </div>
+          )}
+
+          <p>
+            Don't Have Any Account? <a href="#">Sign Up</a>
+          </p>
         </form>
       </div>
       <div className="welcome-section">
-        <h1 style={{ color: 'white', fontSize: '60px', marginBottom:"10px" }}>SymbiAnatomy.</h1>
+        <h1 style={{ color: 'white', fontSize: '60px', marginBottom: '10px' }}>
+          SymbiAnatomy.
+        </h1>
       </div>
     </div>
   );

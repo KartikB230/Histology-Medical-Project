@@ -5,6 +5,30 @@ import { openPopup1, closePopup, toggleButtons, openPopup } from './script';
 
 function BoneTS() {
   const [buttonClicked, setButtonClicked] = useState(false);
+
+  
+  useEffect(() => {
+    const disableRightClick = (e) => {
+      e.preventDefault(); 
+    };
+
+    const disableImageDownload = (e) => {
+      
+      if (e.target && e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    };
+
+    
+    document.addEventListener('contextmenu', disableRightClick);
+    document.addEventListener('mousedown', disableImageDownload); 
+
+    
+    return () => {
+      document.removeEventListener('contextmenu', disableRightClick);
+      document.removeEventListener('mousedown', disableImageDownload);
+    };
+  }, []);
   return (
     <>
       <div>
@@ -43,7 +67,7 @@ function BoneTS() {
         <div className="Container2">
         <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Bone/Ground Bone TS Pencil Diagram.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Ground Bone TS</u></strong></a>
         <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
-          <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', margin: '0' }}>
+          <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft: '20px' }}>
             <li>a sheath of dense connective tissue</li>
             <li>an outer fibrous layer</li>
             <li>an inner cellular layer containing osteoprogenitor cells.</li>
@@ -51,7 +75,7 @@ function BoneTS() {
           <br/>
           <p><strong>Lamellae</strong> -  Collagen fibre bundles running parallel to each other but running in different directions hence giving great strength to the bone.</p>
           Types: 
-          <ol style={{ listStyleType: 'numbers', paddingInlineStart: '20px', margin: '0' }}>
+          <ol style={{ listStyleType: 'numbers', paddingInlineStart: '20px', marginLeft: '20px' }}>
             <li><strong>Concentric</strong>- around the Haversian canals</li>
             <li><strong>Interstitial</strong> – between the 2 Haversian systems/ osteons – old lamellae</li>
             <li><strong>Circumferential</strong> –</li>

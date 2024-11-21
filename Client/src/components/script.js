@@ -85,3 +85,15 @@ export function toggleButtons(buttonClicked, setButtonClicked) {
   });
   setButtonClicked(!buttonClicked);
 }
+export function handleQuizSubmission(answers, userAnswers) {
+  answers.forEach((answer, index) => {
+    const correctOption = document.querySelector(`#question-${index} .option-${answer}`);
+    correctOption.classList.add('correct');
+
+    const userAnswer = userAnswers[index];
+    if (userAnswer !== answer) {
+      const wrongOption = document.querySelector(`#question-${index} .option-${userAnswer}`);
+      if (wrongOption) wrongOption.classList.add('wrong');
+    }
+  });
+}

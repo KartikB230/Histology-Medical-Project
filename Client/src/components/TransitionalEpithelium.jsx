@@ -1,10 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { openPopup1, closePopup, toggleButtons } from './script';
 
 function TransitionalEpithelium() {
   const [buttonClicked, setButtonClicked] = useState(false);
+
+  useEffect(() => {
+    const disableRightClick = (e) => {
+      e.preventDefault(); 
+    };
+
+    const disableImageDownload = (e) => {
+
+      if (e.target && e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', disableRightClick);
+    document.addEventListener('mousedown', disableImageDownload); 
+
+    return () => {
+      document.removeEventListener('contextmenu', disableRightClick);
+      document.removeEventListener('mousedown', disableImageDownload);
+    };
+  }, []);
 
   return (
     <>
@@ -39,7 +60,7 @@ function TransitionalEpithelium() {
           <a href='#' className="image-cell" onClick={() => openPopup1("assets/Images/Epithelium/Transitional Epithelium Relaxed Pencil.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Transitional Epithelium Relaxed</u></strong></a>
           <a href='#' className="image-cell" onClick={() => openPopup1("assets/Images/Epithelium/Transitional Epithelium Streched Pencil.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Transitional Epithelium Streched</u></strong></a>
           <p>
-            <ul className='epithelium-list' style={{ listStyleType: 'disc', paddingInlineStart: '20px', margin: '0' }}>
+            <ul className='epithelium-list' style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft: '20px' }}>
             <li>Transitional Epithelium also known as Urothelium as it is found lining most of the urinary system.</li>
             <li>It is a stratified epithelium having 3 types of cell layers:</li>
             <ol className='epithelium-list'>

@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { openPopup1, closePopup, toggleButtons } from './script';
 
-function SimpleCuboidalEpithelium() {
+function Vein() {
   const [buttonClicked, setButtonClicked] = useState(false);
 
   useEffect(() => {
@@ -26,21 +26,23 @@ function SimpleCuboidalEpithelium() {
       document.removeEventListener('mousedown', disableImageDownload);
     };
   }, []);
-
+  
   return (
     <>
     <div>
       <Navbar />
         <div className="heading">
           
-          <h1>Simple Cuboidal Epithelium</h1>
+          <h1>Vein</h1>
         </div>
         <hr style={{ height: "10px" }} />
 
         <div className= "Container1"  id="container1">
           <div style={{ position: 'relative' }}>
-            <img src="assets/Images/Epithelium/Simple Cuboidal Epithelium.jpg" alt="Simple Cuboidal Epithelium" />
-            <button className="AllButtons" data-tooltip="Simple Cuboidal - High Magnification" id="Cuboidalbtn1" data-popup="popup1" onClick={() => openPopup1('assets/Images/Epithelium/Simple Cuboidal Epithelium High Magnification.PNG', '#', '#')}>1</button>
+            <img src="/assets/Images/Blood Vessel/Vein Low Magnification.jpg" alt="Thyroid" />
+            <button className="AllButtons" data-tooltip="Tunica Intima" id="Veinbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Blood Vessel/Vein Tunica Intima.jpg', '<p><strong><span style="text-decoration: underline;">Tunica Intima</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>Includes the endothelium and the underlying subendothelial connective tissue (only in large veins). </li><li>The internal elastic lamina is absent.</li></ul>', '#')}>1</button>
+            <button className="AllButtons" data-tooltip="Tunica Media" id="Veinbtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Blood Vessel/Vein Tunica Media.jpg', '<p><strong><span style="text-decoration: underline;">Tunica Media</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>The proportional thickness of tunica media to tunica adventitia is in a ratio of 1: 3</li><li>Few circularly arranged smooth muscle cells, collagen fibres, elastic fibres, reticular fibres and proteoglycans.</li></ul>','#')}>2</button>
+            <button className="AllButtons" data-tooltip="Tunica Adventitia" id="Veinbtn3" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Blood Vessel/Vein Tunica Adventitia.jpg', '<p><strong><span style="text-decoration: underline;">Tunica Adventitia</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>Thickest layer</li><li>Made of longitudinally arranged collagenous tissue and a few elastic fibres. </li><li>It contains vasa vasorum and nerve vascularis</li></ul>', '#')}>3</button>
           </div>
         </div>
         <div className="toggle-button-container">
@@ -57,15 +59,8 @@ function SimpleCuboidalEpithelium() {
             )}
           </button>
         </div>
-        <div className='Container2'>
-            <a href='#' className="image-cell" onClick={() => openPopup1("assets/Images/Epithelium/Simple Cuboidal Epithelium Pencil.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Simple Cuboidal Epithelium</u></strong></a>
-            <p>
-            <ul className='epithelium-list' style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft : '20px' }}>
-              <li>It is made of single layer of cells whose height and width are equal. A round nucleus is located in the center of each cell. </li>
-              <li>It has secretory role. </li>
-              <li>Example: PCT and DCT of Kidney, Thyroid Follicles, Ducts of many glands, Germinal epithelium of ovary</li>
-            </ul>
-            </p>
+        <div className= 'Container2'>
+    
         </div>
 
         <div id="overlay" className="overlay">
@@ -81,13 +76,14 @@ function SimpleCuboidalEpithelium() {
                 Your browser does not support the audio element.
               </audio>
             </div>
-            <div id="additionalButtons" className="additional-buttons"></div>
+            <div id="additionalButtons" className="additional-buttons">
+            </div>
           </div>
         </div>
+        <Footer/>
       </div>
-      <Footer/>
     </>
   );
 }
 
-export default SimpleCuboidalEpithelium;
+export default Vein;

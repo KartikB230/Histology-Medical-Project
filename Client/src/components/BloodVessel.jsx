@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation} from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { handleQuizSubmission } from './script';
 import '../App.css';
 
-const ConnectiveTissue = () => {
+const BloodVessel = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const searchInputRef = useRef(null);
   const [activeTab, setActiveTab] = useState('Theory');
@@ -37,6 +38,7 @@ const ConnectiveTissue = () => {
   }, []);
 
   useEffect(() => {
+    
     const state = location.state;
     if (state && state.activeTab) {
       setActiveTab(state.activeTab);
@@ -49,14 +51,15 @@ const ConnectiveTissue = () => {
     navigate(location.pathname, { state: { activeTab: tab } });
   };
 
+
   
 
   const tiles = [
-    { name: 'Adipose Connective Tissue', img: '/assets/Images/Connective Tissue/Adipose Low Magnification.jpg', link: '/AdiposeTissue', keywords: [] },
-    { name: 'Dense Regular Connective Tissue', img: '/assets/Images/Connective Tissue/Dense Regular Low Magnification.jpg', link: '/DenseRegularTissue', keywords: ['Dense Connective Tissue', 'Dense Regular Connective Tissue'] },
-    { name: 'Dense Irregular Connective Tissue', img: '/assets/Images/Connective Tissue/Dense Irregular Low Magnification.jpg', link: '/DenseIrregularTissue', keywords: ['Dense Connective Tissue', 'Dense Irregular Connective Tissue'] },
-    { name: 'Loose Connective Tissue', img: '/assets/Images/Connective Tissue/Loose Connective Tissue Low Magnification.jpg', link: '/LooseConnectiveTissue', keywords: [] }
-    
+    { name: 'Vein', img: '/assets/Images/Blood Vessel/Vein Low Magnification.jpg', link: '/Vein', keywords: [] },
+    { name: 'Arteriole', img: '/assets/Images/Blood Vessel/Arteriole Low Magnification.jpg', link: '/Arteriole', keywords: [] },
+    { name: 'Sinusoid', img: '/assets/Images/Blood Vessel/Sinusoid Low Magnification.jpg', link: '/Sinusoid', keywords: [] },
+    { name: 'Large Elastic Artery', img: '/assets/Images/Blood Vessel/Elastic Artery Low Magnification.jpg', link: '/ElasticArtery', keywords: [] },
+    { name: 'Medium Muscular Artery', img: '/assets/Images/Blood Vessel/Muscular Artery Low Magnification.jpg', link: '/MuscularArtery', keywords: [] },
   ];
 
   const filteredTiles = tiles.filter(tile =>
@@ -65,19 +68,18 @@ const ConnectiveTissue = () => {
   );
 
   const questions = [
-    { question: "What is the main function of areolar tissue?", options: ["Structural strength", "Support and nourishment", "Heat production", "Storehouse of energy"], correct: 1 },
-    { question: "Which of the following is an example of dense regular connective tissue?", options: ["Dermis of skin", "Tendons", "Areolar tissue", "Lymphoid organs"], correct: 1 },
-    { question: "What type of connective tissue contains adipocytes?", options: ["Reticular tissue", "Mucoid tissue", "Adipose tissue", "Elastic tissue"], correct: 2 },
-    { question: "Which connective tissue has irregularly arranged fibers?", options: ["Dense regular", "Dense irregular", "Reticular tissue", "Elastic tissue"], correct: 1 },
-    { question: "What is the function of dense regular connective tissue?", options: ["Support and nourishment", "Heat production", "Attaching muscles to bones", "Protection"], correct: 2 },
-    { question: "Where is reticular connective tissue commonly found?", options: ["Lymphoid organs", "Tendons", "Perinephric fat", "Wharton’s jelly"], correct: 0 },
-    { question: "What characterizes dense irregular connective tissue?", options: ["Loosely arranged fibers", "Irregularly arranged fibers", "Regularly arranged fibers", "Single lipid droplet"], correct: 1 },
-    { question: "What is the primary function of adipose tissue?", options: ["Nourishment", "Heat production", "Structural support", "Storehouse of energy"], correct: 3 },
-    { question: "Which connective tissue is rich in elastic fibers?", options: ["Lymphoid tissue", "Elastic tissue", "Dense regular tissue", "Reticular tissue"], correct: 1 },
-    { question: "What is an example of mucoid connective tissue?", options: ["Perinephric fat", "Wharton’s jelly", "Lymphoid organs", "Ligamentum flavum"], correct: 1 }
-   ];
-
-
+    { question: "Which type of blood vessel carries blood away from the heart?", options: ["Veins", "Arteries", "Capillaries", "Sinusoids"], correct: 1 },
+    { question: "What is the primary function of capillaries?", options: ["Transport oxygenated blood only", "Facilitate the exchange of gases and nutrients", "Prevent backflow of blood", "Store blood"], correct: 1 },
+    { question: "Which layer of a blood vessel is primarily responsible for regulating blood flow and pressure?", options: ["Tunica intima", "Tunica media", "Tunica adventitia", "Endothelium"], correct: 1 },
+    { question: "What is a distinguishing feature of veins compared to arteries?", options: ["Thicker walls", "Presence of valves", "Higher pressure", "Circular lumen"], correct: 1 },
+    { question: "What type of blood vessel directly connects arteries to veins?", options: ["Arterioles", "Venules", "Capillaries", "Sinusoids"], correct: 2 },
+    { question: "Which of the following blood vessels has the largest lumen size?", options: ["Capillaries", "Venules", "Veins", "Arteries"], correct: 2 },
+    { question: "What is the primary structural component of the tunica media in arteries?", options: ["Elastic fibers and smooth muscle", "Collagen fibers", "Endothelial cells", "Connective tissue"], correct: 0 },
+    { question: "Which type of blood vessel is known for being elastic and maintaining blood pressure during diastole?", options: ["Capillaries", "Medium muscular arteries", "Large elastic arteries", "Veins"], correct: 2 },
+    { question: "Where are sinusoidal capillaries commonly found?", options: ["Lungs", "Spleen, liver, and bone marrow", "Kidney glomeruli", "Skin"], correct: 1 },
+    { question: "What is the role of the endothelial lining in blood vessels?", options: ["Providing structural support", "Preventing clot formation and regulating vascular tone", "Generating pressure for blood flow", "Absorbing nutrients"], correct: 1 },
+  ];
+  
   const handleAnswerChange = (index, value) => {
     const newAnswers = [...answers];
     newAnswers[index] = value;
@@ -104,20 +106,24 @@ const ConnectiveTissue = () => {
       case 'Theory':
   return (
     <div className="epithelium-container">
-      {/* Section 5: Final Image */}
+      
       <div className="epithelium-section">
-        <img src="/assets/Images/Connective Tissue/Diagram 1.jpg" alt = "Cartilage Diagram" className="epithelium-image image-3" />
+        <h2 className="epithelium-title">Identification points</h2>
+        <ol className="epithelium-introduction-list" style = {{fontSize: "20px"}}>
+        <li><strong>Arteries</strong>- Circular lumen</li>
+        <li><strong>Vein</strong>- Lumen is collapsed, often contains blood clot.</li>
+        </ol>
       </div>
     </div>
   );
 
-      case 'Types of Connective Tissue':
+      case 'Types of Blood Vessels':
         return (
           <div className="trial-container">
             <div className="search-bar">
             <div className="search-icon">
-            <FaSearch />
-          </div>
+              <FaSearch />
+            </div>
               <input
                 type="text"
                 placeholder="Start Typing to Search...."
@@ -173,7 +179,7 @@ const ConnectiveTissue = () => {
       <Navbar />
       <div className="tab-container">
         <button className="tab-button" onClick={() => handleTabChange('Theory')}>Theory</button>
-        <button className="tab-button" onClick={() => handleTabChange('Types of Connective Tissue')}>Types of Connective Tissue</button>
+        <button className="tab-button" onClick={() => handleTabChange('Types of Blood Vessels')}>Types of Blood Vessels</button>
         <button className="tab-button" onClick={() => handleTabChange('Quiz')}>Quiz</button>
       </div>
       <div className="content">
@@ -184,4 +190,4 @@ const ConnectiveTissue = () => {
   );
 }
 
-export default ConnectiveTissue;
+export default BloodVessel;

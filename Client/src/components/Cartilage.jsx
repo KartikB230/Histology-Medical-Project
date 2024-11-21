@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -11,12 +11,47 @@ const Cartilage = () => {
   const [activeTab, setActiveTab] = useState('Theory');
   const [answers, setAnswers] = useState(Array(10).fill(null));
   const [score, setScore] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
 
   useEffect(() => {
-    if (activeTab === 'Types of Cartilage' && searchInputRef.current && window.innerWidth > 1000) {
-      searchInputRef.current.focus();
+    const disableRightClick = (e) => {
+      e.preventDefault(); 
+    };
+
+    const disableImageDownload = (e) => {
+
+      if (e.target && e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    };
+
+
+    document.addEventListener('contextmenu', disableRightClick);
+    document.addEventListener('mousedown', disableImageDownload); 
+
+    return () => {
+      document.removeEventListener('contextmenu', disableRightClick);
+      document.removeEventListener('mousedown', disableImageDownload);
+    };
+  }, []);
+
+  useEffect(() => {
+
+    const state = location.state;
+    if (state && state.activeTab) {
+      setActiveTab(state.activeTab);
     }
-  }, [activeTab]);
+  }, [location]);
+
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+
+    navigate(location.pathname, { state: { activeTab: tab } });
+  };
+
 
   const tiles = [
     { name: 'Hyaline Cartilage', img: '/assets/Images/Cartilage/Hyaline Cartilage Low Magnification.jpg', link: '/HyalineCartilage', keywords: [] },
@@ -239,9 +274,9 @@ const Cartilage = () => {
     <div>
       <Navbar />
       <div className="tab-container">
-        <button className="tab-button" onClick={() => setActiveTab('Theory')}>Theory</button>
-        <button className="tab-button" onClick={() => setActiveTab('Types of Cartilage')}>Slides of Cartilage</button>
-        <button className="tab-button" onClick={() => setActiveTab('Quiz')}>Quiz</button>
+        <button className="tab-button" onClick={() => handleTabChange('Theory')}>Theory</button>
+        <button className="tab-button" onClick={() => handleTabChange('Types of Cartilage')}>Slides of Cartilage</button>
+        <button className="tab-button" onClick={() => handleTabChange('Quiz')}>Quiz</button>
       </div>
       <div className="content">
         {renderContent()}

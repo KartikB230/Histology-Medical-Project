@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation} from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -11,13 +11,46 @@ const Epithelium = () => {
   const [activeTab, setActiveTab] = useState('Theory');
   const [answers, setAnswers] = useState(Array(10).fill(null));
   const [score, setScore] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+
+  useEffect(() => {
+    const disableRightClick = (e) => {
+      e.preventDefault(); 
+    };
+
+    const disableImageDownload = (e) => {
+
+      if (e.target && e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', disableRightClick);
+    document.addEventListener('mousedown', disableImageDownload); 
+
+    return () => {
+      document.removeEventListener('contextmenu', disableRightClick);
+      document.removeEventListener('mousedown', disableImageDownload);
+    };
+  }, []);
 
   useEffect(() => {
     
-    if (activeTab === 'Types of Epithelium' && searchInputRef.current && window.innerWidth > 1000) {
-      searchInputRef.current.focus();
+    const state = location.state;
+    if (state && state.activeTab) {
+      setActiveTab(state.activeTab);
     }
-  }, [activeTab]);
+  }, [location]);
+
+  
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    navigate(location.pathname, { state: { activeTab: tab } });
+  };
+
+
   
 
   const tiles = [
@@ -193,9 +226,9 @@ const Epithelium = () => {
     <div>
       <Navbar />
       <div className="tab-container">
-        <button className="tab-button" onClick={() => setActiveTab('Theory')}>Theory</button>
-        <button className="tab-button" onClick={() => setActiveTab('Types of Epithelium')}>Types of Epithelium</button>
-        <button className="tab-button" onClick={() => setActiveTab('Quiz')}>Quiz</button>
+        <button className="tab-button" onClick={() => handleTabChange('Theory')}>Theory</button>
+        <button className="tab-button" onClick={() => handleTabChange('Types of Epithelium')}>Types of Epithelium</button>
+        <button className="tab-button" onClick={() => handleTabChange('Quiz')}>Quiz</button>
       </div>
       <div className="content">
         {renderContent()}

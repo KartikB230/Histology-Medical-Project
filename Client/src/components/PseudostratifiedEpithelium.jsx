@@ -1,10 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { openPopup1, closePopup, toggleButtons } from './script';
 
 function PseudostratifiedEpithelium() {
   const [buttonClicked, setButtonClicked] = useState(false);
+
+  useEffect(() => {
+    const disableRightClick = (e) => {
+      e.preventDefault(); 
+    };
+
+    const disableImageDownload = (e) => {
+
+      if (e.target && e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', disableRightClick);
+    document.addEventListener('mousedown', disableImageDownload); 
+
+    return () => {
+      document.removeEventListener('contextmenu', disableRightClick);
+      document.removeEventListener('mousedown', disableImageDownload);
+    };
+  }, []);
 
   return (
     <>
@@ -38,7 +59,7 @@ function PseudostratifiedEpithelium() {
         <div className='Container2'>
           <a href='#' className="image-cell" onClick={() => openPopup1("assets/Images/Epithelium/Pseudostratified Epithelium Pencil.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Pseudostratified Epithelium</u></strong></a>
           <p>
-            <ul className='epithelium-list' style={{ listStyleType: 'disc', paddingInlineStart: '20px', margin: '0' }}>
+            <ul className='epithelium-list' style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft: '20px' }}>
             <li>The epithelium consists of a single layer of cells. </li>
             <li>The cells are of varying heights and their nuclei are placed at different levels. This epithelium therefore appears stratified which it actually is not.</li>
             <li>It consists of two cell types a) Tall columnar cells b) Short basal cells. </li>
