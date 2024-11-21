@@ -48,7 +48,7 @@ function AdiposeTissue() {
           </div>
         </div>
 
-        {/* Toggle Button positioned below the image and centered */}
+        
         <div className="toggle-button-container" style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
           <button
             id="toggleButton"

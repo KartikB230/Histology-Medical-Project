@@ -84,6 +84,12 @@ const studentSchema = new mongoose.Schema({
     mname: String,
 });
 
+const imagesSchema = new mongoose.Schema({
+    id: Number,
+    name: String,
+    address: String,
+});
+
 const companyDetailSchema = new mongoose.Schema({
     // Define your schema fields here
     name: String,
@@ -95,6 +101,7 @@ const companyDetailSchema = new mongoose.Schema({
 
 const CompanyDetail = mongoose.model('company_detail', companyDetailSchema);
 const Student = mongoose.model('Student', studentSchema);
+const Images = mongoose.model('images', imagesSchema);
 
 app.post("/login", async (req, res) => {
     try {
@@ -117,6 +124,30 @@ app.post("/login", async (req, res) => {
         res.send({ message: "Server Error" });
     }
 });
+
+app.post("/img", async (req, res) => {
+    try {
+        const { id } = req.body;
+
+        // Validate the ID input
+        if (!id || typeof id !== 'number') {
+            return res.status(400).send({ message: "Invalid ID" });
+        }
+
+        // Find the image address by ID and only select the "address" field
+        const image = await Images.findOne({ id: id }, { address: 1, _id: 0 });
+
+        if (!image) {
+            return res.status(404).send({ message: "Image not found" });
+        }
+
+        res.send(image.address); // Return only the address
+    } catch (error) {
+        console.error("Error fetching image:", error);
+        res.status(500).send({ message: "Internal Server Error" });
+    }
+});
+
 
 app.post("/gpasort", async (req, res) => {
     try {

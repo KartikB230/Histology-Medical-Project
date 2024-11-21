@@ -48,7 +48,7 @@ function BoneTS() {
             <button className="AllButtons" data-tooltip="Osteon (Haversian System)" id="TSbtn6" data-popup="popup6">6</button>
         </div>
 
-        {/* Toggle Button positioned below the image and centered */}
+        
         <div className="toggle-button-container" style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
           <button
             id="toggleButton"
