@@ -44,15 +44,13 @@ const Trial = () => {
   };
 
   const tiles = [
-    { name: 'Thyroid', img: '/assets/Images/Thyroid/Updated_thyroid.png', link: '/Thyroid', keywords: [] },
     { name: 'Kidney', img: '/assets/Images/Kidney/Kidney_Panaromic.png', link: '#', keywords: ['kidney'], onClick: toggleKidneyDetails },
-    { name: 'Adrenal Gland', img: '/assets/Images/Adrenal/Adrenal_Gland.png', link: '/Adrenal', keywords: [] },
-    { name: 'Pituitary Gland', img: '/assets/Images/Pituitary/Pituitary Low Magnification.png', link: '/Pituitary', keywords: [] },
     { name: 'Cartilage', img: '/assets/Images/Cartilage/Elastic Cartilage Low Magnification.jpg', link:  '/Cartilage', keywords: ['Hyaline Cartilage','Elastic Cartilage','White Fibrous Cartilage'] },
     { name: 'Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Squamous _low.jpeg', link: '/Epithelium', keywords: ['Simple Squamous Epithelium','Simple Cuboidal Epithelium','Simple Columnar Epithelium','Pseudostratified Epithelium', 'Transitional Epithelium', 'Stratified Squamous Keratinised Epithelium', 'Stratified Squamous Non-Keratinised Epithelium']},
     { name: 'Connective Tissue', img: '/assets/Images/Connective Tissue/Dense Regular Low Magnification.jpg', link: '/ConnectiveTissue', keywords: ['Adipose Tissue', 'Dense Connective Tissue', 'Dense Regular Connective Tissue', 'Dense Irregular Connective Tissue']},
     { name: 'Bone', img: '/assets/Images/Bone/Ground Bone LS Low Magnification.jpg', link: '/Bone', keywords: []},
-    { name: 'Blood Vessels', img: '/assets/Images/Blood Vessel/Elastic Artery Low Magnification.jpg', link: '/BloodVessel', keywords: []}
+    { name: 'Blood Vessels', img: '/assets/Images/Blood Vessel/Elastic Artery Low Magnification.jpg', link: '/BloodVessel', keywords: []},
+    { name: 'Endocrine System', img: '/assets/Images/Adrenal/Adrenal_Gland.png', link: '/Endocrine', keywords: ['Adrenal Gland', 'Thyroid', 'Pituitary Gland']}
   ];
 
   const kidneyDetails = [
