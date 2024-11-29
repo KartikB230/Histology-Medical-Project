@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import icons
@@ -9,6 +9,11 @@ function LoginPage({ onLogin }) {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loginStatus, setLoginStatus] = useState('');
+
+  useEffect(() => {
+    // Reset authentication state when the login page is accessed
+    localStorage.setItem('isAuthenticated', 'false');
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
