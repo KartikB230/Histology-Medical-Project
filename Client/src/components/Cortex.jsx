@@ -1,10 +1,54 @@
 import React, { useState, useEffect } from 'react'; 
 import Navbar from './Navbar';
+import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { openPopup1, closePopup, toggleButtons } from './script';
 
 function Cortex() {
   const [buttonClicked, setButtonClicked] = useState(false);
+  const navigate = useNavigate();
+  const [startX, setStartX] = useState(null);
+  const [endX, setEndX] = useState(null);
+
+ 
+  const excretoryTypes = [];
+
+
+  const currentIndex = excretoryTypes.indexOf(window.location.pathname);
+
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      navigate(excretoryTypes[currentIndex - 1]);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < excretoryTypes.length - 1) {
+      navigate(excretoryTypes[currentIndex + 1]);
+    }
+  };
+  const handleTouchStart = (e) => {
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (startX && endX) {
+      const distance = startX - endX;
+      if (distance > 50) {
+        handleNext(); // Swipe left
+      } else if (distance < -50) {
+        handlePrev(); // Swipe right
+      }
+    }
+    setStartX(null);
+    setEndX(null);
+  };
 
   useEffect(() => {
     const disableRightClick = (e) => {
@@ -47,18 +91,30 @@ function Cortex() {
             <button className="AllButtons" data-tooltip="Capillaries" id="Cortexbtn5" data-popup="popup5">5</button>
           </div>
         </div>
-        <div className="toggle-button-container">
+        
+        <div className="navigation-buttons">
           <button
-            id="toggleButton"
-            data-tooltip="Show/Hide labels"
-            className="toggle-button"
-            onClick={() => toggleButtons(buttonClicked, setButtonClicked)}
+            className="nav-button prev-button"
+            data-tooltip="Disabled"
+            onClick={handlePrev}
+            disabled={true}
           >
-            {buttonClicked ? (
-              <img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />
-            ) : (
-              <img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />
-            )}
+           <FaArrowLeft /> 
+          </button>
+          
+          <div className="toggle-button-container">
+            <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
+              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) : 
+              (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
+          
+          </div>
+          <button
+            className="nav-button next-button"
+            data-tooltip="Disabled"
+            onClick={handleNext}
+            disabled={true}
+          >
+            <FaArrowRight />
           </button>
         </div>
 

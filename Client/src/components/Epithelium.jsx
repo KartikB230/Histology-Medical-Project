@@ -165,7 +165,7 @@ const Epithelium = () => {
     </div>
   );
 
-      case 'Types of Epithelium':
+      case 'Slides of Epithelium':
         return (
           <div className="trial-container">
             <div className="search-bar">
@@ -227,7 +227,7 @@ const Epithelium = () => {
       <Navbar />
       <div className="tab-container">
         <button className="tab-button" onClick={() => handleTabChange('Theory')}>Theory</button>
-        <button className="tab-button" onClick={() => handleTabChange('Types of Epithelium')}>Types of Epithelium</button>
+        <button className="tab-button" onClick={() => handleTabChange('Slides of Epithelium')}>Slides of Epithelium</button>
         <button className="tab-button" onClick={() => handleTabChange('Quiz')}>Quiz</button>
       </div>
       <div className="content">

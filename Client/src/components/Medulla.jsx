@@ -1,10 +1,54 @@
 import React, { useState, useEffect } from 'react'; 
 import Navbar from './Navbar';
+import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { openPopup1, closePopup, toggleButtons } from './script';
 
 function Medulla() {
   const [buttonClicked, setButtonClicked] = useState(false);
+  const navigate = useNavigate();
+  const [startX, setStartX] = useState(null);
+  const [endX, setEndX] = useState(null);
+
+ 
+  const excretoryTypes = [];
+
+
+  const currentIndex = excretoryTypes.indexOf(window.location.pathname);
+
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      navigate(excretoryTypes[currentIndex - 1]);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < excretoryTypes.length - 1) {
+      navigate(excretoryTypes[currentIndex + 1]);
+    }
+  };
+  const handleTouchStart = (e) => {
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (startX && endX) {
+      const distance = startX - endX;
+      if (distance > 50) {
+        handleNext(); // Swipe left
+      } else if (distance < -50) {
+        handlePrev(); // Swipe right
+      }
+    }
+    setStartX(null);
+    setEndX(null);
+  };
 
   useEffect(() => {
     const disableRightClick = (e) => {
@@ -46,20 +90,33 @@ function Medulla() {
             <button className="AllButtons" id = "Medullabtn4" data-tooltip="Collecting Tubule" data-popup="popup4" onClick={() => openPopup1('/assets/Images/Kidney/Collecting_Tubule.png', 'Distal convoluted tubules drain into short connecting tubules located in the cortical substance (labyrinth). Connecting tubules, in tung, drain into cortical collecting tubules located in the medullary ray. They are lined by simple cuboidal epithelium.', '/assets/Audios/Kidney/Collecting Tubules.m4a')}>4</button>
           </div>
         </div>
-        <div className="toggle-button-container">
+        
+        <div className="navigation-buttons">
           <button
-            id="toggleButton"
-            data-tooltip="Show/Hide labels"
-            className="toggle-button"
-            onClick={() => toggleButtons(buttonClicked, setButtonClicked)}
+            className="nav-button prev-button"
+            data-tooltip="Disabled"
+            onClick={handlePrev}
+            disabled={true}
           >
-            {buttonClicked ? (
-              <img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />
-            ) : (
-              <img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />
-            )}
+           <FaArrowLeft /> 
+          </button>
+          
+          <div className="toggle-button-container">
+            <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
+              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) : 
+              (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
+          
+          </div>
+          <button
+            className="nav-button next-button"
+            data-tooltip="Disabled"
+            onClick={handleNext}
+            disabled={true}
+          >
+            <FaArrowRight />
           </button>
         </div>
+
         <div className="Container2">
         <a href='#' className="image-cell"  style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}><strong><u>Click Here to view Pencil Diagram of Kidney</u></strong></a>
           <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Kidney/Kidney_Panaromic.png")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}><strong><u>Click Here to view Panaromic view of Kidney</u></strong></a>

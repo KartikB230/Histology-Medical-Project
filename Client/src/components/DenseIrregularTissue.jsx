@@ -1,11 +1,61 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
+import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { openPopup1, closePopup, toggleButtons, openPopup } from './script';
 
 function DenseIrregularTissue() {
   const [buttonClicked, setButtonClicked] = useState(false);
   const [buttonBottomOffset, setButtonBottomOffset] = useState('20px');
+  const navigate = useNavigate();
+  const [startX, setStartX] = useState(null);
+  const [endX, setEndX] = useState(null);
+
+ 
+  const connectiveTissueTypes = [
+    "/AdiposeTissue",
+    "/DenseRegularTissue",
+    "/DenseIrregularTissue",
+    "/LooseConnectiveTissue"
+  ];
+
+
+  const currentIndex = connectiveTissueTypes.indexOf(window.location.pathname);
+
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      navigate(connectiveTissueTypes[currentIndex - 1]);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < connectiveTissueTypes.length - 1) {
+      navigate(connectiveTissueTypes[currentIndex + 1]);
+    }
+  };
+  const handleTouchStart = (e) => {
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (startX && endX) {
+      const distance = startX - endX;
+      if (distance > 50) {
+        handleNext(); // Swipe left
+      } else if (distance < -50) {
+        handlePrev(); // Swipe right
+      }
+    }
+    setStartX(null);
+    setEndX(null);
+  };
+
 
   useEffect(() => {
     const disableRightClick = (e) => {
@@ -55,11 +105,11 @@ function DenseIrregularTissue() {
       <div>
         <Navbar />
         <div className="heading">
-          <h1>Dense Irregular Tissue</h1>
+          <h1>Dense Irregular Connective Tissue</h1>
         </div>
         <hr className="divider" />
 
-        <div className="Container1" id="container1">
+        <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
             <img src="/assets/Images/Connective Tissue/Dense Irregular Low Magnification.jpg" alt="Dense Irregular Tissue" />
             <button className="AllButtons" data-tooltip="Collagen Fibres" id="DenseIbtn1" data-popup="popup1">1</button>
@@ -68,21 +118,31 @@ function DenseIrregularTissue() {
           </div>
         </div>
 
-        {/* Toggle Button positioned below the image */}
-        <div className="toggle-button-container">
-          <button
-            id="toggleButton"
-            data-tooltip="Show/Hide labels"
-            className="toggle-button"
-            onClick={() => toggleButtons(buttonClicked, setButtonClicked)}
-          >
-            {buttonClicked ? (
-              <img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />
-            ) : (
-              <img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />
-            )}
-          </button>
-        </div>
+        <div className="navigation-buttons">
+        <button
+          className="nav-button prev-button"
+          data-tooltip="Dense Regular Connective Tissue"
+          onClick={handlePrev}
+          disabled={currentIndex === 0}
+        >
+          <FaArrowLeft /> 
+        </button>
+          
+          <div className="toggle-button-container">
+            <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
+              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) : 
+              (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
+          
+          </div>
+        <button
+          className="nav-button next-button"
+          data-tooltip="Loose Connective Tissue"
+          onClick={handleNext}
+          disabled={currentIndex === connectiveTissueTypes.length - 1}
+        >
+          <FaArrowRight />
+        </button>
+      </div>
 
         <div className="Container2">
         <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/Dense Irregular High Magnification.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view High Magnification of Dense Irregular Tissue</u></strong></a>

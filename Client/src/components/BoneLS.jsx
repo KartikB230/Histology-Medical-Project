@@ -1,29 +1,79 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
+import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { openPopup1, closePopup, toggleButtons, openPopup } from './script';
 
 function BoneLS() {
   const [buttonClicked, setButtonClicked] = useState(false);
+  const navigate = useNavigate();
+  const [startX, setStartX] = useState(null);
+  const [endX, setEndX] = useState(null);
 
-  // Disable right-click and direct image download
+
+  const boneTypes = [
+    "/BoneTS",
+    "/BoneLS",
+    "/Osteon"
+  ];
+
+
+  const currentIndex = boneTypes.indexOf(window.location.pathname);
+
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      navigate(boneTypes[currentIndex - 1]);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < boneTypes.length - 1) {
+      navigate(boneTypes[currentIndex + 1]);
+    }
+  };
+  const handleTouchStart = (e) => {
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (startX && endX) {
+      const distance = startX - endX;
+      if (distance > 50) {
+        handleNext(); // Swipe left
+      } else if (distance < -50) {
+        handlePrev(); // Swipe right
+      }
+    }
+    setStartX(null);
+    setEndX(null);
+  };
+
+
+
+
+ 
   useEffect(() => {
     const disableRightClick = (e) => {
-      e.preventDefault(); // Prevent right-click context menu
+      e.preventDefault(); 
     };
 
     const disableImageDownload = (e) => {
-      // Prevent image download by blocking the right-click on images
+      
       if (e.target && e.target.tagName === 'IMG') {
         e.preventDefault();
       }
     };
 
-    // Add event listeners for right-click and image downloads
+   
     document.addEventListener('contextmenu', disableRightClick);
-    document.addEventListener('mousedown', disableImageDownload); // Disable right-click on images
+    document.addEventListener('mousedown', disableImageDownload); 
 
-    // Cleanup event listeners on component unmount
     return () => {
       document.removeEventListener('contextmenu', disableRightClick);
       document.removeEventListener('mousedown', disableImageDownload);
@@ -39,7 +89,7 @@ function BoneLS() {
         </div>
         <hr style={{ height: "10px" }} />
 
-        <div className="Container1" id="container1">
+        <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
             <img src="/assets/Images/Bone/Ground Bone LS Low Magnification.jpg" alt="Dense Regular Tissue" />
             <button className="AllButtons" data-tooltip="Volkmann's Canal" id="LSbtn1" data-popup="popup1">1</button>
@@ -49,20 +99,31 @@ function BoneLS() {
           </div>
         </div>
 
-        <div className="toggle-button-container">
-          <button
-            id="toggleButton"
-            data-tooltip="Show/Hide labels"
-            className="toggle-button"
-            onClick={() => toggleButtons(buttonClicked, setButtonClicked)}
-          >
-            {buttonClicked ? (
-              <img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />
-            ) : (
-              <img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />
-            )}
-          </button>
-        </div>
+        <div className="navigation-buttons">
+        <button
+          className="nav-button prev-button"
+          data-tooltip="Ground Bone TS"
+          onClick={handlePrev}
+          disabled={currentIndex === 0}
+        >
+          <FaArrowLeft /> 
+        </button>
+          
+          <div className="toggle-button-container">
+            <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
+              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) : 
+              (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
+          
+          </div>
+        <button
+          className="nav-button next-button"
+          data-tooltip="Osteon(Haversian System)"
+          onClick={handleNext}
+          disabled={currentIndex === boneTypes.length - 1}
+        >
+          <FaArrowRight />
+        </button>
+      </div>
 
         <div className="Container2">
           <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Bone/Ground Bone LS Pencil Diagram.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}>

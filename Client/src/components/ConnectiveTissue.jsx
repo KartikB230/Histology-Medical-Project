@@ -111,7 +111,7 @@ const ConnectiveTissue = () => {
     </div>
   );
 
-      case 'Types of Connective Tissue':
+      case 'Slides of Connective Tissue':
         return (
           <div className="trial-container">
             <div className="search-bar">
@@ -173,7 +173,7 @@ const ConnectiveTissue = () => {
       <Navbar />
       <div className="tab-container">
         <button className="tab-button" onClick={() => handleTabChange('Theory')}>Theory</button>
-        <button className="tab-button" onClick={() => handleTabChange('Types of Connective Tissue')}>Types of Connective Tissue</button>
+        <button className="tab-button" onClick={() => handleTabChange('Slides of Connective Tissue')}>Slides of Connective Tissue</button>
         <button className="tab-button" onClick={() => handleTabChange('Quiz')}>Quiz</button>
       </div>
       <div className="content">

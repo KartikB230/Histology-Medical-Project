@@ -1,14 +1,64 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
+import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { openPopup1, closePopup, toggleButtons } from './script';
 
 function WhiteFibrousCartilage() {
   const [buttonClicked, setButtonClicked] = useState(false);
+  const navigate = useNavigate();
+  const [startX, setStartX] = useState(null);
+  const [endX, setEndX] = useState(null);
+
+
+  const cartilageTypes = [
+    "/HyalineCartilage",
+    "/ElasticCartilage",
+    "/WhiteFibrousCartilage"
+  ];
+
+
+  const currentIndex = cartilageTypes.indexOf(window.location.pathname);
+
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      navigate(cartilageTypes[currentIndex - 1]);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < cartilageTypes.length - 1) {
+      navigate(cartilageTypes[currentIndex + 1]);
+    }
+  };
+  const handleTouchStart = (e) => {
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (startX && endX) {
+      const distance = startX - endX;
+      if (distance > 50) {
+        handleNext(); // Swipe left
+      } else if (distance < -50) {
+        handlePrev(); // Swipe right
+      }
+    }
+    setStartX(null);
+    setEndX(null);
+  };
+
+
 
   useEffect(() => {
     const disableRightClick = (e) => {
-      e.preventDefault(); 
+      e.preventDefault();
     };
 
     const disableImageDownload = (e) => {
@@ -19,7 +69,7 @@ function WhiteFibrousCartilage() {
     };
 
     document.addEventListener('contextmenu', disableRightClick);
-    document.addEventListener('mousedown', disableImageDownload); 
+    document.addEventListener('mousedown', disableImageDownload);
 
     return () => {
       document.removeEventListener('contextmenu', disableRightClick);
@@ -29,52 +79,65 @@ function WhiteFibrousCartilage() {
 
   return (
     <>
-    <div>
-      <Navbar />
+      <div>
+        <Navbar />
         <div className="heading">
-          
+
           <h1>White Fibrous Cartilage</h1>
         </div>
         <hr style={{ height: "10px" }} />
 
-        <div className= "Container1"  id="container1">
+        <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
             <img src="/assets/Images/Cartilage/White Fibrous Cartilage Low Magnification.jpg" alt="White Fibrous Cartilage" />
             <button className="AllButtons" data-tooltip="Chondrocyte" id="Fibrousbtn1" data-popup="popup1" >1</button>
             <button className="AllButtons" data-tooltip="Matrix with Collagen Fibres" id="Fibrousbtn2" data-popup="popup2" >2</button>
             <button className="AllButtons" data-tooltip="Lacuna" id="Fibrousbtn3" data-popup="popup3" >3</button>
-            
-            
+
+
           </div>
         </div>
-        <div className="toggle-button-container">
+
+        <div className="navigation-buttons">
           <button
-            id="toggleButton"
-            data-tooltip="Show/Hide labels"
-            className="toggle-button"
-            onClick={() => toggleButtons(buttonClicked, setButtonClicked)}
+            className="nav-button prev-button"
+            data-tooltip="Elastic Cartilage"
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
           >
-            {buttonClicked ? (
-              <img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />
-            ) : (
-              <img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />
-            )}
+            <FaArrowLeft />
+          </button>
+
+          <div className="toggle-button-container">
+            <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
+              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) :
+                (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
+
+          </div>
+          <button
+            className="nav-button next-button"
+            data-tooltip="Disabled"
+            onClick={handleNext}
+            disabled={currentIndex === cartilageTypes.length - 1}
+          >
+            <FaArrowRight />
           </button>
         </div>
-        <div className= 'Container2'>
-          <a href = "" className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/White Fibrous Pencil.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of White Fibrous Cartilage</u></strong></a>
-          <a className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/White Fibrous Cartilage High Magnification.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view High Magnification of White Fibrous Cartilage</u></strong></a>
-          <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft: '20px'}}>
-          <li>The matrix is basophilic and filled with numerous Type-I collagen bundles.</li>
-          <li>The collagen fibre bundles vary in thickness, the bundles branch and branches reunite with each other. This branching pattern gives a feathery appearance to the cartilage.</li>
-          <li>Some fibroblasts are present in between bundles.</li>
-          <li>Relatively fewer numbers of small lacunae with chondrocytes present between collagen fibre bundles.</li>
-          <li>No cell nests are seen.</li>
-          <li>The structural composition of this cartilage gives high tensile strength and elasticity to tissue.</li>
-          <li>Sites where White Fibro cartilage is present -</li>
-          Secondary Cartilaginous Joints, The Articular Discs of Joints, Glenoidal Labrum of shoulder joint, Acetabular labrum of Hip Joint, Intervertebral Discs.
 
-        </ul>
+        <div className='Container2'>
+          <a href="" className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/White Fibrous Pencil.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of White Fibrous Cartilage</u></strong></a>
+          <a className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/White Fibrous Cartilage High Magnification.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view High Magnification of White Fibrous Cartilage</u></strong></a>
+          <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft: '20px' }}>
+            <li>The matrix is basophilic and filled with numerous Type-I collagen bundles.</li>
+            <li>The collagen fibre bundles vary in thickness, the bundles branch and branches reunite with each other. This branching pattern gives a feathery appearance to the cartilage.</li>
+            <li>Some fibroblasts are present in between bundles.</li>
+            <li>Relatively fewer numbers of small lacunae with chondrocytes present between collagen fibre bundles.</li>
+            <li>No cell nests are seen.</li>
+            <li>The structural composition of this cartilage gives high tensile strength and elasticity to tissue.</li>
+            <li>Sites where White Fibro cartilage is present -</li>
+            Secondary Cartilaginous Joints, The Articular Discs of Joints, Glenoidal Labrum of shoulder joint, Acetabular labrum of Hip Joint, Intervertebral Discs.
+
+          </ul>
         </div>
 
         <div id="overlay" className="overlay">
@@ -94,7 +157,7 @@ function WhiteFibrousCartilage() {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

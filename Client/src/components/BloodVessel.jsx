@@ -55,11 +55,11 @@ const BloodVessel = () => {
   
 
   const tiles = [
-    { name: 'Vein', img: '/assets/Images/Blood Vessel/Vein Low Magnification.jpg', link: '/Vein', keywords: [] },
-    { name: 'Arteriole', img: '/assets/Images/Blood Vessel/Arteriole Low Magnification.jpg', link: '/Arteriole', keywords: [] },
-    { name: 'Sinusoid', img: '/assets/Images/Blood Vessel/Sinusoid Low Magnification.jpg', link: '/Sinusoid', keywords: [] },
     { name: 'Large Elastic Artery', img: '/assets/Images/Blood Vessel/Elastic Artery Low Magnification.jpg', link: '/ElasticArtery', keywords: [] },
     { name: 'Medium Muscular Artery', img: '/assets/Images/Blood Vessel/Muscular Artery Low Magnification.jpg', link: '/MuscularArtery', keywords: [] },
+    { name: 'Arteriole', img: '/assets/Images/Blood Vessel/Arteriole Low Magnification.jpg', link: '/Arteriole', keywords: [] },
+    { name: 'Vein', img: '/assets/Images/Blood Vessel/Vein Low Magnification.jpg', link: '/Vein', keywords: [] },
+    { name: 'Sinusoid', img: '/assets/Images/Blood Vessel/Sinusoid Low Magnification.jpg', link: '/Sinusoid', keywords: [] },
   ];
 
   const filteredTiles = tiles.filter(tile =>
@@ -117,7 +117,7 @@ const BloodVessel = () => {
     </div>
   );
 
-      case 'Types of Blood Vessels':
+      case 'Slides of Blood Vessels':
         return (
           <div className="trial-container">
             <div className="search-bar">
@@ -179,7 +179,7 @@ const BloodVessel = () => {
       <Navbar />
       <div className="tab-container">
         <button className="tab-button" onClick={() => handleTabChange('Theory')}>Theory</button>
-        <button className="tab-button" onClick={() => handleTabChange('Types of Blood Vessels')}>Types of Blood Vessels</button>
+        <button className="tab-button" onClick={() => handleTabChange('Slides of Blood Vessels')}>Slides of Blood Vessels</button>
         <button className="tab-button" onClick={() => handleTabChange('Quiz')}>Quiz</button>
       </div>
       <div className="content">
