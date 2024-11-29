@@ -114,6 +114,77 @@ const BloodVessel = () => {
         <li><strong>Vein</strong>- Lumen is collapsed, often contains blood clot.</li>
         </ol>
       </div>
+      <div className="epithelium-section">
+        <h2 className="epithelium-title">Large Elastic Artery</h2>
+        <ol style={{ textAlign: 'left', marginLeft: '10px', fontSize: '20px' }}>
+            <li><strong>Tunica Intima -</strong> Includes endothelium and subendothelial connective tissue.</li>
+            <ul style={{ textAlign: 'left', listStyle: 'disc', fontSize: '20px'}}>
+            <li>The internal elastic lamina is present but not prominent (Tunica media contains elastic fibres, hence internal elastic lamina and external elastic lamina which also contain elastic fibres become indistinguishable).</li></ul>
+            <li><strong>Tunica Media -</strong>Thickest layer.</li>
+            <ul style={{ textAlign: 'left', listStyle: 'disc', fontSize: '20px' }}>
+              <li>Thickness of Tunica media in comparison to Tunica adventitia is 3 : 1</li>
+              <li>Concentrically arranged layers of elastic fibres (almost 40-60 layers thick)</li>
+              <li>Scattered among them are some smooth muscle cells and reticular fibres.</li>
+            </ul>
+            <li><strong>Tunica Adventitia -</strong>External elastic lamina is present but not prominent.</li> 
+            <ul style={{ textAlign: 'left', listStyle: 'disc', fontSize: '20px' }}>
+              <li>Made of longitudinally arranged collagenous tissue and a few elastic fibres. </li>
+              <li>These components gradually merge into the loose connective tissue surrounding the vessels.</li>
+              <li>It contains vasa vasorum and nerve vascularis</li>
+              <li>Examples: aorta, pulmonary trunk, their main branches – brachiocephalic trunk, common carotid, subclavian, common iliac arteries</li>
+            </ul>
+          </ol>
+      </div>
+      <div className="epithelium-section">
+        <h2 className="epithelium-title">Medium Muscular Artery</h2>
+        <ol style={{ textAlign: 'left', marginLeft: '10px', fontSize: '20px' }}>
+            <li><strong>Tunica Intima -</strong> Includes endothelium and internal elastic lamina</li>
+            <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
+            <li>The internal elastic lamina is prominent and is wavy (Wavy due to contraction of smooth muscle cells in the Tunica media).</li></ul>
+            <li><strong>Tunica Media -</strong>Thickness of Tunica media in comparison to Tunica adventitia is 1 : 1</li>
+            <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
+              <li>Concentrically arranged layers of smooth muscle fibres (almost 40 layers thick)</li>
+              <li>Scattered among them are some elastic and reticular fibres.</li>
+            </ul>
+            <li><strong>Tunica Adventitia -</strong>External elastic lamina is prominent.</li> 
+            <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
+              <li>Made of longitudinally arranged collagenous tissue and a few elastic fibres.</li>
+              <li>These components gradually merge into the loose connective tissue surrounding the vessels.</li>
+              <li>It contains vasa vasorum and nervi vascularis.</li>
+              <li>Examples: brachial, radial, ulnar, popliteal, dorsalis pedis artery (All arteries except elastic arteries)</li>
+            </ul>
+          </ol>
+      </div>
+      <div className="epithelium-section">
+        <h2 className="epithelium-title">Arteriole</h2>
+        <ol style={{ textAlign: 'left', marginLeft: '10px', fontSize: '20px' }}>
+            <li><strong>Tunica Intima -</strong> The endothelium is similar, gap junctions are present between endothelial cells and smooth muscle cells of tunica media.</li>
+            <li><strong>Tunica Media -</strong> Usually have 1-2 muscle layers.</li>
+            <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
+              <li>The Internal elastic lamina may or may not be present.</li>
+              <li>Elastic fibres are absent.</li>
+            </ul>
+            <li><strong>Tunica Adventitia -</strong> It is a thin, ill defined sheath of connective tissue that blends with the surrounding connective tissues.</li>
+          </ol>
+      </div>
+      <div className="epithelium-section">
+        <h2 className="epithelium-title">Vein</h2>
+        <ol style={{ textAlign: 'left', marginLeft: '10px', fontSize: '20px' }}>
+            <li><strong>Tunica Intima -</strong> Includes the endothelium and the underlying subendothelial connective tissue (only in large veins). </li>
+            <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
+            <li>The internal elastic lamina is absent.</li></ul>
+            <li><strong>Tunica Media -</strong>The proportional thickness of tunica media to tunica adventitia is in a ratio of 1: 3</li>
+            <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
+              <li>Few circularly arranged smooth muscle cells, collagen fibres, elastic fibres, reticular fibres and proteoglycans.</li>
+            </ul>
+            <li><strong>Tunica Adventitia -</strong>Thickest layer</li> 
+            <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
+              <li>Made of longitudinally arranged collagenous tissue and a few elastic fibres. </li>
+              <li>It contains vasa vasorum and nerve vascularis</li>
+              
+            </ul>
+          </ol>
+      </div>
     </div>
   );
 

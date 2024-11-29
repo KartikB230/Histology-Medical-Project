@@ -121,9 +121,22 @@ function Vein() {
             <FaArrowRight />
           </button>
         </div>
-
         <div className='Container2'>
-
+        <ol style={{ textAlign: 'left', marginLeft: '10px' }}>
+            <li><strong>Tunica Intima -</strong> Includes the endothelium and the underlying subendothelial connective tissue (only in large veins). </li>
+            <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
+            <li>The internal elastic lamina is absent.</li></ul>
+            <li><strong>Tunica Media -</strong>The proportional thickness of tunica media to tunica adventitia is in a ratio of 1: 3</li>
+            <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
+              <li>Few circularly arranged smooth muscle cells, collagen fibres, elastic fibres, reticular fibres and proteoglycans.</li>
+            </ul>
+            <li><strong>Tunica Adventitia -</strong>Thickest layer</li> 
+            <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
+              <li>Made of longitudinally arranged collagenous tissue and a few elastic fibres. </li>
+              <li>It contains vasa vasorum and nerve vascularis</li>
+              
+            </ul>
+          </ol>
         </div>
 
         <div id="overlay" className="overlay">
