@@ -17,8 +17,8 @@ function StratifiedSquamousKeratinisedEpithelium() {
     "/SimpleColumnarEpithelium",
     "/PseudostratifiedEpithelium",
     "/TransitionalEpithelium",
-    "/StratifiedSquamousKeratinisedEpithelium",
     "/StratifiedSquamousNonKeratinisedEpithelium",
+    "/StratifiedSquamousKeratinisedEpithelium",
   ];
 
 
@@ -93,14 +93,14 @@ function StratifiedSquamousKeratinisedEpithelium() {
         <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
             <img src="assets\Images\Epithelium\Stratified Squamous Keratinised Epithelium Low Magnification.jpg" alt="Stratified Squamous Keratinised Epithelium" />
-            <button className="AllButtons" data-tooltip="Stratified Squamous Keratinised Epithelium - High Magnification" id="Keratinisedbtn1" data-popup="popup1" onClick={() => openPopup1('assets/Images/Epithelium/Stratified Squamous Keratinised Epithelium High Magnification.png', '#', '#')}>1</button>
+            <button className="AllButtons" data-tooltip="Stratified Squamous Keratinised Epithelium" id="Keratinisedbtn1" data-popup="popup1" onClick={() => openPopup1('assets/Images/Epithelium/Stratified Squamous Keratinised Epithelium High Magnification.png', '#', '#')}>1</button>
           </div>
         </div>
         
         <div className="navigation-buttons">
         <button
           className="nav-button prev-button"
-          data-tooltip="Transitional Epithelium"
+          data-tooltip="Stratified Squamous Non-Keratinised Epithelium"
           onClick={handlePrev}
           disabled={currentIndex === 0}
         >
@@ -115,7 +115,7 @@ function StratifiedSquamousKeratinisedEpithelium() {
           </div>
         <button
           className="nav-button next-button"
-          data-tooltip="Stratified Squamous Non-KeratinisedEpithelium"
+          data-tooltip="Disabled"
           onClick={handleNext}
           disabled={currentIndex === epitheliumTypes.length - 1}
         >
@@ -129,9 +129,9 @@ function StratifiedSquamousKeratinisedEpithelium() {
             <ul className='epithelium-list' style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft : '20px' }}>
             <li>It is made up of many cell layers.</li>
             <li>There is a basal columnar cell layer, above which,  are cuboidal or polyhedral cells. As we proceed towards the surface, the cells get more and more flat. The superficial layer is made up of flat squamous cells. </li>
-            <li>Stratified Squamous Non-Keratinised Epithelium - where only above mentioned cell layers are present. Keratin layer is absent. It is also known as moist epithelium.</li>
-            <li>Present at places where there is friction, constant wear and tear is going on.</li>
-            <li>Examples - Oral Mucosa, Lip, Oesophagus, Cornea</li>
+            <li><strong>Stratified Squamous Keratinised Epithelium - </strong>It has a layer of keratin(dead cells) above the cell   layers. The superficial cells die, loose their nuclei and form keratin.</li>
+            <li>Present at places where there is friction, constant wear and tear going on.</li>
+            <li>Example - Skin</li>
             </ul>
           </p>
         </div>

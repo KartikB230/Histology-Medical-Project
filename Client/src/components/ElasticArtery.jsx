@@ -125,6 +125,24 @@ function ElasticArtery() {
         </div>
 
         <div className='Container2'>
+        <ol style={{ textAlign: 'left', marginLeft: '10px' }}>
+            <li><strong>Tunica Intima -</strong> Includes endothelium and subendothelial connective tissue.</li>
+            <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
+            <li>The internal elastic lamina is present but not prominent (Tunica media contains elastic fibres, hence internal elastic lamina and external elastic lamina which also contain elastic fibres become indistinguishable).</li></ul>
+            <li><strong>Tunica Media -</strong>Thickest layer.</li>
+            <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
+              <li>Thickness of Tunica media in comparison to Tunica adventitia is 3 : 1</li>
+              <li>Concentrically arranged layers of elastic fibres (almost 40-60 layers thick)</li>
+              <li>Scattered among them are some smooth muscle cells and reticular fibres.</li>
+            </ul>
+            <li><strong>Tunica Adventitia -</strong>External elastic lamina is present but not prominent.</li> 
+            <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
+              <li>Made of longitudinally arranged collagenous tissue and a few elastic fibres. </li>
+              <li>These components gradually merge into the loose connective tissue surrounding the vessels.</li>
+              <li>It contains vasa vasorum and nerve vascularis</li>
+              <li>Examples: aorta, pulmonary trunk, their main branches – brachiocephalic trunk, common carotid, subclavian, common iliac arteries</li>
+            </ul>
+          </ol>
         </div>
 
         <div id="overlay" className="overlay">

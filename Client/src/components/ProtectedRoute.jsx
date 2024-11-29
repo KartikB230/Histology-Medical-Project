@@ -1,21 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
-  const [loading, setLoading] = useState(true);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(null);
 
   useEffect(() => {
-    const checkAuth = () => {
-      const storedAuth = localStorage.getItem("isAuthenticated") === "true";
-      setIsAuthenticated(storedAuth);
-      setLoading(false);
-    };
-    checkAuth();
+    const storedAuth = localStorage.getItem("isAuthenticated");
+    setIsAuthenticated(storedAuth === "true");
   }, []);
 
-  if (loading) {
-    return <div>Loading...</div>; // Show a loading spinner or message
+  // While authentication state is being determined, show a loading screen
+  if (isAuthenticated === null) {
+    return <div>Loading...</div>;
   }
 
   return isAuthenticated ? children : <Navigate to="/" />;

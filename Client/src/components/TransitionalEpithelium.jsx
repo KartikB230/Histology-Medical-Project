@@ -17,8 +17,8 @@ function TransitionalEpithelium() {
     "/SimpleColumnarEpithelium",
     "/PseudostratifiedEpithelium",
     "/TransitionalEpithelium",
-    "/StratifiedSquamousKeratinisedEpithelium",
     "/StratifiedSquamousNonKeratinisedEpithelium",
+    "/StratifiedSquamousKeratinisedEpithelium",
   ];
 
 
@@ -92,7 +92,7 @@ function TransitionalEpithelium() {
         <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
             <img src="assets\Images\Epithelium\Transitional Epithelium Low Magnification.jpg" alt="Transitional Epithelium Low Magnification" />
-            <button className="AllButtons" data-tooltip="Transitional Epithelium - High Magnification" id="Transitionalbtn1" data-popup="popup1" onClick={() => openPopup1('assets/Images/Epithelium/Transitional Epithelium High Magnification.PNG', '#', '#')}>1</button>
+            <button className="AllButtons" data-tooltip="Transitional Epithelium" id="Transitionalbtn1" data-popup="popup1" onClick={() => openPopup1('assets/Images/Epithelium/Transitional Epithelium High Magnification.PNG', '#', '#')}>1</button>
           </div>
         </div>
         

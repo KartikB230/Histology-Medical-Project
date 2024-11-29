@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import '../App.css';
 
-const Epithelium = () => {
+const Endocrine = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const searchInputRef = useRef(null);
   const [activeTab, setActiveTab] = useState('Theory');
@@ -54,14 +54,9 @@ const Epithelium = () => {
   
 
   const tiles = [
-    { name: 'Simple Squamous Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Squamous _low.jpeg', link: '/SquamousEpithelium', keywords: [] },
-    { name: 'Simple Cuboidal Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Cuboidal_low.jpeg', link: '/SimpleCuboidalEpithelium', keywords: ['cuboidal', 'simple', 'epithelium'] },
-    { name: 'Simple Columnar Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Columnar_low.jpeg', link: '/SimpleColumnarEpithelium', keywords: ['columnar', 'simple', 'epithelium'] },
-    { name: 'Pseudostratified Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Pseudo _low.jpg', link: '/PseudostratifiedEpithelium', keywords: ['pseudostratified', 'epithelium'] },
-    { name: 'Transitional Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Trans_low.jpeg', link: '/TransitionalEpithelium', keywords: ['transitional', 'epithelium'] },
-    { name: 'Stratified Squamous Non-Keratinised Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Strat_non_ker_low.jpg', link: '/StratifiedSquamousNonKeratinisedEpithelium', keywords: ['stratified', 'squamous', 'non-keratinised', 'epithelium'] },
-    { name: 'Stratified Squamous Keratinised Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Strat_ker_low.jpeg', link: '/StratifiedSquamousKeratinisedEpithelium', keywords: ['stratified', 'squamous', 'keratinised', 'epithelium'] }
-    
+    { name: 'Thyroid', img: '/assets/Images/Thyroid/Updated_thyroid.png', link: '/Thyroid', keywords: [] },
+    { name: 'Adrenal Gland', img: '/assets/Images/Adrenal/Adrenal_Gland.png', link: '/Adrenal', keywords: [] },
+    { name: 'Pituitary Gland', img: '/assets/Images/Pituitary/Pituitary Low Magnification.png', link: '/Pituitary', keywords: [] }
   ];
 
   const filteredTiles = tiles.filter(tile =>
@@ -108,65 +103,11 @@ const Epithelium = () => {
       case 'Theory':
   return (
     <div className="epithelium-container">
-      {/* Section 1: Specific Learning Objectives (Numerical List) */}
-      <div className="epithelium-section">
-        <h2 className="epithelium-title">Specific Learning Objectives</h2>
-        <ol className="epithelium-objectives-list">
-          <li>Define epithelial tissue.</li>
-          <li>Enumerate the common features of epithelial tissue.</li>
-          <li>Enlist the functions of epithelial tissue.</li>
-          <li>Classify epithelial tissues and give examples of each variety.</li>
-          <li>Differentiate between Cilia, Stereocilia, and Microvilli.</li>
-          <li>Differentiate between Basal membrane and Basal Lamina.</li>
-          <li>Identify various types of epithelia under a light microscope.</li>
-        </ol>
-      </div>
 
-      {/* Section 2: Introduction (Filled Circle Pointers) */}
-      <div className="epithelium-section">
-        <h2 className="epithelium-title">Introduction</h2>
-        <ul className="epithelium-introduction-list">
-          <li>Epithelial tissue forms the lining of general body surfaces, passages, and cavities within the body.</li>
-          <li>The tissue is composed of closely packed cells that adhere to each other through various junctional complexes.</li>
-          <li>Basement membrane connects the epithelium to the underlying subepithelial tissues.</li>
-          <li>Functions include protection, absorption, secretion, excretion, sensory perception, prevention of wear and tear, and conservation of moisture.</li>
-          <li>Classification is based on the shape of cells, number of cell layers, and special modifications seen on cells.</li>
-          <li>Specialized epithelial cells that secrete specific products are called glands.</li>
-        </ul>
-      </div>
-      
-
-
-
-      {/* Section 3: Image and Text Block */}
-      <div className="epithelium-section">
-        <div className="epithelium-image-box">
-          <img src="/assets/Images/Epithelium/Diagram1.png" alt="Image 1" className="epithelium-image image-1" />
-          <img src="/assets/Images/Epithelium/Diagram2.png" alt="Image 2" className="epithelium-image image-2" />
-          <ul className="epithelium-list">
-            <strong>
-              <li>Various cells attached with types of junctions - Zona Occludens, Zona Adherens, Macula Adherens, and Gap Junctions.</li>
-              <li>The basic function of epithelium is protection.</li>
-              <li>The cells of the epithelium rest on the basement membrane.</li>
-            </strong>
-          </ul>
-        </div>
-      </div>
-
-      {/* Section 4: Modifications of Epithelial Cells */}
-      <div className="epithelium-section">
-        <h2 className="epithelium-title">Modifications of Epithelial Cells</h2>
-        <img src="/assets/Images/Epithelium/Diagram4.jpg" alt="Image 4" className="epithelium-image image-4" />
-      </div>
-
-      {/* Section 5: Final Image */}
-      <div className="epithelium-section">
-        <img src="/assets/Images/Epithelium/Diagram3.jpg" alt="Image 3" className="epithelium-image image-3" />
-      </div>
     </div>
   );
 
-      case 'Slides of Epithelium':
+      case 'Slides of Endocrine':
         return (
           <div className="trial-container">
             <div className="search-bar">
@@ -228,7 +169,7 @@ const Epithelium = () => {
       <Navbar />
       <div className="tab-container">
         <button className="tab-button" onClick={() => handleTabChange('Theory')}>Theory</button>
-        <button className="tab-button" onClick={() => handleTabChange('Slides of Epithelium')}>Slides of Epithelium</button>
+        <button className="tab-button" onClick={() => handleTabChange('Slides of Endocrine')}>Slides of Endocrine</button>
         <button className="tab-button" onClick={() => handleTabChange('Quiz')}>Quiz</button>
       </div>
       <div className="content">
@@ -239,4 +180,4 @@ const Epithelium = () => {
   );
 }
 
-export default Epithelium;
+export default Endocrine;

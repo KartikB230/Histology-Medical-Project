@@ -18,8 +18,8 @@ function PseudostratifiedEpithelium() {
     "/SimpleColumnarEpithelium",
     "/PseudostratifiedEpithelium",
     "/TransitionalEpithelium",
-    "/StratifiedSquamousKeratinisedEpithelium",
     "/StratifiedSquamousNonKeratinisedEpithelium",
+    "/StratifiedSquamousKeratinisedEpithelium",
   ];
 
 
@@ -93,7 +93,7 @@ function PseudostratifiedEpithelium() {
         <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
             <img src="assets\Images\Epithelium\Pseudostratified Epithelium Low Magnification.png" alt="Pseudostratified Epithelium Low Magnification" />
-            <button className="AllButtons" data-tooltip="Pseudostratified Epithelium - High Magnification" id="Pseudobtn1" data-popup="popup1" onClick={() => openPopup1('assets/Images/Epithelium/Pseudostratified Epithelium High Magnification.PNG', '#', '#')}>1</button>
+            <button className="AllButtons" data-tooltip="Pseudostratified Epithelium" id="Pseudobtn1" data-popup="popup1" onClick={() => openPopup1('assets/Images/Epithelium/Pseudostratified Epithelium High Magnification.PNG', '#', '#')}>1</button>
           </div>
         </div>
         

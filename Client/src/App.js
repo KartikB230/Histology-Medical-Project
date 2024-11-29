@@ -37,9 +37,9 @@ import Arteriole from "./components/Arteriole";
 import Sinusoid from "./components/Sinusoid";
 import ElasticArtery from "./components/ElasticArtery";
 import MuscularArtery from "./components/MuscularArtery";
+import Endocrine from "./components/Endocrine";
 
 import LoginPage from "./components/LoginPage";
-
 import ProtectedRoute from "./components/ProtectedRoute";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -47,13 +47,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const [loading, setLoading] = useState(true);
   const [loaderSize, setLoaderSize] = useState(30);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    // Check local storage for authentication state
-    const storedAuth = localStorage.getItem("isAuthenticated");
-    setIsAuthenticated(storedAuth === "true");
-
     setTimeout(() => {
       setLoading(false);
     }, 3000);
@@ -76,14 +71,9 @@ function App() {
   }, []);
 
   const handleLogin = () => {
-    setIsAuthenticated(true);
     localStorage.setItem("isAuthenticated", "true");
+    window.location.href = "/home"; // Redirect after login
   };
-
-  // const handleLogout = () => {
-  //   setIsAuthenticated(false);
-  //   localStorage.removeItem("isAuthenticated");
-  // };
 
   return (
     <div>
@@ -100,40 +90,41 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<LoginPage onLogin={handleLogin} />} />
-            <Route path='/home' element={<ProtectedRoute isAuthenticated={isAuthenticated}><HomePage /></ProtectedRoute>} />
-            <Route path='/SquamousEpithelium' element={<ProtectedRoute isAuthenticated={isAuthenticated}><SquamousEpithelium /></ProtectedRoute>} />
-            <Route path='/Thyroid' element={<ProtectedRoute isAuthenticated={isAuthenticated}><Thyroid /></ProtectedRoute>} />
-            <Route path='/Medulla' element={<ProtectedRoute isAuthenticated={isAuthenticated}><Medulla /></ProtectedRoute>} />
-            <Route path='/Adrenal' element={<ProtectedRoute isAuthenticated={isAuthenticated}><Adrenal /></ProtectedRoute>} />
-            <Route path='/Cortex' element={<ProtectedRoute isAuthenticated={isAuthenticated}><Cortex /></ProtectedRoute>} />
-            <Route path="/Trial" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Trial /></ProtectedRoute>} />
-            <Route path="/Pituitary" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Pituitary /></ProtectedRoute>} />
-            <Route path="/Cartilage" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Cartilage /></ProtectedRoute>} />
-            <Route path="/Epithelium" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Epithelium /></ProtectedRoute>} />
-            <Route path="/SimpleCuboidalEpithelium" element={<ProtectedRoute isAuthenticated={isAuthenticated}><SimpleCuboidalEpithelium /></ProtectedRoute>} />
-            <Route path="/SimpleColumnarEpithelium" element={<ProtectedRoute isAuthenticated={isAuthenticated}><SimpleColumnarEpithelium /></ProtectedRoute>} />
-            <Route path="/PseudostratifiedEpithelium" element={<ProtectedRoute isAuthenticated={isAuthenticated}><PseudostratifiedEpithelium /></ProtectedRoute>} />
-            <Route path="/TransitionalEpithelium" element={<ProtectedRoute isAuthenticated={isAuthenticated}><TransitionalEpithelium /></ProtectedRoute>} />
-            <Route path="/StratifiedSquamousKeratinisedEpithelium" element={<ProtectedRoute isAuthenticated={isAuthenticated}><StratifiedSquamousKeratinisedEpithelium /></ProtectedRoute>} />
-            <Route path="/StratifiedSquamousNonKeratinisedEpithelium" element={<ProtectedRoute isAuthenticated={isAuthenticated}><StratifiedSquamousNonKeratinisedEpithelium /></ProtectedRoute>} />
-            <Route path="/HyalineCartilage" element={<ProtectedRoute isAuthenticated={isAuthenticated}><HyalineCartilage /></ProtectedRoute>} />
-            <Route path="/ElasticCartilage" element={<ProtectedRoute isAuthenticated={isAuthenticated}><ElasticCartilage /></ProtectedRoute>} />
-            <Route path="/WhiteFibrousCartilage" element={<ProtectedRoute isAuthenticated={isAuthenticated}><WhiteFibrousCartilage /></ProtectedRoute>} />
-            <Route path="/ConnectiveTissue" element={<ProtectedRoute isAuthenticated={isAuthenticated}><ConnectiveTissue /></ProtectedRoute>} />
-            <Route path="/AdiposeTissue" element={<ProtectedRoute isAuthenticated={isAuthenticated}><AdiposeTissue /></ProtectedRoute>} />
-            <Route path="/DenseRegularTissue" element={<ProtectedRoute isAuthenticated={isAuthenticated}><DenseRegularTissue /></ProtectedRoute>} />
-            <Route path="/DenseIrregularTissue" element={<ProtectedRoute isAuthenticated={isAuthenticated}><DenseIrregularTissue /></ProtectedRoute>} />
-            <Route path="/LooseConnectiveTissue" element={<ProtectedRoute isAuthenticated={isAuthenticated}><LooseConnectiveTissue /></ProtectedRoute>} />
-            <Route path="/Bone" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Bone /></ProtectedRoute>} />
-            <Route path="/BoneTS" element={<ProtectedRoute isAuthenticated={isAuthenticated}><BoneTS /></ProtectedRoute>} />
-            <Route path="/BoneLS" element={<ProtectedRoute isAuthenticated={isAuthenticated}><BoneLS /></ProtectedRoute>} />
-            <Route path="/Osteon" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Osteon /></ProtectedRoute>} />
-            <Route path="/BloodVessel" element={<ProtectedRoute isAuthenticated={isAuthenticated}><BloodVessel /></ProtectedRoute>} />
-            <Route path="/Vein" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Vein /></ProtectedRoute>} />
-            <Route path="/Arteriole" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Arteriole /></ProtectedRoute>} />
-            <Route path="/Sinusoid" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Sinusoid /></ProtectedRoute>} />
-            <Route path="/ElasticArtery" element={<ProtectedRoute isAuthenticated={isAuthenticated}><ElasticArtery /></ProtectedRoute>} />
-            <Route path="/MuscularArtery" element={<ProtectedRoute isAuthenticated={isAuthenticated}><MuscularArtery /></ProtectedRoute>} />
+            <Route path='/home' element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
+            <Route path='/SquamousEpithelium' element={<ProtectedRoute><SquamousEpithelium /></ProtectedRoute>} />
+            <Route path='/Thyroid' element={<ProtectedRoute><Thyroid /></ProtectedRoute>} />
+            <Route path='/Medulla' element={<ProtectedRoute><Medulla /></ProtectedRoute>} />
+            <Route path='/Adrenal' element={<ProtectedRoute><Adrenal /></ProtectedRoute>} />
+            <Route path='/Cortex' element={<ProtectedRoute><Cortex /></ProtectedRoute>} />
+            <Route path="/Trial" element={<ProtectedRoute><Trial /></ProtectedRoute>} />
+            <Route path="/Pituitary" element={<ProtectedRoute><Pituitary /></ProtectedRoute>} />
+            <Route path="/Cartilage" element={<ProtectedRoute><Cartilage /></ProtectedRoute>} />
+            <Route path="/Epithelium" element={<ProtectedRoute><Epithelium /></ProtectedRoute>} />
+            <Route path="/SimpleCuboidalEpithelium" element={<ProtectedRoute><SimpleCuboidalEpithelium /></ProtectedRoute>} />
+            <Route path="/SimpleColumnarEpithelium" element={<ProtectedRoute><SimpleColumnarEpithelium /></ProtectedRoute>} />
+            <Route path="/PseudostratifiedEpithelium" element={<ProtectedRoute><PseudostratifiedEpithelium /></ProtectedRoute>} />
+            <Route path="/TransitionalEpithelium" element={<ProtectedRoute><TransitionalEpithelium /></ProtectedRoute>} />
+            <Route path="/StratifiedSquamousKeratinisedEpithelium" element={<ProtectedRoute><StratifiedSquamousKeratinisedEpithelium /></ProtectedRoute>} />
+            <Route path="/StratifiedSquamousNonKeratinisedEpithelium" element={<ProtectedRoute><StratifiedSquamousNonKeratinisedEpithelium /></ProtectedRoute>} />
+            <Route path="/HyalineCartilage" element={<ProtectedRoute><HyalineCartilage /></ProtectedRoute>} />
+            <Route path="/ElasticCartilage" element={<ProtectedRoute><ElasticCartilage /></ProtectedRoute>} />
+            <Route path="/WhiteFibrousCartilage" element={<ProtectedRoute><WhiteFibrousCartilage /></ProtectedRoute>} />
+            <Route path="/ConnectiveTissue" element={<ProtectedRoute><ConnectiveTissue /></ProtectedRoute>} />
+            <Route path="/AdiposeTissue" element={<ProtectedRoute><AdiposeTissue /></ProtectedRoute>} />
+            <Route path="/DenseRegularTissue" element={<ProtectedRoute><DenseRegularTissue /></ProtectedRoute>} />
+            <Route path="/DenseIrregularTissue" element={<ProtectedRoute><DenseIrregularTissue /></ProtectedRoute>} />
+            <Route path="/LooseConnectiveTissue" element={<ProtectedRoute><LooseConnectiveTissue /></ProtectedRoute>} />
+            <Route path="/Bone" element={<ProtectedRoute><Bone /></ProtectedRoute>} />
+            <Route path="/BoneTS" element={<ProtectedRoute><BoneTS /></ProtectedRoute>} />
+            <Route path="/BoneLS" element={<ProtectedRoute><BoneLS /></ProtectedRoute>} />
+            <Route path="/Osteon" element={<ProtectedRoute><Osteon /></ProtectedRoute>} />
+            <Route path="/BloodVessel" element={<ProtectedRoute><BloodVessel /></ProtectedRoute>} />
+            <Route path="/Vein" element={<ProtectedRoute><Vein /></ProtectedRoute>} />
+            <Route path="/Arteriole" element={<ProtectedRoute><Arteriole /></ProtectedRoute>} />
+            <Route path="/Sinusoid" element={<ProtectedRoute><Sinusoid /></ProtectedRoute>} />
+            <Route path="/ElasticArtery" element={<ProtectedRoute><ElasticArtery /></ProtectedRoute>} />
+            <Route path="/MuscularArtery" element={<ProtectedRoute><MuscularArtery /></ProtectedRoute>} />
+            <Route path="/Endocrine" element={<ProtectedRoute><Endocrine /></ProtectedRoute>} />
           </Routes>
         </BrowserRouter>
       )}

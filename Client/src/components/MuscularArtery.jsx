@@ -122,7 +122,23 @@ function MuscularArtery() {
           </button>
         </div>
         <div className='Container2'>
-
+        <ol style={{ textAlign: 'left', marginLeft: '10px' }}>
+            <li><strong>Tunica Intima -</strong> Includes endothelium and internal elastic lamina</li>
+            <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
+            <li>The internal elastic lamina is prominent and is wavy (Wavy due to contraction of smooth muscle cells in the Tunica media).</li></ul>
+            <li><strong>Tunica Media -</strong>Thickness of Tunica media in comparison to Tunica adventitia is 1 : 1</li>
+            <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
+              <li>Concentrically arranged layers of smooth muscle fibres (almost 40 layers thick)</li>
+              <li>Scattered among them are some elastic and reticular fibres.</li>
+            </ul>
+            <li><strong>Tunica Adventitia -</strong>External elastic lamina is prominent.</li> 
+            <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
+              <li>Made of longitudinally arranged collagenous tissue and a few elastic fibres.</li>
+              <li>These components gradually merge into the loose connective tissue surrounding the vessels.</li>
+              <li>It contains vasa vasorum and nervi vascularis.</li>
+              <li>Examples: brachial, radial, ulnar, popliteal, dorsalis pedis artery (All arteries except elastic arteries)</li>
+            </ul>
+          </ol>
         </div>
 
         <div id="overlay" className="overlay">
