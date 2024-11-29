@@ -37,6 +37,7 @@ import Arteriole from "./components/Arteriole";
 import Sinusoid from "./components/Sinusoid";
 import ElasticArtery from "./components/ElasticArtery";
 import MuscularArtery from "./components/MuscularArtery";
+import Endocrine from "./components/Endocrine";
 
 import LoginPage from "./components/LoginPage";
 
@@ -134,6 +135,7 @@ function App() {
             <Route path="/Sinusoid" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Sinusoid /></ProtectedRoute>} />
             <Route path="/ElasticArtery" element={<ProtectedRoute isAuthenticated={isAuthenticated}><ElasticArtery /></ProtectedRoute>} />
             <Route path="/MuscularArtery" element={<ProtectedRoute isAuthenticated={isAuthenticated}><MuscularArtery /></ProtectedRoute>} />
+            <Route path="/Endocrine" element={<ProtectedRoute isAuthenticated={isAuthenticated}><Endocrine /></ProtectedRoute>} />
           </Routes>
         </BrowserRouter>
       )}
