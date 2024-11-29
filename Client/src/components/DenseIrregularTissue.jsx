@@ -145,7 +145,6 @@ function DenseIrregularTissue() {
       </div>
 
         <div className="Container2">
-        <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/Dense Irregular High Magnification.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view High Magnification of Dense Irregular Tissue</u></strong></a>
           <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/dense_irregular_pencil.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Dense Irregular Tissue</u></strong></a>
           <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
           <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft: '20px' }}>
