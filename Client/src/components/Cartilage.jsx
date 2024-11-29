@@ -54,9 +54,9 @@ const Cartilage = () => {
 
 
   const tiles = [
-    { name: 'Hyaline Cartilage', img: '/assets/Images/Cartilage/Hyaline Cartilage Low Magnification.jpg', link: '/HyalineCartilage', keywords: [] },
-    { name: 'Elastic Cartilage', img: '/assets/Images/Cartilage/Elastic Cartilage Low Magnification.jpg', link: '/ElasticCartilage', keywords: [] },
-    { name: 'White Fibrous Cartilage', img: '/assets/Images/Cartilage/White Fibrous Cartilage Low Magnification.jpg', link: '/WhiteFibrousCartilage', keywords: [] }
+    { name: 'Hyaline Cartilage', img: '/assets/Images/Cartilage/Hyaline Cartilage Low Magnification1.jpeg', link: '/HyalineCartilage', keywords: [] },
+    { name: 'Elastic Cartilage', img: '/assets/Images/Cartilage/Elastic Cartilage Low Magnification1.jpeg', link: '/ElasticCartilage', keywords: [] },
+    { name: 'White Fibrous Cartilage', img: '/assets/Images/Cartilage/White Fibrous Cartilage Low Magnification1.jpeg', link: '/WhiteFibrousCartilage', keywords: [] }
   ];
 
   const filteredTiles = tiles.filter(tile =>
@@ -105,6 +105,66 @@ const Cartilage = () => {
   return (
     <div className="epithelium-container">
       {/* Section 1: Comparison of Cartilage Types */}
+      <div className='cartilage-section'>
+        <h2 className='epithelium-title'>Specific Learning Objectives</h2>
+        <p>At the end of this topic, you should be able to <br />
+            1.Identify sections of Hyaline, Elastic and Fibrocartilage under a light microscope. <br />
+            2.Define cartilage and enumerate its characteristic features. <br />
+            3.Enumerate the various types of cartilages and describe their main identifying features. <br />
+            4.Describe the histological features of chondrocytes seen in various types of cartilages. <br />
+            5. Describe the matrix of Cartilage.</p>
+      </div>
+
+      {/* Section 2: Cartilage Components */}
+      <div className="cartilage-section">
+        <h2 className="epithelium-title">Cartilage Components</h2>
+        <div className="table-responsive">
+          <table className="cartilage-table">
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cells</td>
+                <td>Chondroblasts, Chondrocytes</td>
+              </tr>
+              <tr>
+                <td>Fibers</td>
+                <td>Collagen (Type II except Fibrocartilage which has Type I)</td>
+              </tr>
+              <tr>
+                <td>Ground Substance</td>
+                <td>Elastic, Chondroitin Sulphate, Water, Electrolytes</td>
+              </tr>
+              <tr>
+                <td>Matrix</td>
+                <td>Ground Substance + Fibers</td>
+              </tr>
+              <tr>
+                <td>Perichondrium</td>
+                <td>Outer fibrous layer, Inner cellular layer</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {/* Section 3: Types of Cartilage - Diagram */}
+      <div className='cartilage-section'>
+        <div className='epithelium-title'>Types of Cartilage</div>
+        <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+        
+          <img 
+            src="assets/Images/Cartilage/Diagram1.png" 
+            className='epithelium-image' 
+            style={{ maxWidth: '100%', height: 'auto', borderRadius: '10px' }} 
+            alt="Description" 
+          />
+        </div>
+      </div>
+
       <div className="cartilage-section">
         <h2 className="epithelium-title">Comparison of Cartilage Types</h2>
         <div className="table-responsive">
@@ -156,56 +216,6 @@ const Cartilage = () => {
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
-
-      {/* Section 2: Cartilage Components */}
-      <div className="cartilage-section">
-        <h2 className="epithelium-title">Cartilage Components</h2>
-        <div className="table-responsive">
-          <table className="cartilage-table">
-            <thead>
-              <tr>
-                <th>Component</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Cells</td>
-                <td>Chondroblasts, Chondrocytes</td>
-              </tr>
-              <tr>
-                <td>Fibers</td>
-                <td>Collagen (Type II except Fibrocartilage which has Type I)</td>
-              </tr>
-              <tr>
-                <td>Ground Substance</td>
-                <td>Elastic, Chondroitin Sulphate, Water, Electrolytes</td>
-              </tr>
-              <tr>
-                <td>Matrix</td>
-                <td>Ground Substance + Fibers</td>
-              </tr>
-              <tr>
-                <td>Perichondrium</td>
-                <td>Outer fibrous layer, Inner cellular layer</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      {/* Section 3: Types of Cartilage - Diagram */}
-      <div className='cartilage-section'>
-        <div className='epithelium-title'>Types of Cartilage</div>
-        <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
-        
-          <img 
-            src="assets/Images/Cartilage/Diagram1.png" 
-            className='epithelium-image' 
-            style={{ maxWidth: '100%', height: 'auto', borderRadius: '10px' }} 
-            alt="Description" 
-          />
         </div>
       </div>
     </div>
