@@ -90,8 +90,9 @@ function DenseRegularTissue() {
         <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
             <img src="/assets/Images/Connective Tissue/Dense Regular Low Magnification.jpg" alt="Dense Regular Tissue" />
-            <button className="AllButtons" data-tooltip="Collagen Fibres" id="DenseRbtn1" data-popup="popup1" >1</button>
-            <button className="AllButtons" data-tooltip="Fibroblasts" id="DenseRbtn2" data-popup="popup2" >2</button>
+            <button className="AllButtons" data-tooltip="Collagen Fibres" id="DenseRbtn1" data-popup="popup1" onClick={() => openPopup1("/assets/Images/Connective Tissue/dense_regular_high_pow.png")}>1</button>
+            <button className="AllButtons" data-tooltip="Fibroblasts" id="DenseRbtn2" data-popup="popup2" onClick={() => openPopup1("/assets/Images/Connective Tissue/dense_regular_high_pow.png")}>2</button>
+            <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/dense_regular_pencill.jpeg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Dense Regular Connective Tissue</u></strong></a>
           </div>
         </div>
         

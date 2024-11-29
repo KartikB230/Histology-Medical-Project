@@ -111,9 +111,9 @@ function DenseIrregularTissue() {
 
         <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
-            <img src="/assets/Images/Connective Tissue/Dense Irregular Low Magnification.jpg" alt="Dense Irregular Tissue" />
-            <button className="AllButtons" data-tooltip="Collagen Fibres" id="DenseIbtn1" data-popup="popup1">1</button>
-            <button className="AllButtons" data-tooltip="Fibroblasts" id="DenseIbtn2" data-popup="popup2">2</button>
+            <img src="/assets/Images/Connective Tissue/dense_irregular_highpow.jpeg" alt="Dense Irregular Tissue" />
+            <button className="AllButtons" data-tooltip="Collagen Fibres" id="DenseIbtn1" data-popup="popup1" onClick={() => openPopup1("/assets/Images/Connective Tissue/Dense Irregular High Magnification.jpg")}>1</button>
+            <button className="AllButtons" data-tooltip="Fibroblasts" id="DenseIbtn2" data-popup="popup2" onClick={() => openPopup1("/assets/Images/Connective Tissue/Dense Irregular High Magnification.jpg")}>2</button>
             <button className="AllButtons" data-tooltip="Capiliary" id="DenseIbtn3" data-popup="popup3">3</button>
           </div>
         </div>
@@ -146,7 +146,7 @@ function DenseIrregularTissue() {
 
         <div className="Container2">
         <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/Dense Irregular High Magnification.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view High Magnification of Dense Irregular Tissue</u></strong></a>
-          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/Dense Irregular Pencil Diagram.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Dense Irregular Tissue</u></strong></a>
+          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/dense_irregular_pencil.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Dense Irregular Tissue</u></strong></a>
           <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
           <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft: '20px' }}>
             <li>Collagen and elastic fibres with connective tissue cells dispersed randomly.</li>

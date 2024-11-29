@@ -88,8 +88,8 @@ function Osteon() {
         <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <img src="/assets/Images/Bone/Osteon Low Magnification.jpg" alt="Bone Tissue" />
           <button className="AllButtons" data-tooltip="Haversian Canal" id="Osteonbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Bone/Volkmann Canal TS.jpg', '<p><strong><span style="text-decoration: underline;">Volkmann\'s canal:</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>Volkmann’s canals are perpendicular to haversian canals.</li><li>Blood vessels and nutrients from periosteum and endosteum travel through Volkmann’s canals to reach the Haversian canals.</li></ul>', '')}>1</button>
-          <button className="AllButtons" data-tooltip="Lamellae" id="Osteonbtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Bone/Periosteum TS.jpg', ' <p><strong><span style="text-decoration: underline;">Periosteum:</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>a sheath of dense connective tissue</li><li>an outer fibrous layer</li><li>an inner cellular layer containing osteoprogenitor cells.</li><li>The collagen fibres are arranged parallel to the surface of bone.</li><li>When tendons and ligaments attach to bones, the collagen fibres from these structures extend directly but at an angle into the bone tissue, forming <strong>Sharpey’s fibres</strong>.</li></ul>', '')}>2</button>
-          <button className="AllButtons" data-tooltip="Osteocyte in Lacuna" id="Osteonbtn3" data-popup="popup3">3</button>
+          <button className="AllButtons" data-tooltip="Lamellae" id="Osteonbtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Bone/Osteon_lamellae.png', '')}>2</button>
+          <button className="AllButtons" data-tooltip="Osteocyte in Lacuna" id="Osteonbtn3" data-popup="popup3" onClick={() => openPopup1("/assets/Images/Bone/TS_canaliculii.png")}>3</button>
         </div>
 
         <div className="navigation-buttons">

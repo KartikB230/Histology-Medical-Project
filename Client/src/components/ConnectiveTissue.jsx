@@ -106,7 +106,79 @@ const ConnectiveTissue = () => {
     <div className="epithelium-container">
       {/* Section 5: Final Image */}
       <div className="epithelium-section">
-        <img src="/assets/Images/Connective Tissue/Diagram 1.jpg" alt = "Cartilage Diagram" className="epithelium-image image-3" />
+        <img src="/assets/Images/Connective Tissue/Diagram 1.jpg" alt = "Cartilage Diagram" className="epithelium-image image-3" style={{"margin":"10px"}} />
+        <hr></hr>
+        <h2 style={{color:"red"}}><u>Adipose Connective Tissue</u></h2>
+        
+        <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
+          <ol className="feature-list">
+            <li>A thin rim of cytoplasm is seen at the periphery of the cell.</li>
+            <li>Nucleus is pushed to the periphery.</li>
+            <li>Fat inside the cell is washed off during processing such that the cell looks empty.</li>
+            <li>The adipocytes show signet ring appearance.</li>
+          </ol>
+          <h2 style={{ textDecoration: 'underline' }}>Sites:</h2>
+          <ol className="feature-list">
+            <li>Panniculus adiposus</li>
+            <li>Perinephric fat</li>
+          </ol>
+
+          <h2 style={{ textDecoration: 'underline' }}>Comparison of Yellow and Brown Adipocytes</h2>
+          <div className="table-responsive">
+            <table className="cartilage-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Yellow Adipocytes</th>
+                  <th>Brown Adipocytes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Size and shape of cell</td>
+                  <td>Larger and Rounded</td>
+                  <td>Smaller and Polygonal</td>
+                </tr>
+                <tr>
+                  <td>Number of lipid droplets</td>
+                  <td>Single and Unilocular</td>
+                  <td>Many, Multilocular</td>
+                </tr>
+                <tr>
+                  <td>Nucleus</td>
+                  <td>Flat, Peripherally placed</td>
+                  <td>Spherical, peripherally placed</td>
+                </tr>
+                <tr>
+                  <td>Mitochondria</td>
+                  <td>Few</td>
+                  <td>Many, with long cristae</td>
+                </tr>
+                <tr>
+                  <td>Endoplasmic reticulum</td>
+                  <td>Well developed</td>
+                  <td>Not well developed</td>
+                </tr>
+                <tr>
+                  <td>Vascularity</td>
+                  <td>Less Vascular</td>
+                  <td>Highly vascular</td>
+                </tr>
+                <tr>
+                  <td>Distribution</td>
+                  <td>Wide spread in adults</td>
+                  <td>Limited, in Newborns</td>
+                </tr>
+                <tr>
+                  <td>Function</td>
+                  <td>Storehouse of energy</td>
+                  <td>Production of Heat</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        
+        
       </div>
     </div>
   );
