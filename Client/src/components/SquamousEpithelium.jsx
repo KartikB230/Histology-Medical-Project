@@ -19,8 +19,8 @@ function SquamousEpithelium() {
     "/SimpleColumnarEpithelium",
     "/PseudostratifiedEpithelium",
     "/TransitionalEpithelium",
-    "/StratifiedSquamousKeratinisedEpithelium",
     "/StratifiedSquamousNonKeratinisedEpithelium",
+    "/StratifiedSquamousKeratinisedEpithelium",
   ];
 
 

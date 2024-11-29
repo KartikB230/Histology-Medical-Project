@@ -59,8 +59,9 @@ const Epithelium = () => {
     { name: 'Simple Columnar Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Columnar_low.jpeg', link: '/SimpleColumnarEpithelium', keywords: ['columnar', 'simple', 'epithelium'] },
     { name: 'Pseudostratified Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Pseudo _low.jpg', link: '/PseudostratifiedEpithelium', keywords: ['pseudostratified', 'epithelium'] },
     { name: 'Transitional Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Trans_low.jpeg', link: '/TransitionalEpithelium', keywords: ['transitional', 'epithelium'] },
-    { name: 'Stratified Squamous Keratinised Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Strat_ker_low.jpeg', link: '/StratifiedSquamousKeratinisedEpithelium', keywords: ['stratified', 'squamous', 'keratinised', 'epithelium'] },
-    { name: 'Stratified Squamous Non-Keratinised Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Strat_non_ker_low.jpg', link: '/StratifiedSquamousNonKeratinisedEpithelium', keywords: ['stratified', 'squamous', 'non-keratinised', 'epithelium'] }
+    { name: 'Stratified Squamous Non-Keratinised Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Strat_non_ker_low.jpg', link: '/StratifiedSquamousNonKeratinisedEpithelium', keywords: ['stratified', 'squamous', 'non-keratinised', 'epithelium'] },
+    { name: 'Stratified Squamous Keratinised Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Strat_ker_low.jpeg', link: '/StratifiedSquamousKeratinisedEpithelium', keywords: ['stratified', 'squamous', 'keratinised', 'epithelium'] }
+    
   ];
 
   const filteredTiles = tiles.filter(tile =>
