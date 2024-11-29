@@ -125,7 +125,7 @@ function WhiteFibrousCartilage() {
         </div>
 
         <div className='Container2'>
-          <a href="" className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/White Fibrous Pencil.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of White Fibrous Cartilage</u></strong></a>
+          <a href="#" className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/White Fibrous Pencil1.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of White Fibrous Cartilage</u></strong></a>
           <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft: '20px' }}>
             <li>The matrix is basophilic and filled with numerous Type-I collagen bundles.</li>
             <li>The collagen fibre bundles vary in thickness, the bundles branch and branches reunite with each other. This branching pattern gives a feathery appearance to the cartilage.</li>

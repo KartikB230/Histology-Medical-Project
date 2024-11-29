@@ -12,8 +12,11 @@ function Adrenal() {
   const [endX, setEndX] = useState(null);
 
  
-  const endocrineTypes = [];
-
+  const endocrineTypes = [
+    "/Thyroid",
+    "/Adrenal",
+    "/Pituitary"
+  ];
 
   const currentIndex = endocrineTypes.indexOf(window.location.pathname);
 
@@ -96,9 +99,9 @@ function Adrenal() {
         <div className="navigation-buttons">
           <button
             className="nav-button prev-button"
-            data-tooltip="Disabled"
+            data-tooltip="Thyroid"
             onClick={handlePrev}
-            disabled={true}
+            disabled={currentIndex === 0}
           >
            <FaArrowLeft /> 
           </button>
@@ -111,9 +114,9 @@ function Adrenal() {
           </div>
           <button
             className="nav-button next-button"
-            data-tooltip="Disabled"
+            data-tooltip="Pituitary Gland"
             onClick={handleNext}
-            disabled={true}
+            disabled={currentIndex === endocrineTypes.length - 1}
           >
             <FaArrowRight />
           </button>

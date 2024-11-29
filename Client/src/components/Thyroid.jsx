@@ -12,7 +12,11 @@ function Thyroid() {
   const [endX, setEndX] = useState(null);
 
  
-  const endocrineTypes = [];
+  const endocrineTypes = [
+    "/Thyroid",
+    "/Adrenal",
+    "/Pituitary"
+  ];
   
 
 
@@ -88,9 +92,9 @@ function Thyroid() {
             <button className="AllButtons" data-tooltip="Follicles" id="Thyroidbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Thyroid/Connective_Tissue_Septa.png', 'Follicles are the basic structural units of the thyroid gland. Each lobule contains many closely packed follicles of different size and shapes. The size of the follicle is approximately 150-200 microns. Follicles are round to oval in shape and are lined by simple squamous or cuboidal epithelium. The follicles are filled with colloid. ', '/assets/Audios/Thyroid/Thyroid_Follicles.wav')}>1</button>
             <button className="AllButtons" data-tooltip="Connective Tissue septa" id="Thyroidbtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Thyroid/Connective_Tissue_Septa.png', 'The gland shows a thin capsule. Thin septae extend from the capsule into the substance of the gland and divide it into lobules. ', '/assets/Audios/Thyroid/Connective_tissue_septa.wav')}>2</button>
             <button className="AllButtons" data-tooltip="Blood Vessels" id="Thyroidbtn3" data-popup="popup3" onClick={() => openPopup1('#', 'There is very little interlobular connective tissue (follicles are packed). The interlobular and intralobular connective tissue is thin and contains many capillaries. ', '#')}>3</button>
-            <button className="AllButtons" data-tooltip="Follicular cells (Simple cuboidal epithelium)" id="Thyroidbtn4" data-popup="popup4" onClick={() => openPopup1('/assets/Images/Thyroid/Follicular_cells.png', 'The lining epithelium of the follicles shows cuboidal cells which stain eosinophilic. These cells have a vesicular round nucleus. They constitute the principal secretory cells of thyroid which synthesize thyroglobulin. ', '/assets/Audios/Thyroid/Follicular_cells.wav')}>4</button>
+            <button className="AllButtons" data-tooltip="Follicular cells (Simple cuboidal epithelium)" id="Thyroidbtn4" data-popup="popup4" onClick={() => openPopup1('/assets/Images/Thyroid/Follicular_cells.jpg', 'The lining epithelium of the follicles shows cuboidal cells which stain eosinophilic. These cells have a vesicular round nucleus. They constitute the principal secretory cells of thyroid which synthesize thyroglobulin. ', '/assets/Audios/Thyroid/Follicular_cells.wav')}>4</button>
             <button className="AllButtons" data-tooltip="Parafollicular or C cells " id="Thyroidbtn5" data-popup="popup5" onClick={() => openPopup1('/assets/Images/Thyroid/Parafollicular_Cells.png', 'These cells constitute about 2% of the thyroid gland. The cells are called as clear cells because the cytoplasm is not stained. The cells are large and occur either singly or in groups of 2 or 3. They are usually situated between the basement membrane and the cubical epithelium. They secrete calcitonin.', '/assets/Audios/Thyroid/Parafollicular_cells.wav')}>5</button>
-            <button className="AllButtons" data-tooltip="Colloid" id="Thyroidbtn6" data-popup="popup6" onClick={() => openPopup1('/assets/Images/Thyroid/Follicular_cells.png', 'The lumen of the thyroid follicle is large and contains colloid which is stained eosinophilic It is made of a glycoprotein complex, also known as thyroglobulin. The colloid stains with both acidic and basic dyes. It is strongly PAS positive. ', '/assets/Audios/Thyroid/Colloid.wav')}>6</button>
+            <button className="AllButtons" data-tooltip="Colloid" id="Thyroidbtn6" data-popup="popup6" onClick={() => openPopup1('/assets/Images/Thyroid/Follicular_cells.jpg', 'The lumen of the thyroid follicle is large and contains colloid which is stained eosinophilic It is made of a glycoprotein complex, also known as thyroglobulin. The colloid stains with both acidic and basic dyes. It is strongly PAS positive. ', '/assets/Audios/Thyroid/Colloid.wav')}>6</button>
           </div>
         </div>
         
@@ -112,9 +116,9 @@ function Thyroid() {
           </div>
           <button
             className="nav-button next-button"
-            data-tooltip="Disabled"
+            data-tooltip="Adrenal Gland"
             onClick={handleNext}
-            disabled={true}
+            disabled={currentIndex === endocrineTypes.length - 1}
           >
             <FaArrowRight />
           </button>

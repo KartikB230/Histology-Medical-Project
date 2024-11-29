@@ -14,7 +14,11 @@ function Pituitary() {
   const [endX, setEndX] = useState(null);
 
  
-  const endocrineTypes = [];
+  const endocrineTypes = [
+    "/Thyroid",
+    "/Adrenal",
+    "/Pituitary"
+  ];
 
 
   const currentIndex = endocrineTypes.indexOf(window.location.pathname);
@@ -129,18 +133,16 @@ function Pituitary() {
             <button className="AllButtons" data-tooltip="Pars Nervosa" id="Pituitarybtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Pituitary/Pars Nervosa.png', 'The Hypothalamo-hypophyseal tract comprises of non-myelinated nerve fibres which extend from their cell bodies located in the supraoptic and paraventricular nuclei of hypothalamus to the hypophysis cerebri (pituitary gland). <br/>The supraoptic nucleus of hypothalamus produces Anti-diuretic Hormone while the paraventricular nucleus produces Oxytonin hormone. <br/>These hormones are termed neurosecretions.The secretions get accumulated at the terminal, bulb like enlargements called as Herring bodies, which cannot be identified in a Haematoxylin-Eosin stained slide.', '#')}>1</button>
             <button className="AllButtons" data-tooltip="Pars Intermedia" id="Pituitarybtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Pituitary/Pars Intermedia.png', '<strong>The Pars Intermedia</strong> is rudimentary in human beings. It consists of colloid filled vesicles which are remnants of Rathke’s pouch. The vesicles are lined by low columnar basophilic epithelium. The vesicles contain an eosinophilic colloid of unknown function. In animals, Pars Intermedia is well developed and contains special type of Basophils called Melanotropes which secrete Melanotropic stimulating Hormone.', '#')}>2</button>
             <button className="AllButtons" data-tooltip="Pars Distalis" id="Pituitarybtn3" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Pituitary/Pars Distalis.png', 'The pars anterior is covered by a capsule which is derived from the inner layer of dura mater. <br/>It contains cords of cells which branch and anastomose. The cells are supported by a thin basement membrane which is made of reticular tissue. <br/>Two types of cells are found in pars anterior -<br/>&emsp;<strong>i. Chromophobes</strong> - It makes up 50% of the cell population of pars anterior.<br/><strong>&emsp;ii. Chromophils</strong> - consists of two further subtypes of cells, acidophils (35%) and basophils (15%).', '#', true)}>3</button>
-            <button className="AllButtons" data-tooltip="Acidophil" id="Pituitarybtn4" data-popup="popup4" onClick={() => openPopup1('/assets/Images/Pituitary/Acidophils.png', '<strong>Acidophils</strong> as the name suggests take up a dark, eosinophilic stain. These are round cells occurring either singly or in groups. The cells show a dark, round and vesicular nucleus. They show coarse granules within the cytoplasm.<br/> Acidophils are of two further types -<br/>&emsp; <strong>i. Somatotropes</strong> - Somatotropes secrete growth hormone which is required for the growth of the body, especially the growth of bones. <br/>&emsp; <strong>ii. Mammotropes</strong> - Mammotropes secrete Prolactin which is required for growth of mammary gland and secretion of milk.', '#')}>4</button>
-            <button className="AllButtons" data-tooltip="Basophil" id="Pituitarybtn5" data-popup="popup5" onClick={() => openPopup1('/assets/Images/Pituitary/Basophils.png', '<strong>Basophils</strong> are larger than acidophils. The cells are oval to round in shape and contain a central, vesicular nucleus. They take up basic stains. Their cytoplasm shows fine granules. Basophils are of three subtypes – Corticotropes, Thyrotropes and Gonadotropes. Corticotropes secrete Adrenocorticotrophic hormone, Thyrotropes secrete Thyroid stimulating hormone. Gonadotropes secrete Follicle stimulating hormone and Luteinising hormone.', '#')}>5</button>
-            <button className="AllButtons" data-tooltip="Chromophobe" id="Pituitarybtn6" data-popup="popup6" onClick={() => openPopup1('/assets/Images/Pituitary/Chromophobe.png', '<strong>Chromophobes</strong> are so called as their cytoplasm do not stain with any classic dyes. The cells are very small in size and occur in groups.  The cells have distinct nuclei and scanty cytoplasm giving the appearance of “naked nuclei”. Chromophobes are considered to be precursors of chromophils. They are also considered as degranulated chromophil cells.', '#')}>6</button>
+            
           </div>
         </div>
         
         <div className="navigation-buttons">
           <button
             className="nav-button prev-button"
-            data-tooltip="Disabled"
+            data-tooltip="Adrenal Gland"
             onClick={handlePrev}
-            disabled={true}
+            disabled={currentIndex === 0}
           >
            <FaArrowLeft /> 
           </button>
@@ -153,7 +155,7 @@ function Pituitary() {
           </div>
           <button
             className="nav-button next-button"
-            data-tooltip="Elastic Cartilage"
+            data-tooltip="Disabled"
             onClick={handleNext}
             disabled={true}
           >

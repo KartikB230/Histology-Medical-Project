@@ -101,7 +101,7 @@ function StratifiedSquamousNonKeratinisedEpithelium() {
         <div className="navigation-buttons">
         <button
           className="nav-button prev-button"
-          data-tooltip="Disabled"
+          data-tooltip="Transitional Epithilium"
           onClick={handlePrev}
           disabled={currentIndex === 0}
         >
@@ -116,7 +116,7 @@ function StratifiedSquamousNonKeratinisedEpithelium() {
           </div>
         <button
           className="nav-button next-button"
-          data-tooltip="Disabled"
+          data-tooltip="Stratified Squamous Keratinised Epithelium"
           onClick={handleNext}
           disabled={currentIndex === epitheliumTypes.length - 1}
         >
