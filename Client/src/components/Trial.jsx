@@ -45,7 +45,7 @@ const Trial = () => {
 
   const tiles = [
     { name: 'Kidney', img: '/assets/Images/Kidney/Kidney_Panaromic.png', link: '#', keywords: ['kidney'], onClick: toggleKidneyDetails },
-    { name: 'Cartilage', img: '/assets/Images/Cartilage/Elastic Cartilage Low Magnification.jpg', link:  '/Cartilage', keywords: ['Hyaline Cartilage','Elastic Cartilage','White Fibrous Cartilage'] },
+    { name: 'Cartilage', img: '/assets/Images/Cartilage/Elastic Cartilage Low Magnification1.jpeg', link:  '/Cartilage', keywords: ['Hyaline Cartilage','Elastic Cartilage','White Fibrous Cartilage'] },
     { name: 'Epithelium', img: '/assets/Images/Epithelium/Unlabelled/Squamous _low.jpeg', link: '/Epithelium', keywords: ['Simple Squamous Epithelium','Simple Cuboidal Epithelium','Simple Columnar Epithelium','Pseudostratified Epithelium', 'Transitional Epithelium', 'Stratified Squamous Keratinised Epithelium', 'Stratified Squamous Non-Keratinised Epithelium']},
     { name: 'Connective Tissue', img: '/assets/Images/Connective Tissue/Dense Regular Low Magnification.jpg', link: '/ConnectiveTissue', keywords: ['Adipose Tissue', 'Dense Connective Tissue', 'Dense Regular Connective Tissue', 'Dense Irregular Connective Tissue']},
     { name: 'Bone', img: '/assets/Images/Bone/Ground Bone LS Low Magnification.jpg', link: '/Bone', keywords: []},

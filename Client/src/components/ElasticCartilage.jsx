@@ -91,11 +91,11 @@ function HyalineCartilage() {
 
         <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
-            <img src="/assets/Images/Cartilage/Elastic Cartilage Low Magnification.jpg" alt="Elastic Cartilage" />
-            <button className="AllButtons" data-tooltip="Perichondrium" id="Elasticbtn1" data-popup="popup1" onClick={() => openPopup1('assets/Images/Cartilage/Elastic Perichondrium.png', '#', '#')}>1</button>
-            <button className="AllButtons" data-tooltip="Matrix with Elastic Fibres" id="Elasticbtn2" data-popup="popup2">2</button>
-            <button className="AllButtons" data-tooltip="Lacunae" id="Elasticbtn3" data-popup="popup3">3</button>
-            <button className="AllButtons" data-tooltip="Chondrocytes" id="Elasticbtn4" data-popup="popup4">4</button>
+            <img src="/assets/Images/Cartilage/Elastic Cartilage Low Magnification1.jpeg" alt="Elastic Cartilage" />
+            <button className="AllButtons" data-tooltip="Perichondrium" id="Elasticbtn1" data-popup="popup1" onClick={() => openPopup1('assets/Images/Cartilage/Elastic Perichondrium1.jpg', '#', '#')}>1</button>
+            <button className="AllButtons" data-tooltip="Matrix with Elastic Fibres" id="Elasticbtn2" data-popup="popup2" onClick={() => openPopup1("/assets/Images/Cartilage/Elastic Cartilage High Magnification1.jpg", '#', '#')}>2</button>
+            <button className="AllButtons" data-tooltip="Lacunae" id="Elasticbtn3" data-popup="popup3" onClick={() => openPopup1("/assets/Images/Cartilage/Elastic Cartilage High Magnification1.jpg", '#', '#')}>3</button>
+            <button className="AllButtons" data-tooltip="Chondrocytes" id="Elasticbtn4" data-popup="popup4" onClick={() => openPopup1("/assets/Images/Cartilage/Elastic Cartilage High Magnification1.jpg", '#', '#')}>4</button>
           </div>
         </div>
 
@@ -127,7 +127,6 @@ function HyalineCartilage() {
 
         <div className='Container2'>
           <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/Elastic Pencil.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Elastic Cartilage</u></strong></a>
-          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/Elastic Cartilage High Magnification.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view High Magnification of Elastic Cartilage</u></strong></a>
 
           <ul className='epithelium-introduction-list'>
             <li>Perichondrium is usually present in the inner cellular layer of perichondrium may not be clearly apparent.</li>

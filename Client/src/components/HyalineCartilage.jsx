@@ -89,13 +89,13 @@ function HyalineCartilage() {
 
         <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
-          <img src="/assets/Images/Cartilage/Hyaline Cartilage Low Magnification.jpg" alt="Hyaline Cartilage" />
-            <button className="AllButtons" data-tooltip="Territorial Matrix" id="Hyalinebtn1" data-popup="popup1" >1</button>
-            <button className="AllButtons" data-tooltip="Inter-territorial Matrix" id="Hyalinebtn2" data-popup="popup2" >2</button>
-            <button className="AllButtons" data-tooltip="Lacunae" id="Hyalinebtn3" data-popup="popup3" >3</button>
-            <button className="AllButtons" data-tooltip="Chondrocytes" id="Hyalinebtn4" data-popup="popup4" >4</button>
-            <button className="AllButtons" data-tooltip="Perichondrium" id="Hyalinebtn5" data-popup="popup5" onClick={() => openPopup1('/assets/Images/Cartilage/Hyaline Perichondrium.jpg', '#', '#')}>5</button>
-            <button className="AllButtons" data-tooltip="Cell nests" id="Hyalinebtn6" data-popup="popup6" >6</button>
+          <img src="/assets/Images/Cartilage/Hyaline Cartilage Low Magnification1.jpeg" alt="Hyaline Cartilage" />
+            <button className="AllButtons" data-tooltip="Territorial Matrix" id="Hyalinebtn1" data-popup="popup1" onClick={() => openPopup1("/assets/Images/Cartilage/Hyaline Cartilage High Magnification1.jpg", '#', '#')}>1</button>
+            <button className="AllButtons" data-tooltip="Inter-territorial Matrix" id="Hyalinebtn2" data-popup="popup2" onClick={() => openPopup1("/assets/Images/Cartilage/Hyaline Cartilage High Magnification1.jpg", '#', '#')}>2</button>
+            <button className="AllButtons" data-tooltip="Lacunae" id="Hyalinebtn3" data-popup="popup3" onClick={() => openPopup1("/assets/Images/Cartilage/Hyaline Cartilage High Magnification1.jpg", '#', '#')}>3</button>
+            <button className="AllButtons" data-tooltip="Chondrocytes" id="Hyalinebtn4" data-popup="popup4" onClick={() => openPopup1("/assets/Images/Cartilage/Hyaline Cartilage High Magnification1.jpg", '#', '#')}>4</button>
+            <button className="AllButtons" data-tooltip="Perichondrium" id="Hyalinebtn5" data-popup="popup5" onClick={() => openPopup1('/assets/Images/Cartilage/Hyaline Perichondrium1.jpg', '#', '#')}>5</button>
+            <button className="AllButtons" data-tooltip="Cell nests" id="Hyalinebtn6" data-popup="popup6" onClick={() => openPopup1("/assets/Images/Cartilage/Hyaline Cartilage High Magnification1.jpg", '#', '#')}>6</button>
           </div>
         </div>
         
@@ -127,7 +127,6 @@ function HyalineCartilage() {
 
         <div className="Container2">
           <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/Hyaline Pencil.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Hyaline Cartilage</u></strong></a>
-          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/Hyaline Cartilage High Magnification.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view High Magnification of Hyaline Cartilage</u></strong></a>
           {/* Buttons to switch between Hyaline and Articular Cartilage */}
           <div className="theory-switch-buttons">
             <button
