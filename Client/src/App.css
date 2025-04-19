@@ -2268,6 +2268,7 @@ ul {
   left: 42%;
 }
 
+
 .custom-bullets {
   list-style-type: disc;
   list-style-position: outside;
@@ -2285,3 +2286,66 @@ ul {
   font-weight: bold;         /* Only bullet is bold */
   color: black;
 }
+
+/*Muscle*/
+#Skeletalbtn1 {
+  top: 23%;
+  left: 93%;
+}
+
+#Skeletalbtn2 {
+  top: 54%;
+  left: 76%;
+}
+
+#SkeletalLSbtn1 {
+  top: 20%;
+  left: 81%;
+}
+
+#SkeletalLSbtn2 {
+  top: 34%;
+  left: 89%;
+}
+
+#SkeletalLSbtn3 {
+  top: 43%;
+  left: 83%;
+}
+
+#SkeletalLSbtn4 {
+  top: 60%;
+  left: 72%;
+}
+
+#SkeletalLSbtn5 {
+  top: 77%;
+  left: 58%;
+}
+
+#Smoothbtn1 {
+  top: 58%;
+  left: 79%;
+}
+
+#Smoothbtn2 {
+  top: 85%;
+  left: 71%;
+}
+
+#Cardiacbtn1 {
+  top: 17%;
+  left: 28%;
+}
+
+#Cardiacbtn2 {
+  top: 34%;
+  left: 86%;
+}
+
+#Cardiacbtn3 {
+  top: 60%;
+  left: 76%;
+}
+
+>>>>>>> 48dbafcc086451a72dd03b8f6302bbf4445a0c00

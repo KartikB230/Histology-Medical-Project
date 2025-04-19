@@ -51,7 +51,7 @@ const Trial = () => {
     { name: 'Blood Vessels', img: '/assets/Images/Blood Vessel/Elastic Artery Low Magnification.jpg', link: '/BloodVessel', keywords: []},
     { name: 'Endocrine System', img: '/assets/Images/Adrenal/Adrenal_Gland.png', link: '/Endocrine', keywords: ['Adrenal Gland', 'Thyroid', 'Pituitary Gland']},
     { name: 'Kidney', img: '/assets/Images/Kidney/Kidney_Panaromic.png', link: '#', keywords: ['kidney'], onClick: toggleKidneyDetails },
-    { name: 'Muscle', img: '/assets/Images/Adrenal/Adrenal_Gland.png', link: '/Muscle', keywords: ['Adrenal Gland', 'Thyroid', 'Pituitary Gland']},
+    { name: 'Muscle', img: '/assets/Images/Muscle/Skeletal Muscle Low Magnification.jpg', link: '/Muscle', keywords: ['Adrenal Gland', 'Thyroid', 'Pituitary Gland']},
   ];
 
   const kidneyDetails = [
