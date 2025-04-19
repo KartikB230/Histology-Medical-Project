@@ -39,6 +39,11 @@ import ElasticArtery from "./components/ElasticArtery";
 import MuscularArtery from "./components/MuscularArtery";
 import Endocrine from "./components/Endocrine";
 import Muscle from "./components/Muscle";
+import SkeletalMuscle from "./components/SkeletalMuscle";
+import SkeletalMuscleLS from "./components/SkeletalMuscleLS";
+import SmoothMuscle from "./components/SmoothMuscle";
+import CardiacMuscle from "./components/CardiacMuscle";
+
 
 import LoginPage from "./components/LoginPage";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -127,6 +132,11 @@ function App() {
             <Route path="/MuscularArtery" element={<ProtectedRoute><MuscularArtery /></ProtectedRoute>} />
             <Route path="/Endocrine" element={<ProtectedRoute><Endocrine /></ProtectedRoute>} />
             <Route path="/Muscle" element={<ProtectedRoute><Muscle /></ProtectedRoute>} />
+            <Route path="/SkeletalMuscle" element={<ProtectedRoute><SkeletalMuscle /></ProtectedRoute>} />
+            <Route path="/SkeletalMuscleLS" element={<ProtectedRoute><SkeletalMuscleLS /></ProtectedRoute>} />
+            <Route path="/SmoothMuscle" element={<ProtectedRoute><SmoothMuscle /></ProtectedRoute>} />
+            <Route path="/CardiacMuscle" element={<ProtectedRoute><CardiacMuscle /></ProtectedRoute>} />
+
           </Routes>
         </BrowserRouter>
       )}

@@ -30,6 +30,7 @@ const Footer = () => {
               <li><Link to="/Cartilage" className="footer-link">Cartilage</Link></li>
               <li><Link to="/Bone" className="footer-link">Bone</Link></li>
               <li><Link to="/BloodVessel" className="footer-link">Blood Vessels</Link></li>
+              <li><Link to="/Muscle" className="footer-link">Muscle</Link></li>
             </ul>
           </Col>
 
