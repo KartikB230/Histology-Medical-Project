@@ -2,26 +2,35 @@
   text-align: center;
 }
 
+
 .Loader {
   display: flex;
-  flex-direction: column; /* Arrange children vertically */
-  justify-content: center; /* Center children vertically */
-  align-items: center; /* Center children horizontally */
+  flex-direction: column;
+  /* Arrange children vertically */
+  justify-content: center;
+  /* Center children vertically */
+  align-items: center;
+  /* Center children horizontally */
   background-color: rgb(205, 117, 117);
-  
-  height: 100vh; /* Full viewport height */
-  width: 100vw; /* Full viewport width */
-  position: fixed; /* Fix loader in viewport */
+
+  height: 100vh;
+  /* Full viewport height */
+  width: 100vw;
+  /* Full viewport width */
+  position: fixed;
+  /* Fix loader in viewport */
   top: 0;
   left: 0;
 }
 
 .Loader .title {
   color: white;
-  
-  font-size: 7vw; /* Responsive font size based on viewport width */
- 
-  margin-bottom: 5vh; /* Responsive bottom margin based on viewport height */
+
+  font-size: 7vw;
+  /* Responsive font size based on viewport width */
+
+  margin-bottom: 5vh;
+  /* Responsive bottom margin based on viewport height */
   text-align: center;
 }
 
@@ -94,6 +103,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -108,10 +118,10 @@
 .imgg {
   display: block;
   margin: auto;
-  max-width: 100%; 
-  max-height: 100vh; 
+  max-width: 100%;
+  max-height: 100vh;
   width: auto;
-  height: auto; 
+  height: auto;
 }
 
 .content-container {
@@ -126,7 +136,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 .info-container {
@@ -151,42 +161,46 @@
   justify-content: center;
   align-items: center;
 }
+
 .Container2 {
   display: flex;
-  font-size:large;
-  flex-direction: column; 
-  align-items: left; 
-  text-align: left; 
+  font-size: large;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
 }
 
 .image-cell {
-  
-  margin-left : auto;
+
+  margin-left: auto;
   margin-right: auto;
   color: blue;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
-.image-container
-{
-  margin-left : auto;
+.image-container {
+  margin-left: auto;
   margin-right: auto;
   color: blue;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .overlay {
-  display:none;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Semi-transparent black background */
+  justify-content: center;
+  /* Center items horizontally */
+  align-items: center;
+  /* Center items vertically */
   z-index: 1005;
 }
+
 
 .popup-content {
   text-align: left;
@@ -196,10 +210,11 @@
   max-height: 100vh;
   border-radius: 10px;
   z-index: 1005;
-  background-color: rgb(0,0,0,0.5); /* Semi-transparent background color */
+  background-color: rgb(0, 0, 0, 0.5);
+  /* Semi-transparent background color */
 }
 
-.popup-content > * {
+.popup-content>* {
   margin-bottom: 10px;
 }
 
@@ -210,24 +225,34 @@
   right: 15px;
   width: 35px;
   height: 35px;
-  background-color: rgba(255, 255, 255, 0.2); /* Light semi-transparent background */
-  border:#282c34; /* Remove border */
-  border-radius: 20%; /* Rounded shape */
-  display: flex; /* Flex display for centering */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Light semi-transparent background */
+  border: #282c34;
+  /* Remove border */
+  border-radius: 20%;
+  /* Rounded shape */
+  display: flex;
+  /* Flex display for centering */
+  align-items: center;
+  /* Center vertically */
+  justify-content: center;
+  /* Center horizontally */
   cursor: pointer;
   z-index: 1006;
   color: #fff;
-  font-size: 28px; /* Adjust size for centering */
+  font-size: 28px;
+  /* Adjust size for centering */
   font-weight: bold;
-  transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+  transition: background-color 0.3s, transform 0.3s;
+  /* Smooth transition */
 }
 
 /* Hover effect */
 .close-button:hover {
-  background-color: rgba(255, 0, 0, 0.8); /* Bright red background on hover */
-  transform: scale(1.1); /* Slightly enlarge on hover */
+  background-color: rgba(255, 0, 0, 0.8);
+  /* Bright red background on hover */
+  transform: scale(1.1);
+  /* Slightly enlarge on hover */
 }
 
 
@@ -248,7 +273,8 @@
   position: relative;
   max-height: 75vh;
   object-fit: contain;
-  margin: 0 auto; /* Center the image horizontally */
+  margin: 0 auto;
+  /* Center the image horizontally */
 }
 
 .audio-container {
@@ -258,8 +284,10 @@
 
 /* Style the audio player */
 #audioPlayer {
-  width: 100%; /* Adjust the width as needed */
-  max-width: 400px; /* Set a maximum width for the player */
+  width: 100%;
+  /* Adjust the width as needed */
+  max-width: 400px;
+  /* Set a maximum width for the player */
 }
 
 .navbar {
@@ -282,7 +310,7 @@
   display: block;
 }
 
-.dropdown-submenu > a:after {
+.dropdown-submenu>a:after {
   display: block;
   content: '';
   position: absolute;
@@ -291,7 +319,8 @@
   transform: translateY(-50%);
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-left: 5px solid rgb(205, 117, 117); /* Arrow for submenu */
+  border-left: 5px solid rgb(205, 117, 117);
+  /* Arrow for submenu */
 }
 
 @media (min-width: 992px) {
@@ -320,13 +349,14 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: url('../public/assets/Images/img.jpg') no-repeat center center/cover;
+  background: url('../public/assets/Images/1.jpg') no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0.85;
   padding: 20px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0);
+  
 }
 
 @media (max-width: 1024px) {
@@ -488,21 +518,21 @@
 .Container1 {
   position: relative;
   width: 100%;
-  max-width: 600px; 
+  max-width: 600px;
   margin: 0 auto;
   height: auto;
   overflow: hidden;
   touch-action: pan-x;
-  transition: transform 0.4s ease-in-out; 
+  transition: transform 0.4s ease-in-out;
 }
 
 .Container1 img {
   display: block;
   margin: auto;
-  max-width: 100%; 
-  max-height: 100vh; 
+  max-width: 100%;
+  max-height: 100vh;
   width: auto;
-  height: auto; 
+  height: auto;
   object-fit: cover;
   transition: transform 0.4s ease-in-out;
 }
@@ -510,14 +540,14 @@
 
 .Container1 .AllButtons,
 .overlay .AllButtons {
-    position: absolute;
-    color: white;
-    background-color: rgba(0,0,0,1);
-    border: 1px solid rgba(255, 255, 255, 1);
-    cursor: pointer;
-    font-weight: bolder;
-    /* z-index: 1;  */
-    transition: background-color 0.3s ease;
+  position: absolute;
+  color: white;
+  background-color: rgba(0, 0, 0, 1);
+  border: 1px solid rgba(255, 255, 255, 1);
+  cursor: pointer;
+  font-weight: bolder;
+  /* z-index: 1;  */
+  transition: background-color 0.3s ease;
 }
 
 .divider {
@@ -532,16 +562,21 @@
   height: 100%;
   margin-top: 1%;
   margin-bottom: -1%;
-  position: relative; /* Add this to allow absolute positioning */
+  position: relative;
+  /* Add this to allow absolute positioning */
 }
 
 .heading img {
   height: 40px;
   width: 40px;
-  position: absolute; /* Position the image absolutely */
-  left: 00; /* Align the image to the left */
-  top: 50%; /* Center the image vertically */
-  transform: translateY(-60%); /* Adjust for proper centering */
+  position: absolute;
+  /* Position the image absolutely */
+  left: 00;
+  /* Align the image to the left */
+  top: 50%;
+  /* Center the image vertically */
+  transform: translateY(-60%);
+  /* Adjust for proper centering */
   margin-left: 2%;
 }
 
@@ -549,12 +584,12 @@
 
 .navigation-buttons {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 800px; 
+  max-width: 800px;
   margin: 20px auto;
-  position: relative; 
+  position: relative;
 }
 
 
@@ -565,7 +600,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #007bff;
+  background-color: black;
   color: #fff;
   transition: background-color 0.3s ease;
 }
@@ -578,13 +613,13 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #007bff;
+  background-color: black;
   color: #fff;
   transition: background-color 0.3s ease;
 }
 
 .nav-button:hover:not(:disabled) {
-  background-color: #0056b3;
+  background-color: black;
 }
 
 .nav-button:disabled {
@@ -593,12 +628,12 @@
 }
 
 .nav-button {
-  position: relative; 
+  position: relative;
 }
 
 .nav-button.prev-button:hover::after,
 .nav-button.next-button:hover::after {
-  top: 100%; 
+  top: 100%;
 }
 
 /* Simple Cuboidal Epithelium*/
@@ -607,7 +642,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 50px; 
+  margin-top: 50px;
 }
 
 .tab-button {
@@ -623,7 +658,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px; /* Rounded corners */
+  border-radius: 10px;
+  /* Rounded corners */
 }
 
 .tab-button:hover {
@@ -642,9 +678,12 @@
 }
 
 .tab-button.active {
-  background-color: #3498db; /* Active tab background */
-  color: #fff; /* Active tab text color */
-  border-color: #3498db; /* Active tab border color */
+  background-color: #3498db;
+  /* Active tab background */
+  color: #fff;
+  /* Active tab text color */
+  border-color: #3498db;
+  /* Active tab border color */
 }
 
 /* Styles for the content inside each tab */
@@ -680,28 +719,30 @@
 
 /* List Styling */
 .epithelium-objectives-list {
-  list-style-type: decimal; /* This creates numerical pointers */
+  list-style-type: decimal;
   padding-left: 20px;
   margin-left: 20px;
-  font-size: 1rem;
-  color: #555;
+  font-size: 18px;
 }
 
 .epithelium-objectives-list li {
-  margin-bottom: 10px; /* Add spacing between list items */
+  margin-bottom: 10px;
+  /* Add spacing between list items */
 }
 
 /* Filled Circle Pointers for Introduction */
 .epithelium-introduction-list {
-  list-style-type: disc; /* This creates filled circle pointers */
+  list-style-type: disc;
+  /* This creates filled circle pointers */
   padding-left: 20px;
   margin-left: 20px;
-  font-size: 1rem;
+  font-size: 18px;
 }
 
 .epithelium-introduction-list li {
   margin-bottom: 10px;
 }
+
 /* Image Styling */
 .epithelium-image-box {
   text-align: left;
@@ -731,13 +772,16 @@
   margin-top: 10px;
   margin-bottom: 40px;
 }
+
 /* Responsive Design */
 @media (max-width: 768px) {
-  .epithelium-image-box .image-1, 
+
+  .epithelium-image-box .image-1,
   .epithelium-image-box .image-2 {
     width: 100%;
   }
 }
+
 /* 
 .epithelium-image-box:hover {
   transform: scale(1.02);
@@ -783,12 +827,13 @@
     margin-bottom: 10px;
   }
 }
+
 .epithelium-image.image-3 {
-  display: block;               
-  margin-left: auto;            
-  margin-right: auto;           
-  max-width: 100%;              
-  height: auto;                 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 /* Quiz Styling */
@@ -828,12 +873,14 @@
 }
 
 .quiz-question label.correct {
-  background-color: #d4edda; /* Green for correct answers */
+  background-color: #d4edda;
+  /* Green for correct answers */
   color: #155724;
 }
 
 .quiz-question label.wrong {
-  background-color: #f8d7da; /* Red for wrong answers */
+  background-color: #f8d7da;
+  /* Red for wrong answers */
   color: #721c24;
 }
 
@@ -863,44 +910,44 @@
 
 @media (max-width: 768px) {
   .epithelium-container {
-      padding: 20px;
+    padding: 20px;
   }
 
   .epithelium-title {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   .epithelium-list li,
   .epithelium-text {
-      font-size: 16px;
-  }
-
-  .epithelium-image-box{
-      padding: 10px;
+    font-size: 16px;
   }
 
   .epithelium-image-box {
-      margin: 10px 0;
+    padding: 10px;
+  }
+
+  .epithelium-image-box {
+    margin: 10px 0;
   }
 }
-.image-1
-{
+
+.image-1 {
   /* max-height: 500px;
   max-width: 500px;
   margin-top: 70px; */
   height: auto;
   width: auto;
 }
-.image-2
-{
+
+.image-2 {
   /* max-height: 200px;
   max-width: 750px;
   margin-top: 70px; */
   height: auto;
   width: auto;
 }
-.image-3
-{
+
+.image-3 {
 
   height: auto;
   width: auto;
@@ -910,9 +957,12 @@
 
 /* Center the toggle button */
 .toggle-button-container {
-  position: absolute; /* Positioning within navigation-buttons */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Adjust for true center */
+  position: absolute;
+  /* Positioning within navigation-buttons */
+  left: 50%;
+  /* Center horizontally */
+  transform: translateX(-50%);
+  /* Adjust for true center */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -931,7 +981,8 @@
 }
 
 .toggle-image {
-  width: 40px; /* Adjust size */
+  width: 40px;
+  /* Adjust size */
   height: 40px;
 }
 
@@ -944,49 +995,53 @@
 .nav-button.prev-button:hover::after,
 .nav-button.next-button:hover::after,
 .toggle-button:hover::after,
-.Container1 button:hover::after {
-    content: attr(data-tooltip); 
-    position: absolute;
-    top: 100%; 
-    left: 50%; 
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    white-space: nowrap;
-    opacity: 1; 
-    pointer-events: none;
-    z-index: 1004;
-    transition: opacity 0.3s ease;
+.Container1 button:hover::after,
+.additional-buttons button:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 1004;
+  transition: opacity 0.3s ease;
 }
 
 
 
 /* Styles for small devices (sm) */
 @media only screen and (max-width: 768px) {
+
   /* Styles for small devices (sm) */
-  .Container1 .AllButtons{
-      width:12px;
-      padding: 0px;
-      font-size: 10px;
-      height: 15px;
-  } 
+  .Container1 .AllButtons {
+    width: 12px;
+    padding: 0px;
+    font-size: 10px;
+    height: 15px;
+  }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 992px) {
+
   /* Styles for medium devices (md) */
-.Container1 .AllButtons{
-      font-size: 15px;
+  .Container1 .AllButtons {
+    font-size: 15px;
   }
 }
 
 @media only screen and (min-width: 993px) {
+
   /* Styles for large devices (lg) */
-.Container1 .AllButtons{
-      font-size: 18px;
-      height: 28px;
+  .Container1 .AllButtons {
+    font-size: 18px;
+    height: 28px;
 
   }
 }
@@ -1013,17 +1068,20 @@
   left: 15px;
   top: 50%;
   transform: translateY(-50%);
-  color: #888; /* Subtle color for icon */
+  color: #888;
+  /* Subtle color for icon */
   font-size: 18px;
 }
 
 /* Improved Search Input */
 .search-input {
   width: 100%;
-  padding: 12px 16px 12px 45px; /* Space for the icon */
+  padding: 12px 16px 12px 45px;
+  /* Space for the icon */
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 25px; /* Rounded corners */
+  border-radius: 25px;
+  /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
@@ -1031,7 +1089,8 @@
 /* Focus effect */
 .search-input:focus {
   outline: none;
-  border-color: #4a90e2; /* Slightly blue border on focus */
+  border-color: #4a90e2;
+  /* Slightly blue border on focus */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -1051,9 +1110,9 @@
 }
 
 .tile {
-  width: calc(25% - 30px); 
-  min-width: 200px; 
-  max-width: 300px; 
+  width: calc(25% - 30px);
+  min-width: 200px;
+  max-width: 300px;
   height: 250px;
   margin: 15px;
   text-decoration: none;
@@ -1099,19 +1158,22 @@
 
 @media (max-width: 1200px) {
   .tile {
-    width: calc(33.33% - 30px); /* Adjusts for smaller screens */
+    width: calc(33.33% - 30px);
+    /* Adjusts for smaller screens */
   }
 }
 
 @media (max-width: 768px) {
   .tile {
-    width: calc(50% - 30px); /* Adjusts for mobile screens */
+    width: calc(50% - 30px);
+    /* Adjusts for mobile screens */
   }
 }
 
 @media (max-width: 480px) {
   .tile {
-    width: calc(100% - 30px); /* Adjusts for very small screens */
+    width: calc(100% - 30px);
+    /* Adjusts for very small screens */
   }
 }
 
@@ -1122,40 +1184,48 @@
 /* General container for the Cartilage section */
 
 .theory-switch-buttons {
-  display: flex; /* Display the buttons side by side */
+  display: flex;
+  /* Display the buttons side by side */
   justify-content: center;
   align-items: center;
   margin: 20px 0;
-  width: 100%; /* Ensure the container takes full width */
+  width: 100%;
+  /* Ensure the container takes full width */
 }
 
 .theory-switch-buttons button {
-  flex: 1; /* Each button takes up equal space (50% width) */
-  max-width: 50%; /* Ensure each button never exceeds 50% of the screen */
+  flex: 1;
+  /* Each button takes up equal space (50% width) */
+  max-width: 50%;
+  /* Ensure each button never exceeds 50% of the screen */
   padding: 15px;
   border: none;
   background-color: #f0f0f0;
   cursor: pointer;
-  font-size: 18px; /* Larger font for better readability */
+  font-size: 18px;
+  /* Larger font for better readability */
   border-radius: 5px;
   transition: background-color 0.3s ease;
   text-align: center;
-  box-sizing: border-box; /* Ensure padding is included within the width */
+  box-sizing: border-box;
+  /* Ensure padding is included within the width */
 }
 
 .theory-switch-buttons button:hover {
-  background-color: #ddd; /* Subtle hover effect */
+  background-color: #ddd;
+  /* Subtle hover effect */
 }
 
 .theory-switch-buttons button.active {
-  background-color:  rgb(205, 117, 117);
+  background-color: rgb(205, 117, 117);
   color: white;
 }
 
 /* Optional: On very small screens, if you want to reduce font size */
 @media (max-width: 576px) {
   .theory-switch-buttons button {
-    font-size: 16px; /* Reduce font size slightly on very small screens */
+    font-size: 16px;
+    /* Reduce font size slightly on very small screens */
   }
 }
 
@@ -1165,8 +1235,10 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
-  margin-bottom: 20px; /* Adds space between the sections */
+  margin-bottom: 20px;
+  /* Adds space between the sections */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
 }
 
 /* Title styling for better separation */
@@ -1183,7 +1255,8 @@
 /* Table responsiveness */
 .table-responsive {
   width: 100%;
-  overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
+  overflow-x: auto;
+  /* Enable horizontal scrolling for smaller screens */
 }
 
 .cartilage-table {
@@ -1192,7 +1265,7 @@
   margin-bottom: 20px;
 }
 
-.cartilage-table th, 
+.cartilage-table th,
 .cartilage-table td {
   border: 1px solid #ddd;
   padding: 12px 15px;
@@ -1224,10 +1297,13 @@
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
-  .cartilage-table th, 
+
+  .cartilage-table th,
   .cartilage-table td {
-    font-size: 0.9rem; /* Slightly reduce font size for small screens */
-    padding: 8px 10px; /* Adjust padding for small screens */
+    font-size: 0.9rem;
+    /* Slightly reduce font size for small screens */
+    padding: 8px 10px;
+    /* Adjust padding for small screens */
   }
 
   /* Optional: Improve visibility by adding borders to entire table on small screens */
@@ -1235,8 +1311,9 @@
     border: 1px solid #ddd;
   }
 }
+
 @media only screen and (max-width: 768px) {
-  .span{
+  .span {
     position: absolute;
     color: white;
     /* te: left; */
@@ -1245,18 +1322,12 @@
     transform: translate(-50%, -50%);
     font-size: 50px;
   }
-  
-}
-
-@media only screen and (min-width: 769px) and (max-width: 992px) {
-
 
 }
 
-@media only screen and (min-width: 993px) {
+@media only screen and (min-width: 769px) and (max-width: 992px) {}
 
-
-}
+@media only screen and (min-width: 993px) {}
 
 /* LoginPage.css */
 
@@ -1272,7 +1343,8 @@
 }
 
 .login-form {
-  flex: 0 0 35%; /* Takes up 35% of the width */
+  flex: 0 0 35%;
+  /* Takes up 35% of the width */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1303,15 +1375,19 @@
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  transition: all 0.3s ease; /* Smooth transition for the pop-out effect */
+  transition: all 0.3s ease;
+  /* Smooth transition for the pop-out effect */
 }
 
 .login-form input[type="text"]:focus,
 .login-form input[type="password"]:focus {
   outline: none;
-  border-color: rgb(205, 117, 117); /* Change border color on focus */
-  box-shadow: 0 0 10px rgb(255, 88, 88); /* Add shadow for pop-out effect */
-  transform: scale(1.05); /* Slightly increase size for pop-out effect */
+  border-color: rgb(205, 117, 117);
+  /* Change border color on focus */
+  box-shadow: 0 0 10px rgb(255, 88, 88);
+  /* Add shadow for pop-out effect */
+  transform: scale(1.05);
+  /* Slightly increase size for pop-out effect */
 }
 
 .password-container {
@@ -1323,23 +1399,30 @@
 .password-container input[type="password"],
 .password-container input[type="text"] {
   flex: 1;
-  margin-right: 50px; /* Adjust to leave enough space for the icon */
+  margin-right: 50px;
+  /* Adjust to leave enough space for the icon */
 }
 
 .toggle-password {
   position: absolute;
-  right: 1px; /* Adjust for proper alignment */
-  top: 35%; /* Center vertically */
-  transform: translateY(-50%); /* Correct vertical alignment */
-  background:none;
+  right: 1px;
+  /* Adjust for proper alignment */
+  top: 35%;
+  /* Center vertically */
+  transform: translateY(-50%);
+  /* Correct vertical alignment */
+  background: none;
   border: none;
   cursor: pointer;
-   /* Increase icon size */
-  color: black; /* Ensure the icon is visible */
-  display:inline-flexbox;
+  /* Increase icon size */
+  color: black;
+  /* Ensure the icon is visible */
+  display: inline-flexbox;
   visibility: visible;
-  z-index: 1; /* Ensure the icon is on top */
+  z-index: 1;
+  /* Ensure the icon is on top */
 }
+
 .toggle-password svg {
   color: white;
   font-size: 28px;
@@ -1384,15 +1467,19 @@
 }
 
 .welcome-section {
-  flex: 0 0 65%; /* Takes up 65% of the width */
-  background: url('../public/assets/Images/img login.jpg') no-repeat bottom center; /* Set your background image here */
-  background-size: cover; /* Ensure the image covers the entire section */
+  flex: 0 0 65%;
+  /* Takes up 65% of the width */
+  background: url('../public/assets/Images/2.jpg') no-repeat bottom center;
+  /* Set your background image here */
+  background-size: cover;
+  /* Ensure the image covers the entire section */
   color: black;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding: 20px; /* Add some padding to the bottom */
+  padding: 20px;
+  /* Add some padding to the bottom */
 }
 
 .welcome-section h1 {
@@ -1418,14 +1505,18 @@
   .login-form form {
     width: 100%;
   }
+
   .login-form input[type="text"]:focus,
-.login-form input[type="password"]:focus {
-  outline: none;
-  border-color: rgb(205, 117, 117); /* Change border color on focus */
-  box-shadow: 0 0 10px rgb(255, 88, 88); /* Add shadow for pop-out effect */
-  transform: scale(1.05); /* Slightly increase size for pop-out effect */
-}
-  
+  .login-form input[type="password"]:focus {
+    outline: none;
+    border-color: rgb(205, 117, 117);
+    /* Change border color on focus */
+    box-shadow: 0 0 10px rgb(255, 88, 88);
+    /* Add shadow for pop-out effect */
+    transform: scale(1.05);
+    /* Slightly increase size for pop-out effect */
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -1459,9 +1550,9 @@
   .login-form a {
     font-size: 14px;
   }
-  
-  
-  
+
+
+
 }
 
 
@@ -1469,7 +1560,8 @@
 
 /* Main list styling */
 .feature-list {
-  list-style-type: decimal; /* Numeric pointers for the main list */
+  list-style-type: decimal;
+  /* Numeric pointers for the main list */
   padding-left: 40px;
   margin-left: 20px;
   color: #555;
@@ -1477,12 +1569,13 @@
 
 .feature-list li {
   margin-bottom: 10px;
-  
+
 }
 
 /* Nested list styling */
 .nested-list {
-  list-style-type: lower-roman; /* Use lower roman numerals for nested list */
+  list-style-type: lower-roman;
+  /* Use lower roman numerals for nested list */
   padding-left: 40px;
   margin-left: 20px;
 }
@@ -1494,19 +1587,24 @@
 
 .nested-list li strong {
   font-weight: bold;
-  color: #333; /* Make the zone names stand out */
+  color: #333;
+  /* Make the zone names stand out */
 }
 
 
 /* Carousel.css */
 /* Carousel Container */
 .carousel-container {
-  max-width: 85%; /* Increase the width for better visibility */
+  max-width: 85%;
+  /* Increase the width for better visibility */
   margin: 20px auto;
   padding: 20px 0;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Add shadow */
-  border-radius: 15px; /* Rounded corners */
-  background-color: #f0f0f0; /* Light background */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  /* Add shadow */
+  border-radius: 15px;
+  /* Rounded corners */
+  background-color: #f0f0f0;
+  /* Light background */
 }
 
 /* General Styling for Images */
@@ -1519,8 +1617,10 @@
 }
 
 .carousel-image img:hover {
-  transform: scale(1.05); /* Smooth zoom effect */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+  transform: scale(1.05);
+  /* Smooth zoom effect */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  /* Shadow on hover */
 }
 
 /* Caption Styling */
@@ -1535,9 +1635,12 @@
 
 
 /* Customize Arrow Icons */
-.carousel-control-prev-icon, .carousel-control-next-icon {
-  filter: invert(1); /* Make icons white */
-  width: 20px; /* Adjust icon size */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+  /* Make icons white */
+  width: 20px;
+  /* Adjust icon size */
   height: 20px;
 }
 
@@ -1547,6 +1650,7 @@
   .carousel-image img {
     max-height: 350px;
   }
+
   .carousel-caption h3 {
     font-size: 1.5rem;
   }
@@ -1556,6 +1660,7 @@
   .carousel-image img {
     max-height: 250px;
   }
+
   .carousel-caption h3 {
     font-size: 1.2rem;
   }
@@ -1565,84 +1670,84 @@
 
 /* Footer.css */
 .footer {
- background:  center no-repeat;
- background-size:cover;
- color: #f8f9fa;
- padding: 30px 15px; 
- position: relative; 
+  background: center no-repeat;
+  background-size: cover;
+  color: #f8f9fa;
+  padding: 30px 15px;
+  position: relative;
 }
 
 .footer::before {
- content: "";
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- background: rgba(0, 0, 0, 0.9); 
- z-index: 1; 
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1;
 }
 
 
 .footer .container-fluid {
- position: relative;
- z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
 .footer-title {
- font-size: 18px;
- margin-bottom: 15px;
- color: #f8f9fa;
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #f8f9fa;
 }
 
 .footer-link {
- color: #adb5bd;
- text-decoration: none;
- display: block;
- margin-bottom: 5px;
- transition: color 0.2s ease-in-out;
+  color: #adb5bd;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+  transition: color 0.2s ease-in-out;
 }
 
 .footer-link:hover {
- color: #ffffff;
- text-decoration: underline;
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 ul {
- padding-left: 0;
- list-style-type: none;
+  padding-left: 0;
+  list-style-type: none;
 }
 
 .social-icon {
- font-size: 24px;
- color: #adb5bd;
- margin-right: 15px;
- transition: color 0.2s ease-in-out;
+  font-size: 24px;
+  color: #adb5bd;
+  margin-right: 15px;
+  transition: color 0.2s ease-in-out;
 }
 
 .social-icon:hover {
- color: #ffffff;
+  color: #ffffff;
 }
 
 .footer-divider {
- border-top: 1px solid #495057;
- margin: 20px 0;
+  border-top: 1px solid #495057;
+  margin: 20px 0;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
- .footer-title {
-   font-size: 16px;
- }
+  .footer-title {
+    font-size: 16px;
+  }
 
- .footer-link {
-   margin-bottom: 10px;
- }
+  .footer-link {
+    margin-bottom: 10px;
+  }
 
- .social-icon {
-   font-size: 20px;
-   margin-right: 10px;
- }
+  .social-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
 }
 
 
@@ -1650,10 +1755,9 @@ ul {
 
 /* Squamous */
 
-#Squamousbtn1
-{
+#Squamousbtn1 {
   top: 31%;
-  left: 38.5%; 
+  left: 38.5%;
   transform: translate(-50%, -50%);
 }
 
@@ -1661,37 +1765,37 @@ ul {
 
 #Thyroidbtn1 {
   top: 26%;
-  left: 32%; 
+  left: 32%;
   transform: translate(-50%, -50%);
 }
 
 #Thyroidbtn2 {
   top: 55%;
-  left: 80%; 
+  left: 80%;
   transform: translate(-50%, -50%);
 }
 
 #Thyroidbtn3 {
   top: 84%;
-  left: 35%; 
+  left: 35%;
   transform: translate(-50%, -50%);
 }
 
 #Thyroidbtn4 {
   top: 35%;
-  left: 72.5%; 
+  left: 72.5%;
   transform: translate(-50%, -50%);
 }
 
 #Thyroidbtn5 {
   top: 73%;
-  left: 37%; 
+  left: 37%;
   transform: translate(-50%, -50%);
 }
 
 #Thyroidbtn6 {
   top: 48%;
-  left: 37%; 
+  left: 37%;
   transform: translate(-50%, -50%);
 }
 
@@ -1699,31 +1803,31 @@ ul {
 
 #Adrenalbtn1 {
   top: 15.8%;
-  right: 6.5%; 
+  right: 6.5%;
   transform: translate(-50%, -50%);
 }
 
 #Adrenalbtn2 {
   top: 36%;
-  left: 51.2%; 
+  left: 51.2%;
   transform: translate(-50%, -50%);
 }
 
 #Adrenalbtn3 {
   top: 55.9%;
-  left: 6.2%; 
+  left: 6.2%;
   transform: translate(-50%, -50%);
 }
 
 #Adrenalbtn4 {
   top: 74%;
-  left: 92%; 
+  left: 92%;
   transform: translate(-50%, -50%);
 }
 
 #Adrenalbtn5 {
   top: 86%;
-  left: 8%; 
+  left: 8%;
   transform: translate(-50%, -50%);
 }
 
@@ -1731,109 +1835,103 @@ ul {
 
 #Medullabtn1 {
   top: 12.5%;
-  left: 20%; 
+  left: 20%;
   transform: translate(-50%, -50%);
 }
 
 #Medullabtn2 {
   top: 21%;
-  left: 51%; 
+  left: 51%;
   transform: translate(-50%, -50%);
 }
 
 #Medullabtn3 {
   top: 46.33%;
-  left: 32%; 
+  left: 32%;
   transform: translate(-50%, -50%);
 }
 
 #Medullabtn4 {
   top: 76%;
-  left: 74%; 
+  left: 74%;
   transform: translate(-50%, -50%);
 }
 
 
 #Cortexbtn1 {
   top: 10%;
-  left: 41%; 
+  left: 41%;
   transform: translate(-50%, -50%);
 }
 
 #Cortexbtn2 {
   top: 40%;
-  left: 22.7%; 
+  left: 22.7%;
   transform: translate(-50%, -50%);
 }
 
 #Cortexbtn3 {
   top: 57%;
-  left: 63.6%; 
+  left: 63.6%;
   transform: translate(-50%, -50%);
 }
 
 #Cortexbtn4 {
   top: 47.5%;
-  left: 11.6%; 
+  left: 11.6%;
   transform: translate(-50%, -50%);
 }
 
 #Cortexbtn5 {
   top: 79.5%;
-  left: 48.5%; 
+  left: 48.5%;
   transform: translate(-50%, -50%);
 }
 
 #Cortexbtn6 {
   top: 48%;
-  left: 37%; 
+  left: 37%;
   transform: translate(-50%, -50%);
 }
 
 /* Simple Cuboidal Epithelium */
 
-#Cuboidalbtn1
-{
+#Cuboidalbtn1 {
   top: 29%;
   left: 75%;
 }
 
 /* Simple Columnar Epithelium */
 
-#Columnarbtn1
-{
+#Columnarbtn1 {
   top: 9%;
   left: 53%;
 }
 
 /* Pseudostratified Epithelium */
 
-#Pseudobtn1
-{
+#Pseudobtn1 {
   top: 45%;
   left: 68.5%;
 }
 
 /* Transitional Epithelium */
 
-#Transitionalbtn1
-{
+#Transitionalbtn1 {
   top: 35%;
   left: 65.5%;
 }
 
 /* Stratified Squamous Keratinised Epithelium */
 
-#Keratinisedbtn1
-{
+#Keratinisedbtn1 {
   top: 48%;
   left: 56%;
 }
 
 /* Stratified Squamous Non-Keratinised Epithelium */
 
-#NonKeratinisedbtn1
-{
+#NonKeratinisedbtn1 {
   top: 22%;
   left: 72%;
 }
@@ -1843,43 +1941,44 @@ ul {
 
 #Pituitarybtn1 {
   top: 25%;
-  left: 19%; 
+  left: 19%;
   transform: translate(-50%, -50%);
 }
 
 #Pituitarybtn2 {
   top: 53%;
-  left: 60%; 
+  left: 60%;
   transform: translate(-50%, -50%);
 }
 
 #Pituitarybtn3 {
   top: 25%;
-  left: 83%; 
+  left: 83%;
 
   transform: translate(-50%, -50%);
 }
 
 #Pituitarybtn4 {
   top: 39%;
-  left: 95%; 
+  left: 95%;
   transform: translate(-50%, -50%);
 }
 
 #Pituitarybtn5 {
   top: 52%;
-  left: 87%; 
+  left: 87%;
   transform: translate(-50%, -50%);
 }
 
 #Pituitarybtn6 {
   top: 67%;
-  left: 87%; 
+  left: 87%;
   transform: translate(-50%, -50%);
 }
+
 #Pituitarybtn7 {
   top: 65;
-  left: 87%; 
+  left: 87%;
   transform: translate(-50%, -50%);
 }
 
@@ -1900,283 +1999,271 @@ ul {
   top: 40%;
   left: 55%;
 }
-#Pituitarybtn7, #Pituitarybtn8, #Pituitarybtn9 {
-  position: absolute; 
+
+#Pituitarybtn7,
+#Pituitarybtn8,
+#Pituitarybtn9 {
+  position: absolute;
   transform: translate(-50%, -50%);
 }
 
 /* Cartilage */
 
-#Hyalinebtn1
-{
+#Hyalinebtn1 {
   top: 8.8%;
   left: 85%;
 }
-#Hyalinebtn2
-{
+
+#Hyalinebtn2 {
   top: 14%;
   left: 80.9%;
 }
-#Hyalinebtn3
-{
+
+#Hyalinebtn3 {
   top: 28%;
   left: 69%;
 }
-#Hyalinebtn4
-{
+
+#Hyalinebtn4 {
   top: 44%;
   left: 89%;
 }
-#Hyalinebtn5
-{
+
+#Hyalinebtn5 {
   top: 58.9%;
   left: 94%;
 }
-#Hyalinebtn6
-{
+
+#Hyalinebtn6 {
   top: 72%;
   left: 60%;
 }
 
-#Elasticbtn1
-{
-  top:10%;
-  left:84%  
-}
-#Elasticbtn2
-{
-  top:41.3%;
-  left:71%  
-}
-#Elasticbtn3
-{
-  top:60%;
-  left:88%  
-}
-#Elasticbtn4
-{
-  top:80%;
-  left:74.5%  
+#Elasticbtn1 {
+  top: 10%;
+  left: 84%
 }
 
-#Fibrousbtn1
-{
-  top:30%;
-  left:69%;
+#Elasticbtn2 {
+  top: 41.3%;
+  left: 71%
 }
 
-#Fibrousbtn2
-{
+#Elasticbtn3 {
+  top: 60%;
+  left: 88%
+}
+
+#Elasticbtn4 {
+  top: 80%;
+  left: 74.5%
+}
+
+#Fibrousbtn1 {
+  top: 30%;
+  left: 69%;
+}
+
+#Fibrousbtn2 {
   top: 50%;
-  left:77%;
+  left: 77%;
 }
 
-#Fibrousbtn3
-{
-  top:64.5%;
-  left:55.5%;
+#Fibrousbtn3 {
+  top: 64.5%;
+  left: 55.5%;
 }
 
 /* Connective Tissue */
 
-#Adiposebtn1
-{
-  top:16.5%;
-  left:65%;
-}
-#Adiposebtn2
-{
-  top:26%;
-  left:65%;
-}
-#Adiposebtn3
-{
-  top:50%;
-  left:40.5%;
+#Adiposebtn1 {
+  top: 16.5%;
+  left: 65%;
 }
 
-#DenseRbtn1
-{
-  top:25%;
-  left:69%;
-}
-#DenseRbtn2
-{
-  top:49%;
-  left:53%;
+#Adiposebtn2 {
+  top: 26%;
+  left: 65%;
 }
 
-#DenseIbtn1
-{
-  top:26%;
-  left:73%;
-}
-#DenseIbtn2
-{
-  top:59%;
-  left:67%;
-}
-#DenseIbtn3
-{
-  top:57%;
-  left:52%;
+#Adiposebtn3 {
+  top: 50%;
+  left: 40.5%;
 }
 
-#Loosebtn1
-{
-  top:33%;
-  left:43%;
+#DenseRbtn1 {
+  top: 25%;
+  left: 69%;
 }
-#Loosebtn2
-{
-  top:50%;
-  left:41%;
+
+#DenseRbtn2 {
+  top: 49%;
+  left: 53%;
 }
-#Loosebtn3
-{
-  top:66%;
-  left:74%;
+
+#DenseIbtn1 {
+  top: 26%;
+  left: 73%;
 }
-#Loosebtn4
-{
-  top:77%;
-  left:58%;
+
+#DenseIbtn2 {
+  top: 59%;
+  left: 67%;
+}
+
+#DenseIbtn3 {
+  top: 57%;
+  left: 52%;
+}
+
+#Loosebtn1 {
+  top: 33%;
+  left: 43%;
+}
+
+#Loosebtn2 {
+  top: 50%;
+  left: 41%;
+}
+
+#Loosebtn3 {
+  top: 66%;
+  left: 74%;
+}
+
+#Loosebtn4 {
+  top: 77%;
+  left: 58%;
 }
 
 /* Bone */
-#TSbtn1
-{
-  top:7%;
-  left:15%;
-}
-#TSbtn2
-{
-  top:21%;
-  left:58%;
-}
-#TSbtn3
-{
-  top:32%;
-  left:60%;
-}
-#TSbtn4
-{
-  top:41%;
-  left:20%;
-}
-#TSbtn5
-{
-  top:62%;
-  left:30%;
-}
-#TSbtn6
-{
-  top:68%;
-  left:65%;
+#TSbtn1 {
+  top: 7%;
+  left: 15%;
 }
 
-#TSbtn7{
-  top:65%;
-  left:58%;
+#TSbtn2 {
+  top: 21%;
+  left: 58%;
 }
 
-#LSbtn1
-{
-  top:14%;
-  left:9%;
-}
-#LSbtn2
-{
-  top:38%;
-  left:68%;
-}
-#LSbtn3
-{
-  top:65%;
-  left:81.5%;
-}
-#LSbtn4
-{
-  top:83%;
-  left:32.5%;
+#TSbtn3 {
+  top: 32%;
+  left: 60%;
 }
 
-#Osteonbtn1
-{
-  top:48%;
-  left:60%;
+#TSbtn4 {
+  top: 41%;
+  left: 20%;
 }
-#Osteonbtn2
-{
-  top:54%;
-  left:66%;
+
+#TSbtn5 {
+  top: 62%;
+  left: 30%;
 }
-#Osteonbtn3
-{
-  top:76%;
-  left:62.5%;
+
+#TSbtn6 {
+  top: 68%;
+  left: 65%;
+}
+
+#TSbtn7 {
+  top: 65%;
+  left: 58%;
+}
+
+#LSbtn1 {
+  top: 14%;
+  left: 9%;
+}
+
+#LSbtn2 {
+  top: 38%;
+  left: 68%;
+}
+
+#LSbtn3 {
+  top: 65%;
+  left: 81.5%;
+}
+
+#LSbtn4 {
+  top: 83%;
+  left: 32.5%;
+}
+
+#Osteonbtn1 {
+  top: 48%;
+  left: 60%;
+}
+
+#Osteonbtn2 {
+  top: 54%;
+  left: 66%;
+}
+
+#Osteonbtn3 {
+  top: 76%;
+  left: 62.5%;
 }
 
 /* Blood Vessels */
-#Veinbtn1
-{
-  top:49%;
-  left:67%;
-}
-#Veinbtn2
-{
-  top:53%;
-  left:50%;
-}
-#Veinbtn3
-{
-  top:72%;
-  left:65%;
-}
-#Arteriolebtn1
-{
-  top:40%;
-  left:47%;
-}
-#Sinusoidbtn1
-{
-  top:38%;
-  left:67%;
-}
-#Sinusoidbtn2
-{
-  top:56%;
-  left:23%;
-}
-#EAbtn1
-{
-  top:4%;
-  left:30%;
+#Veinbtn1 {
+  top: 49%;
+  left: 67%;
 }
 
-#EAbtn2
-{
-  top:39%;
-  left:44%;
-}
-#EAbtn3
-{
-  top:78%;
-  left:76%;
-}
-#MAbtn1
-{
-  top:47%;
-  left:67%;
+#Veinbtn2 {
+  top: 53%;
+  left: 50%;
 }
 
-#MAbtn2
-{
-  top:57%;
-  left:58%;
+#Veinbtn3 {
+  top: 72%;
+  left: 65%;
 }
-#MAbtn3
-{
-  top:70%;
-  left:42%;
+
+#Arteriolebtn1 {
+  top: 40%;
+  left: 47%;
+}
+
+#Sinusoidbtn1 {
+  top: 38%;
+  left: 67%;
+}
+
+#Sinusoidbtn2 {
+  top: 56%;
+  left: 23%;
+}
+
+#EAbtn1 {
+  top: 4%;
+  left: 30%;
+}
+
+#EAbtn2 {
+  top: 39%;
+  left: 44%;
+}
+
+#EAbtn3 {
+  top: 78%;
+  left: 76%;
+}
+
+#MAbtn1 {
+  top: 47%;
+  left: 67%;
+}
+
+#MAbtn2 {
+  top: 57%;
+  left: 58%;
+}
+
+#MAbtn3 {
+  top: 70%;
+  left: 42%;
 }

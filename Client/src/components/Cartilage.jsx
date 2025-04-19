@@ -107,12 +107,13 @@ const Cartilage = () => {
       {/* Section 1: Comparison of Cartilage Types */}
       <div className='cartilage-section'>
         <h2 className='epithelium-title'>Specific Learning Objectives</h2>
-        <p>At the end of this topic, you should be able to <br />
-            1.Identify sections of Hyaline, Elastic and Fibrocartilage under a light microscope. <br />
-            2.Define cartilage and enumerate its characteristic features. <br />
-            3.Enumerate the various types of cartilages and describe their main identifying features. <br />
-            4.Describe the histological features of chondrocytes seen in various types of cartilages. <br />
-            5. Describe the matrix of Cartilage.</p>
+        At the end of this topic, you should be able to:-<br/>
+        <br/><ol className="epithelium-objectives-list">
+            <li>Identify sections of Hyaline, Elastic and Fibrocartilage under a light microscope.</li>
+            <li>Define cartilage and enumerate its characteristic features.</li>
+            <li>Enumerate the various types of cartilages and describe their main identifying features.</li>
+            <li>Describe the histological features of chondrocytes seen in various types of cartilages.</li>
+            <li>Describe the matrix of Cartilage.</li></ol>
       </div>
 
       {/* Section 2: Cartilage Components */}
@@ -229,7 +230,7 @@ const Cartilage = () => {
             <div className="search-bar">
             <div className="search-icon">
               <FaSearch />
-          </div>
+            </div>
               <input
                 type="text"
                 placeholder="Start Typing to Search...."
