@@ -65,16 +65,56 @@ const Muscle = () => {
   );
 
   const questions = [
-    { question: "What is hyaline cartilage?", options: ["A type of muscle tissue", "A type of cartilage that provides flexibility and support", "A type of bone tissue", "None of the above"], correct: 1 },
-    { question: "Where is hyaline cartilage commonly found?", options: ["In the ear", "In the intervertebral discs", "At the ends of long bones", "In tendons"], correct: 2 },
-    { question: "What is a key characteristic of hyaline cartilage?", options: ["It contains a lot of elastic fibers", "It is rich in collagen fibers and is glass-like", "It is highly vascular", "It is primarily composed of adipose cells"], correct: 1 },
-    { question: "What is the main function of white fibrous cartilage?", options: ["To provide shock absorption and resist compression", "To facilitate smooth movement at joints", "To maintain the shape of soft structures", "To assist in oxygen transport"], correct: 0 },
-    { question: "Where is white fibrous cartilage found?", options: ["In the nose", "In the intervertebral discs and menisci", "In the trachea", "In the external ear"], correct: 1 },
-    { question: "What distinguishes white fibrous cartilage from other types?", options: ["It contains densely packed collagen fibers", "It is highly flexible", "It lacks any fibers", "It is found only in the respiratory system"], correct: 0 },
-    { question: "What is elastic cartilage?", options: ["A type of muscle tissue", "A type of cartilage that provides flexibility to certain body structures", "A type of nervous tissue", "None of the above"], correct: 1 },
-    { question: "Where can elastic cartilage be found?", options: ["In the external ear and epiglottis", "In the intervertebral discs", "In the long bones", "In the heart valves"], correct: 0 },
-    { question: "What is a defining feature of elastic cartilage?", options: ["It has a high density of elastic fibers, making it flexible", "It contains more collagen fibers than hyaline cartilage", "It is involved in red blood cell production", "It is the hardest and least flexible of all cartilage types"], correct: 0 },
-    { question: "Which of the following is a shared function of hyaline, white fibrous, and elastic cartilage?", options: ["Providing structure and support to body parts", "Aiding in muscle contraction", "Carrying electrical impulses", "None of the above"], correct: 0 }
+    { 
+        question: "What is the main function of muscle tissue?", 
+        options: ["Transmission of nerve impulses", "Contraction and movement", "Support and protection", "Production of hormones"], 
+        correct: 1 
+    },
+    { 
+        question: "Which of the following correctly describes a sarcomere?", 
+        options: ["The contractile unit between two Z lines", "The site of nerve-muscle interaction", "The entire muscle fiber", "The connective tissue surrounding muscle bundles"], 
+        correct: 0 
+    },
+    { 
+        question: "Which type of muscle shows prominent cross-striations and peripheral nuclei?", 
+        options: ["Cardiac muscle", "Smooth muscle", "Skeletal muscle", "None of the above"], 
+        correct: 2 
+    },
+    { 
+        question: "What distinguishes cardiac muscle from skeletal muscle?", 
+        options: ["Lack of striations", "Presence of peripheral nuclei", "Presence of intercalated discs and branching fibers", "Multinucleate fibers"], 
+        correct: 2 
+    },
+    { 
+        question: "Which connective tissue surrounds individual muscle fibers?", 
+        options: ["Endomysium", "Epimysium", "Myomysium", "Perimysium"], 
+        correct: 0 
+    },
+    { 
+        question: "What is a unique identifying feature of cardiac muscle?", 
+        options: ["Striations and intercalated discs", "Lack of T tubules", "Peripheral nuclei", "Spindle-shaped fibers"], 
+        correct: 0 
+    },
+    { 
+        question: "Which muscle type lacks striations and has spindle-shaped cells?", 
+        options: ["Cardiac muscle", "All of the above", "Smooth muscle", "Skeletal muscle"], 
+        correct: 2 
+    },
+    { 
+        question: "Red and white muscle fibers differ based on what component?", 
+        options: ["Type of connective tissue", "Presence of collagen", "Amount of myoglobin", "Quantity of mitochondria"], 
+        correct: 2 
+    },
+    { 
+        question: "In skeletal muscle, what causes the striated appearance?", 
+        options: ["Presence of nuclei", "Alternating A and I bands", "High amount of connective tissue", "Random arrangement of fibers"], 
+        correct: 1 
+    },
+    { 
+        question: "Which of the following best describes smooth muscle under a light microscope?", 
+        options: ["Striated and cylindrical fibers", "Multinucleated peripheral nuclei", "Branched fibers with intercalated discs", "Spindle-shaped fibers with central nuclei"], 
+        correct: 3 
+    }
 ];
 
 
@@ -109,116 +149,171 @@ const Muscle = () => {
         <h2 className='epithelium-title'>Specific Learning Objectives</h2>
         At the end of this topic, you should be able to:-<br/>
         <br/><ol className="epithelium-objectives-list">
-            <li>Identify sections of Hyaline, Elastic and Fibrocartilage under a light microscope.</li>
-            <li>Define cartilage and enumerate its characteristic features.</li>
-            <li>Enumerate the various types of cartilages and describe their main identifying features.</li>
-            <li>Describe the histological features of chondrocytes seen in various types of cartilages.</li>
-            <li>Describe the matrix of Cartilage.</li></ol>
+            <li>Define Muscle Tissue.</li>
+            <li>Describe the structure of muscle tissue.</li>
+            <li>Differentiate between Muscle fasciculi, Muscle fibres, and Myofibrils.</li>
+            <li>Describe the sarcomere.</li>
+            <li>Enumerate the differentiating features of Skeletal muscle, Smooth muscle and Cardiac Muscle.</li>
+            <li>Differentiate between Red and White types of Skeletal Muscle fibres.</li>
+            <li>Identify sections of Skeletal muscle, Smooth muscle, and Cardiac muscle under a light microscope.</li>
+            </ol>
+      </div>
+
+      <div className='cartilage-section'>
+        <h2 className='epithelium-title'>Introduction</h2>
+        <br/><ol className="epithelium-objectives-list">
+            <li>Muscle tissue is a specialized tissue which shows the property of contractility. It is responsible for movements of the body and its various body parts.</li>
+            <li>Muscles are mesodermal in development.</li>
+            <li>Muscles are structurally made of muscle fibres which are bound into bundles (fascicule) by connective tissue. Muscle fibres are also called as muscle cells. Muscle fibres are made of numerous Muscle Fibrils(Myofibril). Each Myofibril has numerous sarcomeres.</li>
+            <li>A sarcomere is the smallest functional subunit of a muscle fibre.</li>
+            </ol>
       </div>
 
       {/* Section 2: Cartilage Components */}
       <div className="cartilage-section">
-        <h2 className="epithelium-title">Cartilage Components</h2>
+        <h2 className="epithelium-title">Types of Muscles</h2>
         <div className="table-responsive">
           <table className="cartilage-table">
             <thead>
               <tr>
-                <th>Component</th>
-                <th>Details</th>
+                <th>Skeletal muscle</th>
+                <th>Cardiac muscle</th>
+                <th>Smooth muscle</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Cells</td>
-                <td>Chondroblasts, Chondrocytes</td>
+                <td>Elongated, cylindrical fibres</td>
+                <td>Elongated, prism shaped fibres</td>
+                <td>Spindle shaped fibres</td>
               </tr>
               <tr>
-                <td>Fibers</td>
-                <td>Collagen (Type II except Fibrocartilage which has Type I)</td>
+                <td>10-40 mm in length, 100 microns in width</td>
+                <td>9-22 microns</td>
+                <td>20-200 microns in length and 3-8 microns in width</td>
               </tr>
               <tr>
-                <td>Ground Substance</td>
-                <td>Elastic, Chondroitin Sulphate, Water, Electrolytes</td>
+                <td>Muscle fibres are arranged parallel to each other</td>
+                <td>Fibres are arranged in anastamosing fashion</td>
+                <td>Fibres are arranged with the broadest parts alternating</td>
               </tr>
               <tr>
-                <td>Matrix</td>
-                <td>Ground Substance + Fibers</td>
+                <td>Nucleus is peripheral</td>
+                <td>Central nucleus</td>
+                <td>Central nucleus, located in the broadest part</td>
               </tr>
               <tr>
-                <td>Perichondrium</td>
-                <td>Outer fibrous layer, Inner cellular layer</td>
+                <td>Striations seen</td>
+                <td>Striations seen</td>
+                <td>Striations not seen</td>
+              </tr>
+              <tr>
+                <td>T tubules are seen</td>
+                <td>T tubules are seen</td>
+                <td>T tubules are absent</td>
+              </tr>
+              <tr>
+                <td>Adult cells do not divide</td>
+                <td>Do not divide</td>
+                <td>Can divide</td>
+              </tr>
+              <tr>
+                <td>Spontaneous contractions are absent</td>
+                <td>Spontaneous contractions are present, regulated by autonomic stimuli</td>
+                <td>Spontaneous contractions present, stimulated by autonomic and hormonal stimuli.</td>
+              </tr>
+              <tr>
+                <td>Under control of spinal nerves</td>
+                <td>Under control of autonomic nervous system</td>
+                <td>Under control of autonomic nervous system</td>
+              </tr>
+              <tr>
+                <td>Voluntary</td>
+                <td>Involuntary</td>
+                <td>Involuntary</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-      {/* Section 3: Types of Cartilage - Diagram */}
-      <div className='cartilage-section'>
-        <div className='epithelium-title'>Types of Cartilage</div>
-        <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
-        
-          <img 
-            src="assets/Images/Cartilage/Diagram1.png" 
-            className='epithelium-image' 
-            style={{ maxWidth: '100%', height: 'auto', borderRadius: '10px' }} 
-            alt="Description" 
-          />
-        </div>
-      </div>
 
       <div className="cartilage-section">
-        <h2 className="epithelium-title">Comparison of Cartilage Types</h2>
+        <h2 className="epithelium-title">Comparison of Muscle Types</h2>
         <div className="table-responsive">
           <table className="cartilage-table">
             <thead>
               <tr>
                 <th>Feature</th>
-                <th>Hyaline Cartilage</th>
-                <th>Elastic Cartilage</th>
-                <th>White Fibrocartilage</th>
+                <th>Red Muscle fibres</th>
+                <th>White Muscle fibres</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Appearance</td>
-                <td>Glass-like, homogenous, amorphous</td>
-                <td>Light yellow due to elastic fibers</td>
-                <td>Feathery appearance due to collagen bundles</td>
+                <td>Type</td>
+                <td>Type I , Aerobic</td>
+                <td>Type II, Anaerobic</td>
               </tr>
               <tr>
-                <td>Perichondrium</td>
-                <td>Present in typical hyaline cartilage; absent in articular cartilage</td>
-                <td>Usually present</td>
-                <td>Absent</td>
+                <td>Myoglobin and cytochrome content</td>
+                <td>High</td>
+                <td>Less</td>
               </tr>
               <tr>
-                <td>Matrix Composition</td>
-                <td>Basophilic, glass-like with territorial and interterritorial matrix</td>
-                <td>Contains numerous elastic fibers, pliable</td>
-                <td>Basophilic, filled with Type I collagen bundles</td>
+                <td>Mitochondria</td>
+                <td>Many</td>
+                <td>Few</td>
               </tr>
               <tr>
-                <td>Cell Arrangement</td>
-                <td>Cell nests (isogenous cell nests)</td>
-                <td>Larger cells in groups (cell nests)</td>
-                <td>Fewer small lacunae with chondrocytes, no cell nests</td>
+                <td>Enzyme</td>
+                <td>Succinate dehydrogenase Myosin ATPase present</td>
+                <td>Succinate dehydrogenase Myosin ATPase  absent</td>
               </tr>
               <tr>
-                <td>Fibers</td>
-                <td>Type II collagen fibers, glass-like matrix</td>
-                <td>Elastic fibers (yellow elastic tissue)</td>
-                <td>Type I collagen fibers</td>
+                <td>Type of contraction</td>
+                <td>Slow and continuous contractions, not easily fatigued</td>
+                <td>Rapid and forceful contractions, easily fatigued.</td>
               </tr>
               <tr>
-                <td>Site Examples</td>
-                <td>Costal cartilages, articular cartilages, thyroid, cricoid, arytenoid, tracheal rings, bronchi, nasal septum, epiphyseal plates</td>
-                <td>Ear pinna, eustachian tube, epiglottis, laryngeal cartilages, apical parts of arytenoid</td>
-                <td>Secondary cartilaginous joints, articular discs, glenoidal labrum, acetabular labrum, intervertebral discs</td>
+                <td>Diameter of fibres</td>
+                <td>Smaller in diameter</td>
+                <td>Larger in diameter</td>
+              </tr>
+              <tr>
+                <td>Examples</td>
+                <td>Postural muscles</td>
+                <td>Extra-ocular muscles</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
+
+      <div className='cartilage-section'>
+        <h2 className='epithelium-title'>Identification Points</h2>
+        <br/><ol className="epithelium-objectives-list">
+            <li>Skeletal Muscle LS-</li>
+            <p>-Elongated Cylindrical unbranched fibres. <br />-Multinucleate, nuclei at the peripherys</p>
+            <li> Skeletal Muscle TS-</li>
+            <p>-Transversely cut fibres with peripheral nuclei. <br />-Endomysium, perimysium and epimysium seen.</p>
+            <li>Smooth Muscle LS-</li>
+            <p>-Spindle shaped unbranched fibres. <br />-Uninucleate, nucleus at the centre.</p>
+            <li>Smooth Muscle TS-</li>
+            <p>-Transversely cut fibres with peripheral nuclei. <br />-Endomysium, perimysium and epimysium seen.</p>
+            <li>Cardiac Muscle -</li>
+            <p>-Elongated Cylindrical branched fibres. <br />-Uninucleate or Binucleate, nuclei at the centre.</p>
+            </ol>
+      </div>
+
+      <div className='cartilage-section'>
+        <h2 className='epithelium-title'>Summary</h2>
+        <br/><ol className="epithelium-objectives-list">
+            <li>A longitudinal section of skeletal muscle shows broad and cylindrical muscle fibres. The fibres are arranged together in bundles. Bundles may branch but individual fibres do not branch. Each fibre shows many nuclei which are placed at the periphery. Muscle fibres show characteristic transverse striations. In a transverse section, cut muscle fibres are seen with peripherally placed nuclei.</li>
+            <li>A longitudinal section of smooth muscle shows spindle shaped fibres. The fibres are thinner as compared to skeletal muscle fibres. Nucleus is present in the centre of the fibre. In a transverse section, fibres are seen as circular structures of varying width with nuclei in the centre.</li>
+            <li>A longitudinal section of cardiac muscle shows cylindrical fibres. The fibres are thinner as compared to skeletal muscle fibres. The fibres branch into smaller fibres. Fibres show faint transverse striations. The nuclei are centrally placed and vesicular in nature. Intercalated discs are typically seen in cardiac muscle fibres.</li>
+            </ol>
+      </div>
+
     </div>
     
   );
