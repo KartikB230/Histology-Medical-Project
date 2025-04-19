@@ -290,20 +290,47 @@ const Muscle = () => {
       </div>
 
       <div className='cartilage-section'>
-        <h2 className='epithelium-title'>Identification Points</h2>
-        <br/><ol className="epithelium-objectives-list">
-            <li>Skeletal Muscle LS-</li>
-            <p>-Elongated Cylindrical unbranched fibres. <br />-Multinucleate, nuclei at the peripherys</p>
-            <li> Skeletal Muscle TS-</li>
-            <p>-Transversely cut fibres with peripheral nuclei. <br />-Endomysium, perimysium and epimysium seen.</p>
-            <li>Smooth Muscle LS-</li>
-            <p>-Spindle shaped unbranched fibres. <br />-Uninucleate, nucleus at the centre.</p>
-            <li>Smooth Muscle TS-</li>
-            <p>-Transversely cut fibres with peripheral nuclei. <br />-Endomysium, perimysium and epimysium seen.</p>
-            <li>Cardiac Muscle -</li>
-            <p>-Elongated Cylindrical branched fibres. <br />-Uninucleate or Binucleate, nuclei at the centre.</p>
-            </ol>
-      </div>
+  <h2 className='epithelium-title'>Identification Points</h2>
+  <br />
+  <ol className="epithelium-objectives-list">
+    <li>
+      Skeletal Muscle LS
+      <ul className="custom-bullets">
+        <li>Elongated cylindrical unbranched fibres</li>
+        <li>Multinucleate, nuclei at the periphery</li>
+      </ul>
+    </li>
+    <li>
+      Skeletal Muscle TS
+      <ul className="custom-bullets">
+        <li>Transversely cut fibres with peripheral nuclei</li>
+        <li>Endomysium, perimysium and epimysium seen</li>
+      </ul>
+    </li>
+    <li>
+      Smooth Muscle LS
+      <ul className="custom-bullets">
+        <li>Spindle shaped unbranched fibres</li>
+        <li>Uninucleate, nucleus at the centre</li>
+      </ul>
+    </li>
+    <li>
+      Smooth Muscle TS
+      <ul className="custom-bullets">
+        <li>Transversely cut fibres with peripheral nuclei</li>
+        <li>Endomysium, perimysium and epimysium seen</li>
+      </ul>
+    </li>
+    <li>
+      Cardiac Muscle
+      <ul className="custom-bullets">
+        <li>Elongated cylindrical branched fibres</li>
+        <li>Uninucleate or binucleate, nuclei at the centre</li>
+      </ul>
+    </li>
+  </ol>
+</div>
+
 
       <div className='cartilage-section'>
         <h2 className='epithelium-title'>Summary</h2>

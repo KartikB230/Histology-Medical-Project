@@ -98,7 +98,7 @@ function LoginPage({ onLogin }) {
                 marginTop: '10px',
               }}
             >
-              {loginStatus}
+              
             </div>
           )}
 
