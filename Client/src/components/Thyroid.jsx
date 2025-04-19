@@ -78,7 +78,11 @@ function Thyroid() {
   
   return (
     <>
-    <div>
+    <div
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
       <Navbar />
         <div className="heading">
           

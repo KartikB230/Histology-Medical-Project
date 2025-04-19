@@ -114,7 +114,11 @@ function Pituitary() {
 
   return (
     <>
-      <div>
+      <div
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <Navbar />
         <div className="heading">
           <h1>Pituitary Gland</h1>

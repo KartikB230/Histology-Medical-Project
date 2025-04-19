@@ -79,7 +79,11 @@ function Adrenal() {
   return (
     <>
       <Navbar />
-      <div className='box'>
+      <div
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      className='box'>
         <div className="heading">
           <h1>Adrenal Gland</h1>
         </div>
