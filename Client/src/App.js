@@ -86,7 +86,7 @@ function App() {
       {loading ? (
         <div className="Loader">
           <div className="title">
-            <strong>SymbiAnatomy</strong>
+            <strong>HistoMatix</strong>
           </div>
           <div className="spinner">
             <PropagateLoader color={'rgb(255, 210, 210)'} size={loaderSize} />

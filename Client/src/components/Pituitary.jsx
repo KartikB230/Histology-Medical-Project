@@ -168,15 +168,18 @@ function Pituitary() {
         </div>
 
         <div className="Container2">
-          <a href='#' className="image-cell"  style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Pituitary Gland</u></strong></a>
+          <a href='#' className="image-cell"  onClick={() => openPopup1("/assets/Images/Pituitary/pituitary pencil.jpeg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Pituitary Gland</u></strong></a>
           <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Pituitary/Pituitary Panaromic.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Panaromic View of Pituitary Gland</u></strong></a>
-          <ol style = {{textAlign : 'left', marginLeft : '20px'}}>
-            <strong><u>Identifying features:</u></strong>
+          <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
+          <ol className='feature-list'>
             <li>Connective Tissue Capsule</li>
-            <li>Three parts visualized are :-</li>
-            <strong>&emsp;Pars Anterior</strong> - cords/ clumps of cells present (chromophils- acidophils, basophils and chromophobes)<br/>
-            <strong>&emsp;Pars Intermedia</strong>- colloid filled follicles lined by basophils.<br/>
-            <strong>&emsp;Pars Posterior</strong> - nerve fibers with pituicytes present large number of capillaries and sinusoids present
+            <li>Three parts visualized are :-
+            <ol className="nested-list">
+            <li><strong>Pars Anterior</strong> - cords/ clumps of cells present (chromophils- acidophils, basophils and chromophobes)</li>
+            <li><strong>Pars Intermedia</strong>- colloid filled follicles lined by basophils.</li>
+            <li><strong>Pars Posterior</strong> - nerve fibers with pituicytes present large number of capillaries and sinusoids present</li>
+            </ol>
+            </li>
             <li>Large number of capillaries and sinusoids are present</li>
             </ol>
             

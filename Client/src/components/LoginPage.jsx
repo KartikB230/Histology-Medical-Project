@@ -108,8 +108,8 @@ function LoginPage({ onLogin }) {
         </form>
       </div>
       <div className="welcome-section">
-        <h1 style={{ color: 'white', fontSize: '60px', marginBottom: '10px' }}>
-          SymbiAnatomy.
+        <h1 style={{ color: 'black', fontSize: '60px', marginBottom: '10px' }}>
+          HistoMatix
         </h1>
       </div>
     </div>

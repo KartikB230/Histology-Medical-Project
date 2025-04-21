@@ -12,7 +12,7 @@ const Footer = () => {
         <Row className="py-4">
           {/* About Section */}
           <Col xs={12} sm={6} md={4} className="mb-3">
-            <h5 className="footer-title">SymbiAnatomy</h5>
+            <h5 className="footer-title">HistoMatix</h5>
             <p>
               An educational platform developed collaboratively by Symbiosis Medical College for Women and Symbiosis Institute of Technology, Pune. Designed to simplify the study of cells and histology for medical students.
             </p>

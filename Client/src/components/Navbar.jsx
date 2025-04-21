@@ -19,7 +19,7 @@ const Navbar = ({ scrollToFooter }) => {
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/" style={{ color: 'white', fontSize: '28px' }}>
-          <strong>SymbiAnatomy.</strong>
+          <strong>HistoMatix</strong>
         </Link>
         <button
           className="navbar-toggler"
