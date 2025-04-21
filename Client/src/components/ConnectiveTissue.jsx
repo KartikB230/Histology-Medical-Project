@@ -105,24 +105,11 @@ const ConnectiveTissue = () => {
   return (
     <div className="epithelium-container">
       {/* Section 5: Final Image */}
-      <div className="epithelium-section">
+      <div className="cartilage-section">
+      <h2 className='epithelium-title'>Types of Connective Tissues</h2>
         <img src="/assets/Images/Connective Tissue/Diagram 1.jpg" alt = "Cartilage Diagram" className="epithelium-image image-3" style={{"margin":"10px"}} />
-        <hr></hr>
-        <h2 style={{color:"red"}}><u>Adipose Connective Tissue</u></h2>
-        
-        <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
-          <ol className="feature-list">
-            <li>A thin rim of cytoplasm is seen at the periphery of the cell.</li>
-            <li>Nucleus is pushed to the periphery.</li>
-            <li>Fat inside the cell is washed off during processing such that the cell looks empty.</li>
-            <li>The adipocytes show signet ring appearance.</li>
-          </ol>
-          <h2 style={{ textDecoration: 'underline' }}>Sites:</h2>
-          <ol className="feature-list">
-            <li>Panniculus adiposus</li>
-            <li>Perinephric fat</li>
-          </ol>
-
+        </div>
+        <div className='cartilage-section'> 
           <h2 style={{ textDecoration: 'underline' }}>Comparison of Yellow and Brown Adipocytes</h2>
           <div className="table-responsive">
             <table className="cartilage-table">
