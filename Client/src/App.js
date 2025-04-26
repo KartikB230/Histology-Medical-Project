@@ -43,6 +43,11 @@ import SkeletalMuscle from "./components/SkeletalMuscle";
 import SkeletalMuscleLS from "./components/SkeletalMuscleLS";
 import SmoothMuscle from "./components/SmoothMuscle";
 import CardiacMuscle from "./components/CardiacMuscle";
+import LymphoidTissue from "./components/LymphoidTissue";
+import LymphNode from "./components/LymphNode";
+import Spleen from "./components/Spleen";
+import Tonsil from "./components/Tonsil";
+import Thymus from "./components/Thymus";
 
 
 import LoginPage from "./components/LoginPage";
@@ -132,6 +137,12 @@ function App() {
             <Route path="/SkeletalMuscleLS" element={<ProtectedRoute><SkeletalMuscleLS /></ProtectedRoute>} />
             <Route path="/SmoothMuscle" element={<ProtectedRoute><SmoothMuscle /></ProtectedRoute>} />
             <Route path="/CardiacMuscle" element={<ProtectedRoute><CardiacMuscle /></ProtectedRoute>} />
+            <Route path="/LymphoidTissue" element={<ProtectedRoute><LymphoidTissue /></ProtectedRoute>} />
+            <Route path="/LymphNode" element={<ProtectedRoute><LymphNode /></ProtectedRoute>} />
+            <Route path="/Spleen" element={<ProtectedRoute><Spleen /></ProtectedRoute>} />
+            <Route path="/Tonsil" element={<ProtectedRoute><Tonsil /></ProtectedRoute>} />
+            <Route path="/Thymus" element={<ProtectedRoute><Thymus /></ProtectedRoute>} />
+
 
           </Routes>
         </BrowserRouter>

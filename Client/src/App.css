@@ -2368,3 +2368,24 @@ ul {
   top: 60%;
   left: 76%;
 }
+
+/* Lymphoid Tissue */
+#LymphNodebtn1 {
+  top: 3%;
+  left: 50%;
+}
+
+#LymphNodebtn2 {
+  top: 10%;
+  left: 34%;
+}
+
+#LymphNodebtn3 {
+  top: 26%;
+  left: 52%;
+}
+
+#LymphNodebtn4 {
+  top: 55%;
+  left: 52%;
+}
