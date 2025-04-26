@@ -85,12 +85,8 @@ function App() {
     <div>
       {loading ? (
         <div className="Loader">
-          <div className="title">
-            <strong>HistoMatix</strong>
-          </div>
-          <div className="spinner">
-            <PropagateLoader color={'rgb(255, 210, 210)'} size={loaderSize} />
-          </div>
+          <div className="title"><strong>HistoMatix</strong></div>
+          <div className="spinner"></div>
         </div>
       ) : (
         <BrowserRouter>

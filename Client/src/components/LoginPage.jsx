@@ -103,12 +103,12 @@ function LoginPage({ onLogin }) {
           )}
 
           <p>
-            Don't Have Any Account? <a href="#">Sign Up</a>
+            {/* Don't Have Any Account? <fa href="#">Sign Up</a> */}
           </p>
         </form>
       </div>
       <div className="welcome-section">
-        <h1 style={{ color: 'black', fontSize: '60px', marginBottom: '10px' }}>
+      <h1>
           HistoMatix
         </h1>
       </div>

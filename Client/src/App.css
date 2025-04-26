@@ -24,22 +24,34 @@
 }
 
 .Loader .title {
-  color: white;
-
-  font-size: 7vw;
-  /* Responsive font size based on viewport width */
-
-  margin-bottom: 5vh;
-  /* Responsive bottom margin based on viewport height */
+  color: #fff;
+  font-size: 6vw;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4vh;
   text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  font-family: 'Poppins', sans-serif;
 }
+
 
 .Loader .spinner {
-  display: flex;
-  margin-right: 20px;
-  justify-content: center;
-  align-items: center;
+  width: 80px;
+  height: 80px;
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  border-top: 8px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-top: 20px;
 }
+
+/* Add this keyframes animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 
 
@@ -1468,23 +1480,32 @@
 
 .welcome-section {
   flex: 0 0 65%;
-  /* Takes up 65% of the width */
-  background: url('../public/assets/Images/img login.jpg') no-repeat bottom center;
-  /* Set your background image here */
+  background: url('../public/assets/Images/img login.jpg') no-repeat center center;
   background-size: cover;
-  /* Ensure the image covers the entire section */
-  color: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #FFF; /* White text usually looks cleaner over images */
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-end; /* Center vertically */
   align-items: center;
-  padding: 20px;
-  /* Add some padding to the bottom */
+  /* padding: 1rem; */
+  text-align: center;
+  backdrop-filter: brightness(0.7); /* Optional: darken image for better text contrast */
+  font-family: 'Poppins', sans-serif; /* Modern, clean font */
 }
+
+/* Optional: Add some heading style inside welcome-section */
+.welcome-section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 6px 6px 4px rgba(0, 0, 0, 0.5); /* Make text pop on image */
+}
+
 
 .welcome-section h1 {
   margin: 0;
-  font-size: 48px;
+  font-size: 55px;
 }
 
 @media (max-width: 768px) {
