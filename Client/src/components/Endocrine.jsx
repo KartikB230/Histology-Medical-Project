@@ -65,17 +65,27 @@ const Endocrine = () => {
   );
 
   const questions = [
-    { question: "What is epithelial tissue?", options: ["A type of muscle tissue", "A type of connective tissue", "A type of tissue that lines body surfaces", "None of the above"], correct: 2 },
-    { question: "Which of the following is not a function of epithelial tissue?", options: ["Protection", "Absorption", "Secretion", "Contraction"], correct: 3 },
-    { question: "What type of epithelial tissue forms the outer layer of the skin?", options: ["Simple squamous", "Simple cuboidal", "Stratified squamous", "Transitional"], correct: 2 },
-    { question: "Where is simple cuboidal epithelium commonly found?", options: ["Lining of the heart", "Kidney tubules", "Alveoli of the lungs", "Outer layer of the skin"], correct: 1 },
-    { question: "Which epithelial tissue is involved in absorption and secretion in the intestines?", options: ["Simple cuboidal", "Simple columnar", "Stratified squamous", "Transitional"], correct: 1 },
-    { question: "What type of epithelial tissue lines the urinary bladder?", options: ["Simple squamous", "Stratified cuboidal", "Transitional", "Pseudostratified columnar"], correct: 2 },
-    { question: "What characterizes pseudostratified columnar epithelium?", options: ["Single layer of flat cells", "Multiple layers of flat cells", "Single layer of cells of varying heights", "Multiple layers of cuboidal cells"], correct: 2 },
-    { question: "Which epithelial tissue is found in the respiratory tract and contains cilia?", options: ["Simple squamous", "Stratified squamous", "Pseudostratified columnar", "Transitional"], correct: 2 },
-    { question: "What is the main function of stratified squamous epithelium?", options: ["Diffusion", "Filtration", "Protection", "Absorption"], correct: 2 },
-    { question: "Which type of epithelium is specialized for rapid diffusion?", options: ["Simple squamous", "Simple cuboidal", "Stratified columnar", "Transitional"], correct: 0 }
-  ];
+    { question: "The structural and functional unit of the thyroid gland is the:", options: ["Acinus", "Follicle", "Sinusoid", "Cord"], correct: 1 },
+    
+    { question: "The anterior pituitary (adenohypophysis) develops from:", options: ["Neural crest", "Oral ectoderm (Rathke’s pouch)", "Diencephalon", "Surface ectoderm"], correct: 1 },
+    
+    { question: "Which layer of the adrenal cortex secretes glucocorticoids?", options: ["Zona glomerulosa", "Zona fasciculata", "Zona reticularis", "Zona medullaris"], correct: 1 },
+    
+    { question: "Which part of the adrenal gland shows polygonal, lightly stained cells arranged in cords and surrounded by sinusoidal capillaries?", options: ["Zona glomerulosa", "Zona reticularis", "Zona fasciculata", "Medulla"], correct: 2 },
+    
+    { question: "Follicular cells of the thyroid gland secrete:", options: ["Calcitonin", "Parathormone", "T3 and T4", "Cortisol"], correct: 2 },
+    
+    { question: "Which cell type secretes growth hormone in the anterior pituitary?", options: ["Basophils", "Chromaffin cells", "Acidophils", "Follicular cells"], correct: 2 },
+    
+    { question: "During histological examination of the pituitary, which region shows unmyelinated axons and Herring bodies?", options: ["Pars distalis", "Pars intermedia", "Pars nervosa", "Infundibulum"], correct: 2 },
+    
+    { question: "Which cells of the thyroid gland secrete calcitonin?", options: ["Follicular cells", "C cells", "Acidophils", "Cortical cells"], correct: 1 },
+    
+    { question: "In a histological section of the thyroid gland, what is the appearance of the colloid inside the follicles?", options: ["Homogeneous and pale-staining", "Granular and basophilic", "Darkly eosinophilic and clumpy", "Clear with vacuolated spaces"], correct: 0 },
+    
+    { question: "Which of the following best describes the histological structure of the anterior pituitary (adenohypophysis)?", options: ["It contains cuboidal cells arranged in columns and interspersed with blood vessels", "It consists mainly of large cells with abundant secretory granules", "It has a meshwork of unmyelinated axons and Herring bodies", "It is composed of dense clusters of neurosecretory cells with few blood vessels"], correct: 0 }
+];
+
 
   const handleAnswerChange = (index, value) => {
     const newAnswers = [...answers];
@@ -103,7 +113,37 @@ const Endocrine = () => {
       case 'Theory':
   return (
     <div className="epithelium-container">
+      <div className='cartilage-section'>
+        <h2 className='epithelium-title'>Specific Learning Objectives</h2>
+        At the end of this topic, you should be able to:-<br/>
+        <br/><ol className="epithelium-objectives-list">
+            <li>Enumerate the characteristic features of Endocrine glands.</li>
+            <li>Enumerate the differences between Adenohypophysis and Neurohypophysis of pituitary.</li>
+            <li>Comment of Hypothalamo-Hypophyseal tract.</li>
+            <li>Comment on Thyroid Follicles, Colloid within follicles & Parafollicular cells.</li>
+            <li>Enumerate the differences between Cortex and Medulla of Suprarenal gland.</li>
+            <li>Identify sections of pituitary, thyroid and adrenal glands under light microscope and list out identifying features of each.</li>
+            </ol>
+      </div>
 
+      <div className='cartilage-section'>
+        <h2 className='epithelium-title'>Introduction</h2>
+        <ol className="epithelium-objectives-list">
+            <li>Endocrine glands do not have a duct system. They pour their specialized secretions directly into the blood stream. Microscopic pictures of these tissues, therefore, show a large number of blood vessels and sinusoids.</li>
+            <li>Thyroid, Parathyroid, Pituitary and Suprarenal glands are fairly large anatomical structures which can be seen by the unaided eye. The Liver also has certain endocrine functions.</li>
+            <li>Certain other tissues of the body possess endocrine functions. These much smaller structures, which cannot be seen by the naked eye, include the islets of Langerhans in Pancreas, Interstitial cells of Leydig in the testis, Ovarian follicles and Corpus Luteum of Ovary.</li>
+            <li>Sections of Thyroid, Pituitary and Suprarenal glands show characteristic features and can be easily differentiated under the light microscope.</li>
+            </ol>
+      </div>
+
+      <div className='cartilage-section'>
+        <h2 className='epithelium-title'>Summary</h2>
+        <ol className="epithelium-objectives-list">
+            <li>A section through the Pituitary gland shows cellular pars anterior and pars posterior predominantly made of nerve fibres. Pars anterior show acidophils, basophils and chromophobes. The vestigial pars intermedia is placed between pars anterior and pars posterior and shows colloid filled vesicles.</li>
+            <li>The Thyroid gland shows large number of follicles filled with a pink staining colloid. Parafollicular cells are occasionally seen interspersed between the follicles.</li>
+            <li>The Suprarenal gland consists of an outer cortex and an inner medulla. The cortex consists of three layers, namely Zona glomerulosa, Zona fasciculate and Zona reticularis. In Zona glomerulosa, the cells are arranged in the shape of inverted U shaped balls. In Zona fasciculata, cells are arranged in the form of straight columns. In Zona reticularis, the cells are arranged in form of branching and anastamosing cords. The medulla contains large numbers of cells, sinusoids and some sympathetic neurons.</li>
+            </ol>
+      </div>
     </div>
   );
 
