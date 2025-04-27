@@ -52,10 +52,10 @@ const LymphoidTissue = () => {
   
 
   const tiles = [
-    { name: 'Lymph Node', img: '/assets/Images/Connective Tissue/Adipose Low Magnification.jpg', link: '/LymphNode', keywords: [] },
-    { name: 'Spleen', img: '/assets/Images/Connective Tissue/Dense Regular Low Magnification.jpg', link: '/Spleen', keywords: [] },
-    { name: 'Thymus', img: '/assets/Images/Connective Tissue/Dense Irregular Low Magnification.jpg', link: '/Thymus', keywords: [] },
-    { name: 'Tonsil', img: '/assets/Images/Connective Tissue/Loose Connective Tissue Low Magnification.jpg', link: '/Tonsil', keywords: [] }
+    { name: 'Lymph Node', img: '/assets/Images/Lymphoid Tissue/Lymph Node Low Magnification.jpg', link: '/LymphNode', keywords: [] },
+    { name: 'Spleen', img: '/assets/Images/Lymphoid Tissue/Spleen Low Magnification.jpg', link: '/Spleen', keywords: [] },
+    { name: 'Thymus', img: '/assets/Images/Lymphoid Tissue/Thymus Low Magnification.jpg', link: '/Thymus', keywords: [] },
+    { name: 'Tonsil', img: '/assets/Images/Lymphoid Tissue/Tonsil Low Magnification.jpg', link: '/Tonsil', keywords: [] }
     
   ];
 

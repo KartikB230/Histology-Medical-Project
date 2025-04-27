@@ -52,7 +52,7 @@ const Trial = () => {
     { name: 'Endocrine System', img: '/assets/Images/Adrenal/Adrenal_Gland.png', link: '/Endocrine', keywords: ['Adrenal Gland', 'Thyroid', 'Pituitary Gland']},
     { name: 'Kidney', img: '/assets/Images/Kidney/Kidney_Panaromic.png', link: '#', keywords: ['kidney', 'Cortex', 'Medulla'], onClick: toggleKidneyDetails },
     { name: 'Muscular Tissue', img: '/assets/Images/Muscle/Skeletal Muscle Low Magnification.jpg', link: '/Muscle', keywords: ['Skeletal Muscle LS', 'Skeletal Muscle TS', 'Smooth Muscle', 'Cardiac Muscle']},
-    { name: 'Lymphoid Tissue', img: '/assets/Images/Muscle/Skeletal Muscle Low Magnification.jpg', link: '/LymphoidTissue', keywords: ['Lymph Node', 'Spleen', 'Palatine Tonsil', 'Thymus']}
+    { name: 'Lymphoid Tissue', img: '/assets/Images/Lymphoid Tissue/Lymph Node Low Magnification.jpg', link: '/LymphoidTissue', keywords: ['Lymph Node', 'Spleen', 'Palatine Tonsil', 'Thymus']}
   ];
 
   const kidneyDetails = [
