@@ -12,26 +12,27 @@ function LymphNode() {
   const [endX, setEndX] = useState(null);
 
  
-  const endocrineTypes = [
+  const LymphoidTissueTypes = [
     "/LymphNode",
-    "/Adrenal",
-    "/Pituitary"
+    "/Spleen",
+    "/Thymus",
+    "/Tonsil"
   ];
   
 
 
-  const currentIndex = endocrineTypes.indexOf(window.location.pathname);
+  const currentIndex = LymphoidTissueTypes.indexOf(window.location.pathname);
 
 
   const handlePrev = () => {
     if (currentIndex > 0) {
-      navigate(endocrineTypes[currentIndex - 1]);
+      navigate(LymphoidTissueTypes[currentIndex - 1]);
     }
   };
 
   const handleNext = () => {
-    if (currentIndex < endocrineTypes.length - 1) {
-      navigate(endocrineTypes[currentIndex + 1]);
+    if (currentIndex < LymphoidTissueTypes.length - 1) {
+      navigate(LymphoidTissueTypes[currentIndex + 1]);
     }
   };
   const handleTouchStart = (e) => {
@@ -95,7 +96,7 @@ function LymphNode() {
             <img src="/assets/Images/Lymphoid Tissue/Lymph Node Low Magnification.jpg" alt="LymphNode" />
             <button className="AllButtons" data-tooltip="Capsule" id="LymphNodebtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Lymphoid Tissue/Lymph Node Subcapsular Sinus.jpg', "<ul style='list-style-type: disc; padding-inline-start: 20px; margin-left: 5px; margin-top: 10px;'><li>Capsule which sends in septa called trabeculae.</li><li>Subcapsular sinus into which the afferent lymph vessels drain.</li><li>Subcapsular sinus continues along the trabeculae as trabecular sinus to the medullary sinus.</li></ul>", '#')}>1</button>
             <button className="AllButtons" data-tooltip="Sub Capsular Sinus" id="LymphNodebtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Lymphoid Tissue/Lymph Node Subcapsular Sinus.jpg', "<ul style='list-style-type: disc; padding-inline-start: 20px; margin-left: 5px; margin-top: 10px;'><li>Capsule which sends in septa called trabeculae.</li><li>Subcapsular sinus into which the afferent lymph vessels drain.</li><li>Subcapsular sinus continues along the trabeculae as trabecular sinus to the medullary sinus.</li></ul>", '#')}>2</button>
-            <button className="AllButtons" data-tooltip="Cortex" id="LymphNodebtn3" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Lymphoid Tissue/Lymph Node Cortex.jpg', "<ul style='list-style-type: disc; padding-inline-start: 20px; margin-left: 5px; margin-top: 10px;'><li>Cortex – made up of lymphoid follicles made up of B lymphocytes.</li><li>Lymphoid follicles without germinal centre – not sensitized to any antigen – primary follicle.</li><li>Lymphoid follicles with germinal centre – sensitized to some antigen – secondary follicle – central pale are lymphoblasts, peripheral dark are lymphocytes.</li></ul>", '#')}>3</button>
+            <button className="AllButtons" data-tooltip="Cortex" id="LymphNodebtn3" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Lymphoid Tissue/Lymph Node Cortex.jpg', "<ul style='list-style-type: disc; padding-inline-start: 20px; margin-left: 5px; margin-top: 10px;'><li>Cortex – made up of lymphoid follicles made up of B lymphocytes.</li><li>Lymphoid follicles without germinal centre – not sensitized to any antigen – primary follicle.</li><li>Lymphoid follicles with germinal centre – sensitized to some antigen – secondary follicle – central pale are lymphoblasts, peripheral dark are lymphocytes.</li></ul>", '#', true)}>3</button>
             <button className="AllButtons" data-tooltip="Medulla" id="LymphNodebtn4" data-popup="popup4" onClick={() => openPopup1('/assets/Images/Lymphoid Tissue/Lymph Node Medulla.jpg', "<ul style='list-style-type: disc; padding-inline-start: 20px; margin-left: 5px; margin-top: 10px;'><li>Medulla – contains medullary cords and sinuses.</li><li>Medullary cords are B lymphocytes present around the medullary sinuses.</li><li>Macrophages and plasma cells are interspersed.</li><li>Medullary sinuses are lined by endothelium and continue into efferent lymphatics.</li></ul>", '#')}>4</button>
           </div>
         </div>
@@ -118,9 +119,9 @@ function LymphNode() {
           </div>
           <button
             className="nav-button next-button"
-            data-tooltip="Adrenal Gland"
+            data-tooltip="Spleen"
             onClick={handleNext}
-            disabled={currentIndex === endocrineTypes.length - 1}
+            disabled={currentIndex === LymphoidTissueTypes.length - 1}
           >
             <FaArrowRight />
           </button>
@@ -128,8 +129,8 @@ function LymphNode() {
 
         <div className= 'Container2'>
           <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Lymphoid Tissue/Lymph Node Pencil Diagram.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Lymph Node</u></strong></a>
-                    <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
-                    <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft: '20px' }}>
+                    
+                    <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginTop: '10px'}}>
                       <li>Lymph nodes are kidney shaped structures found along the course of lymphatics.</li>
                     </ul>
                     <p><strong>Structure of Lymph Node</strong> - Lymph node consists of two components:</p>
@@ -153,6 +154,10 @@ function LymphNode() {
               </audio>
             </div>
             <div id="additionalButtons" className="additional-buttons">
+              <button className="AllButtons" data-tooltip="Capsule" id="Spleenbtn5" data-popup="popup5" onClick={() => openPopup1('/assets/Images/Pituitary/Acidophils.png', '<strong>Acidophils</strong> as the name suggests take up a dark, eosinophilic stain. These are round cells occurring either singly or in groups. The cells show a dark, round and vesicular nucleus. They show coarse granules within the cytoplasm.<br/> Acidophils are of two further types -<br/>&emsp; <strong>i. Somatotropes</strong> - Somatotropes secrete growth hormone which is required for the growth of the body, especially the growth of bones. <br/>&emsp; <strong>ii. Mammotropes</strong> - Mammotropes secrete Prolactin which is required for growth of mammary gland and secretion of milk.', '/assets/Audios/Endocrine/Acidophils (pituitary).m4a')}>1</button>
+              <button className="AllButtons" data-tooltip="Sub-Capsular Sinus" id="Spleenbtn6" data-popup="popup6" onClick={() => openPopup1('/assets/Images/Pituitary/Basophils.png', '<strong>Basophils</strong> are larger than acidophils. The cells are oval to round in shape and contain a central, vesicular nucleus. They take up basic stains. Their cytoplasm shows fine granules. Basophils are of three subtypes – Corticotropes, Thyrotropes and Gonadotropes. Corticotropes secrete Adrenocorticotrophic hormone, Thyrotropes secrete Thyroid stimulating hormone. Gonadotropes secrete Follicle stimulating hormone and Luteinising hormone.', '/assets/Audios/Endocrine/Basophils ( pituitary).m4a')}>2</button>
+              <button className="AllButtons" data-tooltip="Lymphatic Nodule" id="Spleenbtn7" data-popup="popup7" onClick={() => openPopup1('/assets/Images/Pituitary/Chromophobe.png', '<strong>Chromophobes</strong> are so called as their cytoplasm do not stain with any classic dyes. The cells are very small in size and occur in groups.  The cells have distinct nuclei and scanty cytoplasm giving the appearance of “naked nuclei”. Chromophobes are considered to be precursors of chromophils. They are also considered as degranulated chromophil cells.', '/assets/Audios/Endocrine/Chromophobes ( pituitary).m4a')}>3</button>
+              <button className="AllButtons" data-tooltip="Germinal Centre" id="Spleenbtn8" data-popup="popup8" onClick={() => openPopup1('/assets/Images/Pituitary/Chromophobe.png', '<strong>Chromophobes</strong> are so called as their cytoplasm do not stain with any classic dyes. The cells are very small in size and occur in groups.  The cells have distinct nuclei and scanty cytoplasm giving the appearance of “naked nuclei”. Chromophobes are considered to be precursors of chromophils. They are also considered as degranulated chromophil cells.', '/assets/Audios/Endocrine/Chromophobes ( pituitary).m4a')}>3</button>
             </div>
           </div>
         </div>

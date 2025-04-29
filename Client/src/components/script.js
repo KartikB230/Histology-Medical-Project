@@ -23,6 +23,7 @@ export function openPopup1(imagePath, descriptionText, audioPath, showButtons=fa
   }
 
   document.getElementById('overlay').style.display = 'flex';
+  
 }
 export function openPopup(imagePath, descriptionText, audioPath, showButtons=false) {
   resetPopup();
@@ -49,6 +50,7 @@ export function openPopup(imagePath, descriptionText, audioPath, showButtons=fal
   }
 
   document.getElementById('overlay').style.display = 'flex';
+  
 }
 
 export function resetPopup() {
@@ -77,6 +79,7 @@ export function closePopup() {
   } else {
     console.warn("Popup audio element not found.");
   }
+  
 }
 
 export function toggleButtons(buttonClicked, setButtonClicked) {
