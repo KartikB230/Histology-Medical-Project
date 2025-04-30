@@ -54,7 +54,7 @@ const Endocrine = () => {
 
 
   const tiles = [
-    { name: 'Thyroid', img: '/assets/Images/Thyroid/Updated_thyroid.png', link: '/Thyroid', keywords: [] },
+    { name: 'Thyroid', img: '/assets/Images/Thyroid/Thyroid Low magnification.tif', link: '/Thyroid', keywords: [] },
     { name: 'Adrenal Gland', img: '/assets/Images/Adrenal/Adrenal_Gland.png', link: '/Adrenal', keywords: [] },
     { name: 'Pituitary Gland', img: '/assets/Images/Pituitary/Pituitary Low Magnification.png', link: '/Pituitary', keywords: [] }
   ];
@@ -277,6 +277,57 @@ const Endocrine = () => {
               </div>
             </div>
 
+            <div className="cartilage-section">
+              <h2 className="epithelium-title">Thyroid Follicles Comparison</h2>
+              <div className="table-responsive">
+                <table className="cartilage-table">
+                  <thead>
+                    <tr>
+                      <th>Feature</th>
+                      <th>Active Thyroid Follicles</th>
+                      <th>Passive Thyroid Follicles</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Follicle Size</td>
+                      <td>Small</td>
+                      <td>Large</td>
+                    </tr>
+                    <tr>
+                      <td>Colloid Amount</td>
+                      <td>Scanty (less colloid)</td>
+                      <td>Abundant (more colloid)</td>
+                    </tr>
+                    <tr>
+                      <td>Colloid Appearance</td>
+                      <td>Vacuolated or scalloped (due to resorption activity)</td>
+                      <td>Homogeneous and dense</td>
+                    </tr>
+                    <tr>
+                      <td>Follicular Cell Shape</td>
+                      <td>Columnar or cuboidal</td>
+                      <td>Flattened or squamous</td>
+                    </tr>
+                    <tr>
+                      <td>Epithelial Height</td>
+                      <td>Tall (indicating high metabolic activity)</td>
+                      <td>Low (indicating low metabolic activity)</td>
+                    </tr>
+                    <tr>
+                      <td>Thyroid Activity Status</td>
+                      <td>Active (synthesizing and secreting thyroid hormones)</td>
+                      <td>Inactive or resting</td>
+                    </tr>
+                    <tr>
+                      <td>TSH Influence</td>
+                      <td>High TSH stimulation</td>
+                      <td>Low TSH stimulation</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
 
             <div className='cartilage-section'>
               <h2 className='epithelium-title'>Summary</h2>
