@@ -88,9 +88,9 @@ function Pituitary() {
       const parsDistalisRect = parsDistalisImage.getBoundingClientRect();
 
       const buttons = [
-        { id: 'Pituitarybtn7', topPercent: 159, leftPercent: 70, imageRect: pituitaryRect },
-        { id: 'Pituitarybtn8', topPercent: 161, leftPercent: 102, imageRect: pituitaryRect },
-        { id: 'Pituitarybtn9', topPercent: 132, leftPercent: 78, imageRect: pituitaryRect },
+        { id: 'Pituitarybtn7', topPercent: -19, leftPercent: 55, imageRect: pituitaryRect },
+        { id: 'Pituitarybtn8', topPercent: 54, leftPercent: 93.5, imageRect: pituitaryRect },
+        { id: 'Pituitarybtn9', topPercent: 80, leftPercent: 81, imageRect: pituitaryRect },
         { id: 'ParsDistalisbtn1', topPercent: 20, leftPercent: 30, imageRect: parsDistalisRect },
       ];
 
@@ -136,7 +136,7 @@ function Pituitary() {
             />
             <button className="AllButtons" data-tooltip="Pars Nervosa" id="Pituitarybtn1" data-popup="popup1" onClick={() => openPopup('/assets/Images/Pituitary/Pars Nervosa.png', 'The Hypothalamo-hypophyseal tract comprises of non-myelinated nerve fibres which extend from their cell bodies located in the supraoptic and paraventricular nuclei of hypothalamus to the hypophysis cerebri (pituitary gland). <br/>The supraoptic nucleus of hypothalamus produces Anti-diuretic Hormone while the paraventricular nucleus produces Oxytonin hormone. <br/>These hormones are termed neurosecretions.The secretions get accumulated at the terminal, bulb like enlargements called as Herring bodies, which cannot be identified in a Haematoxylin-Eosin stained slide.', '#')}>1</button>
             <button className="AllButtons" data-tooltip="Pars Intermedia" id="Pituitarybtn2" data-popup="popup2" onClick={() => openPopup('/assets/Images/Pituitary/Pars Intermedia.png', '<strong>The Pars Intermedia</strong> is rudimentary in human beings. It consists of colloid filled vesicles which are remnants of Rathke’s pouch. The vesicles are lined by low columnar basophilic epithelium. The vesicles contain an eosinophilic colloid of unknown function. In animals, Pars Intermedia is well developed and contains special type of Basophils called Melanotropes which secrete Melanotropic stimulating Hormone.', '#')}>2</button>
-            <button className="AllButtons" data-tooltip="Pars Distalis" id="Pituitarybtn3" data-popup="popup3" onClick={() => openPopup('/assets/Images/Pituitary/Pars Distalis.png', 'The pars anterior is covered by a capsule which is derived from the inner layer of dura mater. <br/>It contains cords of cells which branch and anastomose. The cells are supported by a thin basement membrane which is made of reticular tissue. <br/>Two types of cells are found in pars anterior -<br/>&emsp;<strong>i. Chromophobes</strong> - It makes up 50% of the cell population of pars anterior.<br/><strong>&emsp;ii. Chromophils</strong> - consists of two further subtypes of cells, acidophils (35%) and basophils (15%).', '#', true)}>3</button>
+            <button className="AllButtons" data-tooltip="Pars Distalis" id="Pituitarybtn3" data-popup="popup3" onClick={() => openPopup('/assets/Images/Pituitary/Pars Distalis1.jpeg', 'The pars anterior is covered by a capsule which is derived from the inner layer of dura mater. <br/>It contains cords of cells which branch and anastomose. The cells are supported by a thin basement membrane which is made of reticular tissue. <br/>Two types of cells are found in pars anterior -<br/>&emsp;<strong>i. Chromophobes</strong> - It makes up 50% of the cell population of pars anterior.<br/><strong>&emsp;ii. Chromophils</strong> - consists of two further subtypes of cells, acidophils (35%) and basophils (15%).', '#', true)}>3</button>
             
           </div>
         </div>

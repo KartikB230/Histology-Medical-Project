@@ -129,7 +129,7 @@ function Thyroid() {
         </div>
 
         <div className= 'Container2'>
-          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Thyroid/Thyroid Pencil diagram without labels.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Thyroid</u></strong></a>
+          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Thyroid/Thyroid_Pencil_Diagram.jpeg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Thyroid</u></strong></a>
           <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
             <ol className="feature-list">
               <li>Connective Tissue capsule sending in septae dividing gland into lobules.</li>
