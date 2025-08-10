@@ -6,8 +6,7 @@ import Footer from './Footer';
 import '../App.css';
 import { useQuizLogic } from './script';
 
-
-const LymphoidTissue = () => {
+const UrinarySystem = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const searchInputRef = useRef(null);
   const [activeTab, setActiveTab] = useState('Theory');
@@ -52,10 +51,8 @@ const LymphoidTissue = () => {
   
 
   const tiles = [
-    { name: 'Lymph Node', img: '/assets/Images/Lymphoid Tissue/Lymph Node Low Magnification.jpg', link: '/LymphNode', keywords: [] },
-    { name: 'Spleen', img: '/assets/Images/Lymphoid Tissue/Spleen Low Magnification.jpg', link: '/Spleen', keywords: [] },
-    { name: 'Thymus', img: '/assets/Images/Lymphoid Tissue/Thymus Low Magnification.jpg', link: '/Thymus', keywords: [] },
-    { name: 'Tonsil', img: '/assets/Images/Lymphoid Tissue/Tonsil Low Magnification.jpg', link: '/Tonsil', keywords: [] }
+    { name: 'Urinary Bladder', img: '/assets/Images/Urinary System/Urinary Bladder Low Magnification.jpg', link: '/UrinaryBladder', keywords: [] },
+    { name: 'Ureter', img: '/assets/Images/Urinary System/Ureter Low Magnification.jpg', link: '/Ureter', keywords: [] }
     
   ];
 
@@ -65,26 +62,26 @@ const LymphoidTissue = () => {
   );
 
   const questions = [
-    { question: "Which cells are predominantly found in the lymphoid follicles of the cortex of a lymph node?", options: ["T lymphocytes", "B lymphocytes", "Macrophages", "Plasma cells"], correct: 1 },
-    { question: "What differentiates a primary lymphoid follicle from a secondary follicle?", options: ["Presence of T lymphocytes", "Presence of germinal centre", "Absence of capsule", "Presence of macrophages"], correct: 1 },
-    { question: "In the spleen, the central arteriole is surrounded by which structure?", options: ["Lymphatic nodule", "Peri-arteriolar lymphatic sheath (PALS)", "Medullary cord", "Trabeculae"], correct: 1 },
-    { question: "Which cells form the supporting network in the thymus?", options: ["Reticular cells", "Epithelio-reticular cells", "Macrophages", "Fibroblasts"], correct: 1 },
-    { question: "Hassal’s corpuscles are characteristic of which lymphoid organ?", options: ["Lymph node", "Spleen", "Tonsil", "Thymus"], correct: 3 },
-    { question: "What type of epithelium lines the palatine tonsils?", options: ["Simple cuboidal", "Stratified squamous non-keratinised", "Transitional epithelium", "Pseudostratified columnar"], correct: 1 },
-    { question: "Which structure is present in the medulla of a lymph node?", options: ["Germinal centres", "Medullary cords and sinuses", "Hassal’s corpuscles", "Central artery"], correct: 1 },
-    { question: "Which lymphoid organ filters blood and removes senescent red blood cells?", options: ["Lymph node", "Spleen", "Thymus", "Tonsil"], correct: 1 },
-    { question: "In lymph nodes, the paracortex is rich in:", options: ["B lymphocytes", "T lymphocytes", "Macrophages", "Plasma cells"], correct: 1 },
-    { question: "Which identification feature indicates a spleen in histological slides?", options: ["Lymphatic follicle + Eccentric arteriole", "Lymphatic follicle + Subcapsular sinus", "Lymphoid tissue + Hassal’s corpuscles", "Lymphatic follicle + Stratified squamous epithelium"], correct: 0 }
-  ];
+    { question: "What type of epithelium lines the urinary bladder?", options: ["Stratified squamous", "Simple cuboidal", "Transitional epithelium", "Pseudostratified columnar"], correct: 2 },
+    { question: "Which layer of the urinary bladder contains connective tissue, capillaries, and veins but no glands?", options: ["Mucosa", "Lamina propria", "Adventitia", "Serosa"], correct: 1 },
+    { question: "What is the thick muscle layer of the urinary bladder called?", options: ["Muscularis externa", "Detrusor muscle", "Submucosa", "Muscularis mucosae"], correct: 1 },
+    { question: "How many muscle layers are typically found in the detrusor muscle of the urinary bladder?", options: ["One", "Two", "Three", "Four"], correct: 2 },
+    { question: "Which connective tissue layer covers most of the urinary bladder except its superior surface?", options: ["Lamina propria", "Serosa", "Adventitia", "Submucosa"], correct: 2 },
+    { question: "The ureter is lined by which type of epithelium?", options: ["Simple cuboidal", "Stratified columnar", "Transitional epithelium", "Simple squamous"], correct: 2 },
+    { question: "Which muscle arrangement is found in the ureter’s muscularis layer?", options: ["Inner circular, outer longitudinal", "Inner longitudinal, outer circular", "Three layers intermingled", "Only circular muscle"], correct: 1 },
+    { question: "Which of the following is abundant in the lamina propria of the ureter?", options: ["Keratin fibers", "Elastic tissue", "Hyaline cartilage", "Goblet cells"], correct: 1 },
+    { question: "What is unique about the mucosa of the ureter?", options: ["It has villi", "It contains glands", "It shows folds", "It has keratinized surface"], correct: 2 },
+    { question: "The superior surface of the urinary bladder is covered by:", options: ["Adventitia", "Serosa", "Transitional epithelium", "Peritoneum only"], correct: 1 }
+    ];
 
-  const {
-  answers,
-  score,
-  submitted,
-  handleAnswerChange,
-  handleSubmit,
-  handleReset,
-  getOptionClass
+    const {
+        answers,
+        score,
+        submitted,
+        handleAnswerChange,
+        handleSubmit,
+        handleReset,
+        getOptionClass
 } = useQuizLogic(questions.length);
 
 
@@ -156,10 +153,10 @@ const LymphoidTissue = () => {
         
         
       </div> */}
-    </div>
+    </div> 
   );
 
-      case 'Slides of Lymphoid Tissue':
+      case 'Slides of Urinary System':
         return (
           <div className="trial-container">
             <div className="search-bar">
@@ -194,8 +191,7 @@ const LymphoidTissue = () => {
               <div key={index} className="quiz-question">
                 <p>{index + 1}. {question.question}</p>
                 {question.options.map((option, i) => (
-                  <label key={i} className={getOptionClass(question, index, i)}>
-
+                    <label key={i} className={getOptionClass(question, index, i)}>
                     <input
                       type="radio"
                       value={i}
@@ -222,7 +218,7 @@ const LymphoidTissue = () => {
       <Navbar />
       <div className="tab-container">
         <button className="tab-button" onClick={() => handleTabChange('Theory')}>Theory</button>
-        <button className="tab-button" onClick={() => handleTabChange('Slides of Lymphoid Tissue')}>Slides of Lymphoid Tissue</button>
+        <button className="tab-button" onClick={() => handleTabChange('Slides of Urinary System')}>Slides of Urinary System</button>
         <button className="tab-button" onClick={() => handleTabChange('Quiz')}>Quiz</button>
       </div>
       <div className="content">
@@ -233,4 +229,4 @@ const LymphoidTissue = () => {
   );
 }
 
-export default LymphoidTissue;
+export default UrinarySystem;

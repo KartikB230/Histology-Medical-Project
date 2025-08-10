@@ -1028,6 +1028,11 @@
   transition: opacity 0.3s ease;
 }
 
+#Ureterbtn5:hover::after {
+  top: auto;
+  bottom: 100%;
+  transform: translateX(-50%) translateY(-1px);
+}
 
 
 /* Styles for small devices (sm) */
@@ -2401,4 +2406,60 @@ ul {
 #Spleenbtn4 {
   top: 65%;
   left: 76%;
+}
+
+/* Urinary System */
+#Urinarybtn1 {
+  top: 12%;
+  left: 68%;
+}
+
+#Urinarybtn2 {
+  top: 30%;
+  left: 63%;
+}
+
+#Urinarybtn3 {
+  top: 44%;
+  left: 55%;
+}
+
+#Urinarybtn4 {
+  top: 62%;
+  left: 80%;
+}
+
+#Urinarybtn5 {
+  top: 81%;
+  left: 82%;
+}
+
+#Ureterbtn1 {
+  top: 9%;
+  left: 73%;
+}
+
+#Ureterbtn2 {
+  top: 25%;
+  left: 58%;
+}
+
+#Ureterbtn3 {
+  top: 45%;
+  left: 88%;
+}
+
+#Ureterbtn4 {
+  top: 65%;
+  left: 28%;
+}
+
+#Ureterbtn5 {
+  top: 87%;
+  left: 23%;
+}
+
+#Ureterbtn6 {
+  top: 27%;
+  left: 10%;
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import PropagateLoader from "react-spinners/PropagateLoader";
+// import PropagateLoader from "react-spinners/PropagateLoader";
 import './App.css';
 
 import HomePage from "./components/HomePage";
@@ -48,7 +48,9 @@ import LymphNode from "./components/LymphNode";
 import Spleen from "./components/Spleen";
 import Tonsil from "./components/Tonsil";
 import Thymus from "./components/Thymus";
-
+import UrinarySystem from "./components/UrinarySystem";
+import Ureter from "./components/Ureter";
+import UrinaryBladder from "./components/UrinaryBladder";
 
 import LoginPage from "./components/LoginPage";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -57,7 +59,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [loaderSize, setLoaderSize] = useState(30);
+  // const [loaderSize, setLoaderSize] = useState(30);
 
   useEffect(() => {
     setTimeout(() => {
@@ -65,21 +67,21 @@ function App() {
     }, 3000);
   }, []);
 
-  useEffect(() => {
-    const updateLoaderSize = () => {
-      const width = window.innerWidth;
-      if (width < 600) {
-        setLoaderSize(15);
-      } else if (width < 900) {
-        setLoaderSize(20);
-      } else {
-        setLoaderSize(30);
-      }
-    };
-    updateLoaderSize();
-    window.addEventListener("resize", updateLoaderSize);
-    return () => window.removeEventListener("resize", updateLoaderSize);
-  }, []);
+  // useEffect(() => {
+  //   const updateLoaderSize = () => {
+  //     const width = window.innerWidth;
+  //     if (width < 600) {
+  //       setLoaderSize(15);
+  //     } else if (width < 900) {
+  //       setLoaderSize(20);
+  //     } else {
+  //       setLoaderSize(30);
+  //     }
+  //   };
+  //   updateLoaderSize();
+  //   window.addEventListener("resize", updateLoaderSize);
+  //   return () => window.removeEventListener("resize", updateLoaderSize);
+  // }, []);
 
   const handleLogin = () => {
     localStorage.setItem("isAuthenticated", "true");
@@ -142,8 +144,10 @@ function App() {
             <Route path="/Spleen" element={<ProtectedRoute><Spleen /></ProtectedRoute>} />
             <Route path="/Tonsil" element={<ProtectedRoute><Tonsil /></ProtectedRoute>} />
             <Route path="/Thymus" element={<ProtectedRoute><Thymus /></ProtectedRoute>} />
-
-
+            <Route path="/UrinarySystem" element={<ProtectedRoute><UrinarySystem /></ProtectedRoute>} />
+            <Route path="/Ureter" element={<ProtectedRoute><Ureter /></ProtectedRoute>} />
+            <Route path="/UrinaryBladder" element={<ProtectedRoute><UrinaryBladder /></ProtectedRoute>} />
+            
           </Routes>
         </BrowserRouter>
       )}

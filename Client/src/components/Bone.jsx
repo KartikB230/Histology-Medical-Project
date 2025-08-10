@@ -4,13 +4,12 @@ import { FaSearch } from 'react-icons/fa';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import '../App.css';
+import { useQuizLogic } from './script';
 
 const Bone = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const searchInputRef = useRef(null);
   const [activeTab, setActiveTab] = useState('Theory');
-  const [answers, setAnswers] = useState(Array(10).fill(null));
-  const [score, setScore] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -81,28 +80,15 @@ const Bone = () => {
     { question: "How are collagen fibers in the periosteum arranged?", options: ["At random angles", "Parallel to the bone surface", "In circular patterns", "None of the above"], correct: 1 }
 ];
 
-
-
-  const handleAnswerChange = (index, value) => {
-    const newAnswers = [...answers];
-    newAnswers[index] = value;
-    setAnswers(newAnswers);
-  };
-
-  const handleSubmit = () => {
-    let newScore = 0;
-    answers.forEach((answer, index) => {
-      if (answer === questions[index].correct) {
-        newScore += 1;
-      }
-    });
-    setScore(newScore);
-  };
-
-  const handleReset = () => {
-    setAnswers(Array(10).fill(null));
-    setScore(null);
-  };
+const {
+  answers,
+  score,
+  submitted,
+  handleAnswerChange,
+  handleSubmit,
+  handleReset,
+  getOptionClass
+} = useQuizLogic(questions.length);
 
   const renderContent = () => {
     switch (activeTab) {
@@ -191,7 +177,7 @@ const Bone = () => {
               <div key={index} className="quiz-question">
                 <p>{index + 1}. {question.question}</p>
                 {question.options.map((option, i) => (
-                  <label key={i}>
+                  <label key={i} className={getOptionClass(question, index, i)}>
                     <input
                       type="radio"
                       value={i}
@@ -203,7 +189,7 @@ const Bone = () => {
                 ))}
               </div>
             ))}
-            <button onClick={handleSubmit} className="quiz-button">Submit</button>
+            <button onClick={() => handleSubmit(questions)} className="quiz-button" disabled={submitted}>Submit</button>
             <button onClick={handleReset} className="quiz-button">Reset</button>
             {score !== null && <p>Your score is: {score} / {questions.length}</p>}
           </div>

@@ -27,6 +27,7 @@ function SquamousEpithelium() {
   const currentIndex = epitheliumTypes.indexOf(window.location.pathname);
 
 
+
   const handlePrev = () => {
     if (currentIndex > 0) {
       navigate(epitheliumTypes[currentIndex - 1]);

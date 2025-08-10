@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+# This redirect ensures React Router works without 404s
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

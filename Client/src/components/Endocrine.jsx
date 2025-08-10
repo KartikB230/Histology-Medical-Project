@@ -4,13 +4,12 @@ import { FaSearch } from 'react-icons/fa';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import '../App.css';
+import { useQuizLogic } from './script';
 
 const Endocrine = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const searchInputRef = useRef(null);
   const [activeTab, setActiveTab] = useState('Theory');
-  const [answers, setAnswers] = useState(Array(10).fill(null));
-  const [score, setScore] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
   
@@ -66,47 +65,28 @@ const Endocrine = () => {
 
   const questions = [
     { question: "The structural and functional unit of the thyroid gland is the:", options: ["Acinus", "Follicle", "Sinusoid", "Cord"], correct: 1 },
-    
     { question: "The anterior pituitary (adenohypophysis) develops from:", options: ["Neural crest", "Oral ectoderm (Rathke’s pouch)", "Diencephalon", "Surface ectoderm"], correct: 1 },
-    
     { question: "Which layer of the adrenal cortex secretes glucocorticoids?", options: ["Zona glomerulosa", "Zona fasciculata", "Zona reticularis", "Zona medullaris"], correct: 1 },
-    
     { question: "Which part of the adrenal gland shows polygonal, lightly stained cells arranged in cords and surrounded by sinusoidal capillaries?", options: ["Zona glomerulosa", "Zona reticularis", "Zona fasciculata", "Medulla"], correct: 2 },
-    
     { question: "Follicular cells of the thyroid gland secrete:", options: ["Calcitonin", "Parathormone", "T3 and T4", "Cortisol"], correct: 2 },
-    
     { question: "Which cell type secretes growth hormone in the anterior pituitary?", options: ["Basophils", "Chromaffin cells", "Acidophils", "Follicular cells"], correct: 2 },
-    
     { question: "During histological examination of the pituitary, which region shows unmyelinated axons and Herring bodies?", options: ["Pars distalis", "Pars intermedia", "Pars nervosa", "Infundibulum"], correct: 2 },
-    
     { question: "Which cells of the thyroid gland secrete calcitonin?", options: ["Follicular cells", "C cells", "Acidophils", "Cortical cells"], correct: 1 },
-    
     { question: "In a histological section of the thyroid gland, what is the appearance of the colloid inside the follicles?", options: ["Homogeneous and pale-staining", "Granular and basophilic", "Darkly eosinophilic and clumpy", "Clear with vacuolated spaces"], correct: 0 },
-    
     { question: "Which of the following best describes the histological structure of the anterior pituitary (adenohypophysis)?", options: ["It contains cuboidal cells arranged in columns and interspersed with blood vessels", "It consists mainly of large cells with abundant secretory granules", "It has a meshwork of unmyelinated axons and Herring bodies", "It is composed of dense clusters of neurosecretory cells with few blood vessels"], correct: 0 }
 ];
 
 
-  const handleAnswerChange = (index, value) => {
-    const newAnswers = [...answers];
-    newAnswers[index] = value;
-    setAnswers(newAnswers);
-  };
+  const {
+  answers,
+  score,
+  submitted,
+  handleAnswerChange,
+  handleSubmit,
+  handleReset,
+  getOptionClass
+} = useQuizLogic(questions.length);
 
-  const handleSubmit = () => {
-    let newScore = 0;
-    answers.forEach((answer, index) => {
-      if (answer === questions[index].correct) {
-        newScore += 1;
-      }
-    });
-    setScore(newScore);
-  };
-
-  const handleReset = () => {
-    setAnswers(Array(10).fill(null));
-    setScore(null);
-  };
 
   const renderContent = () => {
     switch (activeTab) {
@@ -182,7 +162,7 @@ const Endocrine = () => {
               <div key={index} className="quiz-question">
                 <p>{index + 1}. {question.question}</p>
                 {question.options.map((option, i) => (
-                  <label key={i}>
+                  <label key={i} className={getOptionClass(question, index, i)}>
                     <input
                       type="radio"
                       value={i}
@@ -194,7 +174,7 @@ const Endocrine = () => {
                 ))}
               </div>
             ))}
-            <button onClick={handleSubmit} className="quiz-button">Submit</button>
+            <button onClick={() => handleSubmit(questions)} className="quiz-button" disabled={submitted}>Submit</button>
             <button onClick={handleReset} className="quiz-button">Reset</button>
             {score !== null && <p>Your score is: {score} / {questions.length}</p>}
           </div>

@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 export function openPopup1(imagePath, descriptionText, audioPath, showButtons=false) {
   resetPopup();
 
@@ -99,4 +101,50 @@ export function handleQuizSubmission(answers, userAnswers) {
       if (wrongOption) wrongOption.classList.add('wrong');
     }
   });
+}
+
+export function useQuizLogic(totalQuestions) {
+  const [answers, setAnswers] = useState(Array(totalQuestions).fill(null));
+  const [score, setScore] = useState(null);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleAnswerChange = (index, value) => {
+    const newAnswers = [...answers];
+    newAnswers[index] = value;
+    setAnswers(newAnswers);
+  };
+
+  const handleSubmit = (questions) => {
+    let newScore = 0;
+    answers.forEach((answer, index) => {
+      if (answer === questions[index].correct) {
+        newScore += 1;
+      }
+    });
+    setScore(newScore);
+    setSubmitted(true);
+  };
+
+  const handleReset = () => {
+    setAnswers(Array(totalQuestions).fill(null));
+    setScore(null);
+    setSubmitted(false);
+  };
+
+  const getOptionClass = (question, questionIndex, optionIndex) => {
+    if (!submitted) return '';
+    if (optionIndex === question.correct) return 'correct';
+    if (answers[questionIndex] === optionIndex && optionIndex !== question.correct) return 'wrong';
+    return '';
+  };
+
+  return {
+    answers,
+    score,
+    submitted,
+    handleAnswerChange,
+    handleSubmit,
+    handleReset,
+    getOptionClass
+  };
 }
