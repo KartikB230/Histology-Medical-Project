@@ -93,8 +93,8 @@ function Tonsil() {
 
         <div className= "Container1"  id="container1">
           <div style={{ position: 'relative' }}>
-            <img src="/assets/Images/Lymphoid Tissue/Tonsil Low Magnification.jpg" alt="Thymus" />
-            <button className="AllButtons" data-tooltip="Stratified squamous nonkeratinised epithelium" id="Tonsilbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Lymphoid Tissue/Tonsil High Magnification.jpg', "<ul style='list-style-type: disc; padding-inline-start: 20px; margin-left: 5px; margin-top: 10px;'><li><strong>Capsule</strong> which sends in incomplete septae dividing it into incomplete thymic lobules.</li><li>Supporting network is formed by star shaped <strong>epithelio-reticular cells</strong>.</li></ul>", '#')}>1</button>
+            <img src="/assets/Images/Lymphoid Tissue/Tonsil Low Magnification.jpg" alt="Tonsil" />
+            <button className="AllButtons" data-tooltip="Stratified squamous nonkeratinised epithelium" id="Tonsilbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Lymphoid Tissue/Tonsil High Magnification.jpg', "#", '#')}>1</button>
             <button className="AllButtons" data-tooltip="Tonsillar crypt" id="Tonsilbtn2" data-popup="popup2" >2</button>
             <button className="AllButtons" data-tooltip="Lymphatic nodule" id="Tonsilbtn3" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Lymphoid Tissue/Tonsil Lymphatic Nodule.jpg', '#', '#')}>3</button>
           </div>
