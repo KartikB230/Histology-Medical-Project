@@ -2408,6 +2408,41 @@ ul {
   left: 76%;
 }
 
+#Thymusbtn1 {
+  top: 3%;
+  left: 48%;
+}
+
+#Thymusbtn2 {
+  top: 20%;
+  left: 63%;
+}
+
+#Thymusbtn3 {
+  top: 42%;
+  left: 80%;
+}
+
+#Thymusbtn4 {
+  top: 68%;
+  left: 75%;
+}
+
+#Tonsilbtn1 {
+  top: 3%;
+  left: 57%;
+}
+
+#Tonsilbtn2 {
+  top: 50%;
+  left: 52%;
+}
+
+#Tonsilbtn3 {
+  top: 78%;
+  left: 29%;
+}
+
 /* Urinary System */
 #Urinarybtn1 {
   top: 12%;
