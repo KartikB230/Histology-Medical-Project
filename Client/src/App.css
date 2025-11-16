@@ -534,6 +534,15 @@
   transition: background-color 0.3s ease;
 }
 
+
+.additional-buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .divider {
   height: 10px;
 }
@@ -1725,6 +1734,24 @@
 
 
 
+.custom-bullets {
+  list-style-type: disc;
+  list-style-position: outside;
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+}
+
+.custom-bullets li {
+  font-weight: normal;       /* Keep text normal */
+  display: list-item;        /* Ensures bullet is shown */
+}
+
+.custom-bullets li::marker {
+  font-size: 1.2em;          /* Make bullet slightly bigger */
+  font-weight: bold;         /* Only bullet is bold */
+  color: black;
+}
+
 /* Footer.css */
 .footer {
   background: center no-repeat;
@@ -1806,7 +1833,6 @@ ul {
     margin-right: 10px;
   }
 }
-
 
 /* Coordinates */
 
@@ -2316,25 +2342,6 @@ ul {
   left: 42%;
 }
 
-
-.custom-bullets {
-  list-style-type: disc;
-  list-style-position: outside;
-  margin-left: 1.5rem;
-  padding-left: 1rem;
-}
-
-.custom-bullets li {
-  font-weight: normal;       /* Keep text normal */
-  display: list-item;        /* Ensures bullet is shown */
-}
-
-.custom-bullets li::marker {
-  font-size: 1.2em;          /* Make bullet slightly bigger */
-  font-weight: bold;         /* Only bullet is bold */
-  color: black;
-}
-
 /*Muscle*/
 #Skeletalbtn1 {
   top: 23%;
@@ -2546,12 +2553,4 @@ ul {
 #Ureterbtn6 {
   top: 27%;
   left: 10%;
-}
-
-.additional-buttons {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
