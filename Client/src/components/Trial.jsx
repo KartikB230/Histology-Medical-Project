@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaList, FaThLarge } from 'react-icons/fa'; 
 import '../App.css'; 
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -8,24 +8,20 @@ import Footer from './Footer';
 const Trial = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showKidneyDetails, setShowKidneyDetails] = useState(false);
+  const [listView, setListView] = useState(() => {
+    // load saved view preference from localStorage
+    return localStorage.getItem('viewMode') === 'list';
+  });
+
   const searchInputRef = useRef(null);
-  
 
   useEffect(() => {
-    const disableRightClick = (e) => {
-      e.preventDefault(); 
-    };
-
+    const disableRightClick = (e) => e.preventDefault();
     const disableImageDownload = (e) => {
-
-      if (e.target && e.target.tagName === 'IMG') {
-        e.preventDefault();
-      }
+      if (e.target && e.target.tagName === 'IMG') e.preventDefault();
     };
-
     document.addEventListener('contextmenu', disableRightClick);
-    document.addEventListener('mousedown', disableImageDownload); 
-
+    document.addEventListener('mousedown', disableImageDownload);
     return () => {
       document.removeEventListener('contextmenu', disableRightClick);
       document.removeEventListener('mousedown', disableImageDownload);
@@ -33,11 +29,17 @@ const Trial = () => {
   }, []);
 
   useEffect(() => {
-    
-    if (window.innerWidth > 1000) {
-      searchInputRef.current.focus();
-    }
+    if (window.innerWidth > 1000) searchInputRef.current.focus();
   }, []);
+
+  // Save preference to localStorage whenever user toggles
+  const handleToggleView = () => {
+    setListView((prev) => {
+      const newView = !prev;
+      localStorage.setItem('viewMode', newView ? 'list' : 'tiles');
+      return newView;
+    });
+  };
 
   const toggleKidneyDetails = () => {
     setShowKidneyDetails(prevState => !prevState);
@@ -54,7 +56,8 @@ const Trial = () => {
     { name: 'Muscular Tissue', img: '/assets/Images/Muscle/Skeletal Muscle Low Magnification.jpg', link: '/Muscle', keywords: ['Skeletal Muscle LS', 'Skeletal Muscle TS', 'Smooth Muscle', 'Cardiac Muscle']},
     { name: 'Lymphoid Tissue', img: '/assets/Images/Lymphoid Tissue/Lymph Node Low Magnification.jpg', link: '/LymphoidTissue', keywords: ['Lymph Node', 'Spleen', 'Palatine Tonsil', 'Thymus']},
     { name: 'Urinary System', img: '/assets/Images/Urinary System/Urinary Bladder Low Magnification.jpg', link: '/UrinarySystem', keywords: ['Urinary Bladder', 'Urine', 'Ureter']},
-    { name: 'Salivary Gland', img: '/assets/Images/Salivary Gland/Mixed Salivary Gland Low Magnification.jpg', link: '/Salivary Gland', keywords: ['Saliva', 'Mixed Salivary Gland', 'Serous Salivary Gland', 'Mucous Salivary Gland', 'Mucous Salivary Gland']}
+    { name: 'Salivary Gland', img: '/assets/Images/Salivary Gland/Mixed Salivary Gland Low Magnification.jpg', link: '/Salivary Gland', keywords: ['Saliva', 'Mixed Salivary Gland', 'Serous Salivary Gland', 'Mucous Salivary Gland', 'Mucous Salivary Gland']},
+    { name: 'Hepatobiliary System', img: '/assets/Images/Hepatobiliary System/Pancreas Low Magnification.jpg', link: '/HepatobiliarySystem', keywords: ['Liver', 'Gall Bladder', 'Pancreas']}
   ];
 
   const kidneyDetails = [
@@ -77,50 +80,78 @@ const Trial = () => {
       <Navbar />
       <div className="trial-container">
         <div className="search-bar">
-        <div className="search-icon">
-            <FaSearch />
+          <div className="search-input-wrapper">
+            <div className="search-icon">
+              <FaSearch />
+            </div>
+            <input
+              type="text"
+              placeholder="Start Typing to Search...."
+              value={searchTerm}
+              onChange={e => setSearchTerm(e.target.value)}
+              ref={searchInputRef}
+              className="search-input"
+            />
           </div>
-          <input
-            type="text"
-            placeholder="Start Typing to Search...."
-            value={searchTerm}
-            onChange={e => setSearchTerm(e.target.value)}
-            ref={searchInputRef}
-            className="search-input"
-          />
+          {/* Toggle Button */}
+          <button
+            className="view-toggle-button"
+            onClick={() => setListView(prev => !prev)}
+            aria-label="Toggle View"
+          >
+            {listView ? <FaThLarge /> : <FaList />}
+          </button>
         </div>
-        <div className="tiles-wrapper">
-          {!showKidneyDetails && filteredTiles.map(tile => (
-            tile.name === 'Kidney' ? (
-              <div key={tile.name} className="tile" onClick={tile.onClick}>
-                <div className="tile-content">
-                  <img src={tile.img} alt={tile.name} className="tile-image" />
-                  <div className="tile-name">{tile.name}</div>
-                </div>
-              </div>
-            ) : (
-              <Link to={tile.link} key={tile.name} className="tile">
-                <div className="tile-content">
-                  <img src={tile.img} alt={tile.name} className="tile-image" />
-                  <div className="tile-name">{tile.name}</div>
-                </div>
-              </Link>
-            )
-          ))}
 
-          {showKidneyDetails && (
-            <>
-              {filteredTiles.map(detail => (
-                <Link to={detail.link} key={detail.name} className="tile">
+        {/* List View */}
+        {listView ? (
+          <div className="list-view">
+            {filteredTiles.map(tile => (
+              <Link
+                to={tile.link}
+                key={tile.name}
+                className="list-item"
+              >
+                {tile.name}
+              </Link>
+            ))}
+          </div>
+
+        ) : (
+          /* Tile View */
+          <div className="tiles-wrapper">
+            {!showKidneyDetails && filteredTiles.map(tile => (
+              tile.name === 'Kidney' ? (
+                <div key={tile.name} className="tile" onClick={tile.onClick}>
                   <div className="tile-content">
-                    <img src={detail.img} alt={detail.name} className="tile-image" />
-                    <div className="tile-name">{detail.name}</div>
+                    <img src={tile.img} alt={tile.name} className="tile-image" />
+                    <div className="tile-name">{tile.name}</div>
+                  </div>
+                </div>
+              ) : (
+                <Link to={tile.link} key={tile.name} className="tile">
+                  <div className="tile-content">
+                    <img src={tile.img} alt={tile.name} className="tile-image" />
+                    <div className="tile-name">{tile.name}</div>
                   </div>
                 </Link>
-              ))}
-            </>
-          )}
-        </div>
+              )
+            ))}
+
+            {showKidneyDetails && (
+              <>
+                {filteredTiles.map(detail => (
+                  <Link to={detail.link} key={detail.name} className="tile">
+                    <div className="tile-content">
+                      <img src={detail.img} alt={detail.name} className="tile-image" />
+                      <div className="tile-name">{detail.name}</div>
+                    </div>
+                  </Link>
+                ))}
+              </>
+            )}
+          </div>
+        )}
       </div>
       <Footer/>
     </>

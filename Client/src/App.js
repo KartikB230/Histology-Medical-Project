@@ -51,6 +51,10 @@ import Thymus from "./components/Thymus";
 import UrinarySystem from "./components/UrinarySystem";
 import Ureter from "./components/Ureter";
 import UrinaryBladder from "./components/UrinaryBladder";
+import HepatobiliarySystem from "./components/HepatobiliarySystem";
+import Pancreas from "./components/Pancreas";
+import GallBladder from "./components/GallBladder";
+import Liver from "./components/Liver";
 
 import LoginPage from "./components/LoginPage";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -147,6 +151,10 @@ function App() {
             <Route path="/UrinarySystem" element={<ProtectedRoute><UrinarySystem /></ProtectedRoute>} />
             <Route path="/Ureter" element={<ProtectedRoute><Ureter /></ProtectedRoute>} />
             <Route path="/UrinaryBladder" element={<ProtectedRoute><UrinaryBladder /></ProtectedRoute>} />
+            <Route path="/HepatobiliarySystem" element={<ProtectedRoute><HepatobiliarySystem /></ProtectedRoute>} />
+            <Route path="/Pancreas" element={<ProtectedRoute><Pancreas /></ProtectedRoute>} />
+            <Route path="/GallBladder" element={<ProtectedRoute><GallBladder /></ProtectedRoute>} />
+            <Route path="/Liver" element={<ProtectedRoute><Liver /></ProtectedRoute>} />
             
           </Routes>
         </BrowserRouter>
