@@ -71,22 +71,6 @@ function App() {
     }, 3000);
   }, []);
 
-  // useEffect(() => {
-  //   const updateLoaderSize = () => {
-  //     const width = window.innerWidth;
-  //     if (width < 600) {
-  //       setLoaderSize(15);
-  //     } else if (width < 900) {
-  //       setLoaderSize(20);
-  //     } else {
-  //       setLoaderSize(30);
-  //     }
-  //   };
-  //   updateLoaderSize();
-  //   window.addEventListener("resize", updateLoaderSize);
-  //   return () => window.removeEventListener("resize", updateLoaderSize);
-  // }, []);
-
   const handleLogin = () => {
     localStorage.setItem("isAuthenticated", "true");
     window.location.href = "/home"; // Redirect after login
