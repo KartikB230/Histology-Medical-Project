@@ -138,15 +138,34 @@ export function closePopup() {
 }
 
 export function resetPopup() {
-  document.getElementById('popupImage').src = '';
-  document.getElementById('popupInfo').innerHTML = '';
-  document.getElementById('popupAudio').src = '';
+  const popupImage = document.getElementById('popupImage');
+  const popupInfo = document.getElementById('popupInfo');
+  const popupAudio = document.getElementById('popupAudio');
+  const popupImageWrapper = document.getElementById('popupImageWrapper');
+  const additionalButtons = document.getElementById('additionalButtons');
 
-  document.getElementById('popupImage').style.display = 'none';
-  document.getElementById('popupImageWrapper').style.display = 'none';
-  document.getElementById('popupInfo').style.display = 'none';
-  document.getElementById('popupAudio').style.display = 'none';
-  document.getElementById('additionalButtons').style.display = 'none';
+  if (popupImage) {
+    popupImage.src = '';
+    popupImage.style.display = 'none';
+  }
+
+  if (popupInfo) {
+    popupInfo.innerHTML = '';
+    popupInfo.style.display = 'none';
+  }
+
+  if (popupAudio) {
+    popupAudio.src = '';
+    popupAudio.style.display = 'none';
+  }
+
+  if (popupImageWrapper) {
+    popupImageWrapper.style.display = 'none';
+  }
+
+  if (additionalButtons) {
+    additionalButtons.style.display = 'none';
+  }
 }
 
 // Initialize browser back button handler

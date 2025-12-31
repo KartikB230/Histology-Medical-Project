@@ -55,7 +55,6 @@ const Muscle = () => {
   const tiles = [
     { name: 'Skeletal Muscle', img: '/assets/Images/Muscle/Skeletal Muscle Low Magnification.jpg', link: '/SkeletalMuscle', keywords: [] },
     { name: 'Skeletal Muscle LS', img: '/assets/Images/Muscle/Skeletal Muscle LS Low Magnification.jpg', link: '/SkeletalMuscleLS', keywords: [] },
-    // { name: 'Skeletal Muscle TS', img: '/assets/Images/Muscle/Skeletal Muscle TS Low Magnification.jpg', link: '/SkeletalMuscleTS', keywords: [] },
     { name: 'Smooth Muscle', img: '/assets/Images/Muscle/Smooth Muscle Low Magnification.jpg', link: '/SmoothMuscle', keywords: [] },
     { name: 'Cardiac Muscle', img: '/assets/Images/Muscle/Cardiac Muscle Low Magnification.jpg', link: '/CardiacMuscle', keywords: [] }
   ];
