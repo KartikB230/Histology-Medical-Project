@@ -86,7 +86,7 @@ const ContactUs = () => {
 
           <div className='thecard'>
               <div className='thefront' style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
-                <img className="wsppimg" src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png'></img>
+                <img alt= "" className="wsppimg" src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png'></img>
                 
               </div>
               <div className='theback'>
@@ -110,7 +110,7 @@ const ContactUs = () => {
 
           <div className='thecard'>
               <div className='thefrontt' style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
-                  <img className="wsppimg" src='https://cdn-icons-png.flaticon.com/512/281/281769.png'></img>
+                  <img alt= ""  className="wsppimg" src='https://cdn-icons-png.flaticon.com/512/281/281769.png'></img>
               </div>
               <div className='thebackk'>
                 <div style={{display:"flex", justifyContent:"center", alignItems:"center", backgroundColor:"white"}}>
@@ -133,7 +133,7 @@ const ContactUs = () => {
 
         <div className='thecard'>
           <div className='thefronttt' style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
-            <img className="wsppimg" src='https://images.vexels.com/media/users/3/137415/isolated/lists/0e475bb9b17b3fa4f94f31fba1635b8f-telephone-call-icon-logo.png'></img>
+            <img alt= ""  className="wsppimg" src='https://images.vexels.com/media/users/3/137415/isolated/lists/0e475bb9b17b3fa4f94f31fba1635b8f-telephone-call-icon-logo.png'></img>
           </div>
           <div className='thebackkk'>
             <div style={{backgroundColor:"white",display:"flex", justifyContent:"center", alignItems:"center"}}>

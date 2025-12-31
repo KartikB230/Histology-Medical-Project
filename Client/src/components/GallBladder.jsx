@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { openPopup1, closePopup, toggleButtons } from './script';
+import { openPopup1, closePopup, toggleButtons, initPopupHistory } from './script';
 
 function GallBladder() {
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -53,6 +53,7 @@ function GallBladder() {
   };
 
   useEffect(() => {
+    initPopupHistory();
     const disableRightClick = (e) => {
       e.preventDefault();
     };
@@ -89,9 +90,9 @@ function GallBladder() {
 
         <div className="Container1" id="container1">
           <div style={{ position: 'relative' }}>
-            <img src="/assets/Images/Hepatobiliary System/Gall Bladder Low Magnification.jpg" alt="Gall Bladder" />
-            <button className="AllButtons" data-tooltip="Simple Columnar Epithelium" id="Gallbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Hepatobiliary System/Gall Bladder Epithelium.jpg', '<ul style="list-style-type:disc;margin-left:20px;"><li>Surface epithelium – simple columnar cells with irregular microvilli (Brush Border appearance).</li><li>Mucosal folds are deep and hence the gaps between the folds can be mistaken for mucous glands, which are present only in the neck.</li></ul>', '#')}>1</button>
-            <button className="AllButtons" data-tooltip="Mucosal Fold" id="Gallbtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Hepatobiliary System/Gall Bladder Epithelium.jpg', '<b>Mucosa</b> – shows plenty of mucosal folds.', '#')}>2</button>
+            <img alt="" src="/assets/Images/Hepatobiliary System/Gall Bladder Low Magnification.jpg" />
+            <button className="AllButtons" data-tooltip="Simple Columnar Epithelium" id="Gallbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Hepatobiliary System/Gall Bladder Epithelium.jpg', '<ul style="list-style-type:disc;margin-left:20px;"><li>Surface epithelium – simple columnar cells with irregular microvilli (Brush Border appearance).</li><li>Mucosal folds are deep and hence the gaps between the folds can be mistaken for mucous glands, which are present only in the neck.</li></ul>', '#', true)}>1</button>
+            <button className="AllButtons" data-tooltip="Mucosal Fold" id="Gallbtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Hepatobiliary System/Gall Bladder Epithelium.jpg', '<b>Mucosa</b> - shows plenty of mucosal folds.', '#')}>2</button>
             <button className="AllButtons" data-tooltip="Fibro Muscular Stroma" id="Gallbtn3" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Hepatobiliary System/Gall Bladder Fibromuscular Stroma.jpg', '<b>Fibromuscular layer - </b> Circularly arranged Smooth Muscle fibres interlace with white fibrous connective tissue.', '#')}>3</button>
             <button className="AllButtons" data-tooltip="Serosa" id="Gallbtn4" data-popup="popup4" >4</button>
           </div>
@@ -109,8 +110,8 @@ function GallBladder() {
 
           <div className="toggle-button-container">
             <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) :
-                (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
+              {buttonClicked ? (<img alt="" src="/assets/on-1.png" className="toggle-image" />) :
+                (<img alt="" src="/assets/off-1.png" className="toggle-image" />)}</button>
 
           </div>
           <button
@@ -124,7 +125,7 @@ function GallBladder() {
         </div>
 
         <div className='Container2'>
-          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Gall Bladder/Gall Bladder_Pencil_Diagram.jpeg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Gall Bladder</u></strong></a>
+          {/* <a className="image-cell" onClick={() => openPopup1("/assets/Images/Gall Bladder/Gall Bladder_Pencil_Diagram.jpeg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Gall Bladder</u></strong></a> */}
           <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
           <ul style={{ listStyleType: "disc" }}>
             <li>Gall bladder is a pear shaped structure which serves to store and concentrate bile.</li>
@@ -134,9 +135,16 @@ function GallBladder() {
         </div>
 
         <div id="overlay" className="overlay">
-          <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
+          <button className="close-button" onClick={() => closePopup()}>&times;</button>
           <div className="popup-content">
-            <img id="popupImage" className="popup-image" src="" alt="Pop-up Image" />
+            <div id="popupImageWrapper" className="popup-image-wrapper">
+              <img id="popupImage" className="popup-image" src="" alt="Pop-up Image" />
+              <div id="additionalButtons" className="additional-buttons">
+                <button className="AllButtons" data-tooltip="Simple Columnar Epithelium" id="Gallbtn5" data-popup="popup5" >1</button>
+                <button className="AllButtons" data-tooltip="Mucosal Fold" id="Gallbtn6" data-popup="popup6" >2</button>
+                <button className="AllButtons" data-tooltip="Lamina Propria" id="Gallbtn7" data-popup="popup7" onClick={() => openPopup1('/assets/Images/Hepatobiliary System/Gall Bladder Lamina Propria.jpg', '<b>Lamina propria</b><ul style="list-style-type:disc;margin-left:20px;"><li>It shows connective tissue, capillaries, veins and lymphatics.</li><li>No muscularis mucosa.</li></ul>', '#')}>3</button>
+              </div>
+            </div>
             <div>
               <p id="popupInfo"></p>
             </div>
@@ -145,8 +153,6 @@ function GallBladder() {
                 <source src="" type="audio/wav" />
                 Your browser does not support the audio element.
               </audio>
-            </div>
-            <div id="additionalButtons" className="additional-buttons">
             </div>
           </div>
         </div>

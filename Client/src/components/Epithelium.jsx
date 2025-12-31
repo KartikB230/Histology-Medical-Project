@@ -131,8 +131,8 @@ const Epithelium = () => {
       {/* Section 3: Image and Text Block */}
       <div className="epithelium-section">
         <div className="epithelium-image-box">
-          <img src="/assets/Images/Epithelium/Diagram1.png" alt="Image 1" className="epithelium-image image-1" />
-          <img src="/assets/Images/Epithelium/Diagram2.png" alt="Image 2" className="epithelium-image image-2" />
+          <img alt= ""  src="/assets/Images/Epithelium/Diagram1.png" className="epithelium-image image-1" />
+          <img alt= ""  src="/assets/Images/Epithelium/Diagram2.png" className="epithelium-image image-2" />
           <ul className="epithelium-list">
             <strong>
               <li>Various cells attached with types of junctions - Zona Occludens, Zona Adherens, Macula Adherens, and Gap Junctions.</li>
@@ -146,12 +146,12 @@ const Epithelium = () => {
       {/* Section 4: Modifications of Epithelial Cells */}
       <div className="epithelium-section">
         <h2 className="epithelium-title">Modifications of Epithelial Cells</h2>
-        <img src="/assets/Images/Epithelium/Diagram4.jpg" alt="Image 4" className="epithelium-image image-4" />
+        <img alt= ""  src="/assets/Images/Epithelium/Diagram4.jpg" className="epithelium-image image-4" />
       </div>
 
       {/* Section 5: Final Image */}
       <div className="epithelium-section">
-        <img src="/assets/Images/Epithelium/Diagram3.jpg" alt="Image 3" className="epithelium-image image-3" />
+        <img alt= ""  src="/assets/Images/Epithelium/Diagram3.jpg" className="epithelium-image image-3" />
       </div>
     </div>
   );

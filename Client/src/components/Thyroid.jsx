@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { openPopup1, closePopup, toggleButtons } from './script';
+import { openPopup1, closePopup, toggleButtons, initPopupHistory } from './script';
 
 function Thyroid() {
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -11,13 +11,13 @@ function Thyroid() {
   const [startX, setStartX] = useState(null);
   const [endX, setEndX] = useState(null);
 
- 
+
   const endocrineTypes = [
     "/Thyroid",
     "/Adrenal",
     "/Pituitary"
   ];
-  
+
 
 
   const currentIndex = endocrineTypes.indexOf(window.location.pathname);
@@ -56,8 +56,9 @@ function Thyroid() {
   };
 
   useEffect(() => {
+    initPopupHistory();
     const disableRightClick = (e) => {
-      e.preventDefault(); 
+      e.preventDefault();
     };
 
     const disableImageDownload = (e) => {
@@ -68,31 +69,31 @@ function Thyroid() {
     };
 
     document.addEventListener('contextmenu', disableRightClick);
-    document.addEventListener('mousedown', disableImageDownload); 
+    document.addEventListener('mousedown', disableImageDownload);
 
     return () => {
       document.removeEventListener('contextmenu', disableRightClick);
       document.removeEventListener('mousedown', disableImageDownload);
     };
   }, []);
-  
+
   return (
     <>
-    <div
+      <div
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-      <Navbar />
+        <Navbar />
         <div className="heading">
-          
+
           <h1>Thyroid</h1>
         </div>
         <hr style={{ height: "10px" }} />
 
-        <div className= "Container1"  id="container1">
+        <div className="Container1" id="container1">
           <div style={{ position: 'relative' }}>
-            <img src="/assets/Images/Thyroid/Updated_thyroid.png" alt="Thyroid" />
+            <img alt= ""  src="/assets/Images/Thyroid/Updated_thyroid.png" />
             <button className="AllButtons" data-tooltip="Follicles" id="Thyroidbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Thyroid/Connective_Tissue_Septa.png', 'Follicles are the basic structural units of the thyroid gland. Each lobule contains many closely packed follicles of different size and shapes. The size of the follicle is approximately 150-200 microns. Follicles are round to oval in shape and are lined by simple squamous or cuboidal epithelium. The follicles are filled with colloid. ', '/assets/Audios/Endocrine/Follicles ( thyroid).m4a')}>1</button>
             <button className="AllButtons" data-tooltip="Connective Tissue septa" id="Thyroidbtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Thyroid/Connective_Tissue_Septa.png', 'The gland shows a thin capsule. Thin septae extend from the capsule into the substance of the gland and divide it into lobules. ', '/assets/Audios/Endocrine/Connective tissue septa.m4a')}>2</button>
             <button className="AllButtons" data-tooltip="Blood Vessels" id="Thyroidbtn3" data-popup="popup3" onClick={() => openPopup1('#', 'There is very little interlobular connective tissue (follicles are packed). The interlobular and intralobular connective tissue is thin and contains many capillaries. ', '/assets/Audios/Endocrine/Blood vs ( thyroid).m4a')}>3</button>
@@ -101,7 +102,7 @@ function Thyroid() {
             <button className="AllButtons" data-tooltip="Colloid" id="Thyroidbtn6" data-popup="popup6" onClick={() => openPopup1('/assets/Images/Thyroid/Follicular_cells.jpg', 'The lumen of the thyroid follicle is large and contains colloid which is stained eosinophilic It is made of a glycoprotein complex, also known as thyroglobulin. The colloid stains with both acidic and basic dyes. It is strongly PAS positive. ', '/assets/Audios/Endocrine/Colloid ( thyroid)-1.m4a')}>6</button>
           </div>
         </div>
-        
+
         <div className="navigation-buttons">
           <button
             className="nav-button prev-button"
@@ -109,14 +110,14 @@ function Thyroid() {
             onClick={handlePrev}
             disabled={true}
           >
-           <FaArrowLeft /> 
+            <FaArrowLeft />
           </button>
-          
+
           <div className="toggle-button-container">
             <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) : 
-              (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
-          
+              {buttonClicked ? (<img alt= ""  src="/assets/on-1.png" className="toggle-image" />) :
+                (<img alt= ""  src="/assets/off-1.png" className="toggle-image" />)}</button>
+
           </div>
           <button
             className="nav-button next-button"
@@ -128,21 +129,25 @@ function Thyroid() {
           </button>
         </div>
 
-        <div className= 'Container2'>
-          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Thyroid/Thyroid_Pencil_Diagram.jpeg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Thyroid</u></strong></a>
+        <div className='Container2'>
+          <a className="image-cell" onClick={() => openPopup1("/assets/Images/Thyroid/Thyroid_Pencil_Diagram.jpeg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Thyroid</u></strong></a>
           <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
-            <ol className="feature-list">
-              <li>Connective Tissue capsule sending in septae dividing gland into lobules.</li>
-              <li>Parenchyma consists of large number of follicles lined by simple squamous epithelium (in resting follicles) to simple cuboidal epithelium (in active follicles).</li>
-              <li>Colloid is present in the lumen of the follicles</li>
-              <li>Parafollicular cells present outside the follicles</li>
-            </ol>
+          <ol className="feature-list">
+            <li>Connective Tissue capsule sending in septae dividing gland into lobules.</li>
+            <li>Parenchyma consists of large number of follicles lined by simple squamous epithelium (in resting follicles) to simple cuboidal epithelium (in active follicles).</li>
+            <li>Colloid is present in the lumen of the follicles</li>
+            <li>Parafollicular cells present outside the follicles</li>
+          </ol>
         </div>
 
         <div id="overlay" className="overlay">
-          <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
+          <button className="close-button" onClick={() => closePopup()}>&times;</button>
           <div className="popup-content">
-            <img id="popupImage" className="popup-image" src="" alt="Pop-up Image" />
+            <div id="popupImageWrapper" className="popup-image-wrapper">
+              <img alt= ""  id="popupImage" className="popup-image" src="" />
+              <div id="additionalButtons" className="additional-buttons">
+              </div>
+            </div>
             <div>
               <p id="popupInfo"></p>
             </div>
@@ -152,14 +157,11 @@ function Thyroid() {
                 Your browser does not support the audio element.
               </audio>
             </div>
-            <div id="additionalButtons" className="additional-buttons">
-            </div>
           </div>
         </div>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
 }
-
 export default Thyroid;

@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { openPopup1, closePopup, toggleButtons } from './script';
+import { openPopup1, closePopup, toggleButtons, initPopupHistory } from './script';
 
 function AdiposeTissue() {
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -58,6 +58,9 @@ function AdiposeTissue() {
 
   
   useEffect(() => {
+    // Initialize popup history handler
+    initPopupHistory();
+
     const disableRightClick = (e) => {
       e.preventDefault(); 
     };
@@ -91,7 +94,7 @@ function AdiposeTissue() {
 
         <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
-            <img src="/assets/Images/Connective Tissue/Adipose Low Magnification.jpg" alt="Adipose Tissue" />
+            <img alt= ""  src="/assets/Images/Connective Tissue/Adipose Low Magnification.jpg" />
             <button className="AllButtons" data-tooltip="Adipose Cells" id="Adiposebtn1" data-popup="popup1" onClick={() => openPopup1("/assets/Images/Connective Tissue/Adipose High Magnification.jpg")}>1</button>
             <button className="AllButtons" data-tooltip="Connective Tissue Septa" id="Adiposebtn2" data-popup="popup2">2</button>
             <button className="AllButtons" data-tooltip="Capiliary" id="Adiposebtn3" data-popup="popup3">3</button>
@@ -111,8 +114,8 @@ function AdiposeTissue() {
           
           <div className="toggle-button-container">
             <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) : 
-              (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
+              {buttonClicked ? (<img alt= ""  src="/assets/on-1.png" className="toggle-image" />) : 
+              (<img alt= ""  src="/assets/off-1.png" className="toggle-image" />)}</button>
           
           </div>
         <button
@@ -126,8 +129,8 @@ function AdiposeTissue() {
       </div>
 
         <div className="Container2">
-          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/Adipose Pencil Diagram.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Adipose Connective Tissue</u></strong></a>
-          {/* <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/Adipose High Magnification.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view High Magnification of Adipose Connective Tissue</u></strong></a> */}
+          <a className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/Adipose Pencil Diagram.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Adipose Connective Tissue</u></strong></a>
+          {/* <a className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/Adipose High Magnification.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view High Magnification of Adipose Connective Tissue</u></strong></a> */}
           <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
           <ol className="feature-list">
             <li>A thin rim of cytoplasm is seen at the periphery of the cell.</li>
@@ -145,9 +148,12 @@ function AdiposeTissue() {
         </div>
 
         <div id="overlay" className="overlay">
-          <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
+          <button className="close-button" onClick={() => closePopup()}>&times;</button>
           <div className="popup-content">
-            <img id="popupImage" className="popup-image" src="" alt="Pop-up Image" />
+            <div id="popupImageWrapper" className="popup-image-wrapper">
+              <img alt= ""  id="popupImage" className="popup-image" src="" />
+              <div id="additionalButtons" className="additional-buttons"></div>
+            </div>
             <div>
               <p id="popupInfo"></p>
             </div>
@@ -157,7 +163,6 @@ function AdiposeTissue() {
                 Your browser does not support the audio element.
               </audio>
             </div>
-            <div id="additionalButtons" className="additional-buttons"></div>
           </div>
         </div>
 

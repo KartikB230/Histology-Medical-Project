@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { openPopup1, closePopup, toggleButtons } from './script';
+import { openPopup1, closePopup, toggleButtons, initPopupHistory } from './script';
 
 function Arteriole() {
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -58,6 +58,8 @@ function Arteriole() {
 
 
   useEffect(() => {
+    initPopupHistory();
+    
     const disableRightClick = (e) => {
       e.preventDefault();
     };
@@ -90,7 +92,7 @@ function Arteriole() {
 
         <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
-            <img src="/assets/Images/Blood Vessel/Arteriole Low Magnification.jpg" alt="Arteriole" />
+            <img alt= ""  src="/assets/Images/Blood Vessel/Arteriole Low Magnification.jpg" />
             <button className="AllButtons" data-tooltip="Arteriole" id="Arteriolebtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Blood Vessel/Arteriole High Magnification.jpg', '#', '#')}>1</button>
           </div>
         </div>
@@ -107,8 +109,8 @@ function Arteriole() {
 
           <div className="toggle-button-container">
             <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) :
-                (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
+              {buttonClicked ? (<img alt= ""  src="/assets/on-1.png" className="toggle-image" />) :
+                (<img alt= ""  src="/assets/off-1.png" className="toggle-image" />)}</button>
 
           </div>
           <button
@@ -134,9 +136,13 @@ function Arteriole() {
         </div>
 
         <div id="overlay" className="overlay">
-          <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
+          <button className="close-button" onClick={() => closePopup()}>&times;</button>
           <div className="popup-content">
-            <img id="popupImage" className="popup-image" src="" alt="Pop-up Image" />
+            <div id="popupImageWrapper" className="popup-image-wrapper">
+              <img alt= ""  id="popupImage" className="popup-image" src="" />
+              <div id="additionalButtons" className="additional-buttons">
+              </div>
+            </div>
             <div>
               <p id="popupInfo"></p>
             </div>
@@ -145,8 +151,6 @@ function Arteriole() {
                 <source src="" type="audio/wav" />
                 Your browser does not support the audio element.
               </audio>
-            </div>
-            <div id="additionalButtons" className="additional-buttons">
             </div>
           </div>
         </div>

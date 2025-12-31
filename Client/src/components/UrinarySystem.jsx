@@ -93,7 +93,7 @@ const UrinarySystem = () => {
       {/* Section 5: Final Image */}
       {/* <div className="cartilage-section">
       <h2 className='epithelium-title'>Types of Connective Tissues</h2>
-        <img src="/assets/Images/Connective Tissue/Diagram 1.jpg" alt = "Cartilage Diagram" className="epithelium-image image-3" style={{"margin":"10px"}} />
+        <img alt= ""  src="/assets/Images/Connective Tissue/Diagram 1.jpg" alt = "Cartilage Diagram" className="epithelium-image image-3" style={{"margin":"10px"}} />
         </div>
         <div className='cartilage-section'> 
           <h2 style={{ textDecoration: 'underline' }}>Comparison of Yellow and Brown Adipocytes</h2>

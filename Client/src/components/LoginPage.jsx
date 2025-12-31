@@ -101,10 +101,6 @@ function LoginPage({ onLogin }) {
               
             </div>
           )}
-
-          <p>
-            {/* Don't Have Any Account? <fa href="#">Sign Up</a> */}
-          </p>
         </form>
       </div>
       <div className="welcome-section">

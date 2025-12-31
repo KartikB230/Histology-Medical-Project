@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { openPopup1, closePopup, toggleButtons } from './script';
+import { openPopup1, closePopup, toggleButtons, initPopupHistory } from './script';
 
 function WhiteFibrousCartilage() {
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -57,6 +57,7 @@ function WhiteFibrousCartilage() {
 
 
   useEffect(() => {
+    initPopupHistory();
     const disableRightClick = (e) => {
       e.preventDefault();
     };
@@ -87,9 +88,9 @@ function WhiteFibrousCartilage() {
         </div>
         <hr style={{ height: "10px" }} />
 
-        <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+        <div className="Container1" id="container1" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
-            <img src="/assets/Images/Cartilage/White Fibrous Cartilage Low Magnification1.jpeg" alt="White Fibrous Cartilage" />
+            <img alt= ""  src="/assets/Images/Cartilage/White Fibrous Cartilage Low Magnification1.jpeg" />
             <button className="AllButtons" data-tooltip="Chondrocyte" id="Fibrousbtn1" data-popup="popup1" onClick={() => openPopup1("/assets/Images/Cartilage/White Fibrous Cartilage High Magnification1.jpg", '#', '#')}>1</button>
             <button className="AllButtons" data-tooltip="Matrix with Collagen Fibres" id="Fibrousbtn2" data-popup="popup2" onClick={() => openPopup1("/assets/Images/Cartilage/White Fibrous Cartilage High Magnification1.jpg", '#', '#')}>2</button>
             <button className="AllButtons" data-tooltip="Lacuna" id="Fibrousbtn3" data-popup="popup3" onClick={() => openPopup1("/assets/Images/Cartilage/White Fibrous Cartilage High Magnification1.jpg", '#', '#')}>3</button>
@@ -110,8 +111,8 @@ function WhiteFibrousCartilage() {
 
           <div className="toggle-button-container">
             <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) :
-                (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
+              {buttonClicked ? (<img alt= ""  src="/assets/on-1.png" className="toggle-image" />) :
+                (<img alt= ""  src="/assets/off-1.png" className="toggle-image" />)}</button>
 
           </div>
           <button
@@ -125,7 +126,7 @@ function WhiteFibrousCartilage() {
         </div>
 
         <div className='Container2'>
-          <a href="#" className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/White Fibrous Pencil1.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of White Fibrous Cartilage</u></strong></a>
+          <a className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/White Fibrous Pencil1.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of White Fibrous Cartilage</u></strong></a>
           <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft: '20px' }}>
             <li>The matrix is basophilic and filled with numerous Type-I collagen bundles.</li>
             <li>The collagen fibre bundles vary in thickness, the bundles branch and branches reunite with each other. This branching pattern gives a feathery appearance to the cartilage.</li>
@@ -140,9 +141,13 @@ function WhiteFibrousCartilage() {
         </div>
 
         <div id="overlay" className="overlay">
-          <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
+          <button className="close-button" onClick={() => closePopup()}>&times;</button>
           <div className="popup-content">
-            <img id="popupImage" className="popup-image" src="" alt="Pop-up Image" />
+            <div id="popupImageWrapper" className="popup-image-wrapper">
+              <img alt= ""  id="popupImage" className="popup-image" src="" />
+              <div id="additionalButtons" className="additional-buttons">
+              </div>
+            </div>
             <div>
               <p id="popupInfo"></p>
             </div>
@@ -152,11 +157,10 @@ function WhiteFibrousCartilage() {
                 Your browser does not support the audio element.
               </audio>
             </div>
-            <div id="additionalButtons" className="additional-buttons"></div>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }

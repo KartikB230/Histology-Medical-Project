@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { openPopup1, closePopup, toggleButtons, openPopup } from './script';
+import { openPopup1, closePopup, toggleButtons, initPopupHistory } from './script';
 
 function BoneTS() {
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -56,6 +56,8 @@ function BoneTS() {
 
 
   useEffect(() => {
+    initPopupHistory();
+    
     const disableRightClick = (e) => {
       e.preventDefault();
     };
@@ -87,7 +89,7 @@ function BoneTS() {
         <hr className="divider" />
 
         <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
-          <img src="/assets/Images/Bone/Ground Bone TS Low Magnification.jpg" alt="Bone Tissue" />
+          <img alt= ""  src="/assets/Images/Bone/Ground Bone TS Low Magnification.jpg" />
           <button className="AllButtons" data-tooltip="Volkmann's Canal" id="TSbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Bone/Volkmann Canal TS.jpg', '<p><strong><span style="text-decoration: underline;">Volkmann\'s canal:</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>Volkmann’s canals are perpendicular to haversian canals.</li><li>Blood vessels and nutrients from periosteum and endosteum travel through Volkmann’s canals to reach the Haversian canals.</li></ul>', '')}>1</button>
           <button className="AllButtons" data-tooltip="Periosteum" id="TSbtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Bone/Periosteum TS.png', ' <p><strong><span style="text-decoration: underline;">Periosteum:</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>a sheath of dense connective tissue</li><li>an outer fibrous layer</li><li>an inner cellular layer containing osteoprogenitor cells.</li><li>The collagen fibres are arranged parallel to the surface of bone.</li><li>When tendons and ligaments attach to bones, the collagen fibres from these structures extend directly but at an angle into the bone tissue, forming <strong>Sharpey’s fibres</strong>.</li></ul>', '')}>2</button>
           <button className="AllButtons" data-tooltip="Circumferential lamellae" id="TSbtn3" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Bone/Periosteum TS.png', ' <p><strong><span style="text-decoration: underline;">Periosteum:</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>a sheath of dense connective tissue</li><li>an outer fibrous layer</li><li>an inner cellular layer containing osteoprogenitor cells.</li><li>The collagen fibres are arranged parallel to the surface of bone.</li><li>When tendons and ligaments attach to bones, the collagen fibres from these structures extend directly but at an angle into the bone tissue, forming <strong>Sharpey’s fibres</strong>.</li></ul>', '')}>3</button>
@@ -109,8 +111,8 @@ function BoneTS() {
 
           <div className="toggle-button-container">
             <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) :
-                (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
+              {buttonClicked ? (<img alt= ""  src="/assets/on-1.png" className="toggle-image" />) :
+                (<img alt= ""  src="/assets/off-1.png" className="toggle-image" />)}</button>
 
           </div>
           <button
@@ -124,7 +126,7 @@ function BoneTS() {
         </div>
 
         <div className="Container2">
-          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Bone/Ground Bone TS Pencil Diagram.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Ground Bone TS</u></strong></a>
+          <a className="image-cell" onClick={() => openPopup1("/assets/Images/Bone/Ground Bone TS Pencil Diagram.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Ground Bone TS</u></strong></a>
           <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
           <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft: '20px' }}>
             <li>a sheath of dense connective tissue</li>
@@ -132,7 +134,7 @@ function BoneTS() {
             <li>an inner cellular layer containing osteoprogenitor cells.</li>
           </ul>
           <br />
-          <p><strong>Lamellae</strong> -  Collagen fibre bundles running parallel to each other but running in different directions hence giving great strength to the bone.</p>
+          <p><strong>Lamellae</strong> -  Collagen fibre bundles running parallel to each other but running in different directions hence giving great strength to the bone.</p>
           Types:
           <ol style={{ listStyleType: 'numbers', paddingInlineStart: '20px', marginLeft: '20px' }}>
             <li><strong>Concentric</strong>- around the Haversian canals</li>
@@ -146,10 +148,12 @@ function BoneTS() {
         </div>
 
         <div id="overlay" className="overlay">
-          <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
+          <button className="close-button" onClick={() => closePopup()}>&times;</button>
           <div className="popup-content">
-            <img id="popupImage" className="popup-image" src="" alt="Pop-up Image" />
-            <div id="additionalButtons" className="additional-buttons"></div>
+            <div id="popupImageWrapper" className="popup-image-wrapper">
+              <img alt= ""  id="popupImage" className="popup-image" src="" />
+              <div id="additionalButtons" className="additional-buttons"></div>
+            </div>
             <div>
               <p id="popupInfo"></p>
             </div>

@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { openPopup1, closePopup, toggleButtons } from './script';
+import { openPopup1, closePopup, toggleButtons, initPopupHistory } from './script';
 
 function DenseRegularTissue() {
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -57,6 +57,8 @@ function DenseRegularTissue() {
 
 
   useEffect(() => {
+    initPopupHistory();
+    
     const disableRightClick = (e) => {
       e.preventDefault(); 
     };
@@ -89,7 +91,7 @@ function DenseRegularTissue() {
 
         <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
-            <img src="/assets/Images/Connective Tissue/Dense Regular Low Magnification.jpg" alt="Dense Regular Tissue" />
+            <img alt= ""  src="/assets/Images/Connective Tissue/Dense Regular Low Magnification.jpg" />
             <button className="AllButtons" data-tooltip="Collagen Fibres" id="DenseRbtn1" data-popup="popup1" onClick={() => openPopup1("/assets/Images/Connective Tissue/dense_regular_high_pow.png")}>1</button>
             <button className="AllButtons" data-tooltip="Fibroblasts" id="DenseRbtn2" data-popup="popup2" onClick={() => openPopup1("/assets/Images/Connective Tissue/dense_regular_high_pow.png")}>2</button>
             
@@ -108,8 +110,8 @@ function DenseRegularTissue() {
           
           <div className="toggle-button-container">
             <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) : 
-              (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
+              {buttonClicked ? (<img alt= ""  src="/assets/on-1.png" className="toggle-image" />) : 
+              (<img alt= ""  src="/assets/off-1.png" className="toggle-image" />)}</button>
           
           </div>
         <button
@@ -123,7 +125,7 @@ function DenseRegularTissue() {
       </div>
 
         <div className="Container2">
-        <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/dense_regular_pencill.jpeg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Dense Regular Connective Tissue</u></strong></a>
+        <a className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/dense_regular_pencill.jpeg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Dense Regular Connective Tissue</u></strong></a>
           <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
           <p>Parallel and regularly arranged collagen fibres with connective tissue cells dispersed loosely and randomly between fibres.</p>
           
@@ -134,9 +136,12 @@ function DenseRegularTissue() {
         
 
         <div id="overlay" className="overlay">
-          <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
+          <button className="close-button" onClick={() => closePopup()}>&times;</button>
           <div className="popup-content">
-            <img id="popupImage" className="popup-image" src="" alt="Pop-up Image" />
+            <div id="popupImageWrapper" className="popup-image-wrapper">
+              <img alt= ""  id="popupImage" className="popup-image" src="" />
+              <div id="additionalButtons" className="additional-buttons"></div>
+            </div>
             <div>
               <p id="popupInfo"></p>
             </div>
@@ -146,7 +151,6 @@ function DenseRegularTissue() {
                 Your browser does not support the audio element.
               </audio>
             </div>
-            <div id="additionalButtons" className="additional-buttons"></div>
           </div>
         </div>
       </div>

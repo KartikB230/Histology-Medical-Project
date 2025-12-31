@@ -38,10 +38,10 @@ const CarouselComponent = () => {
         <Carousel.Item>
           <Link to="/Epithelium">
             <div className='carousel-image'>
-              <img
+              <img alt= "" 
                 className="d-block w-100"
                 src="/assets/Images/Carouse/Epithelium.jpg"
-                alt="First slide"
+               
               />
             </div>
             <Carousel.Caption>
@@ -53,10 +53,10 @@ const CarouselComponent = () => {
         <Carousel.Item>
           <Link to="/ConnectiveTissue">
             <div className='carousel-image'>
-              <img
+              <img alt= "" 
                 className="d-block w-100"
                 src="/assets/Images/Carouse/Connective Tissue.jpg"
-                alt="Second slide"
+               
               />
             </div>
             <Carousel.Caption>
@@ -68,10 +68,10 @@ const CarouselComponent = () => {
         <Carousel.Item>
           <Link to="/Cartilage">
             <div className='carousel-image'>
-              <img
+              <img alt= "" 
                 className="d-block w-100"
                 src="/assets/Images/Carouse/Cartilage.jpg"
-                alt="Third slide"
+               
               />
             </div>
             <Carousel.Caption>
@@ -83,10 +83,10 @@ const CarouselComponent = () => {
         <Carousel.Item>
           <Link to="/Bone">
             <div className='carousel-image'>
-              <img
+              <img alt= "" 
                 className="d-block w-100"
                 src="/assets/Images/Carouse//Bone.jpg"
-                alt="Fourth slide"
+               
               />
             </div>
             <Carousel.Caption>
@@ -98,10 +98,10 @@ const CarouselComponent = () => {
         <Carousel.Item>
           <Link to="/Adrenal">
             <div className='carousel-image'>
-              <img
+              <img alt= "" 
                 className="d-block w-100"
                 src="/assets/Images/Carouse/Adrenal.png"
-                alt="Fifth slide"
+               
               />
             </div>
             <Carousel.Caption>
@@ -114,10 +114,10 @@ const CarouselComponent = () => {
         <Carousel.Item>
           <Link to="/Pituitary">
             <div className='carousel-image'>
-              <img
+              <img alt= "" 
                 className="d-block w-100"
                 src="/assets/Images/Carouse/Pituitary.png"
-                alt="Sixth slide"
+               
               />
             </div>
             <Carousel.Caption>
@@ -129,10 +129,10 @@ const CarouselComponent = () => {
         <Carousel.Item>
           <Link to="/Thyroid">
             <div className='carousel-image'>
-              <img
+              <img alt= "" 
                 className="d-block w-100"
                 src="/assets/Images/Carouse/Thyroid.tif"
-                alt="Seventh slide"
+               
               />
             </div>
             <Carousel.Caption>
@@ -144,10 +144,10 @@ const CarouselComponent = () => {
         <Carousel.Item>
           <Link to="/Medulla">
             <div className='carousel-image'>
-              <img
+              <img alt= "" 
                 className="d-block w-100"
                 src="/assets/Images/Carouse/Kidney.jpg"
-                alt="Eighth slide"
+               
               />
             </div>
             <Carousel.Caption>
@@ -159,10 +159,10 @@ const CarouselComponent = () => {
         <Carousel.Item>
           <Link to="/BloodVessel">
             <div className='carousel-image'>
-              <img
+              <img alt= "" 
                 className="d-block w-100"
                 src="/assets/Images/Carouse/Blood Vessel.jpg"
-                alt="Eighth slide"
+               
               />
             </div>
             <Carousel.Caption>

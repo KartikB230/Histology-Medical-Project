@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { openPopup1, closePopup, toggleButtons } from './script';
+import { openPopup1, closePopup, toggleButtons, initPopupHistory } from './script';
 
 function HyalineCartilage() {
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -12,7 +12,7 @@ function HyalineCartilage() {
   const [startX, setStartX] = useState(null);
   const [endX, setEndX] = useState(null);
 
- 
+
   const cartilageTypes = [
     "/HyalineCartilage",
     "/ElasticCartilage",
@@ -58,8 +58,9 @@ function HyalineCartilage() {
 
 
   useEffect(() => {
+    initPopupHistory();
     const disableRightClick = (e) => {
-      e.preventDefault(); 
+      e.preventDefault();
     };
 
     const disableImageDownload = (e) => {
@@ -70,7 +71,7 @@ function HyalineCartilage() {
     };
 
     document.addEventListener('contextmenu', disableRightClick);
-    document.addEventListener('mousedown', disableImageDownload); 
+    document.addEventListener('mousedown', disableImageDownload);
 
     return () => {
       document.removeEventListener('contextmenu', disableRightClick);
@@ -87,9 +88,9 @@ function HyalineCartilage() {
         </div>
         <hr style={{ height: "10px" }} />
 
-        <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+        <div className="Container1" id="container1" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
-          <img src="/assets/Images/Cartilage/Hyaline Cartilage Low Magnification1.jpeg" alt="Hyaline Cartilage" />
+            <img alt= ""  src="/assets/Images/Cartilage/Hyaline Cartilage Low Magnification1.jpeg" />
             <button className="AllButtons" data-tooltip="Territorial Matrix" id="Hyalinebtn1" data-popup="popup1" onClick={() => openPopup1("/assets/Images/Cartilage/Hyaline Cartilage High Magnification1.jpg", '#', '#')}>1</button>
             <button className="AllButtons" data-tooltip="Inter-territorial Matrix" id="Hyalinebtn2" data-popup="popup2" onClick={() => openPopup1("/assets/Images/Cartilage/Hyaline Cartilage High Magnification1.jpg", '#', '#')}>2</button>
             <button className="AllButtons" data-tooltip="Lacunae" id="Hyalinebtn3" data-popup="popup3" onClick={() => openPopup1("/assets/Images/Cartilage/Hyaline Cartilage High Magnification1.jpg", '#', '#')}>3</button>
@@ -98,7 +99,7 @@ function HyalineCartilage() {
             <button className="AllButtons" data-tooltip="Cell nests" id="Hyalinebtn6" data-popup="popup6" onClick={() => openPopup1("/assets/Images/Cartilage/Hyaline Cartilage High Magnification1.jpg", '#', '#')}>6</button>
           </div>
         </div>
-        
+
         <div className="navigation-buttons">
           <button
             className="nav-button prev-button"
@@ -106,14 +107,14 @@ function HyalineCartilage() {
             onClick={handlePrev}
             disabled={currentIndex === 0}
           >
-           <FaArrowLeft /> 
+            <FaArrowLeft />
           </button>
-          
+
           <div className="toggle-button-container">
             <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) : 
-              (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
-          
+              {buttonClicked ? (<img alt= ""  src="/assets/on-1.png" className="toggle-image" />) :
+                (<img alt= ""  src="/assets/off-1.png" className="toggle-image" />)}</button>
+
           </div>
           <button
             className="nav-button next-button"
@@ -126,7 +127,7 @@ function HyalineCartilage() {
         </div>
 
         <div className="Container2">
-          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/Hyaline Pencil.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Hyaline Cartilage</u></strong></a>
+          <a className="image-cell" onClick={() => openPopup1("/assets/Images/Cartilage/Hyaline Pencil.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Hyaline Cartilage</u></strong></a>
           {/* Buttons to switch between Hyaline and Articular Cartilage */}
           <div className="theory-switch-buttons">
             <button
@@ -166,9 +167,13 @@ function HyalineCartilage() {
           )}
         </div>
         <div id="overlay" className="overlay">
-          <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
+          <button className="close-button" onClick={() => closePopup()}>&times;</button>
           <div className="popup-content">
-            <img id="popupImage" className="popup-image" src="" alt="Pop-up Image" />
+            <div id="popupImageWrapper" className="popup-image-wrapper">
+              <img alt= ""  id="popupImage" className="popup-image" src="" />
+              <div id="additionalButtons" className="additional-buttons">
+              </div>
+            </div>
             <div>
               <p id="popupInfo"></p>
             </div>
@@ -178,11 +183,10 @@ function HyalineCartilage() {
                 Your browser does not support the audio element.
               </audio>
             </div>
-            <div id="additionalButtons" className="additional-buttons"></div>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer/>
     </>
   );
 }

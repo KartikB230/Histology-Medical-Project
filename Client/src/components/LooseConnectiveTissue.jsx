@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { openPopup1, closePopup, toggleButtons } from './script';
+import { openPopup1, closePopup, toggleButtons, initPopupHistory } from './script';
 
 function LooseConnectiveTissue() {
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -11,7 +11,7 @@ function LooseConnectiveTissue() {
   const [startX, setStartX] = useState(null);
   const [endX, setEndX] = useState(null);
 
- 
+
   const connectiveTissueTypes = [
     "/AdiposeTissue",
     "/DenseRegularTissue",
@@ -57,8 +57,9 @@ function LooseConnectiveTissue() {
 
 
   useEffect(() => {
+    initPopupHistory();
     const disableRightClick = (e) => {
-      e.preventDefault(); 
+      e.preventDefault();
     };
 
     const disableImageDownload = (e) => {
@@ -69,14 +70,14 @@ function LooseConnectiveTissue() {
     };
 
     document.addEventListener('contextmenu', disableRightClick);
-    document.addEventListener('mousedown', disableImageDownload); 
+    document.addEventListener('mousedown', disableImageDownload);
 
     return () => {
       document.removeEventListener('contextmenu', disableRightClick);
       document.removeEventListener('mousedown', disableImageDownload);
     };
   }, []);
-  
+
 
   return (
     <>
@@ -87,10 +88,10 @@ function LooseConnectiveTissue() {
         </div>
         <hr style={{ height: "10px" }} />
 
-        <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+        <div className="Container1" id="container1" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
-          <img src="/assets/Images/Connective Tissue/Loose Connective Tissue Low Magnification.jpg" alt="Loose Connective Tissue" />
-            <button className="AllButtons" data-tooltip="Collagen Fibres" id="Loosebtn1" data-popup="popup1" onClick={() => openPopup1("/assets/Images/Connective Tissue/Collagen Fibres.jpg",'','')}>1</button>
+            <img alt= ""  src="/assets/Images/Connective Tissue/Loose Connective Tissue Low Magnification.jpg" />
+            <button className="AllButtons" data-tooltip="Collagen Fibres" id="Loosebtn1" data-popup="popup1" onClick={() => openPopup1("/assets/Images/Connective Tissue/Collagen Fibres.jpg", '', '')}>1</button>
             <button className="AllButtons" data-tooltip="Adipocytes" id="Loosebtn2" data-popup="popup2" onClick={() => openPopup1("/assets/Images/Connective Tissue/Adipocytes.jpg")}>2</button>
             <button className="AllButtons" data-tooltip="Blood Vessel" id="Loosebtn3" data-popup="popup3" onClick={() => openPopup1("/assets/Images/Connective Tissue/Blood Vessel.jpg")}>3</button>
             <button className="AllButtons" data-tooltip="Elastic Fibres" id="Loosebtn4" data-popup="popup4" onClick={() => openPopup1("/assets/Images/Connective Tissue/Elastic Fibres.jpg")}>4</button>
@@ -98,46 +99,50 @@ function LooseConnectiveTissue() {
         </div>
 
         <div className="navigation-buttons">
-        <button
-          className="nav-button prev-button"
-          data-tooltip="Dense Irregular Connective Tissue"
-          onClick={handlePrev}
-          disabled={currentIndex === 0}
-        >
-          <FaArrowLeft /> 
-        </button>
-          
+          <button
+            className="nav-button prev-button"
+            data-tooltip="Dense Irregular Connective Tissue"
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
+          >
+            <FaArrowLeft />
+          </button>
+
           <div className="toggle-button-container">
             <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) : 
-              (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
-          
+              {buttonClicked ? (<img alt= ""  src="/assets/on-1.png" className="toggle-image" />) :
+                (<img alt= ""  src="/assets/off-1.png" className="toggle-image" />)}</button>
+
           </div>
-        <button
-          className="nav-button next-button"
-          data-tooltip="Disabled"
-          onClick={handleNext}
-          disabled={currentIndex === connectiveTissueTypes.length - 1}
-        >
-          <FaArrowRight />
-        </button>
-      </div>
+          <button
+            className="nav-button next-button"
+            data-tooltip="Disabled"
+            onClick={handleNext}
+            disabled={currentIndex === connectiveTissueTypes.length - 1}
+          >
+            <FaArrowRight />
+          </button>
+        </div>
 
         <div className="Container2">
-          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/Loose Connective Tissue Pencil Diagram.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Loose Connective Tissue</u></strong></a>
+          <a className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/Loose Connective Tissue Pencil Diagram.jpg")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Loose Connective Tissue</u></strong></a>
           <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
           <p>Collagen and elastic fibres with connective tissue cells dispersed loosely and randomly.</p>
-          
+
           <h2 style={{ textDecoration: 'underline' }}>Examples:</h2>
           <p>Areolar Tissue, Perimysium and Lamina Propria.
           </p>
-        
+
         </div>
 
         <div id="overlay" className="overlay">
-          <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
+          <button className="close-button" onClick={() => closePopup()}>&times;</button>
           <div className="popup-content">
-            <img id="popupImage" className="popup-image" src="" alt="Pop-up Image" />
+            <div id="popupImageWrapper" className="popup-image-wrapper">
+              <img alt= ""  id="popupImage" className="popup-image" src="" />
+              <div id="additionalButtons" className="additional-buttons">
+              </div>
+            </div>
             <div>
               <p id="popupInfo"></p>
             </div>
@@ -147,11 +152,10 @@ function LooseConnectiveTissue() {
                 Your browser does not support the audio element.
               </audio>
             </div>
-            <div id="additionalButtons" className="additional-buttons"></div>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer/>
     </>
   );
 }

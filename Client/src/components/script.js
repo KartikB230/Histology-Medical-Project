@@ -1,38 +1,75 @@
 import { useState } from 'react';
 
+// Popup stack to track nested popups
+let popupStack = [];
+
 export function openPopup1(imagePath, descriptionText, audioPath, showButtons=false) {
-  resetPopup();
+  const overlay = document.getElementById('overlay');
 
-  if (imagePath && imagePath !== '#') {
-    document.getElementById('popupImage').src = imagePath;
-    document.getElementById('popupImage').style.display = 'block';
+  if (overlay && overlay.style.display === 'flex') {
+    const currentState = {
+      image: document.getElementById('popupImage').src,
+      description: document.getElementById('popupInfo').innerHTML,
+      audio: document.getElementById('popupAudio').src,
+      showButtons: document.getElementById('additionalButtons').style.display === 'block',
+      imageDisplay: document.getElementById('popupImage').style.display,
+      descDisplay: document.getElementById('popupInfo').style.display,
+      audioDisplay: document.getElementById('popupAudio').style.display
+    };
+    popupStack.push(currentState);
+    window.history.pushState({ popupLevel: popupStack.length }, '');
   }
 
-  if (descriptionText && descriptionText !== '#') {
+  resetPopup();
+
+  const hasValidValue = (val) =>
+    val !== undefined && val !== null && val !== '' && val !== '#';
+
+  if (hasValidValue(imagePath)) {
+    document.getElementById('popupImage').src = imagePath;
+    document.getElementById('popupImage').style.display = 'block';
+    document.getElementById('popupImageWrapper').style.display = 'block';
+  }
+
+  if (hasValidValue(descriptionText)) {
     document.getElementById('popupInfo').innerHTML = descriptionText;
     document.getElementById('popupInfo').style.display = 'block';
   }
 
-  if (audioPath && audioPath !== '#') {
+  if (hasValidValue(audioPath)) {
     document.getElementById('popupAudio').src = audioPath;
     document.getElementById('popupAudio').style.display = 'block';
   }
 
-  if (showButtons) {
-    document.getElementById('additionalButtons').style.display = 'block';
-  } else {
-    document.getElementById('additionalButtons').style.display = 'none';
-  }
-
+  document.getElementById('additionalButtons').style.display = showButtons ? 'block' : 'none';
   document.getElementById('overlay').style.display = 'flex';
-  
 }
+
 export function openPopup(imagePath, descriptionText, audioPath, showButtons=false) {
+  const overlay = document.getElementById('overlay');
+  
+  // Only save current state if overlay is already open (nested popup scenario)
+  if (overlay && overlay.style.display === 'flex') {
+    const currentState = {
+      image: document.getElementById('popupImage').src,
+      description: document.getElementById('popupInfo').innerHTML,
+      audio: document.getElementById('popupAudio').src,
+      showButtons: document.getElementById('additionalButtons').style.display === 'block',
+      imageDisplay: document.getElementById('popupImage').style.display,
+      descDisplay: document.getElementById('popupInfo').style.display,
+      audioDisplay: document.getElementById('popupAudio').style.display
+    };
+
+    popupStack.push(currentState);
+    window.history.pushState({ popupLevel: popupStack.length }, '');
+  }
+
   resetPopup();
 
   if (imagePath && imagePath !== '#') {
     document.getElementById('popupImage').src = imagePath;
     document.getElementById('popupImage').style.display = 'block';
+    document.getElementById('popupImageWrapper').style.display = 'block';
   }
 
   if (descriptionText && descriptionText !== '#') {
@@ -52,7 +89,52 @@ export function openPopup(imagePath, descriptionText, audioPath, showButtons=fal
   }
 
   document.getElementById('overlay').style.display = 'flex';
-  
+}
+
+export function closePopup() {
+  const overlay = document.getElementById('overlay');
+  const popupAudio = document.getElementById('popupAudio');
+
+  if (popupAudio) {
+    popupAudio.pause();
+  }
+
+  // Check if there's a parent popup in the stack
+  if (popupStack.length > 0) {
+    const previousState = popupStack.pop();
+    
+    // Restore previous popup state
+    resetPopup();
+    
+    if (previousState.image) {
+      document.getElementById('popupImage').src = previousState.image;
+      document.getElementById('popupImage').style.display = previousState.imageDisplay;
+      document.getElementById('popupImageWrapper').style.display = previousState.imageDisplay;
+    }
+    
+    if (previousState.description) {
+      document.getElementById('popupInfo').innerHTML = previousState.description;
+      document.getElementById('popupInfo').style.display = previousState.descDisplay;
+    }
+    
+    if (previousState.audio) {
+      document.getElementById('popupAudio').src = previousState.audio;
+      document.getElementById('popupAudio').style.display = previousState.audioDisplay;
+    }
+    
+    if (previousState.showButtons) {
+      document.getElementById('additionalButtons').style.display = 'block';
+    }
+    
+    overlay.style.display = 'flex';
+  } else {
+    // No parent popup, close overlay completely
+    if (overlay) {
+      overlay.style.display = 'none';
+    }
+    resetPopup();
+    popupStack = []; // Clear stack
+  }
 }
 
 export function resetPopup() {
@@ -61,27 +143,17 @@ export function resetPopup() {
   document.getElementById('popupAudio').src = '';
 
   document.getElementById('popupImage').style.display = 'none';
+  document.getElementById('popupImageWrapper').style.display = 'none';
   document.getElementById('popupInfo').style.display = 'none';
   document.getElementById('popupAudio').style.display = 'none';
   document.getElementById('additionalButtons').style.display = 'none';
 }
 
-export function closePopup() {
-  const overlay = document.getElementById('overlay');
-  const popupAudio = document.getElementById('popupAudio');
-
-  if (overlay) {
-    overlay.style.display = 'none';
-  } else {
-    console.warn("Overlay element not found.");
-  }
-
-  if (popupAudio) {
-    popupAudio.pause();
-  } else {
-    console.warn("Popup audio element not found.");
-  }
-  
+// Initialize browser back button handler
+export function initPopupHistory() {
+  window.addEventListener('popstate', (event) => {
+    closePopup();
+  });
 }
 
 export function toggleButtons(buttonClicked, setButtonClicked) {
@@ -90,6 +162,7 @@ export function toggleButtons(buttonClicked, setButtonClicked) {
   });
   setButtonClicked(!buttonClicked);
 }
+
 export function handleQuizSubmission(answers, userAnswers) {
   answers.forEach((answer, index) => {
     const correctOption = document.querySelector(`#question-${index} .option-${answer}`);

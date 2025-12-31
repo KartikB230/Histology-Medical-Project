@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { openPopup1, closePopup, toggleButtons } from './script';
+import { openPopup1, closePopup, toggleButtons, initPopupHistory } from './script';
 
 function MuscularArtery() {
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -58,6 +58,7 @@ function MuscularArtery() {
 
 
   useEffect(() => {
+    initPopupHistory();
     const disableRightClick = (e) => {
       e.preventDefault();
     };
@@ -88,9 +89,9 @@ function MuscularArtery() {
         </div>
         <hr style={{ height: "10px" }} />
 
-        <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+        <div className="Container1" id="container1" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
-            <img src="/assets/Images/Blood Vessel/Muscular Artery Low Magnification.jpg" alt="Medium Muscular Artery" />
+            <img alt= ""  src="/assets/Images/Blood Vessel/Muscular Artery Low Magnification.jpg" />
             <button className="AllButtons" data-tooltip="Tunica Intima" id="MAbtn1" data-popup="popup1" onClick={() => openPopup1('/assets/Images/Blood Vessel/Muscular Artery Tunica Intima.jpg', '<p><strong><span style="text-decoration: underline;">Tunica Intima</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>Includes endothelium and internal elastic lamina</li><li>The internal elastic lamina is prominent and is wavy (Wavy due to contraction of smooth muscle cells in the Tunica media).</li></ul>', '#')}>1</button>
             <button className="AllButtons" data-tooltip="Tunica Media" id="MAbtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Blood Vessel/Muscular Artery Tunica Media.jpg', '<p><strong><span style="text-decoration: underline;">Tunica Media</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>Thickness of Tunica media in comparison to Tunica adventitia is 1 : 1</li><li>Concentrically arranged layers of smooth muscle fibres (almost 40 layers thick)</li><li>Scattered among them are some elastic and reticular fibres.</li></ul>', '#')}>2</button>
             <button className="AllButtons" data-tooltip="Tunica Adventitia" id="MAbtn3" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Blood Vessel/Muscular Artery Tunica Adventitia.jpg', '<p><strong><span style="text-decoration: underline;">Tunica Adventitia</span></strong></p><ul style="list-style-type: disc; padding-left: 20px;"><li>External elastic lamina is prominent.</li><li>Made of longitudinally arranged collagenous tissue and a few elastic fibres.</li><li>These components gradually merge into the loose connective tissue surrounding the vessels.</li><li>It contains vasa vasorum and nervi vascularis</li><li><strong>Examples:</strong> brachial, radial, ulnar, popliteal, dorsalis pedis artery (All arteries except elastic arteries)</li></ul>', '#')}>3</button>
@@ -108,8 +109,8 @@ function MuscularArtery() {
 
           <div className="toggle-button-container">
             <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) :
-                (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
+              {buttonClicked ? (<img alt= ""  src="/assets/on-1.png" className="toggle-image" />) :
+                (<img alt= ""  src="/assets/off-1.png" className="toggle-image" />)}</button>
 
           </div>
           <button
@@ -122,16 +123,16 @@ function MuscularArtery() {
           </button>
         </div>
         <div className='Container2'>
-        <ol style={{ textAlign: 'left', marginLeft: '10px' }}>
+          <ol style={{ textAlign: 'left', marginLeft: '10px' }}>
             <li><strong>Tunica Intima -</strong> Includes endothelium and internal elastic lamina</li>
             <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
-            <li>The internal elastic lamina is prominent and is wavy (Wavy due to contraction of smooth muscle cells in the Tunica media).</li></ul>
+              <li>The internal elastic lamina is prominent and is wavy (Wavy due to contraction of smooth muscle cells in the Tunica media).</li></ul>
             <li><strong>Tunica Media -</strong>Thickness of Tunica media in comparison to Tunica adventitia is 1 : 1</li>
             <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
               <li>Concentrically arranged layers of smooth muscle fibres (almost 40 layers thick)</li>
               <li>Scattered among them are some elastic and reticular fibres.</li>
             </ul>
-            <li><strong>Tunica Adventitia -</strong>External elastic lamina is prominent.</li> 
+            <li><strong>Tunica Adventitia -</strong>External elastic lamina is prominent.</li>
             <ul style={{ textAlign: 'left', listStyle: 'disc' }}>
               <li>Made of longitudinally arranged collagenous tissue and a few elastic fibres.</li>
               <li>These components gradually merge into the loose connective tissue surrounding the vessels.</li>
@@ -142,9 +143,13 @@ function MuscularArtery() {
         </div>
 
         <div id="overlay" className="overlay">
-          <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
+          <button className="close-button" onClick={() => closePopup()}>&times;</button>
           <div className="popup-content">
-            <img id="popupImage" className="popup-image" src="" alt="Pop-up Image" />
+            <div id="popupImageWrapper" className="popup-image-wrapper">
+              <img alt= ""  id="popupImage" className="popup-image" src="" />
+              <div id="additionalButtons" className="additional-buttons">
+              </div>
+            </div>
             <div>
               <p id="popupInfo"></p>
             </div>
@@ -153,8 +158,6 @@ function MuscularArtery() {
                 <source src="" type="audio/wav" />
                 Your browser does not support the audio element.
               </audio>
-            </div>
-            <div id="additionalButtons" className="additional-buttons">
             </div>
           </div>
         </div>

@@ -146,11 +146,11 @@ const Cartilage = () => {
         <div className='epithelium-title'>Types of Cartilage</div>
         <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
         
-          <img 
+          <img alt= ""  
             src="assets/Images/Cartilage/Diagram1.png" 
             className='epithelium-image' 
             style={{ maxWidth: '100%', height: 'auto', borderRadius: '10px' }} 
-            alt="Description" 
+            
           />
         </div>
       </div>

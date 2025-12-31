@@ -12,7 +12,6 @@ const Bone = () => {
   const [activeTab, setActiveTab] = useState('Theory');
   const navigate = useNavigate();
   const location = useLocation();
-  const [buttonClicked, setButtonClicked] = useState(false);
 
   // Disable right-click and direct image download
   useEffect(() => {

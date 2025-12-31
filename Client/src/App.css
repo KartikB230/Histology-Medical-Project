@@ -263,6 +263,35 @@
   margin: 0 auto;
 }
 
+.popup-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: none;
+}
+
+.popup-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.popup-image-wrapper .additional-buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+}
+
+.popup-image-wrapper .additional-buttons .AllButtons {
+  position: absolute;
+  pointer-events: auto; 
+}
+
 .audio-container {
   display: flex;
   justify-content: center;
@@ -2581,6 +2610,21 @@ ul {
   left: 83%;
 }
 
+#Pancreasbtn6 {
+  top: 15%;
+  left: 57%;
+}
+
+#Pancreasbtn7 {
+  top: 48%;
+  left: 59%;
+}
+
+#Pancreasbtn8 {
+  top: 69%;
+  left: 69%;
+}
+
 #Gallbtn1 {
   top: 41%;
   left: 74%;
@@ -2599,6 +2643,21 @@ ul {
 #Gallbtn4 {
   top: 83%;
   left: 14%;
+}
+
+#Gallbtn5 {
+  top: 21%;
+  left: 71%;
+}
+
+#Gallbtn6 {
+  top: 43%;
+  left: 67%;
+}
+
+#Gallbtn7 {
+  top: 82%;
+  left: 72%;
 }
 
 #Liverbtn1 {

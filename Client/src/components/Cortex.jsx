@@ -3,13 +3,13 @@ import Navbar from './Navbar';
 import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { openPopup1, closePopup, toggleButtons } from './script';
+import { openPopup1, closePopup, toggleButtons, initPopupHistory } from './script';
 
 function Cortex() {
   const [buttonClicked, setButtonClicked] = useState(false);
   const navigate = useNavigate();
-  const [startX, setStartX] = useState(null);
-  const [endX, setEndX] = useState(null);
+  // const [startX, setStartX] = useState(null);
+  // const [endX, setEndX] = useState(null);
 
  
   const excretoryTypes = [];
@@ -29,28 +29,29 @@ function Cortex() {
       navigate(excretoryTypes[currentIndex + 1]);
     }
   };
-  const handleTouchStart = (e) => {
-    setStartX(e.touches[0].clientX);
-  };
+  // const handleTouchStart = (e) => {
+  //   setStartX(e.touches[0].clientX);
+  // };
 
-  const handleTouchMove = (e) => {
-    setEndX(e.touches[0].clientX);
-  };
+  // const handleTouchMove = (e) => {
+  //   setEndX(e.touches[0].clientX);
+  // };
 
-  const handleTouchEnd = () => {
-    if (startX && endX) {
-      const distance = startX - endX;
-      if (distance > 50) {
-        handleNext(); // Swipe left
-      } else if (distance < -50) {
-        handlePrev(); // Swipe right
-      }
-    }
-    setStartX(null);
-    setEndX(null);
-  };
+  // const handleTouchEnd = () => {
+  //   if (startX && endX) {
+  //     const distance = startX - endX;
+  //     if (distance > 50) {
+  //       handleNext(); // Swipe left
+  //     } else if (distance < -50) {
+  //       handlePrev(); // Swipe right
+  //     }
+  //   }
+  //   setStartX(null);
+  //   setEndX(null);
+  // };
 
   useEffect(() => {
+    initPopupHistory();
     const disableRightClick = (e) => {
       e.preventDefault(); 
     };
@@ -83,7 +84,7 @@ function Cortex() {
         <div className="Container1" id="container1"> {/* Add id to the parent container */}
           <div style={{ position: 'relative' }}> {/* Ensure relative positioning for parent container */}
             
-            <img src="/assets/Images/Kidney/Cortex.png" alt="Thyroid"/>
+            <img alt= ""  src="/assets/Images/Kidney/Cortex.png"/>
             <button className="AllButtons" data-tooltip="Capsule" id="Cortexbtn1" data-popup="popup1">1</button>
             <button className="AllButtons" data-tooltip="Glomerulus" id="Cortexbtn2" data-popup="popup2" onClick={() => openPopup1('/assets/Images/Kidney/Glomerulus.png', '<strong><u>Glomerulus: </u></strong>The Glomerulus consists of anastomosing tuft of capillaries which appears as a round cellular mass. The endothelial lining of the capillaries is fenestrated. Supporting cells called Mesangial cells lie amongst the capillaries along with their secreted matrix, Mesangium. In addition to support, mesangial cells phagocytose trapped residues and clear the glomerular basement membrane. Mesangial cells respond to both vasoconstrictors like Angiotensin II and vasodilators like Atriopeptides and thus regulate blood flow through the glomerulus. The glomerulus is surrounded by Bowman’s capsule.<br/> <strong><u>Bowmans Capsule: </strong></u>Bowmans capsule has two layers, an outer parietal layer and an inner visceral layer. The visceral layer is in contact with the glomerular capillaries. The visceral layer of Bowman’s capsule is lined by special cells called Podocytes because they have feet like processes or pedicels extending to the wall of capillaries. The parietal layer of Bowman’s capsule is lined by simple squamous flattened epithelium. The glomerulus receives blood through the afferent arteriole and the filtered blood leaves via efferent arteriole located at the vascular pole. The efferent arteriole has a narrower lumen and thicker wall than the afferent arteriole', '/assets/Audios/Kidney/Glomerulus.m4a', '/assets/Audios/Kidney/Bowman_capsule .m4a')}>2</button>
             <button className="AllButtons" data-tooltip="PCT" id="Cortexbtn3" data-popup="popup3" onClick={() => openPopup1('/assets/Images/Kidney/PCT_DCT.png', '<strong><u>Proximal convoluted tubule (PCT):</u></strong> In sections, they appear transversely cut with large and irregularly oval outline. The lining epithelium is simple cuboidal with microvilli. They are darkly stained. As microvilli are present,  the lumen is small and not very clearly seen', '/assets/Audios/Kidney/Pct.m4a')}>3</button>
@@ -104,8 +105,8 @@ function Cortex() {
           
           <div className="toggle-button-container">
             <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) : 
-              (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
+              {buttonClicked ? (<img alt= ""  src="/assets/on-1.png" className="toggle-image" />) : 
+              (<img alt= ""  src="/assets/off-1.png" className="toggle-image" />)}</button>
           
           </div>
           <button
@@ -119,8 +120,8 @@ function Cortex() {
         </div>
 
         <div className="Container2">
-        <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Kidney/cortex_medulla_pencil.jpeg")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}><strong><u>Click Here to view Pencil Diagram of Kidney</u></strong></a>
-          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Kidney/Kidney_Panaromic.png")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}><strong><u>Click Here to view Panaromic view of Kidney</u></strong></a>
+        <a className="image-cell" onClick={() => openPopup1("/assets/Images/Kidney/cortex_medulla_pencil.jpeg", "#", "#")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}><strong><u>Click Here to view Pencil Diagram of Kidney</u></strong></a>
+          <a className="image-cell" onClick={() => openPopup1("/assets/Images/Kidney/Kidney_Panaromic.png", "#", "#")} style={{"display":"flex","justifyContent":"center","marginBottom":"10px"}}><strong><u>Click Here to view Panaromic view of Kidney</u></strong></a>
           <p>
             Cortex is the dark coloured outer portion of the kidney. The cortex or the Cortical labrynth consists of Glomerulus, Bowman’s Capsule, PCT and DCT.
             These elements give the cortex a granular appearance. There are striations seen in the outer part of cortex called Medullary rays.
@@ -130,10 +131,13 @@ function Cortex() {
         
 
         {/* < Pop-up overlay */}
-        <div id="overlay" className="overlay" >
-          <button className="close-button" onClick={closePopup}>&times;</button>
+         <div id="overlay" className="overlay">
+          <button className="close-button" onClick={() => closePopup()}>&times;</button>
           <div className="popup-content">
-            <img id="popupImage" className="popup-image" src="" alt="Pop-up Image" />
+            <div id="popupImageWrapper" className="popup-image-wrapper">
+              <img alt= ""  id="popupImage" className="popup-image" src="" />
+              <div id="additionalButtons" className="additional-buttons"></div>
+            </div>
             <div>
               <p id="popupInfo"></p>
             </div>
@@ -143,11 +147,10 @@ function Cortex() {
                 Your browser does not support the audio element.
               </audio>
             </div>
-            <div id="additionalButtons" className="additional-buttons"></div>
           </div>
         </div>
-        <Footer/>
       </div>
+      <Footer />
     </>
   );
 }

@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import { useNavigate } from "react-router-dom";
 import Footer from './Footer';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { openPopup1, closePopup, toggleButtons, openPopup } from './script';
+import { openPopup1, closePopup, toggleButtons, openPopup, initPopupHistory } from './script';
 
 function DenseIrregularTissue() {
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -58,6 +58,8 @@ function DenseIrregularTissue() {
 
 
   useEffect(() => {
+    initPopupHistory();
+    
     const disableRightClick = (e) => {
       e.preventDefault(); 
     };
@@ -111,7 +113,7 @@ function DenseIrregularTissue() {
 
         <div className="Container1" id="container1"  onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <div style={{ position: 'relative' }}>
-            <img src="/assets/Images/Connective Tissue/dense_irregular_highpow.jpeg" alt="Dense Irregular Tissue" />
+            <img alt= ""  src="/assets/Images/Connective Tissue/dense_irregular_highpow.jpeg" />
             <button className="AllButtons" data-tooltip="Collagen Fibres" id="DenseIbtn1" data-popup="popup1" onClick={() => openPopup1("/assets/Images/Connective Tissue/Dense Irregular High Magnification.jpg")}>1</button>
             <button className="AllButtons" data-tooltip="Fibroblasts" id="DenseIbtn2" data-popup="popup2" onClick={() => openPopup1("/assets/Images/Connective Tissue/Dense Irregular High Magnification.jpg")}>2</button>
             <button className="AllButtons" data-tooltip="Capiliary" id="DenseIbtn3" data-popup="popup3">3</button>
@@ -130,8 +132,8 @@ function DenseIrregularTissue() {
           
           <div className="toggle-button-container">
             <button id="toggleButton" data-tooltip="Show/Hide labels" className="toggle-button" onClick={() => toggleButtons(buttonClicked, setButtonClicked)}>
-              {buttonClicked ? (<img src="/assets/on-1.png" alt="afterClick" className="toggle-image" />) : 
-              (<img src="/assets/off-1.png" alt="beforeClick" className="toggle-image" />)}</button>
+              {buttonClicked ? (<img alt= ""  src="/assets/on-1.png" className="toggle-image" />) : 
+              (<img alt= ""  src="/assets/off-1.png" className="toggle-image" />)}</button>
           
           </div>
         <button
@@ -145,7 +147,7 @@ function DenseIrregularTissue() {
       </div>
 
         <div className="Container2">
-          <a href='#' className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/dense_irregular_pencil.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Dense Irregular Tissue</u></strong></a>
+          <a className="image-cell" onClick={() => openPopup1("/assets/Images/Connective Tissue/dense_irregular_pencil.png")} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Pencil Diagram of Dense Irregular Tissue</u></strong></a>
           <h2 style={{ textDecoration: 'underline' }}>Identifying Features</h2>
           <ul style={{ listStyleType: 'disc', paddingInlineStart: '20px', marginLeft: '20px' }}>
             <li>Collagen and elastic fibres with connective tissue cells dispersed randomly.</li>
@@ -158,11 +160,13 @@ function DenseIrregularTissue() {
         </div>
 
         <div id="overlay" className="overlay">
-          <button className="close-button" onClick={() => closePopup('overlay')}>&times;</button>
+          <button className="close-button" onClick={() => closePopup()}>&times;</button>
           <div className="popup-content">
-            <img id="popupImage" className="popup-image" src="" alt="Pop-up Image" />
-            <div id="additionalButtons" className="additional-buttons">
-              <a href="#" className="image-cell" onClick={() => openPopup('/assets/Images/Connective/Fibroblasts Diagram.jpg')} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Fibroblasts Diagram</u></strong></a>
+            <div id="popupImageWrapper" className="popup-image-wrapper">
+              <img alt= ""  id="popupImage" className="popup-image" src="" />
+              <div id="additionalButtons" className="additional-buttons">
+                <a className="image-cell" onClick={() => openPopup('/assets/Images/Connective/Fibroblasts Diagram.jpg')} style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}><strong><u>Click Here to view Fibroblasts Diagram</u></strong></a>
+              </div>
             </div>
             <div>
               <p id="popupInfo"></p>
